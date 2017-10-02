@@ -10,6 +10,7 @@ pages:
   stage: deploy
   script:
       - yarn build
+      - mv public oldpublic
       - mv build public
   artifacts:
     paths:
