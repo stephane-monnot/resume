@@ -1,4 +1,3 @@
-/* global __DEVELOPMENT__ __USE_GA__ __DEVTOOLS__ */
 /* eslint global-require: 0 */
 
 import { createStore, applyMiddleware } from 'redux';

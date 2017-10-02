@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import blue from 'material-ui/colors/blue';
@@ -17,7 +16,6 @@ import './App.css';
 
 import LanguagePicker from './LanguagePicker';
 import ResumeScreen from './ResumeScreen';
-import { getCurrentUser, getCurrentLanguage } from './selectors';
 import configureStore from './store/configureStore';
 
 const store = configureStore({});

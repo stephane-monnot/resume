@@ -13,7 +13,7 @@ import LanguageIcon from 'material-ui-icons/Language';
 
 import Timeline from './VerticalTimeline/Timeline';
 import TimelineElement from './VerticalTimeline/TimelineElement';
-import BottomNavigation from './BottomNavigation';
+// import BottomNavigation from './BottomNavigation';
 import './Resume.css';
 import translate from './i18n/Translate';
 
@@ -366,8 +366,7 @@ class Resume extends Component {
               <br />
 
               <Typography className="Resume-summary" component="p"
-                          dangerouslySetInnerHTML={{ __html: this.props.summary }}>
-              </Typography>
+                          dangerouslySetInnerHTML={{ __html: this.props.summary }} />
             </CardContent>
             <CardActions className="Resume-actions">
               <Button raised color="primary">{ this.props.strings.download }</Button>
@@ -383,7 +382,7 @@ class Resume extends Component {
                                title={position.title} subtitle={position.company}
                                content={position.summary} icon={<WorkIcon />}
                                iconStyle={styles.primaryColor}
-                               date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate == 'Today' || position.endDate == 'Aujourd\'hui' || position.endDate == '今' ? (new Date()).getFullYear() : parseInt(position.endDate)) - parseInt(position.startDate)) + this.props.strings.years + ')'}
+                               date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + this.props.strings.years + ')'}
                                color="red"
               />
             )}
@@ -393,7 +392,7 @@ class Resume extends Component {
                                title={education.fieldOfStudy} subtitle={education.degree}
                                content={education.activities} icon={<SchoolIcon />}
                                iconStyle={styles.secondaryColor}
-                               date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate == 'Today' || education.endDate == 'Aujourd\'hui' || education.endDate == '今' ? (new Date()).getFullYear() : parseInt(education.endDate)) - parseInt(education.startDate)) + this.props.strings.years + ')'}
+                               date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + this.props.strings.years + ')'}
                                color="red"
               />
             )}
