@@ -1,0 +1,239 @@
+{
+  "firstName": "Stéphane",
+  "lastName": "Monnot",
+  "emailAddress": "monnot.stephane@gmail.com",
+  "headline": "Ingénieur full-stack web",
+  "summary": "Ingénieur full-stack web & intervenant / formateur dans le domaine du web. Mon domaine de compétences comprend : le PHP (Symfony & Laravel frameworks), le développemment piloté par les tests, l'intégration continue, WordPress, l'administration de systèmes Linux et le développement d'APIs. XXXXX grâce à une license dans le domaine du développement web obtenue à l'Université Claude Bernard Lyon 1. Ma stack favorite : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative avec intégration/déploiement continue avec Gitlab.",
+  "pictureUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg",
+  "dateOfBirth": "1987-09-16",
+  "mainAddress": "Noda, Osaka, Japan",
+  "websites": [
+    {
+      "type": "Linkedin",
+      "url": "https://www.linkedin.com/in/monnotnakatsuji/"
+    }
+  ],
+  "phoneNumbers": [
+    {
+      "type": "Work",
+      "number": "+33 (0)6 73 83 21 42"
+    },
+    {
+      "type": "Personal",
+      "number": "+33 (0)6 73 83 21 42"
+    }
+  ],
+  "imAccounts": [
+    {
+      "type": "Line",
+      "name": "shinbuntu"
+    },
+    {
+      "type": "Skype",
+      "name": "monnot.stephane"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Osaka",
+      "country": "Japan",
+      "isCurrent": true
+    },
+    {
+      "name": "Lyon",
+      "country": "France"
+    }
+  ],
+  "positions": [
+    {
+      "title": "Ingénieur full-stack web",
+      "summary": "Développement PHP/MySQL/Javascript<br />Laravel 5 | Symfony 3 | Vuejs | ReactJS | Docker | CI",
+      "startDate": "2010",
+      "endDate": "Aujourd'hui",
+      "isCurrent": true,
+      "company": "NanokaWeb"
+    },
+    {
+      "title": "Intervenant / formateur",
+      "summary": "Interventions dans le développement web<br />PHP (Les bases, POO, Framework Laravel) | MySQL",
+      "startDate": "2016",
+      "endDate": "Aujourd'hui",
+      "isCurrent": true,
+      "company": "Sup’ La Mache"
+    },
+    {
+      "title": "Développeur web sénior & CTO / Lead developer",
+      "summary": "Développement PHP/MySQL/Javascript <br />Solire Framework | Jquery | AngularJS",
+      "startDate": "2009",
+      "endDate": "2017",
+      "isCurrent": true,
+      "company": "Solire"
+    }
+  ],
+  "interests": "",
+  "languages": [
+    {
+      "name": "Français",
+      "level": "Natif"
+    },
+    {
+      "name": "Anglais",
+      "level": "Compétence professionnelle"
+    },
+    {
+      "name": "Japanese",
+      "level": "Compétence professionnelle"
+    },
+    {
+      "name": "Korean",
+      "level": "Notions élémentaires"
+    }
+  ],
+  "skills": [
+    {
+      "name": "PHP POO",
+      "category": {
+        "name": "Langages"
+      }
+    },
+    {
+      "name": "HTML5",
+      "category": {
+        "name": "Langages"
+      }
+    },
+    {
+      "name": "SQL (MYSQL)",
+      "category": {
+        "name": "Langages"
+      }
+    },
+    {
+      "name": "CSS3",
+      "category": {
+        "name": "Langages"
+      }
+    },
+    {
+      "name": "Javascript ES6",
+      "category": {
+        "name": "Langages"
+      }
+    },
+    {
+      "name": "Laravel 5",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "SYMFONY 2 & 3",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "Facebook SDK",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "REACTJS/REDUX",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "REACTNATIVE",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "BOOTSTRAP",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "JQUERY",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "Wordpress",
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "Linux",
+      "category": {
+        "name": "Outils"
+      }
+    },
+    {
+      "name": "JIRA/Redmine",
+      "category": {
+        "name": "Outils"
+      }
+    },
+    {
+      "name": "GIT",
+      "category": {
+        "name": "Outils"
+      }
+    },
+    {
+      "name": "Jenkins/Gitlab-CI",
+      "category": {
+        "name": "Outils"
+      }
+    },
+    {
+      "name": "Docker",
+      "category": {
+        "name": "Outils"
+      }
+    },
+    {
+      "name": "GITLAB/GITHUB",
+      "category": {
+        "name": "Outils"
+      }
+    }
+  ],
+  "educations": [
+    {
+      "schoolName": "Claude Bernard University Lyon 1",
+      "fieldOfStudy": "Metinet",
+      "startDate": "2009",
+      "endDate": "2010",
+      "degree": "Licence",
+      "activities": "Base de données, PHP, Flash, Java, Anglais, Communication, Javascript"
+    },
+    {
+      "schoolName": "Lycée Joseph Marie Carriat ",
+      "fieldOfStudy": "Informatique de Gestion",
+      "startDate": "2007",
+      "endDate": "2009",
+      "degree": "Brevet de technicien supérieur (BTS)",
+      "activities": "Programmation, Anglais, Mathématiques, Management"
+    }
+  ],
+  "volunteer": [
+    {
+      "name": ""
+    }
+  ],
+  "hobbies": [
+    {
+      "name": "La cuisine"
+    },
+    {
+      "name": "Les voyages"
+    }
+  ]
+}

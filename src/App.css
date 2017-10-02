@@ -1,0 +1,12 @@
+.App {
+  padding: 80px 0;
+}
+
+.App-title {
+  flex: 1;
+}
+
+.App-header {
+  background: #1e88e5;
+  height: 100px;
+}

@@ -1,0 +1,64 @@
+html {
+  background: #e3e3e3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Card-md {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 1em;
+  text-indent: -.7em;
+}
+
+li::before {
+  font-size: 42px;
+  content: "• ";
+  color: #E91E63;
+  top: 8px;
+  position: relative;
+}
+
+li::after {
+  content: "";
+  position: absolute;
+  left: 0.65em;
+  border-left: 2px solid #E91E63;
+  height: 100%;
+  width: 2px;
+}
+
+li:first-child::after {
+  top: 28px;
+}
+
+
+li:last-child::after {
+  height: 28px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1170px;
+  margin: 0 auto;
+}

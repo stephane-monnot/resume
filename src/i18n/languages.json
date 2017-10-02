@@ -1,0 +1,5 @@
+[
+  { "value": "en", "iso": "gb", "name": "English", "englishName": "English" },
+  { "value": "fr", "iso": "fr", "name": "Français", "englishName": "French" },
+  { "value": "jp", "iso": "jp", "name": "日本語", "englishName": "Japanese" }
+]
