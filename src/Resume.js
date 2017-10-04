@@ -282,7 +282,9 @@ class Resume extends Component {
       return obj;
     }, {});
 
-    return Object.values(skillsByCategories);
+    return Object.keys(skillsByCategories).map(function(key) {
+      return skillsByCategories[key];
+    });
   }
 
   renderSkillsCategory(skillCategory, i) {

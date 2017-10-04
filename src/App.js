@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import blue from 'material-ui/colors/blue';
 import red from 'material-ui/colors/red';
@@ -27,6 +28,8 @@ const theme = createMuiTheme({
   },
 });
 
+const title = 'Stéphane Monnot : Web developer in Osaka';
+
 class App extends Component {
   constructor() {
     super();
@@ -39,6 +42,7 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Router>
             <div className="App">
+              <Helmet titleTemplate={`%s - ${title}`} />
               <AppBar position="fixed">
                 <Toolbar>
                   <Typography type="title" color="inherit" className="App-title">
@@ -48,10 +52,10 @@ class App extends Component {
                   <Button href="mailto:monnot.stephane@gmail.com" color="contrast">monnot.stephane@gmail.com</Button>
                 </Toolbar>
               </AppBar>
-              <Route exact path="/" render={() => <ResumeScreen language="jp" />} />
-              <Route exact path="/fr/cv" render={() => <ResumeScreen language="fr" />} />
-              <Route exact path="/jp/rirekisho" render={() => <ResumeScreen language="jp" />} />
-              <Route exact path="/en/resume" render={() => <ResumeScreen language="en" />} />
+              <Route exact path="/" render={() => <ResumeScreen language="jp" title="履歴書" />} />
+              <Route exact path="/fr/cv" render={() => <ResumeScreen language="fr" title="CV" />} />
+              <Route exact path="/jp/rirekisho" render={() => <ResumeScreen language="jp" title="履歴書" />} />
+              <Route exact path="/en/resume" render={() => <ResumeScreen language="en" title="Resume" />} />
             </div>
           </Router>
         </MuiThemeProvider>
