@@ -53,9 +53,9 @@ class App extends Component {
                 </Toolbar>
               </AppBar>
               <Route exact path="/" render={() => <ResumeScreen language="jp" title="履歴書" />} />
-              <Route exact path="/fr/cv" render={() => <ResumeScreen language="fr" title="CV" />} />
-              <Route exact path="/jp/rirekisho" render={() => <ResumeScreen language="jp" title="履歴書" />} />
-              <Route exact path="/en/resume" render={() => <ResumeScreen language="en" title="Resume" />} />
+              <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
+              <Route exact path="/jp/rirekisho.html" render={() => <ResumeScreen language="jp" title="履歴書" />} />
+              <Route exact path="/en/resume.html" render={() => <ResumeScreen language="en" title="Resume" />} />
             </div>
           </Router>
         </MuiThemeProvider>
