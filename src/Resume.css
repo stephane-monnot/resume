@@ -91,3 +91,13 @@
     width: 49%;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .Resume-skills-category {
+    width: 100%;
+  }
+
+  .Resume-skill {
+    width: 30%;
+  }
+}

@@ -7,5 +7,6 @@ export default {
     year: ' year',
     skills: 'Skills',
     languages: 'Languages',
+    resume: 'Resume',
   }
 };

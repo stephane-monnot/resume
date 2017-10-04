@@ -227,5 +227,13 @@
     {
       "name": ""
     }
+  ],
+  "hobbies": [
+    {
+      "name": "Cooking"
+    },
+    {
+      "name": "Trips"
+    }
   ]
 }

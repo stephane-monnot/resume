@@ -48,10 +48,10 @@ class App extends Component {
                   <Button href="mailto:monnot.stephane@gmail.com" color="contrast">monnot.stephane@gmail.com</Button>
                 </Toolbar>
               </AppBar>
-              <Route exact path="/" render={() => <ResumeScreen language="fr" />} />
-              <Route exact path="/fr" render={() => <ResumeScreen language="fr" />} />
-              <Route exact path="/jp" render={() => <ResumeScreen language="jp" />} />
-              <Route exact path="/en" render={() => <ResumeScreen language="en" />} />
+              <Route exact path="/" render={() => <ResumeScreen language="jp" />} />
+              <Route exact path="/fr/cv" render={() => <ResumeScreen language="fr" />} />
+              <Route exact path="/jp/rirekisho" render={() => <ResumeScreen language="jp" />} />
+              <Route exact path="/en/resume" render={() => <ResumeScreen language="en" />} />
             </div>
           </Router>
         </MuiThemeProvider>

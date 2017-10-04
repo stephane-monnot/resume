@@ -10,6 +10,8 @@ import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
 import LanguageIcon from 'material-ui-icons/Language';
+import ToysIcon from 'material-ui-icons/Toys';
+import Helmet from 'react-helmet';
 
 import Timeline from './VerticalTimeline/Timeline';
 import TimelineElement from './VerticalTimeline/TimelineElement';
@@ -342,6 +344,8 @@ class Resume extends Component {
 
     return (
       <div className="Resume">
+        <Helmet title={this.props.strings.resume} />
+
         <div className="container">
 
           <Card className="Resume-header Card-md">
@@ -369,7 +373,7 @@ class Resume extends Component {
                           dangerouslySetInnerHTML={{ __html: this.props.summary }} />
             </CardContent>
             <CardActions className="Resume-actions">
-              <Button raised color="primary">{ this.props.strings.download }</Button>
+              <Button raised color="primary" target="_blank" href="/data/fr.pdf">{ this.props.strings.download }</Button>
               <Button raised color="accent">{ this.props.strings.hireMe }</Button>
             </CardActions>
           </Card>
@@ -411,6 +415,15 @@ class Resume extends Component {
                   <span className="Resume-languageTitle">{language.name}</span> :
                   <span className="Resume-languageLevel"> {language.level}</span>
                 </li>
+            )}
+          </ul>
+
+          <h2 id="Resume-hobbies"><ToysIcon /> { this.props.strings.hobbies }</h2>
+          <ul className="Resume-languages">
+            {this.props.hobbies.map((hobby, i) =>
+              <li className="Resume-language" key={i}>
+                <span className="Resume-hobbyTitle">{hobby.name}</span>
+              </li>
             )}
           </ul>
         </div>

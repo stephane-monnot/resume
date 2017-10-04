@@ -7,5 +7,7 @@ export default {
     year: ' 年間',
     skills: '特技',
     languages: '言語能力',
+    hobbies: '趣味',
+    resume: '履歴書'
   }
 };

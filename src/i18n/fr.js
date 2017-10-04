@@ -7,5 +7,7 @@ export default {
     year: ' an',
     skills: 'Compétences',
     languages: 'Langues',
+    hobbies: 'Loisirs',
+    resume: 'CV'
   }
 };

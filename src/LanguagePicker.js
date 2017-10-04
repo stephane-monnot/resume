@@ -8,7 +8,7 @@ import translate from './i18n/Translate';
 const LanguagePicker = () => (
   <div>
     {languages.map((language, i) =>
-      <Button color="contrast" component={Link} to={'/' + language.value}>{language.name}</Button>
+      <Button color="contrast" component={Link} to={'/' + language.url}>{language.name}</Button>
     )}
   </div>
 );

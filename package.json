@@ -8,20 +8,23 @@
     "material-ui-icons": "^1.0.0-beta.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-helmet": "4",
     "react-intl": "^2.4.0",
     "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
+    "react-router-dom": "next",
     "react-scripts": "1.0.13",
     "react-scrollspy": "^3.3.3",
+    "react-snapshot": "^1.2.0",
     "react-visibility-sensor": "^3.10.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
     "redux-saga": "^0.15.6",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "styled-components": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && react-snapshot",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

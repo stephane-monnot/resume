@@ -58,7 +58,7 @@ li:last-child::after {
 }
 
 .container {
-  width: 90%;
+  width: 98%;
   max-width: 1170px;
   margin: 0 auto;
 }
