@@ -327,6 +327,8 @@ class Resume extends Component {
       fullName += ' (' + this.props.firstNameKana + ' ' + this.props.lastNameKana + ')'
     }
 
+    const cv = this.props.cvPDF;
+
     const { theme } = this.props;
     const primaryColor = theme.palette.primary[500];
     const secondaryColor = theme.palette.secondary[500];
@@ -375,7 +377,7 @@ class Resume extends Component {
                           dangerouslySetInnerHTML={{ __html: this.props.summary }} />
             </CardContent>
             <CardActions className="Resume-actions">
-              <Button raised color="primary" target="_blank" href="/data/fr.pdf">{ this.props.strings.download }</Button>
+              <Button raised color="primary" target="_blank" href={cv}>{ this.props.strings.download }</Button>
               <Button raised color="accent">{ this.props.strings.hireMe }</Button>
             </CardActions>
           </Card>
