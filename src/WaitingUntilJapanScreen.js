@@ -12,7 +12,7 @@ class WaitingUntilJapanScreen extends Component {
     const remainingDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
     const timeDiff2 = Math.abs(today.getTime() - fromDate.getTime());
     const spentDays = Math.ceil(timeDiff2 / (1000 * 3600 * 24));
-    const percent = Math.round(spentDays / (remainingDays + spentDays) * 100 * 10, 10) / 10;
+    const percent = Math.round(spentDays / (remainingDays + spentDays) * 100 * 10) / 10;
 
     return (
       <Card style={{maxWidth: '90%', margin: '0 auto'}}>
