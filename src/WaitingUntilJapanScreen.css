@@ -4,6 +4,18 @@
     text-align: center;
 }
 
+.WaitingUntilJapanScreen-progress {
+    height: 25px !important;
+}
+
+.WaitingUntilJapanScreen-progress-percent {
+    position: absolute;
+    top: 5px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
 .WaitingUntilJapanScreen-card-footer {
     padding: 50px !important;
     justify-content: space-around;

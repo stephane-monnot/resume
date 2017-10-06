@@ -38,8 +38,9 @@ class WaitingUntilJapanScreen extends Component {
         <CardContent>
           <h3>Remaining days until japan</h3>
 
-          <div>
-            <LinearProgress color="accent" mode="determinate" value={percent}/>
+          <div style={{position: 'relative'}}>
+            <LinearProgress className="WaitingUntilJapanScreen-progress" color="accent" mode="determinate" value={percent}/>
+            <div className="WaitingUntilJapanScreen-progress-percent" style={{width: percent + '%'}}>{percent}%</div>
           </div>
 
         </CardContent>
