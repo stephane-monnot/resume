@@ -15,7 +15,7 @@ import Helmet from 'react-helmet';
 
 import Timeline from './VerticalTimeline/Timeline';
 import TimelineElement from './VerticalTimeline/TimelineElement';
-// import BottomNavigation from './BottomNavigation';
+import BottomNavigation from './BottomNavigation';
 import './Resume.css';
 import translate from './i18n/Translate';
 
@@ -431,7 +431,7 @@ class Resume extends Component {
             )}
           </ul>
         </div>
-        {/*<BottomNavigation />*/}
+        <BottomNavigation />
       </div>
     );
   }

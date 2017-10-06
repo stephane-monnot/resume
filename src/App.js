@@ -17,6 +17,7 @@ import './App.css';
 
 import LanguagePicker from './LanguagePicker';
 import ResumeScreen from './ResumeScreen';
+import WaitingUntilJapanScreen from './WaitingUntilJapanScreen';
 import configureStore from './store/configureStore';
 
 const store = configureStore({});
@@ -56,6 +57,8 @@ class App extends Component {
               <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
               <Route exact path="/jp/rirekisho.html" render={() => <ResumeScreen language="jp" title="履歴書" />} />
               <Route exact path="/en/resume.html" render={() => <ResumeScreen language="en" title="Resume" />} />
+              <Route exact path="/until/japan.html" render={() => <WaitingUntilJapanScreen title="Until Japan" />} />
+
             </div>
           </Router>
         </MuiThemeProvider>
