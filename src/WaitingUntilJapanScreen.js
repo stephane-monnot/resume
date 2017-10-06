@@ -20,6 +20,7 @@ class WaitingUntilJapanScreen extends Component {
           <h3>Remaining days until japan</h3>
 
           <div>
+            From : { fromDate.toLocaleDateString() }<br />
             Until : { untilDate.toLocaleDateString() }<br />
             Spent days : { spentDays } days<br />
             Remaining days : { remainingDays } days<br />
