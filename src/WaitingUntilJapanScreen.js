@@ -8,7 +8,6 @@ class WaitingUntilJapanScreen extends Component {
     const fromDate = new Date(2017, 9, 3);
     const untilDate = new Date(2018, 0, 15);
     const today = new Date();
-    console.log(today, fromDate, untilDate)
     const timeDiff = Math.abs(untilDate.getTime() - today.getTime());
     const remainingDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
     const timeDiff2 = Math.abs(today.getTime() - fromDate.getTime());
@@ -21,6 +20,7 @@ class WaitingUntilJapanScreen extends Component {
           <h3>Remaining days until japan</h3>
 
           <div>
+            Until : { untilDate.toLocaleDateString() }<br />
             Spent days : { spentDays } days<br />
             Remaining days : { remainingDays } days<br />
             Percent : { percent }%<br />
