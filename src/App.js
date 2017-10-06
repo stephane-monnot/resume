@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Link
 } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
@@ -50,6 +51,7 @@ class App extends Component {
                     {/*MONNOT Stéphane*/}
                   </Typography>
                   <LanguagePicker/>
+                  <Link to="/until/japan.html" />
                   <Button href="mailto:monnot.stephane@gmail.com" color="contrast">monnot.stephane@gmail.com</Button>
                 </Toolbar>
               </AppBar>
