@@ -54,7 +54,7 @@ class WaitingUntilJapanScreen extends Component {
           </div>
           <div className="WaitingUntilJapanScreen-info">
             <div className="WaitingUntilJapanScreen-info-title">Days</div>
-            <div className="WaitingUntilJapanScreen-info-value">{ spentDays } / { remainingDays }</div>
+            <div className="WaitingUntilJapanScreen-info-value">{ spentDays } / { remainingDays + spentDays }</div>
           </div>
           <div className="WaitingUntilJapanScreen-info">
             <div className="WaitingUntilJapanScreen-info-title">Percent</div>
