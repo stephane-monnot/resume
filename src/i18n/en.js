@@ -15,5 +15,12 @@ export default {
     until: 'Until',
     days: 'Days',
     Percent: 'Percent'
+  },
+  SimpleBottomNavigation: {
+    home: 'Home',
+    workExperienceAndEducation: 'Work experience & Education',
+    skills: 'Skills',
+    languages: 'Languages',
+    hobbies: 'Resume',
   }
 };

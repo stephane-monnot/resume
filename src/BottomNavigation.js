@@ -2,13 +2,16 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import flow from 'lodash/flow';
 import { withStyles } from 'material-ui/styles';
 import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
 import HomeIcon from 'material-ui-icons/Home';
-import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
+import LanguageIcon from 'material-ui-icons/Language';
+import ToysIcon from 'material-ui-icons/Toys';
 import Scrollspy from './ScrollSpy';
+import translate from './i18n/Translate';
 
 const styles = {
   root: {
@@ -27,24 +30,29 @@ const styles = {
 
 var buttons = [
   {
-    label: 'Home',
+    label: 'home',
     id: 'Resume-home',
     icon: <HomeIcon />,
   },
   {
-    label: 'Work',
+    label: 'workExperienceAndEducation',
     id: 'Resume-work',
     icon: <WorkIcon />,
   },
   {
-    label: 'Education',
-    id: 'Resume-education',
-    icon: <SchoolIcon />,
-  },
-  {
-    label: 'Skills',
+    label: 'skills',
     id: 'Resume-skills',
     icon: <SettingsIcon />,
+  },
+  {
+    label: 'languages',
+    id: 'Resume-languages',
+    icon: <LanguageIcon />,
+  },
+  {
+    label: 'hobbies',
+    id: 'Resume-hobbies',
+    icon: <ToysIcon />,
   },
 ];
 
@@ -53,13 +61,17 @@ class SimpleBottomNavigation extends React.Component {
     value: 0
   };
 
+  static propTypes = {
+    strings: PropTypes.object
+  };
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
   handleSpy = (item) => {
     if (typeof item !== 'undefined') {
-      const value = buttons.findIndex(x => x.id == item.id);
+      const value = buttons.findIndex(x => x.id === item.id);
       this.setState({ value });
     }
   };
@@ -70,7 +82,7 @@ class SimpleBottomNavigation extends React.Component {
 
     return (
 
-      <Scrollspy onUpdate={this.handleSpy} items={['Resume-home', 'Resume-work', 'Resume-education', 'Resume-skills']}
+      <Scrollspy onUpdate={this.handleSpy} items={buttons.map(function(a) {return a.id;})}
                  currentClassName="is-current">
         <BottomNavigation
           value={value}
@@ -79,7 +91,7 @@ class SimpleBottomNavigation extends React.Component {
           className={classes.root}
         >
           {buttons.map((button, j) =>
-            <BottomNavigationButton key={j} className={classes.link} href={'#' + button.id} label={button.label}
+            <BottomNavigationButton key={j} className={classes.link} href={'#' + button.id} label={this.props.strings[button.label]}
                                     icon={button.icon} />
           )}
         </BottomNavigation>
@@ -93,4 +105,9 @@ SimpleBottomNavigation.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleBottomNavigation);
+const decorators = flow([
+  withStyles(styles),
+  translate('SimpleBottomNavigation')
+]);
+
+export default decorators(SimpleBottomNavigation);

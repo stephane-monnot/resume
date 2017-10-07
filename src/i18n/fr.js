@@ -16,5 +16,12 @@ export default {
     until: 'Jusqu\'à',
     days: 'Jours',
     Percent: 'Pourcentage'
+  },
+  SimpleBottomNavigation: {
+    home: 'Accueil',
+    workExperienceAndEducation: 'Expérience professionnelle et éducation',
+    skills: 'Compétences',
+    languages: 'Langues',
+    hobbies: 'Loisirs',
   }
 };
