@@ -46,10 +46,10 @@ class App extends Component {
             <div className="App">
               <Helmet titleTemplate={`%s - ${title}`} />
               <AppBar position="fixed">
-                <Toolbar>
-                  <Typography type="title" color="inherit" className="App-title">
-                    {/*MONNOT Stéphane*/}
-                  </Typography>
+                <Toolbar className="App-header">
+                  {/*<Typography type="title" color="inherit" className="App-title">*/}
+                    {/*/!*MONNOT Stéphane*!/*/}
+                  {/*</Typography>*/}
                   <LanguagePicker/>
                   <Link to="/jp/until/japan.html" />
                   <Link to="/fr/until/japan.html" />

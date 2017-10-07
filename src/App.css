@@ -6,7 +6,9 @@
   flex: 1;
 }
 
-.App-header {
-  background: #1e88e5;
-  height: 100px;
+@media only screen and (max-width: 800px) {
+  .App-header {
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
 }
