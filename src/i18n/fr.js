@@ -19,7 +19,7 @@ export default {
   },
   SimpleBottomNavigation: {
     home: 'Accueil',
-    workExperienceAndEducation: 'Expérience professionnelle et éducation',
+    workExperienceAndEducation: 'Expérience pro et éducation',
     skills: 'Compétences',
     languages: 'Langues',
     hobbies: 'Loisirs',
