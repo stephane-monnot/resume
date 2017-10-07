@@ -18,7 +18,7 @@ export default {
   },
   SimpleBottomNavigation: {
     home: 'Home',
-    workExperienceAndEducation: 'Work experience & Education',
+    workExperienceAndEducation: 'Work & Education',
     skills: 'Skills',
     languages: 'Languages',
     hobbies: 'Resume',
