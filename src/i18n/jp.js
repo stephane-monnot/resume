@@ -15,6 +15,6 @@ export default {
     from: '日から',
     until: '日まで',
     days: '日',
-    Percent: 'パーセンテージ'
+    percent: 'パーセンテージ'
   }
 };
