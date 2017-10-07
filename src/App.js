@@ -12,7 +12,7 @@ import red from 'material-ui/colors/red';
 import AppBar from 'material-ui/AppBar';
 import Button from 'material-ui/Button';
 import Toolbar from 'material-ui/Toolbar';
-// import Typography from 'material-ui/Typography';
+import Typography from 'material-ui/Typography';
 
 import './App.css';
 
@@ -47,9 +47,9 @@ class App extends Component {
               <Helmet titleTemplate={`%s - ${title}`} />
               <AppBar position="fixed">
                 <Toolbar className="App-header">
-                  {/*<Typography type="title" color="inherit" className="App-title">*/}
-                    {/*/!*MONNOT Stéphane*!/*/}
-                  {/*</Typography>*/}
+                  <Typography type="title" color="inherit" className="App-title">
+                    MONNOT Stéphane
+                  </Typography>
                   <LanguagePicker/>
                   <Link to="/jp/until/japan.html" />
                   <Link to="/fr/until/japan.html" />

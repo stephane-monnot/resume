@@ -1,14 +1,18 @@
 .App {
-  padding: 160px 0;
+    padding: 160px 0;
 }
 
 .App-title {
-  flex: 1;
+    flex: 1;
 }
 
 @media only screen and (max-width: 800px) {
-  .App-header {
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-  }
+    .App-header {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    .App-title {
+        display: none !important;
+    }
 }

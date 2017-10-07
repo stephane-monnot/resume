@@ -8,7 +8,7 @@ import HomeIcon from 'material-ui-icons/Home';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
-// import Scrollspy from 'react-scrollspy';
+import Scrollspy from './ScrollSpy';
 
 const styles = {
   root: {
@@ -25,13 +25,43 @@ const styles = {
   }
 };
 
+var buttons = [
+  {
+    label: 'Home',
+    id: 'Resume-home',
+    icon: <HomeIcon />,
+  },
+  {
+    label: 'Work',
+    id: 'Resume-work',
+    icon: <WorkIcon />,
+  },
+  {
+    label: 'Education',
+    id: 'Resume-education',
+    icon: <SchoolIcon />,
+  },
+  {
+    label: 'Skills',
+    id: 'Resume-skills',
+    icon: <SettingsIcon />,
+  },
+];
+
 class SimpleBottomNavigation extends React.Component {
   state = {
-    value: 0,
+    value: 0
   };
 
   handleChange = (event, value) => {
     this.setState({ value });
+  };
+
+  handleSpy = (item) => {
+    if (typeof item !== 'undefined') {
+      const value = buttons.findIndex(x => x.id == item.id);
+      this.setState({ value });
+    }
   };
 
   render() {
@@ -40,25 +70,20 @@ class SimpleBottomNavigation extends React.Component {
 
     return (
 
-      //<Scrollspy rootEl="div" items={['Resume-home', 'Resume-work', 'Resume-education', 'Resume-skills']}
-      //           currentClassName="is-current">
+      <Scrollspy onUpdate={this.handleSpy} items={['Resume-home', 'Resume-work', 'Resume-education', 'Resume-skills']}
+                 currentClassName="is-current">
         <BottomNavigation
           value={value}
           onChange={this.handleChange}
           showLabels
           className={classes.root}
         >
-
-
-          <BottomNavigationButton className={classes.link} href="#Resume-home" label="Home" icon={<HomeIcon />} />
-          <BottomNavigationButton className={classes.link} href="#Resume-work" label="Work" icon={<WorkIcon />} />
-          <BottomNavigationButton className={classes.link} href="#Resume-education" label="Education"
-                                  icon={<SchoolIcon />} />
-          <BottomNavigationButton className={classes.link} href="#Resume-skills" label="Skills"
-                                  icon={<SettingsIcon />} />
-
+          {buttons.map((button, j) =>
+            <BottomNavigationButton key={j} className={classes.link} href={'#' + button.id} label={button.label}
+                                    icon={button.icon} />
+          )}
         </BottomNavigation>
-      // </Scrollspy>
+      </Scrollspy>
 
     );
   }
