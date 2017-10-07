@@ -9,5 +9,12 @@ export default {
     languages: 'Langues',
     hobbies: 'Loisirs',
     resume: 'CV'
+  },
+  WaitingUntilJapanScreen: {
+    remainingDaysUntilJapan: 'Jours restants avant Japon',
+    from: 'De',
+    until: 'Jusqu\'à',
+    days: 'Jours',
+    Percent: 'Pourcentage'
   }
 };

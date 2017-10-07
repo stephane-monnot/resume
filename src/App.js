@@ -51,7 +51,9 @@ class App extends Component {
                     {/*MONNOT Stéphane*/}
                   </Typography>
                   <LanguagePicker/>
-                  <Link to="/until/japan.html" />
+                  <Link to="/jp/until/japan.html" />
+                  <Link to="/fr/until/japan.html" />
+                  <Link to="/en/until/japan.html" />
                   <Button href="mailto:monnot.stephane@gmail.com" color="contrast">monnot.stephane@gmail.com</Button>
                 </Toolbar>
               </AppBar>
@@ -59,7 +61,9 @@ class App extends Component {
               <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
               <Route exact path="/jp/rirekisho.html" render={() => <ResumeScreen language="jp" title="履歴書" />} />
               <Route exact path="/en/resume.html" render={() => <ResumeScreen language="en" title="Resume" />} />
-              <Route exact path="/until/japan.html" render={() => <WaitingUntilJapanScreen title="Until Japan" />} />
+              <Route exact path="/jp/until/japan.html" render={() => <WaitingUntilJapanScreen language="jp" title="日本まで" />} />
+              <Route exact path="/en/until/japan.html" render={() => <WaitingUntilJapanScreen language="en" title="日本まで" />} />
+              <Route exact path="/fr/until/japan.html" render={() => <WaitingUntilJapanScreen language="fr" title="日本まで" />} />
 
             </div>
           </Router>

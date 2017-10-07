@@ -8,5 +8,12 @@ export default {
     skills: 'Skills',
     languages: 'Languages',
     resume: 'Resume',
+  },
+  WaitingUntilJapanScreen: {
+    remainingDaysUntilJapan: 'Remaining days until Japan',
+    from: 'From',
+    until: 'Until',
+    days: 'Days',
+    Percent: 'Percent'
   }
 };
