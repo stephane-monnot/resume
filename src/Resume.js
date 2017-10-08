@@ -378,7 +378,7 @@ class Resume extends Component {
             </CardContent>
             <CardActions className="Resume-actions">
               <Button raised color="primary" target="_blank" href={cv}>{ this.props.strings.download }</Button>
-              <Button raised color="accent">{ this.props.strings.hireMe }</Button>
+              <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">{ this.props.strings.hireMe }</Button>
             </CardActions>
           </Card>
 
