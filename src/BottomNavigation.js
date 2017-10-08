@@ -21,6 +21,7 @@ const styles = {
   },
   link: {
     width: '100%',
+    minWidth: '60px',
     display: 'inline-flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -58,27 +59,45 @@ var buttons = [
 
 class SimpleBottomNavigation extends React.Component {
   state = {
-    value: 0
+    value: 0,
+    windowHeight: window.innerHeight,
+    windowWidth: window.innerWidth
   };
 
   static propTypes = {
     strings: PropTypes.object
   };
 
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
   handleChange = (event, value) => {
-    this.setState({ value });
+    this.setState((state) => ({...state, value}));
   };
+
+  handleResize = (event) => {
+    this.setState((state) => ({
+      ...state,
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth}
+    ));
+  }
 
   handleSpy = (item) => {
     if (typeof item !== 'undefined') {
       const value = buttons.findIndex(x => x.id === item.id);
-      this.setState({ value });
+      this.setState((state) => ({...state, value}));
     }
   };
 
   render() {
     const classes = this.props.classes;
-    const { value } = this.state;
+    const { value, windowWidth, windowHeight } = this.state;
 
     return (
 
