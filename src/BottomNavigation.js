@@ -79,7 +79,7 @@ class SimpleBottomNavigation extends React.Component {
 
   render() {
     const classes = this.props.classes;
-    const { value, windowWidth, windowHeight } = this.state;
+    const { value } = this.state;
 
     return (
 
