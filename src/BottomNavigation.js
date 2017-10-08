@@ -59,34 +59,16 @@ var buttons = [
 
 class SimpleBottomNavigation extends React.Component {
   state = {
-    value: 0,
-    windowHeight: window.innerHeight,
-    windowWidth: window.innerWidth
+    value: 0
   };
 
   static propTypes = {
     strings: PropTypes.object
   };
 
-  componentDidMount() {
-    window.addEventListener('resize', this.handleResize)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize)
-  }
-
   handleChange = (event, value) => {
     this.setState((state) => ({...state, value}));
   };
-
-  handleResize = (event) => {
-    this.setState((state) => ({
-      ...state,
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth}
-    ));
-  }
 
   handleSpy = (item) => {
     if (typeof item !== 'undefined') {
