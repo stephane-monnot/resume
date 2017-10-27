@@ -17,6 +17,7 @@ import Typography from 'material-ui/Typography';
 import './App.css';
 
 import LanguagePicker from './LanguagePicker';
+import Analytics from './Analytics';
 import ResumeScreen from './ResumeScreen';
 import WaitingUntilJapanScreen from './WaitingUntilJapanScreen';
 import configureStore from './store/configureStore';
@@ -57,6 +58,8 @@ class App extends Component {
                   <Button href="mailto:monnot.stephane@gmail.com" color="contrast">monnot.stephane@gmail.com</Button>
                 </Toolbar>
               </AppBar>
+
+              <Route path="/" component={Analytics}/>
               <Route exact path="/" render={() => <ResumeScreen language="jp" title="履歴書" />} />
               <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
               <Route exact path="/jp/rirekisho.html" render={() => <ResumeScreen language="jp" title="履歴書" />} />
