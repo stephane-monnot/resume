@@ -12,11 +12,11 @@ import SettingsIcon from 'material-ui-icons/Settings';
 import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
 import Helmet from 'react-helmet';
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 
-import Timeline from './VerticalTimeline/Timeline';
-import TimelineElement from './VerticalTimeline/TimelineElement';
 import BottomNavigation from './BottomNavigation';
 import './Resume.css';
+import 'react-vertical-timeline-component/style.min.css';
 import translate from './i18n/Translate';
 
 class Resume extends Component {
@@ -384,9 +384,9 @@ class Resume extends Component {
 
           <h2 id="Resume-work">{ this.props.strings.workExperienceAndEducation }</h2>
 
-          <Timeline>
+          <VerticalTimeline>
             {this.props.positions.map((position, i) =>
-              <TimelineElement className="Resume-position" key={i}
+              <VerticalTimelineElement className="Resume-position" key={i}
                                title={position.title} subtitle={position.company}
                                content={position.summary} icon={<WorkIcon />}
                                iconStyle={styles.primaryColor}
@@ -396,7 +396,7 @@ class Resume extends Component {
             )}
 
             {this.props.educations.map((education, i) =>
-              <TimelineElement id="Resume-education" className="Resume-position" key={i}
+              <VerticalTimelineElement id="Resume-education" className="Resume-position" key={i}
                                title={education.fieldOfStudy} subtitle={education.degree}
                                content={education.activities} icon={<SchoolIcon />}
                                iconStyle={styles.secondaryColor}
@@ -404,7 +404,7 @@ class Resume extends Component {
                                color="red"
               />
             )}
-          </Timeline>
+          </VerticalTimeline>
 
           <h2 id="Resume-skills"><SettingsIcon /> { this.props.strings.skills }</h2>
 
