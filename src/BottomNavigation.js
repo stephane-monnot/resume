@@ -1,11 +1,11 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
-
+import Scroll from 'react-scroll';
 import React from 'react';
 import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
 import { injectIntl, intlShape } from 'react-intl';
 import { withStyles } from 'material-ui/styles';
-import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
+import BottomNavigation from 'material-ui/BottomNavigation';
 import HomeIcon from 'material-ui-icons/Home';
 import WorkIcon from 'material-ui-icons/Work';
 import SchoolIcon from 'material-ui-icons/School';
@@ -13,7 +13,8 @@ import SettingsIcon from 'material-ui-icons/Settings';
 import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
 import CodeIcon from 'material-ui-icons/Code';
-import Scrollspy from './ScrollSpy';
+
+let Link = Scroll.Link;
 
 const styles = {
   root: {
@@ -24,93 +25,86 @@ const styles = {
   link: {
     width: '100%',
     minWidth: '60px',
+    maxWidth: '168px',
+    flex: '1',
     display: 'inline-flex',
     alignItems: 'center',
     flexDirection: 'column',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    color: 'rgba(0, 0, 0, 0.54)',
+    transition: 'color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    cursor: 'pointer',
+    outline: 'none',
+    position: 'relative',
   }
 };
 
 var buttons = [
   {
     label: 'SimpleBottomNavigation.home',
-    id: 'Resume-home',
+    name: 'Resume-home',
     icon: <HomeIcon />,
+    offset: -170
+
   },
   {
     label: 'SimpleBottomNavigation.workExperience',
-    id: 'Resume-work',
+    name: 'Resume-work',
     icon: <WorkIcon />,
+    offset: -80
   },
   {
     label: 'SimpleBottomNavigation.education',
-    id: 'Resume-education',
+    name: 'Resume-education',
     icon: <SchoolIcon />,
+    offset: -80
+
   },
   {
     label: 'SimpleBottomNavigation.skills',
-    id: 'Resume-skills',
+    name: 'Resume-skills',
     icon: <SettingsIcon />,
+    offset: -80
   },
   {
     label: 'SimpleBottomNavigation.languages',
-    id: 'Resume-languages',
+    name: 'Resume-languages',
     icon: <LanguageIcon />,
+    offset: -80
   },
   {
     label: 'SimpleBottomNavigation.hobbies',
-    id: 'Resume-hobbies',
+    name: 'Resume-hobbies',
     icon: <ToysIcon />,
+    offset: -80
   },
   {
     label: 'SimpleBottomNavigation.projects',
-    id: 'Resume-projects',
+    name: 'Resume-projects',
     icon: <CodeIcon />,
+    offset: -80
   },
 ];
 
 class SimpleBottomNavigation extends React.Component {
-  state = {
-    value: 0
-  };
-
-  handleChange = (event, value) => {
-    this.setState((state) => ({...state, value}));
-  };
-
-  handleSpy = (item) => {
-    if (typeof item !== 'undefined') {
-      const value = buttons.findIndex(x => x.id === item.id);
-      this.setState((state) => ({...state, value}));
-    }
-  };
-
   render() {
     const classes = this.props.classes;
-    const { value } = this.state;
     const { formatMessage } = this.props.intl;
 
     return (
 
-      <Scrollspy onUpdate={this.handleSpy} items={buttons.map(function(a) {return a.id;})}
-                 currentClassName="is-current">
-        <BottomNavigation
-          value={value}
-          onChange={this.handleChange}
-          showLabels
-          className={classes.root}
-        >
-          {buttons.map((button, j) =>
-            <BottomNavigationButton
-              key={j}
-              className={classes.link}
-              href={'#' + button.id}
-              label={formatMessage({id: button.label})}
-              icon={button.icon}
-            />
-          )}
-        </BottomNavigation>
-      </Scrollspy>
+      <BottomNavigation
+        value="0"
+        className={classes.root}
+      >
+        {buttons.map((button, j) =>
+          <Link key={j} className={classes.link} to={button.name}
+                activeClass="active" spy={true} smooth={true} offset={button.offset} duration={500}>
+            {button.icon}
+            {formatMessage({ id: button.label })}
+          </Link>
+        )}
+      </BottomNavigation>
 
     );
   }

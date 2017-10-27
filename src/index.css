@@ -62,3 +62,7 @@ li:last-child::after {
   max-width: 1170px;
   margin: 0 auto;
 }
+
+.active {
+  color: #2196f3 !important;
+}

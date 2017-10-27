@@ -5594,6 +5594,13 @@ react-scripts@1.0.13:
   optionalDependencies:
     fsevents "1.1.2"
 
+react-scroll@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.5.5.tgz#52410d856e19a4259b98d0632df3a47df59036ba"
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.5.8"
+
 react-scrollbar-size@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-scrollbar-size/-/react-scrollbar-size-2.0.0.tgz#611215f4105db28f1f56ccace627c3fce137a2f3"

@@ -88,7 +88,7 @@ class Resume extends Component {
     return (
       <div className="Resume-project-links">
         {links.map((link, i) =>
-            <Button key={i} raised color="default" target="_blank" href={link.url}>{link.text}</Button>
+          <Button key={i} raised color="default" target="_blank" href={link.url}>{link.text}</Button>
         )}
       </div>
     );
@@ -164,13 +164,13 @@ class Resume extends Component {
 
     return (
       <div className="Resume">
-        <Helmet title={formatMessage({id: 'Resume.resume', defaultMessage: 'Resume'})} />
+        <Helmet title={formatMessage({ id: 'Resume.resume', defaultMessage: 'Resume' })} />
 
         <div className="container">
 
-          <Card className="Resume-header Card-md">
+          <Card id="Resume-home" className="Resume-header Card-md">
             <CardContent>
-              <div id="Resume-home" className="Resume-profilePicture">
+              <div className="Resume-profilePicture">
                 <img alt="" src={this.props.pictureUrl} />
               </div>
               <Typography className="Resume-fullName" type="headline" component="h3">
@@ -208,118 +208,138 @@ class Resume extends Component {
             </CardActions>
           </Card>
 
-          <h2 id="Resume-work">
-            <FormattedMessage
-              id='Resume.workExperienceAndEducation'
-              defaultMessage='Work experience & Education'
-            />
-          </h2>
+          <div id="Resume-work">
+            <h2>
+              <FormattedMessage
+                id='Resume.workExperienceAndEducation'
+                defaultMessage='Work experience & Education'
+              />
+            </h2>
 
-          <VerticalTimeline>
-            {this.props.positions.map((position, i) =>
-              <VerticalTimelineElement
-                className="Resume-position"
-                key={i}
-                icon={<WorkIcon />}
-                iconStyle={styles.primaryColor}
-                date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + formatMessage({id: 'Resume.years', defaultMessage: ' years'}) + ')'}
-              >
-                <h3 className="vertical-timeline-element-title">{position.title}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{position.company}</h4>
-                <p>
-                  <span dangerouslySetInnerHTML={{ __html: position.summary }}></span>
-                </p>
-              </VerticalTimelineElement>
-            )}
+            <VerticalTimeline>
+              {this.props.positions.map((position, i) =>
+                <VerticalTimelineElement
+                  className="Resume-position"
+                  key={i}
+                  icon={<WorkIcon />}
+                  iconStyle={styles.primaryColor}
+                  date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + formatMessage({
+                    id: 'Resume.years',
+                    defaultMessage: ' years'
+                  }) + ')'}
+                >
+                  <h3 className="vertical-timeline-element-title">{position.title}</h3>
+                  <h4 className="vertical-timeline-element-subtitle">{position.company}</h4>
+                  <p>
+                    <span dangerouslySetInnerHTML={{ __html: position.summary }}></span>
+                  </p>
+                </VerticalTimelineElement>
+              )}
 
-            {this.props.educations.map((education, i) =>
-              <VerticalTimelineElement
-                id="Resume-education"
-                className="Resume-position"
-                key={i}
-                icon={<SchoolIcon />}
-                iconStyle={styles.secondaryColor}
-                date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + formatMessage({id: 'Resume.years', defaultMessage: ' years'}) + ')'}
-              >
-                <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
-                <p>
-                  <span dangerouslySetInnerHTML={{ __html: education.activities }}></span>
-                </p>
-              </VerticalTimelineElement>
-            )}
-          </VerticalTimeline>
-
-          <h2 id="Resume-skills"><SettingsIcon />
-            <FormattedMessage
-              id='Resume.skills'
-              defaultMessage='Skills'
-            />
-          </h2>
-
-          <div className="Resume-skills">
-            {skills.map(this.renderSkillsCategory)}
+              {this.props.educations.map((education, i) =>
+                <VerticalTimelineElement
+                  id="Resume-education"
+                  className="Resume-position"
+                  key={i}
+                  icon={<SchoolIcon />}
+                  iconStyle={styles.secondaryColor}
+                  date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + formatMessage({
+                    id: 'Resume.years',
+                    defaultMessage: ' years'
+                  }) + ')'}
+                >
+                  <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
+                  <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
+                  <p>
+                    <span dangerouslySetInnerHTML={{ __html: education.activities }}></span>
+                  </p>
+                </VerticalTimelineElement>
+              )}
+            </VerticalTimeline>
           </div>
 
-          <h2 id="Resume-languages"><LanguageIcon />
-            <FormattedMessage
-              id='Resume.languages'
-              defaultMessage='Languages'
-            />
-          </h2>
-          <ul className="Resume-languages">
-            {this.props.languages.map((language, i) =>
-              <li className="Resume-language" key={i}>
-                <span className="Resume-languageTitle">{language.name}</span> :
-                <span className="Resume-languageLevel"> {language.level}</span>
-              </li>
-            )}
-          </ul>
-
-          <h2 id="Resume-hobbies"><ToysIcon />
-            <FormattedMessage
-              id='Resume.interests'
-              defaultMessage='Interests'
-            />
-          </h2>
-          <div className="Resume-hobbies">
-            {this.props.hobbies.map((hobby, i) =>
-              <Card key={i} style={styles.primaryColor} className="Resume-hobby">
-                <CardContent>
-                  <Icon>{hobby.icon}</Icon>
-                  <h4>{hobby.name}</h4>
-                </CardContent>
-              </Card>
-            )}
+          <div id="Resume-skills">
+            <h2><SettingsIcon />
+              <FormattedMessage
+                id='Resume.skills'
+                defaultMessage='Skills'
+              />
+            </h2>
+            <div className="Resume-skills">
+              {skills.map(this.renderSkillsCategory)}
+            </div>
           </div>
 
-          <h2 id="Resume-projects"><CodeIcon />
-            <FormattedMessage
-              id='Resume.projectsAndDevelopments'
-              defaultMessage='Projects & developments'
-            />
-          </h2>
-          <VerticalTimeline>
-            {this.props.projects.map((project, i) =>
-              <VerticalTimelineElement
-                style={{borderTop: '3px solid ' + styles[project.subcategory + 'Color'].border}}
-                className={"Resume-project " + styles[project.subcategory + 'Color'].className}
-                key={i}
-                icon={styles[project.subcategory + 'Color'].icon}
-                iconStyle={styles[project.subcategory + 'Color'].style}
-                date={formatDate(new Date(project.date).getTime(), {year: 'numeric', month: 'numeric', day: 'numeric'})}
-              >
-                {this.renderTechnologies(project.technologies)}
-                <h3 className="vertical-timeline-element-title">{project.title}</h3>
-                <h4 className="vertical-timeline-element-subtitle">{project.subtitle}</h4>
-                <p>
-                  <span dangerouslySetInnerHTML={{ __html: project.content }}></span>
-                </p>
-                <br />
-                {this.renderButtons(project.links)}
-              </VerticalTimelineElement>
-            )}
-          </VerticalTimeline>
+          <div id="Resume-languages">
+            <h2><LanguageIcon />
+              <FormattedMessage
+                id='Resume.languages'
+                defaultMessage='Languages'
+              />
+            </h2>
+            <ul className="Resume-languages">
+              {this.props.languages.map((language, i) =>
+                <li className="Resume-language" key={i}>
+                  <span className="Resume-languageTitle">{language.name}</span> :
+                  <span className="Resume-languageLevel"> {language.level}</span>
+                </li>
+              )}
+            </ul>
+          </div>
+
+          <div id="Resume-hobbies">
+            <h2><ToysIcon />
+              <FormattedMessage
+                id='Resume.interests'
+                defaultMessage='Interests'
+              />
+            </h2>
+            <div className="Resume-hobbies">
+              {this.props.hobbies.map((hobby, i) =>
+                <Card key={i} style={styles.primaryColor} className="Resume-hobby">
+                  <CardContent>
+                    <Icon>{hobby.icon}</Icon>
+                    <h4>{hobby.name}</h4>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          </div>
+
+          <div id="Resume-projects">
+            <h2><CodeIcon />
+              <FormattedMessage
+                id='Resume.projectsAndDevelopments'
+                defaultMessage='Projects & developments'
+              />
+            </h2>
+            <VerticalTimeline>
+              {this.props.projects.map((project, i) =>
+                <VerticalTimelineElement
+                  style={{ borderTop: '3px solid ' + styles[project.subcategory + 'Color'].border }}
+                  className={"Resume-project " + styles[project.subcategory + 'Color'].className}
+                  key={i}
+                  icon={styles[project.subcategory + 'Color'].icon}
+                  iconStyle={styles[project.subcategory + 'Color'].style}
+                  date={formatDate(new Date(project.date).getTime(), {
+                    year: 'numeric',
+                    month: 'numeric',
+                    day: 'numeric'
+                  })}
+                >
+                  {this.renderTechnologies(project.technologies)}
+                  <h3 className="vertical-timeline-element-title">{project.title}</h3>
+                  <h4 className="vertical-timeline-element-subtitle">{project.subtitle}</h4>
+                  <p>
+                    <span dangerouslySetInnerHTML={{ __html: project.content }}></span>
+                  </p>
+                  <br />
+                  {this.renderButtons(project.links)}
+                </VerticalTimelineElement>
+              )}
+            </VerticalTimeline>
+          </div>
+
         </div>
         <BottomNavigation />
       </div>
