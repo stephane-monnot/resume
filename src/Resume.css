@@ -1,6 +1,14 @@
 .Resume {
 }
 
+.Resume .vertical-timeline-element-title {
+  margin: 0;
+}
+
+.Resume .vertical-timeline-element-subtitle {
+  margin: 0;
+}
+
 .Resume h2 {
   text-align: center;
 }
@@ -84,6 +92,12 @@
 .Resume-languageTitle {
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.Resume-project-technologies {
+  display: flex;
+  justifyContent: center;
+  flexWrap: wrap;
 }
 
 @media only screen and (max-width: 1170px) {

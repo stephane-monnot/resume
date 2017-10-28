@@ -238,6 +238,11 @@
           "text": "Voir les sources"
         }
       ],
+      "technologies": [
+        {
+          "name": "ReactJS"
+        }
+      ],
       "content": "A react component to generate responsive vertical timeline.",
       "date": "2017-10-27"
     },
@@ -255,6 +260,14 @@
           "text": "Voir les sources"
         }
       ],
+      "technologies": [
+        {
+          "name": "ReactJS"
+        },
+        {
+          "name": "Redux"
+        }
+      ],
       "content": "My resume in japanese, french and english, developed with React.",
       "date": "2017-10-02"
     },
@@ -269,7 +282,18 @@
           "text": "Voir les commits"
         }
       ],
-      "content": "Contributions to a Laravel Library which gives the ability to manage friendships with Eloquent models.<br>Add new functionalities, improve build, add Unit tests, documentation, ...",
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Laravel"
+        },
+        {
+          "name": "PHPUnit"
+        }
+      ],
+      "content": "Contributions to a Laravel Library which gives the ability to manage friendships with Eloquent models.<br />Add new functionalities, improve build, add Unit tests, documentation, ...",
       "date": "2016-03-05"
     },
     {
@@ -282,7 +306,15 @@
           "text": "Voir les sources"
         }
       ],
-      "content": "Library which makes easier the MySQL User Account Management in PHP and it avoids the use of raw SQL queries.<br>Unit testing with Atoum",
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Atoum"
+        }
+      ],
+      "content": "Library which makes easier the MySQL User Account Management in PHP and it avoids the use of raw SQL queries.<br />Unit testing with Atoum",
       "date": "2015-10-02"
     },
     {
@@ -295,7 +327,15 @@
           "text": "Voir les sources"
         }
       ],
-      "content": "A wrapper to work with Gocr inside PHP scripts. This library makes easier the use of the OCR software named GOCR.<br>Unit testing with Atoum",
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Atoum"
+        }
+      ],
+      "content": "A wrapper to work with Gocr inside PHP scripts. This library makes easier the use of the OCR software named GOCR.<br />Unit testing with Atoum",
       "date": "2015-09-07"
     }
   ],

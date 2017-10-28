@@ -16,7 +16,7 @@
     "react-scripts": "1.0.13",
     "react-scrollspy": "^3.3.3",
     "react-snapshot": "^1.2.0",
-    "react-vertical-timeline-component": "^1.1.0",
+    "react-vertical-timeline-component": "^2.0.0",
     "react-visibility-sensor": "^3.10.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",

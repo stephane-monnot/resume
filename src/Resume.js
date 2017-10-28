@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
 import Button from 'material-ui/Button';
@@ -7,6 +6,7 @@ import Divider from 'material-ui/Divider';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
+import Chip from 'material-ui/Chip';
 import CodeIcon from 'material-ui-icons/Code';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
@@ -53,6 +53,7 @@ class Resume extends Component {
     educations: [],
     volunteer: [],
     hobbies: [],
+    projects: [],
   };
 
   constructor() {
@@ -113,15 +114,31 @@ class Resume extends Component {
       return '';
     }
 
-    return ReactDOMServer.renderToString(
-        <div>
-          {links.map((link, i) =>
-            <span>
+    return (
+      <div>
+        {links.map((link, i) =>
+          <span>
               <Button raised color="default" target="_blank" href={link.url}>{link.text}</Button>&nbsp;
             </span>
-          )}
-        </div>
-      );
+        )}
+      </div>
+    );
+  }
+
+  renderTechnologies(technologies) {
+    if (!(technologies instanceof Array)) {
+      return '';
+    }
+
+    return (
+      <div className="Resume-project-technologies">
+        {technologies.map((technology, j) =>
+          <Chip
+            label={technology.name}
+          />
+        )}
+      </div>
+    );
   }
 
   render() {
@@ -189,23 +206,36 @@ class Resume extends Component {
 
           <VerticalTimeline>
             {this.props.positions.map((position, i) =>
-              <VerticalTimelineElement className="Resume-position" key={i}
-                                       title={position.title} subtitle={position.company}
-                                       content={position.summary} icon={<WorkIcon />}
-                                       iconStyle={styles.primaryColor}
-                                       date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + this.props.strings.years + ')'}
-                                       color="red"
-              />
+              <VerticalTimelineElement
+                className="Resume-position"
+                key={i}
+                icon={<WorkIcon />}
+                iconStyle={styles.primaryColor}
+                date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + this.props.strings.years + ')'}
+              >
+                <h3 className="vertical-timeline-element-title">{position.title}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{position.company}</h4>
+                <p>
+                  {position.summary}
+                </p>
+              </VerticalTimelineElement>
             )}
 
             {this.props.educations.map((education, i) =>
-              <VerticalTimelineElement id="Resume-education" className="Resume-position" key={i}
-                                       title={education.fieldOfStudy} subtitle={education.degree}
-                                       content={education.activities} icon={<SchoolIcon />}
-                                       iconStyle={styles.secondaryColor}
-                                       date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + this.props.strings.years + ')'}
-                                       color="red"
-              />
+              <VerticalTimelineElement
+                id="Resume-education"
+                className="Resume-position"
+                key={i}
+                icon={<SchoolIcon />}
+                iconStyle={styles.secondaryColor}
+                date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + this.props.strings.years + ')'}
+              >
+                <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
+                <p>
+                  {education.activities}
+                </p>
+              </VerticalTimelineElement>
             )}
           </VerticalTimeline>
 
@@ -240,13 +270,19 @@ class Resume extends Component {
               <VerticalTimelineElement
                 className="Resume-project"
                 key={i}
-                title={project.title}
-                subtitle={project.subtitle}
-                content={project.content + '<br><br>' + this.renderButtons(project.links)}
                 icon={<CodeIcon />}
                 iconStyle={styles.primaryColor}
                 date={project.date}
-              />
+              >
+                {this.renderTechnologies(project.technologies)}
+                <h3 className="vertical-timeline-element-title">{project.title}</h3>
+                <h4 className="vertical-timeline-element-subtitle">{project.subtitle}</h4>
+                <p>
+                  {project.content}
+                  <br /><br />
+                  {this.renderButtons(project.links)}
+                </p>
+              </VerticalTimelineElement>
             )}
           </VerticalTimeline>
         </div>
