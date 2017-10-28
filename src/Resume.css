@@ -2,116 +2,166 @@
 }
 
 .Resume .vertical-timeline-element-title {
-  margin: 0;
+    margin: 0;
 }
 
 .Resume .vertical-timeline-element-subtitle {
-  margin: 0;
+    margin: 0;
+}
+
+.Resume .vertical-timeline-element-content p {
+    margin: 1em 0 0;
 }
 
 .Resume h2 {
-  text-align: center;
+    text-align: center;
 }
 
 .Resume-header {
-  margin-top: 100px;
-  text-align: center;
+    margin-top: 100px;
+    text-align: center;
 }
 
 .Resume-header p {
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 30px;
-  color: #8a8a8b;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    color: #8a8a8b;
 }
 
 .Resume-actions {
-  justify-content: center;
+    justify-content: center;
 }
 
 .Resume-profilePicture {
-  display: inline-block;
-  height: 62px;
-  width: 150px;
+    display: inline-block;
+    height: 62px;
+    width: 150px;
 }
 
 .Resume-profilePicture img {
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
-  vertical-align: middle;
-  margin-top: -106px;
-  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    vertical-align: middle;
+    margin-top: -106px;
+    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.07);
 
 }
 
 .Resume-skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .Resume-skills-category {
-  width: 32%;
-  margin-bottom: 15px;
+    width: 32%;
+    margin-bottom: 15px;
 }
 
 .Resume-skills-category h3 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
 .Resume-skills-category-skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .Resume-skill {
-  width: 40%;
+    width: 40%;
 }
 
 .Resume-skillTitle {
-  margin-bottom: 10px;
-  font-size: 15px;
+    margin-bottom: 10px;
+    font-size: 15px;
 }
 
 .Resume-languages {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .Resume-languages:after {
-  clear: both;
+    clear: both;
 }
 
 .Resume-language {
-  width: 100%;
+    width: 100%;
 }
 
 .Resume-languageTitle {
-  text-transform: uppercase;
-  font-weight: 500;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 .Resume-project-technologies {
-  display: flex;
-  justifyContent: center;
-  flexWrap: wrap;
+    display: flex;
+    justifyContent: center;
+    flexWrap: wrap;
+    margin-bottom: 10px;
+}
+
+.Resume-project-technologies > * {
+    margin-right: 5px;
+}
+
+.Resume-project-technologies > * > * {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.vertical-timeline-element-icon .SVGInline {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
+
+.vertical-timeline-element-icon .SVGInline svg {
+    width: 36px;
+    height: 36px;
+    left: auto;
+    top: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.vertical-timeline-element-icon .SVGInline svg path, .vertical-timeline-element-icon .SVGInline svg g {
+    fill: #fff !important;
 }
 
 @media only screen and (max-width: 1170px) {
-  .Resume-skills-category {
-    width: 49%;
-  }
+    .vertical-timeline-element-icon .SVGInline {
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        margin-top: -12px;
+    }
+
+    .vertical-timeline-element-icon .SVGInline svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .Resume-skills-category {
+        width: 49%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
-  .Resume-skills-category {
-    width: 100%;
-  }
+    .Resume-skills-category {
+        width: 100%;
+    }
 
-  .Resume-skill {
-    width: 30%;
-  }
+    .Resume-skill {
+        width: 30%;
+    }
 }

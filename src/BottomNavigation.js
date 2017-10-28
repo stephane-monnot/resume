@@ -10,6 +10,7 @@ import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
 import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
+import CodeIcon from 'material-ui-icons/Code';
 import Scrollspy from './ScrollSpy';
 import translate from './i18n/Translate';
 
@@ -54,6 +55,11 @@ var buttons = [
     label: 'hobbies',
     id: 'Resume-hobbies',
     icon: <ToysIcon />,
+  },
+  {
+    label: 'projects',
+    id: 'Resume-projects',
+    icon: <CodeIcon />,
   },
 ];
 

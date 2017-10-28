@@ -6,7 +6,9 @@
     "local-storage": "^1.4.2",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.10",
+    "proxyquire": "^1.8.0",
     "react": "^15.6.1",
+    "react-devicon": "^0.1.9",
     "react-dom": "^15.6.1",
     "react-ga": "^2.3.5",
     "react-helmet": "4",
@@ -22,12 +24,16 @@
     "redux-actions": "^2.2.1",
     "redux-saga": "^0.15.6",
     "reselect": "^3.0.1",
+    "rewire": "^2.5.2",
     "styled-components": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && react-snapshot",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "node scripts/customized-config  start",
+    "build": "node scripts/customized-config build && react-snapshot",
+    "test": "node scripts/customized-config test --env=jsdom",
+    "eject": "node scripts/customized-config eject"
+  },
+  "devDependencies": {
+    "svg-inline-loader": "^0.8.0"
   }
 }

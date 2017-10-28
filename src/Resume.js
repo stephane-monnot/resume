@@ -11,6 +11,9 @@ import CodeIcon from 'material-ui-icons/Code';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
+import LaravelIcon from 'react-devicon/laravel/plain'
+import PhpIcon from 'react-devicon/php/plain'
+import ReactIcon from 'react-devicon/react/original'
 import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
 import Helmet from 'react-helmet';
@@ -164,6 +167,27 @@ class Resume extends Component {
         background: secondaryColor,
         color: '#fff',
       },
+      laravelColor: {
+        style: {
+          background: '#fd4f31',
+          color: '#fff',
+        },
+        icon: <LaravelIcon />,
+      },
+      phpColor: {
+        style: {
+          background: '#6181b6',
+          color: '#fff',
+        },
+        icon: <PhpIcon />,
+      },
+      reactColor: {
+        style: {
+          background: '#61DAFB',
+          color: '#fff',
+        },
+        icon: <ReactIcon />,
+      },
     };
 
     return (
@@ -216,7 +240,7 @@ class Resume extends Component {
                 <h3 className="vertical-timeline-element-title">{position.title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{position.company}</h4>
                 <p>
-                  {position.summary}
+                  <span dangerouslySetInnerHTML={{ __html: position.summary }}></span>
                 </p>
               </VerticalTimelineElement>
             )}
@@ -233,7 +257,7 @@ class Resume extends Component {
                 <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
                 <p>
-                  {education.activities}
+                  <span dangerouslySetInnerHTML={{ __html: education.activities }}></span>
                 </p>
               </VerticalTimelineElement>
             )}
@@ -264,21 +288,21 @@ class Resume extends Component {
             )}
           </ul>
 
-          <h2 id="Resume-hobbies"><CodeIcon /> {this.props.strings.projectsLibrariesDevelopmentsAndContributions}</h2>
+          <h2 id="Resume-projects"><CodeIcon /> {this.props.strings.projectsLibrariesDevelopmentsAndContributions}</h2>
           <VerticalTimeline>
             {this.props.projects.map((project, i) =>
               <VerticalTimelineElement
                 className="Resume-project"
                 key={i}
-                icon={<CodeIcon />}
-                iconStyle={styles.primaryColor}
+                icon={styles[project.subcategory + 'Color'].icon}
+                iconStyle={styles[project.subcategory + 'Color'].style}
                 date={project.date}
               >
                 {this.renderTechnologies(project.technologies)}
                 <h3 className="vertical-timeline-element-title">{project.title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{project.subtitle}</h4>
                 <p>
-                  {project.content}
+                  <span dangerouslySetInnerHTML={{ __html: project.content }}></span>
                   <br /><br />
                   {this.renderButtons(project.links)}
                 </p>
