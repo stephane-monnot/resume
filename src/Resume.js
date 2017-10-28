@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOMServer from 'react-dom/server';
 import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
 import Button from 'material-ui/Button';
@@ -6,13 +7,14 @@ import Divider from 'material-ui/Divider';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
+import CodeIcon from 'material-ui-icons/Code';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
 import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
 import Helmet from 'react-helmet';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 import BottomNavigation from './BottomNavigation';
 import './Resume.css';
@@ -40,232 +42,17 @@ class Resume extends Component {
     pictureUrl: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg',
     dateOfBirth: '1987-09-16',
     mainAddress: 'Noda, Osaka, Japan',
-    websites: [
-      {
-        type: 'Linkedin',
-        url: 'https://www.linkedin.com/in/monnotnakatsuji/'
-      }
-    ],
-    phoneNumbers: [
-      {
-        type: 'Work',
-        number: '+33 (0)6 73 83 21 42'
-      },
-      {
-        type: 'Personal',
-        number: '+33 (0)6 73 83 21 42'
-      }
-    ],
-    imAccounts: [
-      {
-        type: 'Line',
-        name: 'shinbuntu'
-      },
-      {
-        type: 'Skype',
-        name: 'monnot.stephane'
-      }
-    ],
-    locations: [
-      {
-        name: 'Osaka',
-        country: 'Japan',
-        isCurrent: true
-      },
-      {
-        name: 'Lyon',
-        country: 'France'
-      }
-    ],
-    positions: [
-      {
-        title: 'Full-stack web engineer',
-        summary: 'PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | ReactJS | Docker | CI',
-        startDate: '2010',
-        endDate: 'Today',
-        isCurrent: true,
-        company: 'NanokaWeb'
-      },
-      {
-        title: 'Trainer',
-        summary: 'Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL',
-        startDate: '2016',
-        endDate: 'Today',
-        isCurrent: true,
-        company: 'Sup’ La Mache'
-      },
-      {
-        title: 'Senior web dev & CTO / Lead developer',
-        summary: 'PHP/MySQL/Javascript development <br />Solire Framework | Jquery | AngularJS',
-        startDate: '2009',
-        endDate: '2017',
-        isCurrent: true,
-        company: 'NanokaWeb'
-      }
-    ],
+    websites: [],
+    phoneNumbers: [],
+    imAccounts: [],
+    locations: [],
+    positions: [],
     interests: '',
-    languages: [
-      {
-        name: 'French',
-        level: 'Native'
-      },
-      {
-        name: 'English',
-        level: 'Professional working proficiency'
-      },
-      {
-        name: 'Japanese',
-        level: 'Professional working proficiency'
-      },
-      {
-        name: 'Korean',
-        level: 'Elementary proficiency'
-      }
-    ],
-    skills: [
-      {
-        name: 'PHP OOP',
-        category: {
-          name: 'Languages'
-        }
-      },
-      {
-        name: 'HTML5',
-        category: {
-          name: 'Languages'
-        }
-      },
-      {
-        name: 'SQL (MYSQL)',
-        category: {
-          name: 'Languages'
-        }
-      },
-      {
-        name: 'CSS3',
-        category: {
-          name: 'Languages'
-        }
-      },
-      {
-        name: 'Javascript ES6',
-        category: {
-          name: 'Languages'
-        }
-      },
-      {
-        name: 'Laravel 5',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'SYMFONY 2 & 3',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'Facebook SDK',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'REACTJS/REDUX',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'REACTNATIVE',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'BOOTSTRAP',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'JQUERY',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'Wordpress',
-        category: {
-          name: 'Frameworks / SDK / CMS'
-        }
-      },
-      {
-        name: 'Linux',
-        category: {
-          name: 'Tools'
-        }
-      },
-      {
-        name: 'JIRA/Redmine',
-        category: {
-          name: 'Tools'
-        }
-      },
-      {
-        name: 'GIT',
-        category: {
-          name: 'Tools'
-        }
-      },
-      {
-        name: 'Jenkins/Gitlab-CI',
-        category: {
-          name: 'Tools'
-        }
-      },
-      {
-        name: 'Docker',
-        category: {
-          name: 'Tools'
-        }
-      },
-      {
-        name: 'GITLAB/GITHUB',
-        category: {
-          name: 'Tools'
-        }
-      },
-    ],
-    educations: [
-      {
-        schoolName: 'Claude Bernard University Lyon 1',
-        fieldOfStudy: 'Metinet',
-        startDate: '2009',
-        endDate: '2010',
-        degree: 'License',
-        activities: 'Database, PHP, Flash, Java, English, Communication, Javascript'
-      },
-      {
-        schoolName: 'Joseph Marie Carriat high school',
-        fieldOfStudy: 'Business informatics',
-        startDate: '2007',
-        endDate: '2009',
-        degree: 'Brevet de technicien supérieur (BTS)',
-        activities: 'Programming, English, Mathematics, Management'
-      }
-    ],
-    volunteer: [
-      {
-        name: '',
-      }
-    ],
-    hobbies: [
-      {
-        name: '',
-      }
-    ],
+    languages: [],
+    skills: [],
+    educations: [],
+    volunteer: [],
+    hobbies: [],
   };
 
   constructor() {
@@ -282,7 +69,7 @@ class Resume extends Component {
       return obj;
     }, {});
 
-    return Object.keys(skillsByCategories).map(function(key) {
+    return Object.keys(skillsByCategories).map(function (key) {
       return skillsByCategories[key];
     });
   }
@@ -319,6 +106,22 @@ class Resume extends Component {
         </CardContent>
       </Card>
     );
+  }
+
+  renderButtons(links) {
+    if (!(links instanceof Array)) {
+      return '';
+    }
+
+    return ReactDOMServer.renderToString(
+        <div>
+          {links.map((link, i) =>
+            <span>
+              <Button raised color="default" target="_blank" href={link.url}>{link.text}</Button>&nbsp;
+            </span>
+          )}
+        </div>
+      );
   }
 
   render() {
@@ -370,59 +173,59 @@ class Resume extends Component {
               </Typography>
 
               <br />
-              <Divider/>
+              <Divider />
               <br />
 
               <Typography className="Resume-summary" component="p"
                           dangerouslySetInnerHTML={{ __html: this.props.summary }} />
             </CardContent>
             <CardActions className="Resume-actions">
-              <Button raised color="primary" target="_blank" href={cv}>{ this.props.strings.download }</Button>
-              <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">{ this.props.strings.hireMe }</Button>
+              <Button raised color="primary" target="_blank" href={cv}>{this.props.strings.download}</Button>
+              <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">{this.props.strings.hireMe}</Button>
             </CardActions>
           </Card>
 
-          <h2 id="Resume-work">{ this.props.strings.workExperienceAndEducation }</h2>
+          <h2 id="Resume-work">{this.props.strings.workExperienceAndEducation}</h2>
 
           <VerticalTimeline>
             {this.props.positions.map((position, i) =>
               <VerticalTimelineElement className="Resume-position" key={i}
-                               title={position.title} subtitle={position.company}
-                               content={position.summary} icon={<WorkIcon />}
-                               iconStyle={styles.primaryColor}
-                               date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + this.props.strings.years + ')'}
-                               color="red"
+                                       title={position.title} subtitle={position.company}
+                                       content={position.summary} icon={<WorkIcon />}
+                                       iconStyle={styles.primaryColor}
+                                       date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + this.props.strings.years + ')'}
+                                       color="red"
               />
             )}
 
             {this.props.educations.map((education, i) =>
               <VerticalTimelineElement id="Resume-education" className="Resume-position" key={i}
-                               title={education.fieldOfStudy} subtitle={education.degree}
-                               content={education.activities} icon={<SchoolIcon />}
-                               iconStyle={styles.secondaryColor}
-                               date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + this.props.strings.years + ')'}
-                               color="red"
+                                       title={education.fieldOfStudy} subtitle={education.degree}
+                                       content={education.activities} icon={<SchoolIcon />}
+                                       iconStyle={styles.secondaryColor}
+                                       date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + this.props.strings.years + ')'}
+                                       color="red"
               />
             )}
           </VerticalTimeline>
 
-          <h2 id="Resume-skills"><SettingsIcon /> { this.props.strings.skills }</h2>
+          <h2 id="Resume-skills"><SettingsIcon /> {this.props.strings.skills}</h2>
 
           <div className="Resume-skills">
             {skills.map(this.renderSkillsCategory)}
           </div>
 
-          <h2 id="Resume-languages"><LanguageIcon /> { this.props.strings.languages }</h2>
+          <h2 id="Resume-languages"><LanguageIcon /> {this.props.strings.languages}</h2>
           <ul className="Resume-languages">
             {this.props.languages.map((language, i) =>
-                <li className="Resume-language" key={i}>
-                  <span className="Resume-languageTitle">{language.name}</span> :
-                  <span className="Resume-languageLevel"> {language.level}</span>
-                </li>
+              <li className="Resume-language" key={i}>
+                <span className="Resume-languageTitle">{language.name}</span> :
+                <span className="Resume-languageLevel"> {language.level}</span>
+              </li>
             )}
           </ul>
 
-          <h2 id="Resume-hobbies"><ToysIcon /> { this.props.strings.hobbies }</h2>
+          <h2 id="Resume-hobbies"><ToysIcon /> {this.props.strings.hobbies}</h2>
           <ul className="Resume-languages">
             {this.props.hobbies.map((hobby, i) =>
               <li className="Resume-language" key={i}>
@@ -430,6 +233,22 @@ class Resume extends Component {
               </li>
             )}
           </ul>
+
+          <h2 id="Resume-hobbies"><CodeIcon /> {this.props.strings.projectsLibrariesDevelopmentsAndContributions}</h2>
+          <VerticalTimeline>
+            {this.props.projects.map((project, i) =>
+              <VerticalTimelineElement
+                className="Resume-project"
+                key={i}
+                title={project.title}
+                subtitle={project.subtitle}
+                content={project.content + '<br><br>' + this.renderButtons(project.links)}
+                icon={<CodeIcon />}
+                iconStyle={styles.primaryColor}
+                date={project.date}
+              />
+            )}
+          </VerticalTimeline>
         </div>
         <BottomNavigation />
       </div>

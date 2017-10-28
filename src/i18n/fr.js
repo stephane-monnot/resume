@@ -8,7 +8,8 @@ export default {
     skills: 'Compétences',
     languages: 'Langues',
     hobbies: 'Loisirs',
-    resume: 'CV'
+    resume: 'CV',
+    projectsLibrariesDevelopmentsAndContributions: 'Projets, librairies, développements et contributions'
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Jours restants avant Japon',
