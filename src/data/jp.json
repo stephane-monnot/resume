@@ -225,6 +225,127 @@
       "activities": "プログラミング, 英語, 数学, Management"
     }
   ],
+  "projects": [
+    {
+      "title": "React Vertical Timeline",
+      "subtitle": "React Component",
+      "category": "library",
+      "subcategory": "react",
+      "links": [
+        {
+          "url": "https://stephane-monnot.github.io/react-vertical-timeline/",
+          "text": "Visit website"
+        },
+        {
+          "url": "https://github.com/stephane-monnot/react-vertical-timeline",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "ReactJS"
+        }
+      ],
+      "content": "A react component to generate responsive vertical timeline.",
+      "date": "2017-10-27"
+    },
+    {
+      "title": "React Resume",
+      "subtitle": "React Project",
+      "category": "project",
+      "subcategory": "react",
+      "links": [
+        {
+          "url": "https://stephanemonnot.com/",
+          "text": "Visit website"
+        },
+        {
+          "url": "https://github.com/stephane-monnot/resume",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "ReactJS"
+        },
+        {
+          "name": "Redux"
+        }
+      ],
+      "content": "My resume in japanese, french and english, developed with React.",
+      "date": "2017-10-02"
+    },
+    {
+      "title": "Laravel 5 Friendships",
+      "subtitle": "Laravel Library",
+      "category": "library",
+      "subcategory": "laravel",
+      "contribution": true,
+      "links": [
+        {
+          "url": "https://github.com/hootlex/laravel-friendships/commits?author=stephane-monnot",
+          "text": "View commits"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Laravel"
+        },
+        {
+          "name": "PHPUnit"
+        }
+      ],
+      "content": "Contributions to a Laravel Library which gives the ability to manage friendships with Eloquent models.<br />Add new functionalities, improve build, add Unit tests, documentation, ...",
+      "date": "2016-03-05"
+    },
+    {
+      "title": "MySQL User Account Management in PHP",
+      "subtitle": "Standalone PHP Library",
+      "category": "library",
+      "subcategory": "php",
+      "links": [
+        {
+          "url": "https://github.com/stephane-monnot/db-user",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Atoum"
+        }
+      ],
+      "content": "Library which makes easier the MySQL User Account Management in PHP and it avoids the use of raw SQL queries.",
+      "date": "2015-10-02"
+    },
+    {
+      "title": "GOCR for PHP",
+      "subtitle": "Standalone PHP Library",
+      "category": "library",
+      "subcategory": "php",
+      "links": [
+        {
+          "url": "https://github.com/stephane-monnot/gocr-php",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Atoum"
+        }
+      ],
+      "content": "A wrapper to work with Gocr inside PHP scripts. This library makes easier the use of the OCR software named GOCR.",
+      "date": "2015-09-07"
+    }
+  ],
   "volunteer": [
     {
       "name": ""

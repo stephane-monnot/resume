@@ -226,7 +226,7 @@
   "projects": [
     {
       "title": "React Vertical Timeline",
-      "subtitle": "React Component",
+      "subtitle": "Composant React",
       "category": "library",
       "subcategory": "react",
       "links": [
@@ -244,12 +244,12 @@
           "name": "ReactJS"
         }
       ],
-      "content": "A react component to generate responsive vertical timeline.",
+      "content": "Un composant React pour générer des chronologies verticales",
       "date": "2017-10-27"
     },
     {
-      "title": "React Resume",
-      "subtitle": "React Project",
+      "title": "React curriculum vitae",
+      "subtitle": "Projet React",
       "category": "project",
       "subcategory": "react",
       "links": [
@@ -270,12 +270,12 @@
           "name": "Redux"
         }
       ],
-      "content": "My resume in japanese, french and english, developed with React.",
+      "content": "Mon CV en japonais, français et anglais, développé avec React.",
       "date": "2017-10-02"
     },
     {
       "title": "Laravel 5 Friendships",
-      "subtitle": "Laravel Library",
+      "subtitle": "Bibliothèque React",
       "category": "library",
       "subcategory": "laravel",
       "contribution": true,
@@ -296,12 +296,12 @@
           "name": "PHPUnit"
         }
       ],
-      "content": "Contributions to a Laravel Library which gives the ability to manage friendships with Eloquent models.<br />Add new functionalities, improve build, add Unit tests, documentation, ...",
+      "content": "Contributions à une librarie Laravel qui donne la possibilité de gérer des amitiés avec des modèles Eloquent.<br />Ajout de nouvelles fonctionnalités, amélioration de la build, ajout de tests unitaires, documentation, ...",
       "date": "2016-03-05"
     },
     {
-      "title": "MySQL User Account Management in PHP",
-      "subtitle": "Standalone PHP Library",
+      "title": "Gestion de comptes utilisateurs MySQL en PHP",
+      "subtitle": "Bibliothèque PHP",
       "category": "library",
       "subcategory": "php",
       "links": [
@@ -318,12 +318,12 @@
           "name": "Atoum"
         }
       ],
-      "content": "Library which makes easier the MySQL User Account Management in PHP and it avoids the use of raw SQL queries.<br />Unit testing with Atoum",
+      "content": "Bibliothèque qui rend facile la gestion de comptes utilisateurs MySQL en PHP et évite l'utilisation de requêtes SQL brutes.",
       "date": "2015-10-02"
     },
     {
-      "title": "GOCR for PHP",
-      "subtitle": "Standalone PHP Library",
+      "title": "GOCR pour PHP",
+      "subtitle": "Bibliothèque PHP",
       "category": "library",
       "subcategory": "php",
       "links": [
@@ -340,7 +340,7 @@
           "name": "Atoum"
         }
       ],
-      "content": "A wrapper to work with Gocr inside PHP scripts. This library makes easier the use of the OCR software named GOCR.<br />Unit testing with Atoum",
+      "content": "un wrapper pour utiliser Gocr dans des scripts PHP. Cette bibliothèque rend facile l'utilisation  du logiciel OCR nommé GOCR.",
       "date": "2015-09-07"
     }
   ],

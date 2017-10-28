@@ -7,6 +7,7 @@ import { withStyles } from 'material-ui/styles';
 import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
 import HomeIcon from 'material-ui-icons/Home';
 import WorkIcon from 'material-ui-icons/Work';
+import SchoolIcon from 'material-ui-icons/School';
 import SettingsIcon from 'material-ui-icons/Settings';
 import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
@@ -37,9 +38,14 @@ var buttons = [
     icon: <HomeIcon />,
   },
   {
-    label: 'workExperienceAndEducation',
+    label: 'workExperience',
     id: 'Resume-work',
     icon: <WorkIcon />,
+  },
+  {
+    label: 'education',
+    id: 'Resume-education',
+    icon: <SchoolIcon />,
   },
   {
     label: 'skills',

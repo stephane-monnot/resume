@@ -3,12 +3,13 @@ export default {
     download: 'ダウンロード',
     hireMe: '私を雇ってください',
     workExperienceAndEducation: '職歴と学歴',
+    years: '年間',
+    year: ' 年間',
     skills: '特技',
     languages: '言語能力',
     hobbies: '趣味',
     resume: '履歴書',
-    years: '年間',
-    year: ' 年間'
+    projectsAndDevelopments: 'プロジェクトと開発'
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: '日本までの残りの日数',
@@ -19,9 +20,11 @@ export default {
   },
   SimpleBottomNavigation: {
     home: 'ホーム',
-    workExperienceAndEducation: '職歴と学歴',
+    workExperience: '職歴',
+    education: '学歴',
     skills: '特技',
     languages: '言語能力',
     hobbies: '趣味',
+    projects: 'プロジェクト'
   }
 };

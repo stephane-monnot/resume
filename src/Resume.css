@@ -17,6 +17,11 @@
     text-align: center;
 }
 
+.Resume h2 svg {
+    position: relative;
+    top: 3px;
+}
+
 .Resume-header {
     margin-top: 100px;
     text-align: center;

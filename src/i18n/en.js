@@ -7,7 +7,9 @@ export default {
     year: ' year',
     skills: 'Skills',
     languages: 'Languages',
+    hobbies: 'Hobbies',
     resume: 'Resume',
+    projectsAndDevelopments: 'Projects et developments'
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Remaining days until Japan',
@@ -18,9 +20,11 @@ export default {
   },
   SimpleBottomNavigation: {
     home: 'Home',
-    workExperienceAndEducation: 'Work & Education',
+    workExperience: 'Experience',
+    education: 'Education',
     skills: 'Skills',
     languages: 'Languages',
-    hobbies: 'Resume',
+    hobbies: 'Hobbies',
+    projects: 'Projects'
   }
 };

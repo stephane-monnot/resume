@@ -288,7 +288,7 @@ class Resume extends Component {
             )}
           </ul>
 
-          <h2 id="Resume-projects"><CodeIcon /> {this.props.strings.projectsLibrariesDevelopmentsAndContributions}</h2>
+          <h2 id="Resume-projects"><CodeIcon /> {this.props.strings.projectsAndDevelopments}</h2>
           <VerticalTimeline>
             {this.props.projects.map((project, i) =>
               <VerticalTimelineElement
