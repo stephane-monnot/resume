@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
+import { injectIntl, intlShape } from 'react-intl';
 import { withStyles } from 'material-ui/styles';
 import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
 import HomeIcon from 'material-ui-icons/Home';
@@ -13,7 +14,6 @@ import LanguageIcon from 'material-ui-icons/Language';
 import ToysIcon from 'material-ui-icons/Toys';
 import CodeIcon from 'material-ui-icons/Code';
 import Scrollspy from './ScrollSpy';
-import translate from './i18n/Translate';
 
 const styles = {
   root: {
@@ -33,37 +33,37 @@ const styles = {
 
 var buttons = [
   {
-    label: 'home',
+    label: 'SimpleBottomNavigation.home',
     id: 'Resume-home',
     icon: <HomeIcon />,
   },
   {
-    label: 'workExperience',
+    label: 'SimpleBottomNavigation.workExperience',
     id: 'Resume-work',
     icon: <WorkIcon />,
   },
   {
-    label: 'education',
+    label: 'SimpleBottomNavigation.education',
     id: 'Resume-education',
     icon: <SchoolIcon />,
   },
   {
-    label: 'skills',
+    label: 'SimpleBottomNavigation.skills',
     id: 'Resume-skills',
     icon: <SettingsIcon />,
   },
   {
-    label: 'languages',
+    label: 'SimpleBottomNavigation.languages',
     id: 'Resume-languages',
     icon: <LanguageIcon />,
   },
   {
-    label: 'hobbies',
+    label: 'SimpleBottomNavigation.hobbies',
     id: 'Resume-hobbies',
     icon: <ToysIcon />,
   },
   {
-    label: 'projects',
+    label: 'SimpleBottomNavigation.projects',
     id: 'Resume-projects',
     icon: <CodeIcon />,
   },
@@ -72,10 +72,6 @@ var buttons = [
 class SimpleBottomNavigation extends React.Component {
   state = {
     value: 0
-  };
-
-  static propTypes = {
-    strings: PropTypes.object
   };
 
   handleChange = (event, value) => {
@@ -92,6 +88,7 @@ class SimpleBottomNavigation extends React.Component {
   render() {
     const classes = this.props.classes;
     const { value } = this.state;
+    const { formatMessage } = this.props.intl;
 
     return (
 
@@ -104,8 +101,13 @@ class SimpleBottomNavigation extends React.Component {
           className={classes.root}
         >
           {buttons.map((button, j) =>
-            <BottomNavigationButton key={j} className={classes.link} href={'#' + button.id} label={this.props.strings[button.label]}
-                                    icon={button.icon} />
+            <BottomNavigationButton
+              key={j}
+              className={classes.link}
+              href={'#' + button.id}
+              label={formatMessage({id: button.label})}
+              icon={button.icon}
+            />
           )}
         </BottomNavigation>
       </Scrollspy>
@@ -116,11 +118,12 @@ class SimpleBottomNavigation extends React.Component {
 
 SimpleBottomNavigation.propTypes = {
   classes: PropTypes.object.isRequired,
+  intl: intlShape.isRequired
 };
 
 const decorators = flow([
   withStyles(styles),
-  translate('SimpleBottomNavigation')
+  injectIntl
 ]);
 
 export default decorators(SimpleBottomNavigation);

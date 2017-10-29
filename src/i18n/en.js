@@ -9,7 +9,7 @@ export default {
     languages: 'Languages',
     hobbies: 'Hobbies',
     resume: 'Resume',
-    projectsAndDevelopments: 'Projects et developments'
+    projectsAndDevelopments: 'Projects & developments'
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Remaining days until Japan',

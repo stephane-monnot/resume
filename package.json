@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dot-object": "^1.7.0",
     "local-storage": "^1.4.2",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.10",

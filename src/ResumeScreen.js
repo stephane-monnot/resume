@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import cvFR from './data/fr.json';
-import cvJP from './data/jp.json';
+import cvJA from './data/ja.json';
 import cvEN from './data/en.json';
 import cvPDFFR from './data/fr.pdf';
-import cvPDFJP from './data/fr.pdf';
+import cvPDFJA from './data/fr.pdf';
 import cvPDFEN from './data/fr.pdf';
 import Resume from './Resume';
 import { changeLanguage } from './reducers/language';
@@ -13,8 +13,8 @@ class ResumeScreen extends Component {
   constructor() {
     super();
     this.state = {
-      cvs: {fr: cvFR, jp: cvJP, en: cvEN},
-      cvPDFs: {fr: cvPDFFR, jp: cvPDFJP, en: cvPDFEN}
+      cvs: {fr: cvFR, ja: cvJA, en: cvEN},
+      cvPDFs: {fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN}
     }
   }
 

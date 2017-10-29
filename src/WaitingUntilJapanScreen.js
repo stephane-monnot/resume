@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import flow from 'lodash/flow';
 import { LinearProgress } from 'material-ui/Progress';
 import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
 
 import './WaitingUntilJapanScreen.css';
-import translate from "./i18n/Translate";
 import { changeLanguage } from './reducers/language';
 
 class WaitingUntilJapanScreen extends Component {
-
-  static propTypes = {
-    strings: PropTypes.object
-  };
 
   componentWillMount() {
     this.props.onChangeLanguage(this.props.language)
@@ -48,7 +43,12 @@ class WaitingUntilJapanScreen extends Component {
     return (
       <Card className="WaitingUntilJapanScreen-card">
         <CardContent>
-          <h3>{this.props.strings.remainingDaysUntilJapan}</h3>
+          <h3>
+            <FormattedMessage
+              id='WaitingUntilJapanScreen.remainingDaysUntilJapan'
+              defaultMessage='Remaining days until Japan'
+            />
+          </h3>
 
           <div style={{ position: 'relative' }}>
             <LinearProgress className="WaitingUntilJapanScreen-progress" color="accent" mode="determinate"
@@ -59,19 +59,39 @@ class WaitingUntilJapanScreen extends Component {
         </CardContent>
         <CardActions className="WaitingUntilJapanScreen-card-footer" style={styles.primaryColor}>
           <div className="WaitingUntilJapanScreen-info">
-            <div className="WaitingUntilJapanScreen-info-title">{this.props.strings.from}</div>
+            <div className="WaitingUntilJapanScreen-info-title">
+              <FormattedMessage
+                id='WaitingUntilJapanScreen.from'
+                defaultMessage='From'
+              />
+            </div>
             <div className="WaitingUntilJapanScreen-info-value">{fromDate.toLocaleDateString()}</div>
           </div>
           <div className="WaitingUntilJapanScreen-info">
-            <div className="WaitingUntilJapanScreen-info-title">{this.props.strings.until}</div>
+            <div className="WaitingUntilJapanScreen-info-title">
+              <FormattedMessage
+                id='WaitingUntilJapanScreen.until'
+                defaultMessage='Until'
+              />
+            </div>
             <div className="WaitingUntilJapanScreen-info-value">{untilDate.toLocaleDateString()}</div>
           </div>
           <div className="WaitingUntilJapanScreen-info">
-            <div className="WaitingUntilJapanScreen-info-title">{this.props.strings.days}</div>
+            <div className="WaitingUntilJapanScreen-info-title">
+              <FormattedMessage
+                id='WaitingUntilJapanScreen.days'
+                defaultMessage='Days'
+              />
+            </div>
             <div className="WaitingUntilJapanScreen-info-value">{spentDays} / {remainingDays + spentDays}</div>
           </div>
           <div className="WaitingUntilJapanScreen-info">
-            <div className="WaitingUntilJapanScreen-info-title">{this.props.strings.percent}</div>
+            <div className="WaitingUntilJapanScreen-info-title">
+              <FormattedMessage
+                id='WaitingUntilJapanScreen.percent'
+                defaultMessage='Percent'
+              />
+            </div>
             <div className="WaitingUntilJapanScreen-info-value">{percent}%</div>
           </div>
         </CardActions>
@@ -81,6 +101,9 @@ class WaitingUntilJapanScreen extends Component {
   }
 }
 
+WaitingUntilJapanScreen.propTypes = {
+  intl: intlShape.isRequired
+};
 
 const actionsToProps = dispatch => ({
   onChangeLanguage: lang => dispatch(changeLanguage(lang))
@@ -89,7 +112,7 @@ const actionsToProps = dispatch => ({
 const decorators = flow([
   withTheme,
   connect(null, actionsToProps),
-  translate('WaitingUntilJapanScreen'),
+  injectIntl
 ]);
 
 export default decorators(WaitingUntilJapanScreen);

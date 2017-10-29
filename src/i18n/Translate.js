@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import en from './en';
 import fr from './fr';
-import jp from './jp';
+import ja from './ja';
 
-const languages = { en, fr, jp };
+const languages = { en, fr, ja };
 
 export default function translate(key) {
   return Component => {
