@@ -275,7 +275,7 @@
     },
     {
       "title": "Laravel 5 Friendships",
-      "subtitle": "Bibliothèque React",
+      "subtitle": "Bibliothèque Laravel",
       "category": "library",
       "subcategory": "laravel",
       "contribution": true,
@@ -296,7 +296,7 @@
           "name": "PHPUnit"
         }
       ],
-      "content": "Contributions à une librarie Laravel qui donne la possibilité de gérer des amitiés avec des modèles Eloquent.<br />Ajout de nouvelles fonctionnalités, amélioration de la build, ajout de tests unitaires, documentation, ...",
+      "content": "Contributions à une bibliothèque Laravel qui donne la possibilité de gérer des amitiés avec des modèles Eloquent.<br />Ajout de nouvelles fonctionnalités, amélioration de la build, ajout de tests unitaires, documentation, ...",
       "date": "2016-03-05"
     },
     {

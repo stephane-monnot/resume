@@ -298,7 +298,7 @@
           "name": "PHPUnit"
         }
       ],
-      "content": "Contributions to a Laravel Library which gives the ability to manage friendships with Eloquent models.<br />Add new functionalities, improve build, add Unit tests, documentation, ...",
+      "content": "Contributions to a Laravel library which gives the ability to manage friendships with Eloquent models.<br />Add new functionalities, improve build, add Unit tests, documentation, ...",
       "date": "2016-03-05"
     },
     {
