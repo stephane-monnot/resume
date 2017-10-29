@@ -87,9 +87,7 @@ class Resume extends Component {
     return (
       <div>
         {links.map((link, i) =>
-          <span key={i}>
-              <Button raised color="default" target="_blank" href={link.url}>{link.text}</Button>&nbsp;
-            </span>
+            <Button key={i} raised color="default" target="_blank" href={link.url}>{link.text}</Button>
         )}
       </div>
     );
@@ -308,9 +306,9 @@ class Resume extends Component {
                 <h4 className="vertical-timeline-element-subtitle">{project.subtitle}</h4>
                 <p>
                   <span dangerouslySetInnerHTML={{ __html: project.content }}></span>
-                  <br /><br />
-                  {this.renderButtons(project.links)}
                 </p>
+                <br />
+                {this.renderButtons(project.links)}
               </VerticalTimelineElement>
             )}
           </VerticalTimeline>
