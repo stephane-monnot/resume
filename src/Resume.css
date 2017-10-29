@@ -20,6 +20,7 @@
 .Resume h2 svg {
     position: relative;
     top: 3px;
+    margin-right: 5px;
 }
 
 .Resume-header {
