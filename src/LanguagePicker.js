@@ -3,7 +3,6 @@ import flow from 'lodash/flow';
 import { Link } from 'react-router-dom';
 import Button from 'material-ui/Button';
 import languages from './i18n/languages.json';
-import translate from './i18n/Translate';
 
 const LanguagePicker = () => (
   <div>
@@ -13,8 +12,6 @@ const LanguagePicker = () => (
   </div>
 );
 
-const decorators = flow([
-  translate('LanguagePicker')
-]);
+const decorators = flow();
 
 export default decorators(LanguagePicker);
