@@ -33,7 +33,7 @@ addLocaleData([...en, ...fr, ...ja]);
 
 const theme = createMuiTheme({
   palette: {
-    primary: blue, // Purple and green play nicely together.
+    primary: blue,
     error: red,
   },
 });
