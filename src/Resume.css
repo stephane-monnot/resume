@@ -104,6 +104,31 @@
     font-weight: 500;
 }
 
+.Resume-hobbies {
+    display: flex;
+}
+
+.Resume-hobby {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.Resume-hobby h4 {
+    margin: 4px;
+}
+
+.Resume-hobby .material-icons {
+    font-size: 48px;
+}
+
 .Resume-project-technologies {
     display: flex;
     justifyContent: center;
@@ -122,6 +147,18 @@
 
 .Resume-project-links > * {
     margin-right: 10px;
+}
+
+.vertical-timeline-element--laravel .vertical-timeline-element-content {
+    border-top: 3px solid #fd4f31;
+}
+
+.vertical-timeline-element--php .vertical-timeline-element-content {
+    border-top: 3px solid #6181b6;
+}
+
+.vertical-timeline-element--react .vertical-timeline-element-content {
+    border-top: 3px solid #61DAFB;
 }
 
 .vertical-timeline-element-icon .SVGInline {

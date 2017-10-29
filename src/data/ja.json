@@ -353,10 +353,20 @@
   ],
   "hobbies": [
     {
-      "name": "料理"
+      "name": "料理",
+      "icon": "restaurant"
     },
     {
-      "name": "旅行"
+      "name": "旅行",
+      "icon": "flight"
+    },
+    {
+      "name": "言語の勉強",
+      "icon": "school"
+    },
+    {
+      "name": "自転車",
+      "icon": "directions_bike"
     }
   ]
 }

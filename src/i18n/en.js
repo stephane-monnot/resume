@@ -7,7 +7,7 @@ export default {
     year: ' year',
     skills: 'Skills',
     languages: 'Languages',
-    hobbies: 'Hobbies',
+    interests: 'Interests',
     resume: 'Resume',
     projectsAndDevelopments: 'Projects & developments'
   },

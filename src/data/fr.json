@@ -351,10 +351,20 @@
   ],
   "hobbies": [
     {
-      "name": "La cuisine"
+      "name": "La cuisine",
+      "icon": "restaurant"
     },
     {
-      "name": "Les voyages"
+      "name": "Les voyages",
+      "icon": "flight"
+    },
+    {
+      "name": "L'apprentissage de langue",
+      "icon": "school"
+    },
+    {
+      "name": "Le vélo",
+      "icon": "directions_bike"
     }
   ]
 }

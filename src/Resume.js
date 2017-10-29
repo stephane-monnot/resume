@@ -12,6 +12,7 @@ import CodeIcon from 'material-ui-icons/Code';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
 import SettingsIcon from 'material-ui-icons/Settings';
+import Icon from 'material-ui/Icon';
 import LaravelIcon from 'react-devicon/laravel/plain'
 import PhpIcon from 'react-devicon/php/plain'
 import ReactIcon from 'react-devicon/react/original'
@@ -140,6 +141,7 @@ class Resume extends Component {
           background: '#fd4f31',
           color: '#fff',
         },
+        className: 'vertical-timeline-element--laravel',
         icon: <LaravelIcon />,
       },
       phpColor: {
@@ -147,6 +149,7 @@ class Resume extends Component {
           background: '#6181b6',
           color: '#fff',
         },
+        className: 'vertical-timeline-element--php',
         icon: <PhpIcon />,
       },
       reactColor: {
@@ -154,6 +157,7 @@ class Resume extends Component {
           background: '#61DAFB',
           color: '#fff',
         },
+        className: 'vertical-timeline-element--react',
         icon: <ReactIcon />,
       },
     };
@@ -274,17 +278,20 @@ class Resume extends Component {
 
           <h2 id="Resume-hobbies"><ToysIcon />
             <FormattedMessage
-              id='Resume.hobbies'
-              defaultMessage='Hobbies'
+              id='Resume.interests'
+              defaultMessage='Interests'
             />
           </h2>
-          <ul className="Resume-languages">
+          <div className="Resume-hobbies">
             {this.props.hobbies.map((hobby, i) =>
-              <li className="Resume-language" key={i}>
-                <span className="Resume-hobbyTitle">{hobby.name}</span>
-              </li>
+              <Card key={i} style={styles.primaryColor} className="Resume-hobby">
+                <CardContent>
+                  <Icon>{hobby.icon}</Icon>
+                  <h4>{hobby.name}</h4>
+                </CardContent>
+              </Card>
             )}
-          </ul>
+          </div>
 
           <h2 id="Resume-projects"><CodeIcon />
             <FormattedMessage
@@ -295,7 +302,8 @@ class Resume extends Component {
           <VerticalTimeline>
             {this.props.projects.map((project, i) =>
               <VerticalTimelineElement
-                className="Resume-project"
+                style={{borderTop: '3px solid ' + styles[project.subcategory + 'Color'].border}}
+                className={"Resume-project " + styles[project.subcategory + 'Color'].className}
                 key={i}
                 icon={styles[project.subcategory + 'Color'].icon}
                 iconStyle={styles[project.subcategory + 'Color'].style}
