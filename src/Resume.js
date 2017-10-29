@@ -85,7 +85,7 @@ class Resume extends Component {
     }
 
     return (
-      <div>
+      <div className="Resume-project-links">
         {links.map((link, i) =>
             <Button key={i} raised color="default" target="_blank" href={link.url}>{link.text}</Button>
         )}

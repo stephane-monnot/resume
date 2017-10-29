@@ -120,6 +120,10 @@
     padding-right: 15px !important;
 }
 
+.Resume-project-links > * {
+    margin-right: 10px;
+}
+
 .vertical-timeline-element-icon .SVGInline {
     display: block;
     width: 36px;
