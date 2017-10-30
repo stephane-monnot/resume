@@ -43,46 +43,44 @@ var buttons = [
   {
     label: 'SimpleBottomNavigation.home',
     name: 'Resume-home',
-    icon: <HomeIcon />,
-    offset: -170
-
+    icon: <HomeIcon />
   },
   {
     label: 'SimpleBottomNavigation.workExperience',
     name: 'Resume-work',
     icon: <WorkIcon />,
-    offset: -80
+    offset: -64
   },
   {
     label: 'SimpleBottomNavigation.education',
     name: 'Resume-education',
     icon: <SchoolIcon />,
-    offset: -80
+    offset: -64
 
   },
   {
     label: 'SimpleBottomNavigation.skills',
     name: 'Resume-skills',
     icon: <SettingsIcon />,
-    offset: -80
+    offset: -64
   },
   {
     label: 'SimpleBottomNavigation.languages',
     name: 'Resume-languages',
     icon: <LanguageIcon />,
-    offset: -80
+    offset: -64
   },
   {
     label: 'SimpleBottomNavigation.hobbies',
     name: 'Resume-hobbies',
     icon: <ToysIcon />,
-    offset: -80
+    offset: -64
   },
   {
     label: 'SimpleBottomNavigation.projects',
     name: 'Resume-projects',
     icon: <CodeIcon />,
-    offset: -80
+    offset: -64
   },
 ];
 

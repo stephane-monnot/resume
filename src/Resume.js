@@ -8,19 +8,16 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Chip from 'material-ui/Chip';
-import CodeIcon from 'material-ui-icons/Code';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
-import SettingsIcon from 'material-ui-icons/Settings';
 import Icon from 'material-ui/Icon';
 import LaravelIcon from 'react-devicon/laravel/plain'
 import PhpIcon from 'react-devicon/php/plain'
 import ReactIcon from 'react-devicon/react/original'
-import LanguageIcon from 'material-ui-icons/Language';
-import ToysIcon from 'material-ui-icons/Toys';
 import Helmet from 'react-helmet';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
+import ScreenBlock from './ScreenBlock';
 import BottomNavigation from './BottomNavigation';
 import './Resume.css';
 import 'react-vertical-timeline-component/style.min.css';
@@ -166,49 +163,61 @@ class Resume extends Component {
       <div className="Resume">
         <Helmet title={formatMessage({ id: 'Resume.resume', defaultMessage: 'Resume' })} />
 
-        <div className="container">
+        <ScreenBlock id="Resume-home" style={styles.phpColor.style}>
+          <div className="container">
 
-          <Card id="Resume-home" className="Resume-header Card-md">
-            <CardContent>
-              <div className="Resume-profilePicture">
-                <img alt="" src={this.props.pictureUrl} />
-              </div>
-              <Typography className="Resume-fullName" type="headline" component="h3">
-                {fullName}
-              </Typography>
+            <h2>
+              <FormattedMessage
+                id='Resume.aboutMe'
+                defaultMessage='About me'
+              />
+            </h2>
+            <FormattedMessage
+              id='Resume.aboutMeSubtitle'
+              defaultMessage='A small introduction about myself'
+            />
 
-              <Typography className="Resume-headline" type="body1">
-                {this.props.headline}
-              </Typography>
+            <div className="Resume-profilePicture">
+              <img alt="" src={this.props.pictureUrl} />
+            </div>
 
-              <Typography className="Resume-mainAddress">
-                {this.props.mainAddress}
-              </Typography>
+            <Typography className="Resume-fullName" type="headline" component="h3">
+              {fullName}
+            </Typography>
 
-              <br />
-              <Divider />
-              <br />
+            <Typography className="Resume-headline" type="body1">
+              {this.props.headline}
+            </Typography>
 
-              <Typography className="Resume-summary" component="p"
-                          dangerouslySetInnerHTML={{ __html: this.props.summary }} />
-            </CardContent>
-            <CardActions className="Resume-actions">
-              <Button raised color="primary" target="_blank" href={cv}>
-                <FormattedMessage
-                  id='Resume.download'
-                  defaultMessage='Download'
-                />
-              </Button>
-              <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
-                <FormattedMessage
-                  id='Resume.hireMe'
-                  defaultMessage='Hire me'
-                />
-              </Button>
-            </CardActions>
-          </Card>
+            <Typography className="Resume-mainAddress">
+              {this.props.mainAddress}
+            </Typography>
 
-          <div id="Resume-work">
+            <br />
+            <Divider />
+            <br />
+
+            <Typography className="Resume-summary" component="p"
+                        dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+
+            <Button raised color="primary" target="_blank" href={cv}>
+              <FormattedMessage
+                id='Resume.download'
+                defaultMessage='Download'
+              />
+            </Button>
+            <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
+              <FormattedMessage
+                id='Resume.hireMe'
+                defaultMessage='Hire me'
+              />
+            </Button>
+
+          </div>
+        </ScreenBlock>
+
+        <ScreenBlock id="Resume-work">
+          <div className="container">
             <h2>
               <FormattedMessage
                 id='Resume.workExperienceAndEducation'
@@ -257,9 +266,11 @@ class Resume extends Component {
               )}
             </VerticalTimeline>
           </div>
+        </ScreenBlock>
 
-          <div id="Resume-skills">
-            <h2><SettingsIcon />
+        <ScreenBlock id="Resume-skills">
+          <div className="container">
+            <h2>
               <FormattedMessage
                 id='Resume.skills'
                 defaultMessage='Skills'
@@ -269,9 +280,11 @@ class Resume extends Component {
               {skills.map(this.renderSkillsCategory)}
             </div>
           </div>
+        </ScreenBlock>
 
-          <div id="Resume-languages">
-            <h2><LanguageIcon />
+        <ScreenBlock id="Resume-languages">
+          <div className="container">
+            <h2>
               <FormattedMessage
                 id='Resume.languages'
                 defaultMessage='Languages'
@@ -286,9 +299,11 @@ class Resume extends Component {
               )}
             </ul>
           </div>
+        </ScreenBlock>
 
-          <div id="Resume-hobbies">
-            <h2><ToysIcon />
+        <ScreenBlock id="Resume-hobbies">
+          <div className="container">
+            <h2>
               <FormattedMessage
                 id='Resume.interests'
                 defaultMessage='Interests'
@@ -305,9 +320,11 @@ class Resume extends Component {
               )}
             </div>
           </div>
+        </ScreenBlock>
 
-          <div id="Resume-projects">
-            <h2><CodeIcon />
+        <ScreenBlock id="Resume-projects">
+          <div className="container">
+            <h2>
               <FormattedMessage
                 id='Resume.projectsAndDevelopments'
                 defaultMessage='Projects & developments'
@@ -339,8 +356,8 @@ class Resume extends Component {
               )}
             </VerticalTimeline>
           </div>
+        </ScreenBlock>
 
-        </div>
         <BottomNavigation />
       </div>
     );

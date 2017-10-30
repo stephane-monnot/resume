@@ -1,6 +1,10 @@
 .Resume {
 }
 
+.Resume .ScreenBlockContainer:nth-child(odd) .ScreenBlock {
+    background: #fff;
+}
+
 .Resume .vertical-timeline-element-title {
     margin: 0;
 }
@@ -15,12 +19,12 @@
 
 .Resume h2 {
     text-align: center;
+    color: #ff4081;
 }
 
-.Resume h2 svg {
-    position: relative;
-    top: 3px;
-    margin-right: 5px;
+.Resume .container {
+    padding-top: 85px;
+    padding-bottom: 69px;
 }
 
 .Resume-header {
@@ -50,7 +54,6 @@
     height: 150px;
     width: 150px;
     vertical-align: middle;
-    margin-top: -106px;
     box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.07);
 
 }
