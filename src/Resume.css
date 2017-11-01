@@ -1,7 +1,7 @@
 .Resume {
 }
 
-.Resume .ScreenBlockContainer:nth-child(odd) .ScreenBlock {
+.Resume .ScreenBlockContainer:nth-child(even) .ScreenBlock {
     background: #fff;
 }
 
@@ -18,8 +18,108 @@
 }
 
 .Resume h2 {
-    text-align: center;
+    margin: 0;
     color: #ff4081;
+    font-size: 34px;
+    text-transform: none;
+}
+
+.Resume #Resume-home h1 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+}
+
+.Resume #Resume-home h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.Resume-profilePicture img {
+    border-radius: 50%;
+    max-height: 150px;
+    max-width: 150px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.07);
+}
+
+.Resume #Resume-home {
+    /*margin-top: 64px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Resume-home-squares {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    overflow: hidden;
+    text-align: center;
+    background: #000;
+}
+
+.Resume .Resume-home-squares > div {
+    opacity: 0.35;
+}
+
+.Resume-home-squares > div > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Resume-home-squares .SVGInline {
+    width: 40%;
+}
+
+.Resume .Resume-home-headline-container {
+    color: #fff;
+    text-align: center;
+    padding: 30px 25px 30px;
+    max-width: 960px;
+    border: 1px solid #fff;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.Resume-aboutMe-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Resume-aboutMe-content h3 {
+    margin: 0;
+    padding-bottom: 6px;
+}
+
+.Resume-aboutMe-content h4 {
+    margin: 0;
+    padding-bottom: 22px;
+}
+
+.Resume-aboutMe-content p {
+    font-size: 16px;
+}
+
+.Resume-aboutMe-content a {
+    padding: 14px 23px;
+    font-size: 16px;
+}
+
+.Resume-aboutMe-profilePicture img {
+    max-width: 90%;
+    max-height: none;
+}
+
+.Resume-aboutMe-description {
+    flex: 1;
+    padding-right: 35px;
 }
 
 .Resume .container {
@@ -37,25 +137,6 @@
     font-size: 18px;
     line-height: 30px;
     color: #8a8a8b;
-}
-
-.Resume-actions {
-    justify-content: center;
-}
-
-.Resume-profilePicture {
-    display: inline-block;
-    height: 62px;
-    width: 150px;
-}
-
-.Resume-profilePicture img {
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    vertical-align: middle;
-    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.07);
-
 }
 
 .Resume-skills {
@@ -154,6 +235,14 @@
     margin-right: 10px;
 }
 
+#Resume-aboutMe * {
+    color: #fff;
+}
+
+.vertical-timeline {
+    margin: 0 auto !important;
+}
+
 .vertical-timeline-element--laravel .vertical-timeline-element-content {
     border-top: 3px solid #fd4f31;
 }
@@ -186,7 +275,10 @@
     margin-top: 0px;
 }
 
-.vertical-timeline-element-icon .SVGInline svg path, .vertical-timeline-element-icon .SVGInline svg g {
+.vertical-timeline-element-icon .SVGInline svg path,
+.vertical-timeline-element-icon .SVGInline svg g,
+.Resume-home-squares .SVGInline svg path,
+.Resume-home-squares .SVGInline svg g{
     fill: #fff !important;
 }
 
@@ -209,11 +301,42 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .Resume #Resume-home h2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .Resume #Resume-home h1 {
+        font-size: 42px;
+        line-height: 48px;
+    }
+
     .Resume-skills-category {
         width: 100%;
     }
 
     .Resume-skill {
         width: 30%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .Resume-aboutMe-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .Resume-aboutMe-description {
+        padding-right: 0;
+    }
+
+    .Resume-aboutMe-profilePicture {
+        max-width: 45%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+
+    .Resume-aboutMe-profilePicture img {
+        max-height: none;
     }
 }

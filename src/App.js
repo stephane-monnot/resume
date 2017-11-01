@@ -13,7 +13,6 @@ import red from 'material-ui/colors/red';
 import AppBar from 'material-ui/AppBar';
 import Button from 'material-ui/Button';
 import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
@@ -57,11 +56,8 @@ class App extends Component {
           <Router>
             <div className="App">
               <Helmet titleTemplate={`%s - ${title}`} />
-              <AppBar position="fixed">
+              <AppBar className="App-bar" position="absolute">
                 <Toolbar className="App-header">
-                  <Typography type="title" color="inherit" className="App-title">
-                    MONNOT Stéphane
-                  </Typography>
                   <LanguagePicker/>
                   <Link to="/ja/until/japan.html" />
                   <Link to="/fr/until/japan.html" />

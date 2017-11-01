@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
 import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import Button from 'material-ui/Button';
-import Divider from 'material-ui/Divider';
-import Card, { CardActions, CardContent } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import Chip from 'material-ui/Chip';
@@ -14,11 +13,15 @@ import Icon from 'material-ui/Icon';
 import LaravelIcon from 'react-devicon/laravel/plain'
 import PhpIcon from 'react-devicon/php/plain'
 import ReactIcon from 'react-devicon/react/original'
+import RubyIcon from 'react-devicon/ruby/plain';
+import JavascriptIcon from 'react-devicon/javascript/plain';
+import DockerIcon from 'react-devicon/docker/plain';
 import Helmet from 'react-helmet';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 import ScreenBlock from './ScreenBlock';
 import BottomNavigation from './BottomNavigation';
+import GridBackground from './GridBackground';
 import './Resume.css';
 import 'react-vertical-timeline-component/style.min.css';
 
@@ -110,8 +113,10 @@ class Resume extends Component {
 
   render() {
     let fullName = `${this.props.firstName} ${this.props.lastName}`;
+    let shortFullName = `${this.props.firstName} ${this.props.lastName}`;
     if (this.props.firstNameKana) {
-      fullName += ' (' + this.props.firstNameKana + ' ' + this.props.lastNameKana + ')'
+      shortFullName = this.props.firstNameKana + ' ' + this.props.lastNameKana;
+      fullName += ' (' + this.props.firstNameKana + ' ' + this.props.lastNameKana + ')';
     }
 
     const cv = this.props.cvPDF;
@@ -157,73 +162,144 @@ class Resume extends Component {
         className: 'vertical-timeline-element--react',
         icon: <ReactIcon />,
       },
+      rubyColor: {
+        style: {
+          background: '#d91404',
+          color: '#fff',
+        },
+        className: 'vertical-timeline-element--ruby',
+        icon: <RubyIcon />,
+      },
+      javascriptColor: {
+        style: {
+          background: '#F0DB4F',
+          color: '#fff',
+        },
+        className: 'vertical-timeline-element--javascript',
+        icon: <JavascriptIcon />,
+      },
+      dockerColor: {
+        style: {
+          background: '#019bc6',
+          color: '#fff',
+        },
+        className: 'vertical-timeline-element--docker',
+        icon: <DockerIcon />,
+      },
     };
 
     return (
       <div className="Resume">
         <Helmet title={formatMessage({ id: 'Resume.resume', defaultMessage: 'Resume' })} />
 
-        <ScreenBlock id="Resume-home" style={styles.phpColor.style}>
-          <div className="container">
-
-            <h2>
-              <FormattedMessage
-                id='Resume.aboutMe'
-                defaultMessage='About me'
-              />
-            </h2>
-            <FormattedMessage
-              id='Resume.aboutMeSubtitle'
-              defaultMessage='A small introduction about myself'
-            />
-
-            <div className="Resume-profilePicture">
-              <img alt="" src={this.props.pictureUrl} />
+        <ScreenBlock id="Resume-home">
+          <div className="Resume-home-headline-container">
+            <div className="Resume-home-headline">
+              <h1>
+                <FormattedMessage
+                  id='Resume.im'
+                  defaultMessage="I'm {fullName}"
+                  values={{fullName: shortFullName}}
+                />
+              </h1>
+              <h2>{this.props.headline}</h2>
             </div>
 
-            <Typography className="Resume-fullName" type="headline" component="h3">
-              {fullName}
-            </Typography>
+          </div>
+          <div className="Resume-home-squares">
+            <GridBackground>
+              <div style={{...styles.laravelColor.style}}>
+                {styles.laravelColor.icon}
+              </div>
+              <div style={{...styles.phpColor.style}}>
+                {styles.phpColor.icon}
+              </div>
+              <div style={{...styles.reactColor.style}}>
+                {styles.reactColor.icon}
+              </div>
+              <div style={{...styles.rubyColor.style}}>
+                {styles.rubyColor.icon}
+              </div>
+              <div style={{...styles.javascriptColor.style}}>
+                {styles.javascriptColor.icon}
+              </div>
+              <div style={{...styles.dockerColor.style}}>
+                {styles.dockerColor.icon}
+              </div>
+            </GridBackground>
+          </div>
 
-            <Typography className="Resume-headline" type="body1">
-              {this.props.headline}
-            </Typography>
+        </ScreenBlock>
 
-            <Typography className="Resume-mainAddress">
-              {this.props.mainAddress}
-            </Typography>
+        <ScreenBlock id="Resume-aboutMe" style={styles.phpColor.style}>
+          <div className="container">
 
-            <br />
-            <Divider />
-            <br />
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.aboutMe'
+                  defaultMessage='About me'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.aboutMeSubtitle'
+                  defaultMessage='A small introduction about myself'
+                />
+              </p>
+            </div>
 
-            <Typography className="Resume-summary" component="p"
-                        dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+            <div className="Resume-aboutMe-content">
+              <div className="Resume-aboutMe-description">
+                <h3>{fullName}</h3>
+                <h4>{this.props.headline}</h4>
 
-            <Button raised color="primary" target="_blank" href={cv}>
-              <FormattedMessage
-                id='Resume.download'
-                defaultMessage='Download'
-              />
-            </Button>
-            <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
-              <FormattedMessage
-                id='Resume.hireMe'
-                defaultMessage='Hire me'
-              />
-            </Button>
+                <Typography className="Resume-summary" component="p"
+                            dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+
+                <br />
+                <br />
+
+                <Button raised color="primary" target="_blank" href={cv}>
+                  <FormattedMessage
+                    id='Resume.download'
+                    defaultMessage='Download'
+                  />
+                </Button>
+                &nbsp;&nbsp;&nbsp;
+                <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
+                  <FormattedMessage
+                    id='Resume.hireMe'
+                    defaultMessage='Hire me'
+                  />
+                </Button>
+              </div>
+
+
+              <div className="Resume-aboutMe-profilePicture Resume-profilePicture">
+                <img alt="" src={this.props.pictureUrl} />
+              </div>
+            </div>
 
           </div>
         </ScreenBlock>
 
         <ScreenBlock id="Resume-work">
           <div className="container">
-            <h2>
-              <FormattedMessage
-                id='Resume.workExperienceAndEducation'
-                defaultMessage='Work experience & Education'
-              />
-            </h2>
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.workExperienceAndEducation'
+                  defaultMessage='Work experience & Education'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.workExperienceAndEducationSubtitle'
+                  defaultMessage='My previous jobs and my qualifications.'
+                />
+              </p>
+            </div>
 
             <VerticalTimeline>
               {this.props.positions.map((position, i) =>
@@ -270,12 +346,21 @@ class Resume extends Component {
 
         <ScreenBlock id="Resume-skills">
           <div className="container">
-            <h2>
-              <FormattedMessage
-                id='Resume.skills'
-                defaultMessage='Skills'
-              />
-            </h2>
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.skills'
+                  defaultMessage='Skills'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.skillsSubtitle'
+                  defaultMessage='I can say i’m quite good at'
+                />
+              </p>
+            </div>
+
             <div className="Resume-skills">
               {skills.map(this.renderSkillsCategory)}
             </div>
@@ -284,12 +369,21 @@ class Resume extends Component {
 
         <ScreenBlock id="Resume-languages">
           <div className="container">
-            <h2>
-              <FormattedMessage
-                id='Resume.languages'
-                defaultMessage='Languages'
-              />
-            </h2>
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.languages'
+                  defaultMessage='Languages'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.languagesSubtitle'
+                  defaultMessage='I speak'
+                />
+              </p>
+            </div>
+
             <ul className="Resume-languages">
               {this.props.languages.map((language, i) =>
                 <li className="Resume-language" key={i}>
@@ -303,12 +397,21 @@ class Resume extends Component {
 
         <ScreenBlock id="Resume-hobbies">
           <div className="container">
-            <h2>
-              <FormattedMessage
-                id='Resume.interests'
-                defaultMessage='Interests'
-              />
-            </h2>
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.interests'
+                  defaultMessage='Interests'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.interestsSubtitle'
+                  defaultMessage='What I like'
+                />
+              </p>
+            </div>
+
             <div className="Resume-hobbies">
               {this.props.hobbies.map((hobby, i) =>
                 <Card key={i} style={styles.primaryColor} className="Resume-hobby">
@@ -324,12 +427,21 @@ class Resume extends Component {
 
         <ScreenBlock id="Resume-projects">
           <div className="container">
-            <h2>
-              <FormattedMessage
-                id='Resume.projectsAndDevelopments'
-                defaultMessage='Projects & developments'
-              />
-            </h2>
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.projectsAndDevelopments'
+                  defaultMessage='Projects & developments'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.projectsAndDevelopmentsSubtitle'
+                  defaultMessage='Showcase of my latest works, projects and developments.'
+                />
+              </p>
+            </div>
+
             <VerticalTimeline>
               {this.props.projects.map((project, i) =>
                 <VerticalTimelineElement

@@ -19,6 +19,7 @@ export default {
     Percent: 'Percent'
   },
   SimpleBottomNavigation: {
+    aboutMe: 'About me',
     home: 'Home',
     workExperience: 'Experience',
     education: 'Education',

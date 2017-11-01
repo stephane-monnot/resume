@@ -1,15 +1,24 @@
 export default {
   Resume: {
+    im: 'Je suis {fullName}',
+    aboutMe: 'À propos de moi',
+    aboutMeSubtitle: 'Une petite introduction sur moi',
     download: 'Télécharger',
-    hireMe: 'Engagez moi',
+    hireMe: 'Engagez-moi',
     workExperienceAndEducation: 'Expérience professionnelle et éducation',
+    workExperienceAndEducationSubtitle: 'Mes précédents emplois and mes qualifications.',
     years: ' ans',
     year: ' an',
     skills: 'Compétences',
+    skillsSubtitle: 'Je peux dire que je suis plutôt à l\'aise avec',
     languages: 'Langues',
+    languagesSubtitle: 'Je parle',
     interests: 'Loisirs',
+    interestsSubtitle: 'Ce que j\'aime',
     resume: 'CV',
-    projectsAndDevelopments: 'Projets et développements'
+    projectsAndDevelopments: 'Projets et développements',
+    projectsAndDevelopmentsSubtitle: 'Mes derniers travaux, projets et développements.'
+
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Jours restants avant Japon',
@@ -19,6 +28,7 @@ export default {
     Percent: 'Pourcentage'
   },
   SimpleBottomNavigation: {
+    aboutMe: 'À propos de moi',
     home: 'Accueil',
     workExperience: 'Expérience',
     education: 'Education',

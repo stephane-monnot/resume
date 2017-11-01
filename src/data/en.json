@@ -2,11 +2,11 @@
   "firstName": "Stéphane",
   "lastName": "Monnot",
   "emailAddress": "monnot.stephane@gmail.com",
-  "headline": "Full-stack web engineer",
-  "summary": "Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.",
+  "headline": "Full-stack web engineer in Osaka",
+  "summary": "Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.",
   "pictureUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg",
   "dateOfBirth": "1987-09-16",
-  "mainAddress": "Noda, Osaka, Japan",
+  "mainAddress": "Osaka, Japan",
   "websites": [
     {
       "type": "Linkedin",
@@ -365,6 +365,10 @@
     {
       "name": "Biking",
       "icon": "directions_bike"
+    },
+    {
+      "name": "Photography",
+      "icon": "photo_camera"
     }
   ]
 }

@@ -96,3 +96,17 @@ li:last-child::after {
 .active {
   color: #2196f3 !important;
 }
+
+.heading {
+  text-align: center;
+  padding-bottom: 45px;
+}
+
+.heading p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  padding-bottom: 22px;
+  margin: 0px;
+}
