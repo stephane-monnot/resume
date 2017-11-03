@@ -2,9 +2,15 @@ image: node:latest
 
 stages:
   - deploy
+  - qa
 
 before_script:
   - yarn
+
+qa:
+  stage: qa
+  script:
+      - yarn test
 
 pages:
   stage: deploy
