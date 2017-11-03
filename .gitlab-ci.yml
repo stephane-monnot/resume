@@ -1,8 +1,8 @@
 image: node:latest
 
 stages:
-  - deploy
   - qa
+  - deploy
 
 before_script:
   - yarn
