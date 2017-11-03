@@ -2,17 +2,12 @@ import React from 'react';
 
 import './ScreenBlock.css';
 
-const ScreenBlock = (props) => {
-  const { children } = props;
-  let { className } = props;
-  let newProps = Object.assign({}, props);
-  delete newProps.className;
-
+const ScreenBlock = ({ children, className, ...othersProps }) => {
   className += ' ScreenBlock';
 
   return (
     <div className="ScreenBlockContainer">
-      <div {...newProps} className={className.trim()}>
+      <div {...othersProps} className={className.trim()}>
         {children}
       </div>
     </div>

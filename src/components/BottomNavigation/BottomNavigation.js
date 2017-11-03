@@ -1,8 +1,6 @@
-/* eslint-disable flowtype/require-valid-file-annotation */
-import Scroll from 'react-scroll';
 import React from 'react';
-import flow from 'lodash/flow';
-import { injectIntl, intlShape } from 'react-intl';
+import Scroll from 'react-scroll';
+import { FormattedMessage } from 'react-intl';
 import BottomNavigation from 'material-ui/BottomNavigation';
 import HomeIcon from 'material-ui-icons/Home';
 import WorkIcon from 'material-ui-icons/Work';
@@ -16,7 +14,6 @@ import CodeIcon from 'material-ui-icons/Code';
 import './BottomNavigation.css';
 
 let Link = Scroll.Link;
-
 
 var buttons = [
   {
@@ -63,35 +60,19 @@ var buttons = [
   },
 ];
 
-class SimpleBottomNavigation extends React.Component {
-  render() {
-    const { formatMessage } = this.props.intl;
+const SimpleBottomNavigation = () => (
+  <BottomNavigation
+    value="0"
+    className="BottomNavigation"
+  >
+    {buttons.map((button, j) =>
+      <Link key={j} className="BottomNavigation-link" to={button.name}
+            activeClass="active" spy={true} smooth={true} offset={button.offset} duration={500}>
+        {button.icon}
+        <FormattedMessage id={button.label} />
+      </Link>
+    )}
+  </BottomNavigation>
+);
 
-    return (
-
-      <BottomNavigation
-        value="0"
-        className="BottomNavigation"
-      >
-        {buttons.map((button, j) =>
-          <Link key={j} className="BottomNavigation-link" to={button.name}
-                activeClass="active" spy={true} smooth={true} offset={button.offset} duration={500}>
-            {button.icon}
-            {formatMessage({ id: button.label })}
-          </Link>
-        )}
-      </BottomNavigation>
-
-    );
-  }
-}
-
-SimpleBottomNavigation.propTypes = {
-  intl: intlShape.isRequired
-};
-
-const decorators = flow([
-  injectIntl
-]);
-
-export default decorators(SimpleBottomNavigation);
+export default SimpleBottomNavigation;
