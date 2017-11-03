@@ -120,8 +120,8 @@ class Resume extends Component {
     let fullName = `${this.props.firstName} ${this.props.lastName}`;
     let shortFullName = `${this.props.firstName} ${this.props.lastName}`;
     if (this.props.firstNameKana) {
-      shortFullName = this.props.firstNameKana + ' ' + this.props.lastNameKana;
-      fullName += ' (' + this.props.firstNameKana + ' ' + this.props.lastNameKana + ')';
+      shortFullName = this.props.firstNameKana + this.props.lastNameKana;
+      fullName += ' (' + this.props.firstNameKana + this.props.lastNameKana + ')';
     }
 
     const cv = this.props.cvPDF;
