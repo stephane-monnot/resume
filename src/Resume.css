@@ -279,6 +279,7 @@
 
 .Resume-project-links {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .Resume-project-links > * {
