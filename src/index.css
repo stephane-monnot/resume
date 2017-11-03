@@ -9,6 +9,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .Card-md {
   max-width: 900px;
   margin: 0 auto;
@@ -51,40 +57,6 @@ h5 {
 
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  position: relative;
-  padding-left: 1em;
-  text-indent: -.7em;
-}
-
-li::before {
-  font-size: 42px;
-  content: "• ";
-  color: #E91E63;
-  top: 8px;
-  position: relative;
-}
-
-li::after {
-  content: "";
-  position: absolute;
-  left: 0.65em;
-  border-left: 2px solid #E91E63;
-  height: 100%;
-  width: 2px;
-}
-
-li:first-child::after {
-  top: 28px;
-}
-
-
-li:last-child::after {
-  height: 28px;
 }
 
 .container {
@@ -109,4 +81,10 @@ li:last-child::after {
   font-weight: 400;
   padding-bottom: 22px;
   margin: 0px;
+}
+
+@media only screen and (max-width: 480px) {
+  .heading {
+    padding-bottom: 25px;
+  }
 }

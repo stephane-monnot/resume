@@ -52,8 +52,6 @@ class GridBackground extends React.PureComponent {
 
       let border = 0
 
-      console.log(i, (i-1) % itemsNumberByLine === 0)
-
       if (i - itemsNumberByLine >= 0 && (i) % itemsNumberByLine === 0) {
         interval += itemsNumberByLine - 2;
       }
@@ -81,7 +79,10 @@ class GridBackground extends React.PureComponent {
 GridBackground.propTypes = {
   innerHeight: PropTypes.number,
   innerWidth: PropTypes.number,
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
 }
 
 const decorators = flow([

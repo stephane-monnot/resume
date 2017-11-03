@@ -1,6 +1,6 @@
 export default {
   Resume: {
-    im: 'Je suis {fullName}',
+    im: '{fullName}',
     aboutMe: 'À propos de moi',
     aboutMeSubtitle: 'Une petite introduction sur moi',
     download: 'Télécharger',
@@ -17,8 +17,9 @@ export default {
     interestsSubtitle: 'Ce que j\'aime',
     resume: 'CV',
     projectsAndDevelopments: 'Projets et développements',
-    projectsAndDevelopmentsSubtitle: 'Mes derniers travaux, projets et développements.'
-
+    projectsAndDevelopmentsSubtitle: 'Mes derniers travaux, projets et développements.',
+    tools: 'Outils',
+    toolsSubtitle: 'Mes outils préférés'
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Jours restants avant Japon',

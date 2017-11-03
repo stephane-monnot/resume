@@ -5,10 +5,11 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import Button from 'material-ui/Button';
 import Card, { CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
-import Typography from 'material-ui/Typography';
+import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import SchoolIcon from 'material-ui-icons/School';
 import WorkIcon from 'material-ui-icons/Work';
+import MoreHorizIcon from 'material-ui-icons/MoreHoriz';
 import Icon from 'material-ui/Icon';
 import LaravelIcon from 'react-devicon/laravel/plain'
 import PhpIcon from 'react-devicon/php/plain'
@@ -22,6 +23,8 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import ScreenBlock from './ScreenBlock';
 import BottomNavigation from './BottomNavigation';
 import GridBackground from './GridBackground';
+import DotsProgress from './DotsProgress';
+
 import './Resume.css';
 import 'react-vertical-timeline-component/style.min.css';
 
@@ -32,17 +35,19 @@ class Resume extends Component {
     this.renderSkillsCategory = this.renderSkillsCategory.bind(this);
   }
 
-  getSkillsByCategories() {
+  getSkillsByLanguages() {
     const { skills } = this.props;
 
-    const skillsByCategories = skills.reduce(function (obj, item) {
-      obj[item.category.name] = obj[item.category.name] || [];
-      obj[item.category.name].push(item);
+    const skillsByLanguages = skills.reduce(function (obj, item) {
+      if (item.language) {
+        obj[item.language.name] = obj[item.language.name] || [];
+        obj[item.language.name].push(item);
+      }
       return obj;
     }, {});
 
-    return Object.keys(skillsByCategories).map(function (key) {
-      return skillsByCategories[key];
+    return Object.keys(skillsByLanguages).map(function (key) {
+      return skillsByLanguages[key];
     });
   }
 
@@ -127,7 +132,7 @@ class Resume extends Component {
     const primaryColor = theme.palette.primary[500];
     const secondaryColor = theme.palette.secondary[500];
 
-    const skills = this.getSkillsByCategories();
+    const skills = this.getSkillsByLanguages();
 
     const styles = {
       primaryColor: {
@@ -186,6 +191,14 @@ class Resume extends Component {
         className: 'vertical-timeline-element--docker',
         icon: <DockerIcon />,
       },
+      othersColor: {
+        style: {
+          background: '#019bc6',
+          color: '#fff',
+        },
+        className: 'vertical-timeline-element--others',
+        icon: <MoreHorizIcon />,
+      }
     };
 
     return (
@@ -199,7 +212,7 @@ class Resume extends Component {
                 <FormattedMessage
                   id='Resume.im'
                   defaultMessage="I'm {fullName}"
-                  values={{fullName: shortFullName}}
+                  values={{ fullName: shortFullName }}
                 />
               </h1>
               <h2>{this.props.headline}</h2>
@@ -208,22 +221,22 @@ class Resume extends Component {
           </div>
           <div className="Resume-home-squares">
             <GridBackground>
-              <div style={{...styles.laravelColor.style}}>
+              <div style={{ ...styles.laravelColor.style }}>
                 {styles.laravelColor.icon}
               </div>
-              <div style={{...styles.phpColor.style}}>
+              <div style={{ ...styles.phpColor.style }}>
                 {styles.phpColor.icon}
               </div>
-              <div style={{...styles.reactColor.style}}>
+              <div style={{ ...styles.reactColor.style }}>
                 {styles.reactColor.icon}
               </div>
-              <div style={{...styles.rubyColor.style}}>
+              <div style={{ ...styles.rubyColor.style }}>
                 {styles.rubyColor.icon}
               </div>
-              <div style={{...styles.javascriptColor.style}}>
+              <div style={{ ...styles.javascriptColor.style }}>
                 {styles.javascriptColor.icon}
               </div>
-              <div style={{...styles.dockerColor.style}}>
+              <div style={{ ...styles.dockerColor.style }}>
                 {styles.dockerColor.icon}
               </div>
             </GridBackground>
@@ -254,8 +267,7 @@ class Resume extends Component {
                 <h3>{fullName}</h3>
                 <h4>{this.props.headline}</h4>
 
-                <Typography className="Resume-summary" component="p"
-                            dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+                <p className="Resume-summary" dangerouslySetInnerHTML={{ __html: this.props.summary }} />
 
                 <br />
                 <br />
@@ -320,27 +332,32 @@ class Resume extends Component {
                   </p>
                 </VerticalTimelineElement>
               )}
-
-              {this.props.educations.map((education, i) =>
-                <VerticalTimelineElement
-                  id="Resume-education"
-                  className="Resume-position"
-                  key={i}
-                  icon={<SchoolIcon />}
-                  iconStyle={styles.secondaryColor}
-                  date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + formatMessage({
-                    id: 'Resume.years',
-                    defaultMessage: ' years'
-                  }) + ')'}
-                >
-                  <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
-                  <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
-                  <p>
-                    <span dangerouslySetInnerHTML={{ __html: education.activities }}></span>
-                  </p>
-                </VerticalTimelineElement>
-              )}
             </VerticalTimeline>
+
+            <div id="Resume-education">
+              <VerticalTimeline>
+                {this.props.educations.map((education, i) =>
+                  <VerticalTimelineElement
+                    position={i % 2 ? 'left' : 'right'}
+                    id=""
+                    className="Resume-position"
+                    key={i}
+                    icon={<SchoolIcon />}
+                    iconStyle={styles.secondaryColor}
+                    date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + formatMessage({
+                      id: 'Resume.years',
+                      defaultMessage: ' years'
+                    }) + ')'}
+                  >
+                    <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
+                    <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
+                    <p>
+                      <span dangerouslySetInnerHTML={{ __html: education.activities }}></span>
+                    </p>
+                  </VerticalTimelineElement>
+                )}
+              </VerticalTimeline>
+            </div>
           </div>
         </ScreenBlock>
 
@@ -362,65 +379,50 @@ class Resume extends Component {
             </div>
 
             <div className="Resume-skills">
-              {skills.map(this.renderSkillsCategory)}
-            </div>
-          </div>
-        </ScreenBlock>
-
-        <ScreenBlock id="Resume-languages">
-          <div className="container">
-            <div className="heading">
-              <h2>
-                <FormattedMessage
-                  id='Resume.languages'
-                  defaultMessage='Languages'
-                />
-              </h2>
-              <p>
-                <FormattedMessage
-                  id='Resume.languagesSubtitle'
-                  defaultMessage='I speak'
-                />
-              </p>
-            </div>
-
-            <ul className="Resume-languages">
-              {this.props.languages.map((language, i) =>
-                <li className="Resume-language" key={i}>
-                  <span className="Resume-languageTitle">{language.name}</span> :
-                  <span className="Resume-languageLevel"> {language.level}</span>
-                </li>
-              )}
-            </ul>
-          </div>
-        </ScreenBlock>
-
-        <ScreenBlock id="Resume-hobbies">
-          <div className="container">
-            <div className="heading">
-              <h2>
-                <FormattedMessage
-                  id='Resume.interests'
-                  defaultMessage='Interests'
-                />
-              </h2>
-              <p>
-                <FormattedMessage
-                  id='Resume.interestsSubtitle'
-                  defaultMessage='What I like'
-                />
-              </p>
-            </div>
-
-            <div className="Resume-hobbies">
-              {this.props.hobbies.map((hobby, i) =>
-                <Card key={i} style={styles.primaryColor} className="Resume-hobby">
+              {skills.map((skillCategory, i) =>
+                <Card key={i}>
                   <CardContent>
-                    <Icon>{hobby.icon}</Icon>
-                    <h4>{hobby.name}</h4>
+                    <Avatar style={{
+                      ...styles[`${skillCategory[0].language.style}Color`].style,
+                      width: 100,
+                      height: 100,
+                      margin: '0 auto'
+                    }}>
+                      {styles[`${skillCategory[0].language.style}Color`].icon}
+                    </Avatar>
+                    <h3 style={{ color: styles[`${skillCategory[0].language.style}Color`].style.background }}>
+                      {skillCategory[0].language.name}
+                    </h3>
+                    {skillCategory.map((skill, j) =>
+                      <div key={j}>
+                        {skill.name}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               )}
+
+            </div>
+
+            <br />
+
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.tools'
+                  defaultMessage='Tools'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.toolsSubtitle'
+                  defaultMessage='My favorites tools'
+                />
+              </p>
+            </div>
+
+            <div className="Resume-tools">
+              <p dangerouslySetInnerHTML={{ __html: this.props.tools }} />
             </div>
           </div>
         </ScreenBlock>
@@ -467,6 +469,65 @@ class Resume extends Component {
                 </VerticalTimelineElement>
               )}
             </VerticalTimeline>
+          </div>
+        </ScreenBlock>
+
+        <ScreenBlock id="Resume-languages">
+          <div className="container">
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.languages'
+                  defaultMessage='Languages'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.languagesSubtitle'
+                  defaultMessage='I speak'
+                />
+              </p>
+            </div>
+
+            <div className="Resume-languages">
+              {this.props.languages.map((language, i) =>
+                <div className="Resume-language" key={i}>
+                  <div className="Resume-languageTitleAndLevel">
+                    <span className="Resume-languageTitle">{language.name}</span><br />
+                    <span className="Resume-languageLevel"> {language.level}</span>
+                  </div>
+                  <DotsProgress maxNumberOfDots={10} numberOfActiveDots={language.levelNumber} />
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div id="Resume-hobbies">
+            <div className="heading">
+              <h2>
+                <FormattedMessage
+                  id='Resume.interests'
+                  defaultMessage='Interests'
+                />
+              </h2>
+              <p>
+                <FormattedMessage
+                  id='Resume.interestsSubtitle'
+                  defaultMessage='What I like'
+                />
+              </p>
+            </div>
+          </div>
+
+          <div className="Resume-hobbies">
+            {this.props.hobbies.map((hobby, i) =>
+              <Card key={i} style={styles.primaryColor} className="Resume-hobby">
+                <CardContent>
+                  <Icon>{hobby.icon}</Icon>
+                  <h4>{hobby.name}</h4>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </ScreenBlock>
 

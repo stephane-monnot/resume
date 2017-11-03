@@ -10,14 +10,16 @@ export default {
     years: '年間',
     year: ' 年間',
     skills: '特技',
-    skillsSubtitle: 'XXXXX',
+    skillsSubtitle: '',
     languages: '言語能力',
     languagesSubtitle: '話せる言語',
     interests: '趣味',
     interestsSubtitle: '私の好きな事',
     resume: '履歴書',
     projectsAndDevelopments: 'プロジェクトと開発',
-    projectsAndDevelopmentsSubtitle: 'XXXXX'
+    projectsAndDevelopmentsSubtitle: '',
+    tools: 'ツール',
+    toolsSubtitle: '好きなツール'
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: '日本までの残りの日数',

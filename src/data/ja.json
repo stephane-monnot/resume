@@ -76,102 +76,204 @@
   "languages": [
     {
       "name": "フランス語",
-      "level": "母国語"
+      "level": "母国語",
+      "levelNumber": 10
     },
     {
       "name": "英語",
-      "level": "ビジネス初級"
+      "level": "ビジネス初級",
+      "levelNumber": 6
     },
     {
       "name": "日本語",
-      "level": "ビジネス初級"
+      "level": "ビジネス初級",
+      "levelNumber": 6
     },
     {
       "name": "韓国語",
-      "level": "挨拶レベル"
+      "level": "挨拶レベル",
+      "levelNumber": 2
     }
   ],
   "skills": [
     {
-      "name": "PHP OOP",
-      "category": {
-        "name": "プログラミング言語"
-      }
-    },
-    {
-      "name": "HTML5",
-      "category": {
-        "name": "プログラミング言語"
-      }
-    },
-    {
-      "name": "SQL (MYSQL)",
-      "category": {
-        "name": "プログラミング言語"
-      }
-    },
-    {
-      "name": "CSS3",
-      "category": {
-        "name": "プログラミング言語"
-      }
-    },
-    {
-      "name": "Javascript ES6",
-      "category": {
-        "name": "プログラミング言語"
-      }
-    },
-    {
       "name": "Laravel 5",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
-      "name": "SYMFONY 2 & 3",
+      "name": "Symfony 2 & 3",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
+      "category": {
+        "name": "フレームワーク / SDK / CMS"
+      }
+    },
+    {
+      "name": "Ruby on Rails",
+      "language": {
+        "name": "Ruby",
+        "style": "ruby"
+      },
+      "category": {
+        "name": "フレームワーク / SDK / CMS"
+      }
+    },
+    {
+      "name": "React",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "フレームワーク / SDK / CMS"
+      }
+    },
+    {
+      "name": "React Native",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "フレームワーク / SDK / CMS"
+      }
+    },
+    {
+      "name": "Redux",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "フレームワーク / SDK / CMS"
+      }
+    },
+    {
+      "name": "ES6",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "プログラミング言語"
+      }
+    },
+    {
+      "name": "Facebook SDK",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
       "name": "Facebook SDK",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
-      "name": "REACTJS/REDUX",
+      "name": "API",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
-      "name": "REACTNATIVE",
+      "name": "SQL (MYSQL, PostgreSQL, PostGIS)",
+      "language": {
+        "name": "その他",
+        "style": "others"
+      },
+      "category": {
+        "name": "プログラミング言語"
+      }
+    },
+    {
+      "name": "Continuous integration",
+      "language": {
+        "name": "その他",
+        "style": "others"
+      },
+      "category": {
+        "name": "プログラミング言語"
+      }
+    },
+    {
+      "name": "TDD",
+      "language": {
+        "name": "その他",
+        "style": "others"
+      },
+      "category": {
+        "name": "プログラミング言語"
+      }
+    },
+    {
+      "name": "HTML5/CSS3",
+      "language": {
+        "name": "その他",
+        "style": "others"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
-      "name": "BOOTSTRAP",
+      "name": "Bootstrap",
+      "language": {
+        "name": "その他",
+        "style": "others"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
       "name": "JQUERY",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
       "name": "Wordpress",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "フレームワーク / SDK / CMS"
       }
     },
     {
       "name": "Linux",
+      "category": {
+        "name": "ツール"
+      }
+    },
+    {
+      "name": "Docker",
       "category": {
         "name": "ツール"
       }
@@ -207,6 +309,7 @@
       }
     }
   ],
+  "tools": "統合開発環境: PhpStorm / RubyMine<br />コンテナ型: Docker<br />継続的インテグレーションソフトウェア: Jenkins / Gitlab-CI / Travis<br />プロジェクトマネジメントソフトウェア: Jira / Gitlab<br />バージョン管理システムソフトウェア: Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Claude Bernard University Lyon 1",
@@ -367,6 +470,10 @@
     {
       "name": "自転車",
       "icon": "directions_bike"
+    },
+    {
+      "name": "写真",
+      "icon": "photo_camera"
     }
   ]
 }

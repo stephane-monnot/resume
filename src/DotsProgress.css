@@ -1,0 +1,45 @@
+.dots-progress {
+  display: flex;
+  align-items: center;
+}
+
+.dots-progress-dot {
+  display: inline-block;
+  margin: 0 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.dots-progress-dot:first-child {
+  margin-left: 0;
+}
+
+.dots-progress-dot.dots-progress-dot-active {
+  background: #ff4081;
+}
+
+@media only screen and (max-width: 800px) {
+  .dots-progress-dot {
+    margin: 0 7px;
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .dots-progress-dot {
+    margin: 0 4px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .dots-progress-dot {
+    margin: 0 3px;
+    width: 14px;
+    height: 14px;
+  }
+}

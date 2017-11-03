@@ -1,4 +1,5 @@
 .Resume {
+    padding-bottom: 56px;
 }
 
 .Resume .ScreenBlockContainer:nth-child(even) .ScreenBlock {
@@ -103,10 +104,6 @@
     padding-bottom: 22px;
 }
 
-.Resume-aboutMe-content p {
-    font-size: 16px;
-}
-
 .Resume-aboutMe-content a {
     padding: 14px 23px;
     font-size: 16px;
@@ -124,6 +121,15 @@
 
 .Resume .container {
     padding-top: 85px;
+    padding-bottom: 69px;
+}
+
+/* fix problem scroll spy with work & education */
+#Resume-work .container {
+    padding-bottom: 0px;
+}
+
+#Resume-work #Resume-education {
     padding-bottom: 69px;
 }
 
@@ -145,6 +151,15 @@
     justify-content: space-between;
 }
 
+.Resume-tools {
+    text-align: center;
+}
+
+.Resume-tools p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 .Resume-skills-category {
     width: 32%;
     margin-bottom: 15px;
@@ -160,19 +175,31 @@
     justify-content: space-between;
 }
 
-.Resume-skill {
-    width: 40%;
+.Resume-skills > div {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 15px;
 }
+
+
+.Resume-skills svg {
+    width: 60px;
+    height: 60px;
+}
+
 
 .Resume-skillTitle {
     margin-bottom: 10px;
     font-size: 15px;
 }
 
+#Resume-languages .container {
+    text-align: center;
+}
+
 .Resume-languages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: inline-flex;
+    flex-flow: column nowrap;
 }
 
 .Resume-languages:after {
@@ -180,12 +207,26 @@
 }
 
 .Resume-language {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: space-between;
+}
+
+.Resume-languageTitleAndLevel {
+    text-align: left;
+    padding-right: 25px;
 }
 
 .Resume-languageTitle {
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.Resume-languageLevel {
+    color: #8a8a8b;
+    width: 100%;
+    text-align: left;
 }
 
 .Resume-hobbies {
@@ -275,14 +316,22 @@
     margin-top: 0px;
 }
 
+
 .vertical-timeline-element-icon .SVGInline svg path,
 .vertical-timeline-element-icon .SVGInline svg g,
 .Resume-home-squares .SVGInline svg path,
-.Resume-home-squares .SVGInline svg g{
+.Resume-home-squares .SVGInline svg g,
+.Resume-skills svg path,
+.Resume-skills svg g {
     fill: #fff !important;
 }
 
 @media only screen and (max-width: 1170px) {
+    .Resume-aboutMe-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
     .vertical-timeline-element-icon .SVGInline {
         width: 24px;
         height: 24px;
@@ -301,6 +350,38 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .Resume .container {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .Resume-skills {
+        justify-content: space-around;
+    }
+
+    .Resume-skills > div {
+        width: 45%;
+    }
+
+    .Resume-aboutMe-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .Resume-aboutMe-description {
+        padding-right: 0;
+    }
+
+    .Resume-aboutMe-profilePicture {
+        max-width: 45%;
+        margin: 0 auto;
+        padding-bottom: 20px;
+    }
+
+    .Resume-aboutMe-profilePicture img {
+        max-height: none;
+    }
+
     .Resume #Resume-home h2 {
         font-size: 18px;
         line-height: 24px;
@@ -321,22 +402,16 @@
 }
 
 @media only screen and (max-width: 480px) {
-    .Resume-aboutMe-content {
-        flex-direction: column-reverse;
-        text-align: center;
+    .Resume-skills {
+        justify-content: center;
     }
 
-    .Resume-aboutMe-description {
-        padding-right: 0;
+    .Resume-skills > div {
+        width: 90%;
     }
 
-    .Resume-aboutMe-profilePicture {
-        max-width: 45%;
-        margin: 0 auto;
-        padding-bottom: 20px;
-    }
-
-    .Resume-aboutMe-profilePicture img {
-        max-height: none;
+    .Resume-skills svg {
+        width: 60px;
+        height: 60px;
     }
 }

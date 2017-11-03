@@ -74,102 +74,204 @@
   "languages": [
     {
       "name": "French",
-      "level": "Native"
+      "level": "Native",
+      "levelNumber": 10
     },
     {
       "name": "English",
-      "level": "Professional working proficiency"
+      "level": "Professional working proficiency",
+      "levelNumber": 6
     },
     {
       "name": "Japanese",
-      "level": "Professional working proficiency"
+      "level": "Professional working proficiency",
+      "levelNumber": 6
     },
     {
       "name": "Korean",
-      "level": "Elementary proficiency"
+      "level": "Elementary proficiency",
+      "levelNumber": 2
     }
   ],
   "skills": [
     {
-      "name": "PHP OOP",
-      "category": {
-        "name": "Languages"
-      }
-    },
-    {
-      "name": "HTML5",
-      "category": {
-        "name": "Languages"
-      }
-    },
-    {
-      "name": "SQL (MYSQL)",
-      "category": {
-        "name": "Languages"
-      }
-    },
-    {
-      "name": "CSS3",
-      "category": {
-        "name": "Languages"
-      }
-    },
-    {
-      "name": "Javascript ES6",
-      "category": {
-        "name": "Languages"
-      }
-    },
-    {
       "name": "Laravel 5",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
-      "name": "SYMFONY 2 & 3",
+      "name": "Symfony 2 & 3",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "Ruby on Rails",
+      "language": {
+        "name": "Ruby",
+        "style": "ruby"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "React",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "React Native",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "Redux",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
+      "name": "ES6",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
+      "category": {
+        "name": "Languages"
+      }
+    },
+    {
+      "name": "Facebook SDK",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
       "name": "Facebook SDK",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
-      "name": "REACTJS/REDUX",
+      "name": "API",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
-      "name": "REACTNATIVE",
+      "name": "SQL (MYSQL, PostgreSQL, PostGIS)",
+      "language": {
+        "name": "Others",
+        "style": "others"
+      },
+      "category": {
+        "name": "Languages"
+      }
+    },
+    {
+      "name": "Continuous integration",
+      "language": {
+        "name": "Others",
+        "style": "others"
+      },
+      "category": {
+        "name": "Languages"
+      }
+    },
+    {
+      "name": "TDD",
+      "language": {
+        "name": "Others",
+        "style": "others"
+      },
+      "category": {
+        "name": "Languages"
+      }
+    },
+    {
+      "name": "HTML5/CSS3",
+      "language": {
+        "name": "Others",
+        "style": "others"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
-      "name": "BOOTSTRAP",
+      "name": "Bootstrap",
+      "language": {
+        "name": "Others",
+        "style": "others"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
       "name": "JQUERY",
+      "language": {
+        "name": "Javascript",
+        "style": "javascript"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
       "name": "Wordpress",
+      "language": {
+        "name": "PHP",
+        "style": "php"
+      },
       "category": {
         "name": "Frameworks / SDK / CMS"
       }
     },
     {
       "name": "Linux",
+      "category": {
+        "name": "Tools"
+      }
+    },
+    {
+      "name": "Docker",
       "category": {
         "name": "Tools"
       }
@@ -205,6 +307,7 @@
       }
     }
   ],
+  "tools": "IDE: PhpStorm / RubyMine<br />Containerization: Docker<br />Continuous integration software: Jenkins / Gitlab-CI / Travis<br />Project Management Software: Jira / Gitlab<br />Version control system software: Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Claude Bernard University Lyon 1",

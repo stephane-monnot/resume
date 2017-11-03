@@ -47,6 +47,11 @@ var buttons = [
     icon: <SettingsIcon />,
   },
   {
+    label: 'SimpleBottomNavigation.projects',
+    name: 'Resume-projects',
+    icon: <CodeIcon />,
+  },
+  {
     label: 'SimpleBottomNavigation.languages',
     name: 'Resume-languages',
     icon: <LanguageIcon />,
@@ -55,11 +60,6 @@ var buttons = [
     label: 'SimpleBottomNavigation.hobbies',
     name: 'Resume-hobbies',
     icon: <ToysIcon />,
-  },
-  {
-    label: 'SimpleBottomNavigation.projects',
-    name: 'Resume-projects',
-    icon: <CodeIcon />,
   },
 ];
 
