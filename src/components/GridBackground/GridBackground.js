@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import flow from 'lodash/flow';
-import withWindowSize from './withWindowSize';
+import withWindowSize from '../../withWindowSize';
 
 class GridBackground extends React.PureComponent {
 

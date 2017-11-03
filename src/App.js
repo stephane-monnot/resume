@@ -22,10 +22,10 @@ import languages from './i18n';
 
 import './App.css';
 
-import LanguagePicker from './LanguagePicker';
-import Analytics from './Analytics';
-import ResumeScreen from './ResumeScreen';
-import WaitingUntilJapanScreen from './WaitingUntilJapanScreen';
+import LanguagePicker from './components/LanguagePicker/LanguagePicker';
+import Analytics from './components/Analytics/Analytics';
+import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
+import WaitingUntilJapanScreen from './containers/WaitingUntilJapanScreen/WaitingUntilJapanScreen';
 
 
 addLocaleData([...en, ...fr, ...ja]);

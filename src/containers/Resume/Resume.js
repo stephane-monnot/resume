@@ -20,10 +20,10 @@ import DockerIcon from 'react-devicon/docker/plain';
 import Helmet from 'react-helmet';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import ScreenBlock from './ScreenBlock';
-import BottomNavigation from './BottomNavigation';
-import GridBackground from './GridBackground';
-import DotsProgress from './DotsProgress';
+import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
+import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
+import GridBackground from '../../components/GridBackground/GridBackground';
+import DotsProgress from '../../components/DotsProgress/DotsProgress';
 
 import './Resume.css';
 import 'react-vertical-timeline-component/style.min.css';

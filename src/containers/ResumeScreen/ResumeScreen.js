@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import cvFR from './data/fr.json';
-import cvJA from './data/ja.json';
-import cvEN from './data/en.json';
-import cvPDFFR from './data/fr.pdf';
-import cvPDFJA from './data/fr.pdf';
-import cvPDFEN from './data/fr.pdf';
-import Resume from './Resume';
-import { changeLanguage } from './reducers/language';
+import cvFR from '../../data/fr.json';
+import cvJA from '../../data/ja.json';
+import cvEN from '../../data/en.json';
+import cvPDFFR from '../../data/fr.pdf';
+import cvPDFJA from '../../data/fr.pdf';
+import cvPDFEN from '../../data/fr.pdf';
+import Resume from '../Resume/Resume';
+import { changeLanguage } from '../../reducers/language';
 
 class ResumeScreen extends Component {
   constructor() {

@@ -7,7 +7,7 @@ import Card, { CardActions, CardContent } from 'material-ui/Card';
 import { withTheme } from 'material-ui/styles';
 
 import './WaitingUntilJapanScreen.css';
-import { changeLanguage } from './reducers/language';
+import { changeLanguage } from '../../reducers/language';
 
 class WaitingUntilJapanScreen extends Component {
 
