@@ -119,6 +119,11 @@
     padding-right: 35px;
 }
 
+.Resume-aboutMe-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .Resume .container {
     padding-top: 85px;
     padding-bottom: 69px;
@@ -272,6 +277,10 @@
     padding-right: 15px !important;
 }
 
+.Resume-project-links {
+    display: flex;
+}
+
 .Resume-project-links > * {
     margin-right: 10px;
 }
@@ -402,6 +411,14 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .Resume {
+        padding-bottom: 88px;
+    }
+
+    .Resume-home-squares {
+        height: calc(100vh - 88px);
+    }
+
     .Resume-skills {
         justify-content: center;
     }
@@ -413,5 +430,14 @@
     .Resume-skills svg {
         width: 60px;
         height: 60px;
+    }
+
+    .Resume-aboutMe-links > * {
+        width: 100%;
+    }
+
+    .Resume-project-links > * {
+        width: 100%;
+        margin: 5px 0;
     }
 }

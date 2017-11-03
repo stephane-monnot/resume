@@ -17,14 +17,14 @@ class GridBackground extends React.PureComponent {
   }
 
   calcItemWidth = (innerWidth, innerHeight) => {
-    const itemHeight = (innerHeight - 56) / 6;
+    const itemHeight = (innerHeight) / 6;
     const cols = Math.floor(innerWidth / itemHeight);
     return itemHeight + ((innerWidth % itemHeight) / cols);
   }
 
 
   calcItemHeight = (innerHeight) =>
-    (innerHeight - 56) / 6;
+    (innerHeight) / 6;
 
   processSize = (props = this.props) => {
     const { innerWidth, innerHeight } = props;
@@ -69,7 +69,7 @@ class GridBackground extends React.PureComponent {
   render() {
 
     return (
-      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', height: '100%'}}>
         {this.generateDOM()}
       </div>
     );

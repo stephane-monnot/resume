@@ -272,19 +272,21 @@ class Resume extends Component {
                 <br />
                 <br />
 
-                <Button raised color="primary" target="_blank" href={cv}>
-                  <FormattedMessage
-                    id='Resume.download'
-                    defaultMessage='Download'
-                  />
-                </Button>
-                &nbsp;&nbsp;&nbsp;
-                <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
-                  <FormattedMessage
-                    id='Resume.hireMe'
-                    defaultMessage='Hire me'
-                  />
-                </Button>
+                <div className="Resume-aboutMe-links">
+                  <Button raised color="primary" target="_blank" href={cv}>
+                    <FormattedMessage
+                      id='Resume.download'
+                      defaultMessage='Download'
+                    />
+                  </Button>
+                  &nbsp;&nbsp;&nbsp;
+                  <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
+                    <FormattedMessage
+                      id='Resume.hireMe'
+                      defaultMessage='Hire me'
+                    />
+                  </Button>
+                </div>
               </div>
 
 
