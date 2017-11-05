@@ -309,7 +309,7 @@
       }
     }
   ],
-  "tools": "統合開発環境: PhpStorm / RubyMine<br />コンテナ型: Docker<br />継続的インテグレーションソフトウェア: Jenkins / Gitlab-CI / Travis<br />プロジェクトマネジメントソフトウェア: Jira / Gitlab<br />バージョン管理システムソフトウェア: Gitlab / Github<br />",
+  "tools": "統合開発環境: PhpStorm / RubyMine<br />コンテナ型: Docker<br />継続的インテグレーションソフトウェア: Jenkins / Gitlab-CI / Travis<br />プロジェクト管理: Jira / Gitlab<br />コード管理: Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Claude Bernard University Lyon 1",
