@@ -54,7 +54,7 @@
       "company": "NanokaWeb"
     },
     {
-      "title": "Trainer",
+      "title": "Teacher",
       "summary": "Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL",
       "startDate": "2016",
       "endDate": "Today",
@@ -307,7 +307,7 @@
       }
     }
   ],
-  "tools": "IDE: PhpStorm / RubyMine<br />Containerization: Docker<br />Continuous integration software: Jenkins / Gitlab-CI / Travis<br />Project Management Software: Jira / Gitlab<br />Version control system software: Gitlab / Github<br />",
+  "tools": "Operating system: Linux(over ten years)<br />IDE: PhpStorm / RubyMine<br />Containerization: Docker<br />Continuous integration software: Jenkins / Gitlab-CI / Travis<br />Project Management Software: Jira / Gitlab<br />Version control system software: Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Claude Bernard University Lyon 1",

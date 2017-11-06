@@ -56,7 +56,7 @@
       "company": "NanokaWeb"
     },
     {
-      "title": "Trainer",
+      "title": "教員",
       "summary": "Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL",
       "startDate": "2016年",
       "endDate": "今",
@@ -297,19 +297,13 @@
       }
     },
     {
-      "name": "Docker",
-      "category": {
-        "name": "ツール"
-      }
-    },
-    {
       "name": "GITLAB/GITHUB",
       "category": {
         "name": "ツール"
       }
     }
   ],
-  "tools": "統合開発環境: PhpStorm / RubyMine<br />コンテナ型: Docker<br />継続的インテグレーションソフトウェア: Jenkins / Gitlab-CI / Travis<br />プロジェクト管理: Jira / Gitlab<br />コード管理: Gitlab / Github<br />",
+  "tools": "オペレーティング システム: Linux(十年間以上)<br />統合開発環境: PhpStorm / RubyMine<br />コンテナ型: Docker<br />継続的インテグレーションソフトウェア: Jenkins / Gitlab-CI / Travis<br />プロジェクト管理: Jira / Gitlab<br />コード管理: Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Claude Bernard University Lyon 1",

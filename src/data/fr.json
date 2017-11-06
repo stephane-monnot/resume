@@ -307,7 +307,7 @@
       }
     }
   ],
-  "tools": "IDE : PhpStorm / RubyMine<br />Gestionnaire de conteneurs : Docker<br />Outils d’intégration continue : Jenkins / Gitlab-CI / Travis<br />Logiciels de gestion de projet : Jira / Gitlab<br />Outils de gestion de versioning : Gitlab / Github<br />",
+  "tools": "Système d'exploitation : Linux (plus de 10 ans)<br />IDE : PhpStorm / RubyMine<br />Gestionnaire de conteneurs : Docker<br />Outils d’intégration continue : Jenkins / Gitlab-CI / Travis<br />Logiciels de gestion de projet : Jira / Gitlab<br />Outils de gestion de versioning : Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Université Claude Bernard Lyon 1",
