@@ -413,6 +413,9 @@
         },
         {
           "name": "Redux"
+        },
+        {
+          "name": "Déploiement continue"
         }
       ],
       "content": "Mon CV en japonais, français et anglais, développé avec React.",

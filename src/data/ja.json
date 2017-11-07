@@ -409,6 +409,9 @@
         },
         {
           "name": "Redux"
+        },
+        {
+          "name": "Continuous deployment"
         }
       ],
       "content": "My resume in japanese, french and english, developed with React.",
