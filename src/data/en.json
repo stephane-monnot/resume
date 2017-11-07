@@ -125,6 +125,16 @@
       }
     },
     {
+      "name": "API development with Rails",
+      "language": {
+        "name": "Ruby",
+        "style": "ruby"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
       "name": "RSpec",
       "language": {
         "name": "Ruby",
@@ -339,7 +349,7 @@
   "projects": [
     {
       "title": "Pen pals API Backend",
-      "subtitle": "API with Ruby on Rails",
+      "subtitle": "API Rails application",
       "category": "project",
       "subcategory": "rails",
       "links": [
