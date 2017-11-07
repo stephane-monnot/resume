@@ -125,6 +125,16 @@
       }
     },
     {
+      "name": "RSpec",
+      "language": {
+        "name": "Ruby",
+        "style": "ruby"
+      },
+      "category": {
+        "name": "Frameworks / SDK / CMS"
+      }
+    },
+    {
       "name": "React",
       "language": {
         "name": "Javascript",
@@ -327,6 +337,28 @@
     }
   ],
   "projects": [
+    {
+      "title": "Pen pals API Backend",
+      "subtitle": "API avec Ruby on Rails",
+      "category": "project",
+      "subcategory": "rails",
+      "links": [
+        {
+          "url": "https://github.com/stephane-monnot/penpals-backend",
+          "text": "Voir les sources"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "Ruby on Rails"
+        },
+        {
+          "name": "RSpec"
+        }
+      ],
+      "content": "API permattant de gérer des messages entre correspondants.",
+      "date": "En cours"
+    },
     {
       "title": "React Vertical Timeline",
       "subtitle": "Composant React",

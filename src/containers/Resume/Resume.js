@@ -15,6 +15,7 @@ import LaravelIcon from 'react-devicon/laravel/plain'
 import PhpIcon from 'react-devicon/php/plain'
 import ReactIcon from 'react-devicon/react/original'
 import RubyIcon from 'react-devicon/ruby/plain';
+import RailsIcon from 'react-devicon/rails/plain';
 import JavascriptIcon from 'react-devicon/javascript/plain';
 import DockerIcon from 'react-devicon/docker/plain';
 import Helmet from 'react-helmet';
@@ -174,6 +175,14 @@ class Resume extends Component {
         },
         className: 'vertical-timeline-element--ruby',
         icon: <RubyIcon />,
+      },
+      railsColor: {
+        style: {
+          background: '#a62c46',
+          color: '#fff',
+        },
+        className: 'vertical-timeline-element--rails',
+        icon: <RailsIcon />,
       },
       javascriptColor: {
         style: {
@@ -454,11 +463,11 @@ class Resume extends Component {
                   key={i}
                   icon={styles[project.subcategory + 'Color'].icon}
                   iconStyle={styles[project.subcategory + 'Color'].style}
-                  date={formatDate(new Date(project.date).getTime(), {
+                  date={Date.parse(project.date) ? formatDate(new Date(project.date).getTime(), {
                     year: 'numeric',
                     month: 'numeric',
                     day: 'numeric'
-                  })}
+                  }): project.date}
                 >
                   {this.renderTechnologies(project.technologies)}
                   <h3 className="vertical-timeline-element-title">{project.title}</h3>
