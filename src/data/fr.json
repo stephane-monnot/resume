@@ -3,7 +3,7 @@
   "lastName": "Monnot",
   "emailAddress": "monnot.stephane@gmail.com",
   "headline": "Ingénieur full-stack web à Osaka",
-  "summary": "Ingénieur full-stack web & intervenant / formateur dans le domaine du web.<br />Mon domaine de compétences comprend : le PHP (Symfony & Laravel frameworks), le développemment piloté par les tests, l'intégration continue, WordPress, l'administration de systèmes Linux et le développement d'APIs.<br /><br />Grâce à une license dans le domaine du développement web obtenue à l'Université Claude Bernard Lyon 1, j'ai pu découvrir les bases de la programmation web et ainsi avoir des bases solides pour en faire véritablement mon métier. En plus d'être mon métier, c'est une réelle passion.<br /><br />Ma stack favorite : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative avec intégration/déploiement continue avec Gitlab.",
+  "summary": "Ingénieur full-stack web & intervenant / formateur dans le domaine du web.<br />Mon domaine de compétences comprend : le PHP (Symfony & Laravel frameworks), le développemment piloté par les tests, l'intégration continue, WordPress, l'administration de systèmes Linux et le développement d'APIs.<br /><br />Grâce à une license dans le domaine du développement web obtenue à l'Université Claude Bernard Lyon 1, j'ai pu découvrir les bases de la programmation web et ainsi avoir des bases solides pour en faire véritablement mon métier. En plus d'être mon métier, c'est une réelle passion.<br /><br />Ma stack favorite : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative avec intégration/déploiement continu avec Gitlab.",
   "pictureUrl": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg",
   "dateOfBirth": "1987-09-16",
   "mainAddress": "Osaka, Japon",
@@ -348,6 +348,35 @@
   ],
   "projects": [
     {
+      "title": "React pen pals Frontend",
+      "subtitle": "Projet React",
+      "category": "project",
+      "subcategory": "react",
+      "links": [
+        {
+          "url": "https://penpals.pages.gitlab.nanoka.fr/frontend/",
+          "text": "Visit website"
+        },
+        {
+          "url": "https://github.com/stephane-monnot/penpals-frontend",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "React"
+        },
+        {
+          "name": "Redux"
+        },
+        {
+          "name": "Déploiement continu"
+        }
+      ],
+      "content": "Frontend de l'application pen pals, développé avec React.",
+      "date": "En cours"
+    },
+    {
       "title": "Pen pals API Backend",
       "subtitle": "API Rails application",
       "category": "project",
@@ -418,7 +447,7 @@
           "name": "Redux"
         },
         {
-          "name": "Déploiement continue"
+          "name": "Déploiement continu"
         }
       ],
       "content": "Mon CV en japonais, français et anglais, développé avec React.",

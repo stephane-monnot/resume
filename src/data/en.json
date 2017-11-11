@@ -348,6 +348,35 @@
   ],
   "projects": [
     {
+      "title": "React pen pals Frontend",
+      "subtitle": "React Project",
+      "category": "project",
+      "subcategory": "react",
+      "links": [
+        {
+          "url": "https://penpals.pages.gitlab.nanoka.fr/frontend/",
+          "text": "Visit website"
+        },
+        {
+          "url": "https://github.com/stephane-monnot/penpals-frontend",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "React"
+        },
+        {
+          "name": "Redux"
+        },
+        {
+          "name": "Continuous deployment"
+        }
+      ],
+      "content": "Frontend of pen pals application developed with React.",
+      "date": "In progress"
+    },
+    {
       "title": "Pen pals API Backend",
       "subtitle": "API Rails application",
       "category": "project",
