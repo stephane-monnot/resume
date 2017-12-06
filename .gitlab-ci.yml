@@ -4,6 +4,10 @@ stages:
   - qa
   - deploy
 
+cache:
+  paths:
+    - node_modules/
+
 before_script:
   - yarn
   - apt-get update
