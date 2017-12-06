@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import blue from 'material-ui/colors/blue';
