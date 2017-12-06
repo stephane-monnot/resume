@@ -1,4 +1,9 @@
 {
+  "meta": {
+    "title": "履歴書 - Stéphane Monnot : 大阪のフルスタックwebエンジニア",
+    "keywords": "Osaka, React, PHP, Laravel",
+    "description": "Stéphane Monnot, 大阪のフルスタックwebエンジニア. 特技 : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design."
+  },
   "firstName": "Stéphane",
   "firstNameKana": "ステファン",
   "lastName": "Monnot",

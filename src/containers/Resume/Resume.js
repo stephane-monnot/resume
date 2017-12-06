@@ -212,7 +212,16 @@ class Resume extends Component {
 
     return (
       <div className="Resume">
-        <Helmet title={formatMessage({ id: 'Resume.resume', defaultMessage: 'Resume' })} />
+        <Helmet
+          title={this.props.meta.title}
+          meta={[
+            {"name": "description", "content": this.props.meta.description},
+            {"name": "keywords", "content": this.props.meta.keywords},
+            {"property": "og:title", "content": this.props.meta.title},
+            {"property": "twitter:title", "content": this.props.meta.title},
+            {"property": "og:description", "content": this.props.meta.description},
+          ]}
+        />
 
         <ScreenBlock id="Resume-home">
           <div className="Resume-home-headline-container">

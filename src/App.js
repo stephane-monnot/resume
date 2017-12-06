@@ -60,9 +60,6 @@ class App extends Component {
               <AppBar className="App-bar" position="absolute">
                 <Toolbar className="App-header">
                   <LanguagePicker/>
-                  <Link to="/ja/until/japan.html" />
-                  <Link to="/fr/until/japan.html" />
-                  <Link to="/en/until/japan.html" />
                   <Button href="mailto:monnot.stephane@gmail.com" color="contrast">monnot.stephane@gmail.com</Button>
                 </Toolbar>
               </AppBar>

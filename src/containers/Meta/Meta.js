@@ -9,7 +9,6 @@ class Meta extends Component {
     const { location: { pathname }, locale } = this.props;
 
 
-
     const mainDomain = 'https://stephanemonnot.com';
     const jaDomain = 'https://webエンジニア.com';
 
@@ -23,11 +22,19 @@ class Meta extends Component {
     }
 
     return (
-      <div>
-        <Helmet titleTemplate={`%s - ${title}`} />
-        <link rel="canonical" href={`${canonical}`} />
-        <meta name="google-site-verification" content="-WO5leO82u7tAYgflVya2_d4FlcHvr28LzjUUv4nHpE" />
-      </div>
+      <Helmet
+        htmlAttributes={
+          {"lang": locale}
+        }
+        link={
+          [{"rel": "canonical", "href": canonical}
+        ]}
+        meta={[
+          {"name": "google-site-verification", "content": '-WO5leO82u7tAYgflVya2_d4FlcHvr28LzjUUv4nHpE'},
+          {"property": "og:url", "content": canonical},
+          {"property": "og:image", "content": `${mainDomain}/share.png`},
+        ]}
+      />
     );
   }
 }
