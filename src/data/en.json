@@ -348,6 +348,35 @@
   ],
   "projects": [
     {
+      "title": "Saint-Fons JAZZ",
+      "subtitle": "Laravel Project",
+      "category": "project",
+      "subcategory": "laravel",
+      "links": [
+        {
+          "url": "https://stfonsjazz.nanoka.fr/",
+          "text": "Visit sample website"
+        },
+        {
+          "url": "http://www.saint-fons-jazz.fr/",
+          "text": "Visit website"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Laravel"
+        },
+        {
+          "name": "Continuous deployment"
+        }
+      ],
+      "content": "Website of the Saint-Fons Jazz school which gives the ability to book concerts and list meetings of Saint-Fons Jazz festival.",
+      "date": "2017-12-08"
+    },
+    {
       "title": "React pen pals Frontend",
       "subtitle": "React Project",
       "category": "project",
