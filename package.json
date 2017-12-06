@@ -19,7 +19,6 @@
     "react-scripts": "1.0.13",
     "react-scroll": "^1.5.5",
     "react-scrollspy": "^3.3.3",
-    "react-snapshot": "^1.2.0",
     "react-vertical-timeline-component": "^2.0.0",
     "react-visibility-sensor": "^3.10.1",
     "redux": "^3.7.2",
@@ -32,7 +31,7 @@
   "scripts": {
     "fix-normalize-css-unit": "cross-env NODE_ENV=production babel --presets es2015 ./node_modules/normalize-css-unit/dist --out-dir ./node_modules/normalize-css-unit/dist",
     "start": "node scripts/customized-config  start",
-    "build": "npm run fix-normalize-css-unit && node scripts/customized-config build && react-snapshot",
+    "build": "npm run fix-normalize-css-unit && node scripts/customized-config build && react-snap || true",
     "test": "node scripts/customized-config test --env=jsdom",
     "eject": "node scripts/customized-config eject"
   },
@@ -41,6 +40,10 @@
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "cross-env": "^5.1.1",
+    "react-snap": "^1.1.1",
     "svg-inline-loader": "^0.8.0"
+  },
+  "reactSnap": {
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   }
 }

@@ -4,8 +4,8 @@ import cvFR from '../../data/fr.json';
 import cvJA from '../../data/ja.json';
 import cvEN from '../../data/en.json';
 import cvPDFFR from '../../data/fr.pdf';
-import cvPDFJA from '../../data/fr.pdf';
-import cvPDFEN from '../../data/fr.pdf';
+import cvPDFJA from '../../data/ja.pdf';
+import cvPDFEN from '../../data/en.pdf';
 import Resume from '../Resume/Resume';
 import { changeLanguage } from '../../reducers/language';
 
