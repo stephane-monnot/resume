@@ -6,7 +6,6 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import Helmet from 'react-helmet';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import blue from 'material-ui/colors/blue';
 import red from 'material-ui/colors/red';
@@ -25,6 +24,7 @@ import './App.css';
 import LanguagePicker from './components/LanguagePicker/LanguagePicker';
 import Analytics from './components/Analytics/Analytics';
 import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
+import Meta from './containers/Meta/Meta';
 import WaitingUntilJapanScreen from './containers/WaitingUntilJapanScreen/WaitingUntilJapanScreen';
 
 
@@ -36,8 +36,6 @@ const theme = createMuiTheme({
     error: red,
   },
 });
-
-const title = 'Stéphane Monnot : Web developer in Osaka';
 
 class App extends Component {
   constructor() {
@@ -55,7 +53,7 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Router>
             <div className="App">
-              <Helmet titleTemplate={`%s - ${title}`} />
+              <Meta />
               <AppBar className="App-bar" position="absolute">
                 <Toolbar className="App-header">
                   <LanguagePicker/>
