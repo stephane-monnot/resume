@@ -66,6 +66,7 @@ pages:
       - REACT_APP_LOCALE=en yarn build
       - mv build build_en
       - mv public oldpublic
+      - mkdir public/
       - mv build_ja public/ja
       - mv build_en public/en
   artifacts:
