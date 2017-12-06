@@ -14,11 +14,11 @@ class Meta extends Component {
     const jaDomain = 'https://webエンジニア.com';
 
     let canonical = mainDomain;
-    if (locale == 'ja') {
+    if (locale === 'ja') {
       canonical = jaDomain;
     }
 
-    if (pathname != '/ja/rirekisho.html' && pathname != '/en/resume.html') {
+    if (pathname !== '/ja/rirekisho.html' && pathname !== '/en/resume.html') {
       canonical += pathname;
     }
 

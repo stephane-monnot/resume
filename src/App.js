@@ -45,7 +45,7 @@ class App extends Component {
 
   render() {
     const locale = process.env.REACT_APP_LOCALE || 'ja';
-    const title = locale == 'ja' ? '履歴書' : 'Resume' ;
+    const title = locale === 'ja' ? '履歴書' : 'Resume' ;
 
     return (
       <IntlProvider
