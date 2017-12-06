@@ -10,6 +10,16 @@ before_script:
         udev \
         ttf-freefont \
         chromium \
+        fontconfig \
+        pango-dev \
+        libxcursor \
+        libxdamage \
+        cups-libs \
+        dbus-libs \
+        libxrandr \
+        gconf-dev \
+        libxscrnsaver \
+        libc6-compat \
         && rm -rf /var/cache/apk/*
 
 qa:
