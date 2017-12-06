@@ -6,11 +6,26 @@ const title = 'Stéphane Monnot : Web developer in Osaka';
 
 class Meta extends Component {
   render() {
-    const { location } = this.props;
+    const { location: { pathname }, locale } = this.props;
+
+
+
+    const mainDomain = 'https://stephanemonnot.com';
+    const jaDomain = 'https://webエンジニア.com';
+
+    let canonical = mainDomain;
+    if (locale == 'ja') {
+      canonical = jaDomain;
+    }
+
+    if (pathname != '/ja/rirekisho.html' && pathname != '/en/resume.html') {
+      canonical += pathname;
+    }
+
     return (
       <div>
         <Helmet titleTemplate={`%s - ${title}`} />
-        <link rel="canonical" href={`https://xn--web-li4b3a0h2ftn.com${location.pathname}`} />
+        <link rel="canonical" href={`${canonical}`} />
       </div>
     );
   }

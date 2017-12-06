@@ -61,9 +61,13 @@ pages:
     name: production
     url: https://stephanemonnot.com/
   script:
-      - yarn build
+      - REACT_APP_LOCALE=ja yarn build
+      - mv build build_ja
+      - REACT_APP_LOCALE=en yarn build
+      - mv build build_en
       - mv public oldpublic
-      - mv build public
+      - mv build_ja public/ja
+      - mv build_en public/en
   artifacts:
     paths:
       - public

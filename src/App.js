@@ -44,6 +44,9 @@ class App extends Component {
   }
 
   render() {
+    const locale = process.env.REACT_APP_LOCALE || 'ja';
+    const title = locale == 'ja' ? '履歴書' : 'Resume' ;
+
     return (
       <IntlProvider
         locale={this.props.currentLanguage}
@@ -53,7 +56,7 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <Router>
             <div className="App">
-              <Meta />
+              <Meta locale={this.props.currentLanguage} />
               <AppBar className="App-bar" position="absolute">
                 <Toolbar className="App-header">
                   <LanguagePicker/>
@@ -65,7 +68,7 @@ class App extends Component {
               </AppBar>
 
               <Route path="/" component={Analytics}/>
-              <Route exact path="/" render={() => <ResumeScreen language="ja" title="履歴書" />} />
+              <Route exact path="/" render={() => <ResumeScreen language={locale} title={title} />} />
               <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
               <Route exact path="/ja/rirekisho.html" render={() => <ResumeScreen language="ja" title="履歴書" />} />
               <Route exact path="/en/resume.html" render={() => <ResumeScreen language="en" title="Resume" />} />

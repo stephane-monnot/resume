@@ -2574,7 +2574,7 @@ express-history-api-fallback@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/express-history-api-fallback/-/express-history-api-fallback-2.2.1.tgz#3a2ad27f7bebc90fc533d110d7c6d83097bcd057"
 
-express@^4.13.3, express@^4.15.2:
+express@^4.13.3:
   version "4.15.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.4.tgz#032e2253489cf8fce02666beca3d11ed7a2daed1"
   dependencies:
@@ -3011,10 +3011,6 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
-glob-to-regexp@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
-
 glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
@@ -3331,7 +3327,7 @@ http-parser-js@>=0.4.0:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/http-parser-js/-/http-parser-js-0.4.5.tgz#a3ecf39a667481a38ca60882ab57a2db578b9970"
 
-http-proxy-middleware@^0.17.4, http-proxy-middleware@~0.17.4:
+http-proxy-middleware@~0.17.4:
   version "0.17.4"
   resolved "https://registry.yarnpkg.com/http-proxy-middleware/-/http-proxy-middleware-0.17.4.tgz#642e8848851d66f09d4f124912846dbaeb41b833"
   dependencies:
@@ -4072,7 +4068,7 @@ jschardet@^1.4.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/jschardet/-/jschardet-1.5.1.tgz#c519f629f86b3a5bedba58a88d311309eec097f9"
 
-jsdom@^9.12.0, jsdom@^9.4.5:
+jsdom@^9.12.0:
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-9.12.0.tgz#e8c546fffcb06c00d4833ca84410fed7f8a097d4"
   dependencies:
@@ -5705,7 +5701,7 @@ react-devicon@^0.1.9:
     prop-types "^15.3.0"
     react-svg-inline "^2.0.0"
 
-"react-dom@^15 || ^16", react-dom@^15.3.0, react-dom@^15.6.1:
+"react-dom@^15 || ^16", react-dom@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
   dependencies:
@@ -5899,19 +5895,6 @@ react-snap@^1.1.1:
     serve-static "^1.13.1"
     sourcemapped-stacktrace-node "^2.0.4"
 
-react-snapshot@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-snapshot/-/react-snapshot-1.2.0.tgz#5e2cba30e45aa6f5dd1abfdaef0042c47b9e3ef9"
-  dependencies:
-    connect-history-api-fallback "^1.3.0"
-    express "^4.15.2"
-    glob-to-regexp "^0.3.0"
-    http-proxy-middleware "^0.17.4"
-    jsdom "^9.4.5"
-    mkdirp "^0.5.1"
-    react "^15.3.0"
-    react-dom "^15.3.0"
-
 react-svg-inline@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-2.0.1.tgz#a8ce9d0c3cc4af8b8cc13cf3f71af1e07c7359e4"
@@ -5950,7 +5933,7 @@ react-visibility-sensor@^3.11.0:
     create-react-class "^15.5.1"
     prop-types "^15.5.4"
 
-"react@^15 || ^16", react@^15.3.0, react@^15.5.4, react@^15.6.1:
+"react@^15 || ^16", react@^15.5.4, react@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
   dependencies:
