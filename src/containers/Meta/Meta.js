@@ -26,6 +26,7 @@ class Meta extends Component {
       <div>
         <Helmet titleTemplate={`%s - ${title}`} />
         <link rel="canonical" href={`${canonical}`} />
+        <meta name="google-site-verification" content="-WO5leO82u7tAYgflVya2_d4FlcHvr28LzjUUv4nHpE" />
       </div>
     );
   }
