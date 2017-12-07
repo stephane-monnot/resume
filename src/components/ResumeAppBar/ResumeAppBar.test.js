@@ -7,6 +7,6 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <MemoryRouter location="someLocation" context={{}}>
-      <ResumeAppBar email="test@test.fr" />
+      <ResumeAppBar emailAddress="test@test.fr" snsAccounts={[]} />
     </MemoryRouter>, div);
 });
