@@ -1,0 +1,24 @@
+
+.ResumeAppBar-title {
+    flex: 1;
+}
+
+.ResumeAppBar {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.ResumeAppBar-header {
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 800px) {
+    .ResumeAppBar-header {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+
+    .ResumeAppBar-title {
+        display: none !important;
+    }
+}

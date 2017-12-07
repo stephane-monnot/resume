@@ -8,6 +8,13 @@
     flex: 1;
 }
 
+.ScreenBlock h2 {
+    margin: 0;
+    color: #ff4081;
+    font-size: 34px;
+    text-transform: none;
+}
+
 @media only screen and (max-width: 480px) {
     .ScreenBlockContainer {
         min-height: calc(100vh - 88px);

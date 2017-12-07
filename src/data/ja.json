@@ -42,12 +42,14 @@
   ],
   "snAccounts": [
     {
-      "type": "Linkedin",
-      "name": "https://www.linkedin.com/in/monnotstephane/"
+      "name": "Linkedin",
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/monnotstephane/"
     },
     {
-      "type": "Github",
-      "name": "https://github.com/stephane-monnot"
+      "name": "Github",
+      "icon": "github",
+      "url": "https://github.com/stephane-monnot"
     }
   ],
   "locations": [

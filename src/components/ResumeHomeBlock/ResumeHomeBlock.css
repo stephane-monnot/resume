@@ -1,0 +1,78 @@
+.ResumeHomeBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ResumeHomeBlock.ScreenBlock h1 {
+    margin: 0;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+}
+
+.ResumeHomeBlock.ScreenBlock h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.ResumeHomeBlock-squares {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 56px);
+    overflow: hidden;
+    text-align: center;
+    background: #000;
+}
+
+.ResumeHomeBlock-squares > div {
+    opacity: 0.35;
+}
+
+.ResumeHomeBlock-squares > div > div > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ResumeHomeBlock-squares .SVGInline {
+    width: 40%;
+}
+
+.ResumeHomeBlock-squares .SVGInline svg path,
+.ResumeHomeBlock-squares .SVGInline svg g {
+    fill: #fff !important;
+}
+
+.ResumeHomeBlock-headline-container {
+    color: #fff;
+    text-align: center;
+    padding: 30px 25px 30px;
+    max-width: 960px;
+    border: 1px solid #fff;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.ResumeHomeBlock-sns-container {
+    z-index: 1;
+}
+
+@media only screen and (max-width: 800px) {
+    .ResumeHomeBlock h2 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .ResumeHomeBlock h1 {
+        font-size: 42px;
+        line-height: 48px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .ResumeHomeBlock-squares {
+        height: calc(100vh - 88px);
+    }
+}

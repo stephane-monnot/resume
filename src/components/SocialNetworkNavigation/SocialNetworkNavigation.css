@@ -1,0 +1,7 @@
+.SocialNetworkNavigation {
+    display: flex;
+}
+
+.SocialNetworkNavigation-link {
+    color: white;
+}

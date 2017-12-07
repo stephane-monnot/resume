@@ -13,6 +13,7 @@
     "react-dom": "^15.6.1",
     "react-ga": "^2.3.5",
     "react-helmet": "4",
+    "react-icons": "^2.2.7",
     "react-intl": "^2.4.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
@@ -44,6 +45,9 @@
     "svg-inline-loader": "^0.8.0"
   },
   "reactSnap": {
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   }
 }

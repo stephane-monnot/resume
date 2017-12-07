@@ -1,26 +1,2 @@
 .App {
 }
-
-.App-title {
-    flex: 1;
-}
-
-.App-bar {
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-.App-header {
-    justify-content: flex-end;
-}
-
-@media only screen and (max-width: 800px) {
-    .App-header {
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-    }
-
-    .App-title {
-        display: none !important;
-    }
-}

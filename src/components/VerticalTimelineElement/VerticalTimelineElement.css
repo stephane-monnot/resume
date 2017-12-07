@@ -1,0 +1,73 @@
+.VerticalTimelineElement {
+    margin: 0 auto !important;
+}
+
+.VerticalTimelineElement .vertical-timeline-element-title {
+    margin: 0;
+}
+
+.VerticalTimelineElement .vertical-timeline-element-subtitle {
+    margin: 0;
+}
+
+.VerticalTimelineElement .vertical-timeline-element-content p {
+    margin: 1em 0 0;
+}
+
+
+.VerticalTimelineElement.vertical-timeline-element--laravel .vertical-timeline-element-content {
+    border-top: 3px solid #fd4f31;
+}
+
+.VerticalTimelineElement.vertical-timeline-element--php .vertical-timeline-element-content {
+    border-top: 3px solid #6181b6;
+}
+
+.VerticalTimelineElement.vertical-timeline-element--react .vertical-timeline-element-content {
+    border-top: 3px solid #61DAFB;
+}
+
+.VerticalTimelineElement.vertical-timeline-element--rails .vertical-timeline-element-content {
+    border-top: 3px solid #a62c46;
+}
+
+.VerticalTimelineElement .vertical-timeline-element-icon .SVGInline {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    margin-top: -18px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
+
+.VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg {
+    width: 36px;
+    height: 36px;
+    left: auto;
+    top: auto;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+
+.VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg path,
+.VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg g {
+    fill: #fff !important;
+}
+
+
+@media only screen and (max-width: 1170px) {
+    .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline {
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        margin-top: -12px;
+    }
+
+    .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg {
+        width: 24px;
+        height: 24px;
+    }
+}
