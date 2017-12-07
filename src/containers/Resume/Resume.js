@@ -76,11 +76,13 @@ class Resume extends Component {
           ]}
         />
 
-        <ResumeAppBar/>
+        <ResumeAppBar
+          emailAddress={this.props.emailAddress}
+          snsAccounts={this.props.snsAccounts}
+        />
 
         <ResumeHomeBlock
           shortFullName={shortFullName}
-          snAccounts={this.props.snAccounts}
           headline={this.props.headline}
         />
 

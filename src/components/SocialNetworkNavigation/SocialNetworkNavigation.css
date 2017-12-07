@@ -4,4 +4,19 @@
 
 .SocialNetworkNavigation-link {
     color: white;
+    padding: 0 5px;
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.SocialNetworkNavigation-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+.SocialNetworkNavigation-link:hover {
+    background-color: rgba(255, 255, 255, 0.12);
 }

@@ -80,7 +80,6 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
 ResumeSkillsBlock.propTypes = {
   skills: PropTypes.array.isRequired,
   tools: PropTypes.string.isRequired,
-  styles: PropTypes.object.isRequired,
 };
 
 export default ResumeSkillsBlock;

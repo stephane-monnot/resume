@@ -71,7 +71,6 @@ const ResumeProjectsBlock = ({ projects, formatDate }) => (
 
 ResumeProjectsBlock.propTypes = {
   projects: PropTypes.array.isRequired,
-  styles: PropTypes.object.isRequired,
   formatDate: PropTypes.func.isRequired,
 };
 

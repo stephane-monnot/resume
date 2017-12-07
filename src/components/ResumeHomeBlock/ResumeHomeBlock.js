@@ -8,7 +8,7 @@ import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import appTheme from '../../theme';
 import './ResumeHomeBlock.css';
 
-const ResumeHomeBlock = ({ snAccounts, shortFullName, headline }) => (
+const ResumeHomeBlock = ({ shortFullName, headline }) => (
   <ScreenBlock id="Resume-home" className="ResumeHomeBlock">
     <div className="ResumeHomeBlock-headline-container">
       <div className="ResumeHomeBlock-headline">
@@ -52,8 +52,6 @@ const ResumeHomeBlock = ({ snAccounts, shortFullName, headline }) => (
 ResumeHomeBlock.propTypes = {
   headline: PropTypes.string.isRequired,
   shortFullName: PropTypes.string.isRequired,
-  snAccounts: PropTypes.arrayOf(PropTypes.object).isRequired,
-  styles: PropTypes.object.isRequired,
 };
 
 export default ResumeHomeBlock;
