@@ -4,11 +4,11 @@ import { FormattedMessage } from 'react-intl';
 
 import GridBackground from '../../components/GridBackground/GridBackground';
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
-import SocialNetworkNavigation from "../../components/SocialNetworkNavigation/SocialNetworkNavigation";
 
+import appTheme from '../../theme';
 import './ResumeHomeBlock.css';
 
-const ResumeHomeBlock = ({ snAccounts, shortFullName, headline, styles }) => (
+const ResumeHomeBlock = ({ snAccounts, shortFullName, headline }) => (
   <ScreenBlock id="Resume-home" className="ResumeHomeBlock">
     <div className="ResumeHomeBlock-headline-container">
       <div className="ResumeHomeBlock-headline">
@@ -25,23 +25,23 @@ const ResumeHomeBlock = ({ snAccounts, shortFullName, headline, styles }) => (
 
     <div className="ResumeHomeBlock-squares">
       <GridBackground>
-        <div style={{ ...styles.laravelColor.style }}>
-          {styles.laravelColor.icon}
+        <div style={{ ...appTheme.laravelColor.style }}>
+          {appTheme.laravelColor.icon}
         </div>
-        <div style={{ ...styles.phpColor.style }}>
-          {styles.phpColor.icon}
+        <div style={{ ...appTheme.phpColor.style }}>
+          {appTheme.phpColor.icon}
         </div>
-        <div style={{ ...styles.reactColor.style }}>
-          {styles.reactColor.icon}
+        <div style={{ ...appTheme.reactColor.style }}>
+          {appTheme.reactColor.icon}
         </div>
-        <div style={{ ...styles.rubyColor.style }}>
-          {styles.rubyColor.icon}
+        <div style={{ ...appTheme.rubyColor.style }}>
+          {appTheme.rubyColor.icon}
         </div>
-        <div style={{ ...styles.javascriptColor.style }}>
-          {styles.javascriptColor.icon}
+        <div style={{ ...appTheme.javascriptColor.style }}>
+          {appTheme.javascriptColor.icon}
         </div>
-        <div style={{ ...styles.dockerColor.style }}>
-          {styles.dockerColor.icon}
+        <div style={{ ...appTheme.dockerColor.style }}>
+          {appTheme.dockerColor.icon}
         </div>
       </GridBackground>
     </div>

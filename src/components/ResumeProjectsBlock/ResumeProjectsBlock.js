@@ -8,9 +8,10 @@ import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import VerticalTimeline from '../../components/VerticalTimeline/VerticalTimeline';
 import VerticalTimelineElement from '../../components/VerticalTimelineElement/VerticalTimelineElement';
 
+import appTheme from '../../theme';
 import './ResumeProjectsBlock.css';
 
-const ResumeProjectsBlock = ({ projects, styles, formatDate }) => (
+const ResumeProjectsBlock = ({ projects, formatDate }) => (
   <ScreenBlock id="Resume-projects" className="ResumeProjectsBlock">
     <div className="container">
       <div className="heading">
@@ -31,11 +32,11 @@ const ResumeProjectsBlock = ({ projects, styles, formatDate }) => (
       <VerticalTimeline>
         {projects.map((project, i) =>
           <VerticalTimelineElement
-            style={{ borderTop: '3px solid ' + styles[project.subcategory + 'Color'].border }}
-            className={"ResumeProjectsBlock " + styles[project.subcategory + 'Color'].className}
+            style={{ borderTop: '3px solid ' + appTheme[project.subcategory + 'Color'].border }}
+            className={"ResumeProjectsBlock " + appTheme[project.subcategory + 'Color'].className}
             key={i}
-            icon={styles[project.subcategory + 'Color'].icon}
-            iconStyle={styles[project.subcategory + 'Color'].style}
+            icon={appTheme[project.subcategory + 'Color'].icon}
+            iconStyle={appTheme[project.subcategory + 'Color'].style}
             date={Date.parse(project.date) ? formatDate(new Date(project.date).getTime(), {
               year: 'numeric',
               month: 'numeric',

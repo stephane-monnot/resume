@@ -17,6 +17,8 @@ class GridBackground extends React.PureComponent {
   }
 
   calcItemWidth = (innerWidth, innerHeight) => {
+    if (innerHeight === 0) return 0;
+
     const itemHeight = (innerHeight) / 6;
     const cols = Math.floor(innerWidth / itemHeight);
     return itemHeight + ((innerWidth % itemHeight) / cols);
@@ -50,7 +52,7 @@ class GridBackground extends React.PureComponent {
 
     return _.map(_.range(100), function (i) {
 
-      let border = 0
+      let border = 0;
 
       if (i - itemsNumberByLine >= 0 && (i) % itemsNumberByLine === 0) {
         interval += itemsNumberByLine - 2;
@@ -83,7 +85,12 @@ GridBackground.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
   ]).isRequired
-}
+};
+
+GridBackground.defaultPropTypes = {
+  innerHeight: 0,
+  innerWidth: 0,
+};
 
 const decorators = flow([
   withWindowSize

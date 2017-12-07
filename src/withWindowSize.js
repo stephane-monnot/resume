@@ -12,7 +12,7 @@ function withWindowSize(WrappedComponent) {
       }
     }
 
-    onWindowResize = (e) => {
+    onWindowResize = () => {
       if (!this.mounted) return;
 
       const node = ReactDOM.findDOMNode(this);

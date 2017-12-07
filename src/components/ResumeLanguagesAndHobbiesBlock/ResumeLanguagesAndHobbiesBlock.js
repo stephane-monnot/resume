@@ -73,7 +73,7 @@ const ResumeLanguagesAndHobbiesBlock = ({ languages, hobbies, hobbyCardStyle }) 
 ResumeLanguagesAndHobbiesBlock.propTypes = {
   languages: PropTypes.array.isRequired,
   hobbies: PropTypes.array.isRequired,
-  hobbyCardStyle: PropTypes.array.isRequired,
+  hobbyCardStyle: PropTypes.object.isRequired,
 };
 
 export default ResumeLanguagesAndHobbiesBlock;

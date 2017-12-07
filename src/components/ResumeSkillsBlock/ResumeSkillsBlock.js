@@ -6,9 +6,10 @@ import Avatar from 'material-ui/Avatar';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 
+import appTheme from '../../theme';
 import './ResumeSkillsBlock.css';
 
-const ResumeSkillsBlock = ({ skills, tools, styles }) => (
+const ResumeSkillsBlock = ({ skills, tools }) => (
   <ScreenBlock id="Resume-skills" className="ResumeSkillsBlock">
     <div className="container">
       <div className="heading">
@@ -31,14 +32,14 @@ const ResumeSkillsBlock = ({ skills, tools, styles }) => (
           <Card key={i}>
             <CardContent>
               <Avatar style={{
-                ...styles[`${skillCategory[0].language.style}Color`].style,
+                ...appTheme[`${skillCategory[0].language.style}Color`].style,
                 width: 100,
                 height: 100,
                 margin: '0 auto'
               }}>
-                {styles[`${skillCategory[0].language.style}Color`].icon}
+                {appTheme[`${skillCategory[0].language.style}Color`].icon}
               </Avatar>
-              <h3 style={{ color: styles[`${skillCategory[0].language.style}Color`].style.background }}>
+              <h3 style={{ color: appTheme[`${skillCategory[0].language.style}Color`].style.background }}>
                 {skillCategory[0].language.name}
               </h3>
               {skillCategory.map((skill, j) =>

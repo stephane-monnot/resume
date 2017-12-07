@@ -4,14 +4,6 @@ import flow from 'lodash/flow';
 import Helmet from 'react-helmet';
 import { injectIntl, intlShape } from 'react-intl';
 import { withTheme } from 'material-ui/styles';
-import MoreHorizIcon from 'material-ui-icons/MoreHoriz';
-import LaravelIcon from 'react-devicon/laravel/plain'
-import PhpIcon from 'react-devicon/php/plain'
-import ReactIcon from 'react-devicon/react/original'
-import RubyIcon from 'react-devicon/ruby/plain';
-import RailsIcon from 'react-devicon/rails/plain';
-import JavascriptIcon from 'react-devicon/javascript/plain';
-import DockerIcon from 'react-devicon/docker/plain';
 
 import ResumeAppBar from "../../components/ResumeAppBar/ResumeAppBar";
 import ResumeHomeBlock from "../../components/ResumeHomeBlock/ResumeHomeBlock";
@@ -22,6 +14,7 @@ import ResumeProjectsBlock from "../../components/ResumeProjectsBlock/ResumeProj
 import ResumeLanguagesAndHobbiesBlock from "../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock";
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 
+import appTheme from '../../theme';
 import './Resume.css';
 
 class Resume extends Component {
@@ -67,70 +60,6 @@ class Resume extends Component {
       secondaryColor: {
         background: secondaryColor,
         color: '#fff',
-      },
-      laravelColor: {
-        style: {
-          background: '#fd4f31',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--laravel',
-        icon: <LaravelIcon />,
-      },
-      phpColor: {
-        style: {
-          background: '#6181b6',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--php',
-        icon: <PhpIcon />,
-      },
-      reactColor: {
-        style: {
-          background: '#61DAFB',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--react',
-        icon: <ReactIcon />,
-      },
-      rubyColor: {
-        style: {
-          background: '#d91404',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--ruby',
-        icon: <RubyIcon />,
-      },
-      railsColor: {
-        style: {
-          background: '#a62c46',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--rails',
-        icon: <RailsIcon />,
-      },
-      javascriptColor: {
-        style: {
-          background: '#F0DB4F',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--javascript',
-        icon: <JavascriptIcon />,
-      },
-      dockerColor: {
-        style: {
-          background: '#019bc6',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--docker',
-        icon: <DockerIcon />,
-      },
-      othersColor: {
-        style: {
-          background: '#019bc6',
-          color: '#fff',
-        },
-        className: 'vertical-timeline-element--others',
-        icon: <MoreHorizIcon />,
       }
     };
 
@@ -153,7 +82,6 @@ class Resume extends Component {
           shortFullName={shortFullName}
           snAccounts={this.props.snAccounts}
           headline={this.props.headline}
-          styles={styles}
         />
 
         <ResumeAboutMeBlock
@@ -162,7 +90,7 @@ class Resume extends Component {
           summary={this.props.summary}
           pictureUrl={this.props.pictureUrl}
           resumeUrl={cv}
-          style={styles.phpColor.style}
+          style={appTheme.phpColor.style}
         />
 
         <ResumeWorkAndEducationBlock
@@ -176,13 +104,10 @@ class Resume extends Component {
         <ResumeSkillsBlock
           skills={skills}
           tools={this.props.tools}
-          styles={styles}
         />
-
 
         <ResumeProjectsBlock
           projects={this.props.projects}
-          styles={styles}
           formatDate={formatDate}
         />
 
