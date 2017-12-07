@@ -8,6 +8,9 @@ cache:
   paths:
     - node_modules/
 
+before_script:
+  - yarn
+
 qa:
   stage: qa
   script:
