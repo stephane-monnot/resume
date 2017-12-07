@@ -40,6 +40,16 @@
       "name": "monnot.stephane"
     }
   ],
+  "snAccounts": [
+    {
+      "type": "Linkedin",
+      "name": "https://www.linkedin.com/in/monnotstephane/"
+    },
+    {
+      "type": "Github",
+      "name": "https://github.com/stephane-monnot"
+    }
+  ],
   "locations": [
     {
       "name": "Osaka",
