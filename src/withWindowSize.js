@@ -18,8 +18,8 @@ function withWindowSize(WrappedComponent) {
       const node = ReactDOM.findDOMNode(this);
 
       this.setState({
-        innerWidth: node.offsetWidth,
-        innerHeight: node.offsetHeight,
+        innerWidth: node.getBoundingClientRect().width,
+        innerHeight: node.getBoundingClientRect().height,
       })
     }
 
