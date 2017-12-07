@@ -13,7 +13,14 @@ import CodeIcon from 'material-ui-icons/Code';
 
 import './BottomNavigation.css';
 
-let Link = Scroll.Link;
+let Link = (props) => {
+  const { showLabel, ...rest } = props;
+  return (
+    <div>
+      <Scroll.Link {...rest} />
+    </div>
+  );
+};
 
 var buttons = [
   {
