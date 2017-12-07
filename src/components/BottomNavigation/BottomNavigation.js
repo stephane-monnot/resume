@@ -16,9 +16,7 @@ import './BottomNavigation.css';
 let Link = (props) => {
   const { showLabel, ...rest } = props;
   return (
-    <div>
       <Scroll.Link {...rest} />
-    </div>
   );
 };
 
