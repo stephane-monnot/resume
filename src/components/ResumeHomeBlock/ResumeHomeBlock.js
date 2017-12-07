@@ -23,10 +23,6 @@ const ResumeHomeBlock = ({ snAccounts, shortFullName, headline, styles }) => (
       </div>
     </div>
 
-    <div className="ResumeHomeBlock-sns-container">
-      <SocialNetworkNavigation services={snAccounts} />
-    </div>
-
     <div className="ResumeHomeBlock-squares">
       <GridBackground>
         <div style={{ ...styles.laravelColor.style }}>
