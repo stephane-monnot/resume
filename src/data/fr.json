@@ -365,6 +365,26 @@
   ],
   "projects": [
     {
+      "title": "MACSF LIBEA",
+      "subtitle": "Projet Apache Cordova",
+      "category": "project",
+      "subcategory": "cordova",
+      "links": [],
+      "technologies": [
+        {
+          "name": "Apache Cordova"
+        },
+        {
+          "name": "IOS"
+        },
+        {
+          "name": "Android"
+        }
+      ],
+      "content": "Application mobile IOS et Android d'une compagnie d'assurance MACSF LIBEA qui permet la gestion de services tels que la recherche de taxis, de garages, l'envoi de factures pour remboursement.",
+      "date": "En cours"
+    },
+    {
       "title": "Saint-Fons JAZZ",
       "subtitle": "Projet Laravel",
       "category": "project",

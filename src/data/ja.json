@@ -361,6 +361,26 @@
   ],
   "projects": [
     {
+      "title": "MACSF LIBEA",
+      "subtitle": "Apache Cordova Project",
+      "category": "project",
+      "subcategory": "cordova",
+      "links": [],
+      "technologies": [
+        {
+          "name": "Apache Cordova"
+        },
+        {
+          "name": "IOS"
+        },
+        {
+          "name": "Android"
+        }
+      ],
+      "content": "Mobile application (IOS/Android) of the MACSF LIBEA insurance company which gives the ability to manage some services in the case of accident, such as finding taxi and workshop, sending invoices for reimbursement.",
+      "date": "進行中"
+    },
+    {
       "title": "Saint-Fons JAZZ",
       "subtitle": "Laravel Project",
       "category": "project",
