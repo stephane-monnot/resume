@@ -10,7 +10,6 @@
     margin: 1em 0 0;
 }
 
-
 .VerticalTimelineElement.vertical-timeline-element--laravel .vertical-timeline-element-content {
     border-top: 3px solid #fd4f31;
 }
@@ -51,12 +50,10 @@
     margin-top: 0px;
 }
 
-
 .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg path,
 .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg g {
     fill: #fff !important;
 }
-
 
 @media only screen and (max-width: 1170px) {
     .vertical-timeline-element-content .vertical-timeline-element-date {
