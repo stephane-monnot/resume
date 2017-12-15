@@ -27,6 +27,10 @@
     border-top: 3px solid #a62c46;
 }
 
+.VerticalTimelineElement.vertical-timeline-element--cordova .vertical-timeline-element-content {
+    border-top: 3px solid #4cc2e4;
+}
+
 .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline {
     display: block;
     width: 36px;
