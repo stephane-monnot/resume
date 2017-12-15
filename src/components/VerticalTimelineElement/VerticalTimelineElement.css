@@ -59,6 +59,12 @@
 
 
 @media only screen and (max-width: 1170px) {
+    .vertical-timeline-element-content .vertical-timeline-element-date {
+        text-align: right;
+        width: 100%;
+        margin-bottom: -12px;
+    }
+
     .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline {
         width: 24px;
         height: 24px;
@@ -69,5 +75,11 @@
     .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline svg {
         width: 24px;
         height: 24px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .vertical-timeline-element-content .vertical-timeline-element-date {
+        text-align: center;
     }
 }
