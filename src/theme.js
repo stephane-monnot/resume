@@ -8,6 +8,7 @@ import RubyIcon from 'react-devicon/ruby/plain';
 import RailsIcon from 'react-devicon/rails/plain';
 import JavascriptIcon from 'react-devicon/javascript/plain';
 import DockerIcon from 'react-devicon/docker/plain';
+import CordovaIcon from './components/Icons/Apachecordova';
 
 const theme = {
   laravelColor: {
@@ -65,6 +66,14 @@ const theme = {
     },
     className: 'vertical-timeline-element--docker',
     icon: <DockerIcon />,
+  },
+  cordovaColor: {
+    style: {
+      background: '#4CC2E4',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--cordova',
+    icon: <CordovaIcon />,
   },
   othersColor: {
     style: {
