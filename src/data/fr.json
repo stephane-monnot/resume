@@ -365,6 +365,26 @@
   ],
   "projects": [
     {
+      "title": "Resume generator",
+      "subtitle": "Projet Laravel",
+      "category": "project",
+      "subcategory": "laravel",
+      "links": [],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Laravel"
+        },
+        {
+          "name": "Déploiement continu"
+        }
+      ],
+      "content": "Site Web permettant de générer un CV à partir un JSON. Un CV est la combination d'un CV en format PDF et un CV en format WEB développé grâce à ReactJS.",
+      "date": "En cours"
+    },
+    {
       "title": "MACSF LIBEA",
       "subtitle": "Projet Apache Cordova",
       "category": "project",
@@ -382,7 +402,7 @@
         }
       ],
       "content": "Application mobile IOS et Android d'une compagnie d'assurance MACSF LIBEA qui permet la gestion de services tels que la recherche de taxis, de garages, l'envoi de factures pour remboursement.",
-      "date": "En cours"
+      "date": "2017-12-15"
     },
     {
       "title": "Saint-Fons JAZZ",

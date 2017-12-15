@@ -361,6 +361,26 @@
   ],
   "projects": [
     {
+      "title": "Resume generator",
+      "subtitle": "Laravel Project",
+      "category": "project",
+      "subcategory": "laravel",
+      "links": [],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Laravel"
+        },
+        {
+          "name": "Continuous deployment"
+        }
+      ],
+      "content": "Website which gives the ability to generate resume from a JSON. A resume is a combination of a PDF resume and a website resume in React.",
+      "date": "In progress"
+    },
+    {
       "title": "MACSF LIBEA",
       "subtitle": "Apache Cordova Project",
       "category": "project",
@@ -378,7 +398,7 @@
         }
       ],
       "content": "Mobile application (IOS/Android) of the MACSF LIBEA insurance company which gives the ability to manage some services in the case of accident, such as finding taxi and workshop, sending invoices for reimbursement.",
-      "date": "進行中"
+      "date": "2017-12-15"
     },
     {
       "title": "Saint-Fons JAZZ",
