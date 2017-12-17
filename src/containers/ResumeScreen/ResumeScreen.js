@@ -7,7 +7,7 @@ import cvPDFFR from '../../data/fr.pdf';
 import cvPDFJA from '../../data/ja.pdf';
 import cvPDFEN from '../../data/en.pdf';
 import Resume from '../Resume/Resume';
-import { changeLanguage } from '../../reducers/language';
+import { changeLanguage } from '../../actions';
 
 class ResumeScreen extends Component {
   constructor() {

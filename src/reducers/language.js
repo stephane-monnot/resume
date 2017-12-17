@@ -1,7 +1,6 @@
-import { createAction } from 'redux-actions';
-
-export const CHANGE_LANGUAGE = 'resume/language/change';
-export const CHANGE_LANGUAGE_SUCCESS = 'resume/language/change/success';
+import {
+  CHANGE_LANGUAGE_SUCCESS
+} from '../actions';
 
 export default function reducer(state = {
   lang: 'en'
@@ -16,6 +15,3 @@ export default function reducer(state = {
         return state;
   }
 }
-
-export const changeLanguage = createAction(CHANGE_LANGUAGE);
-export const changeLanguageSuccess = createAction(CHANGE_LANGUAGE_SUCCESS);
