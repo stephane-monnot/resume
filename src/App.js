@@ -13,6 +13,8 @@ import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
 import ja from 'react-intl/locale-data/ja';
 
+import { changeLanguage } from './actions';
+
 import languages from './i18n';
 
 import './App.css';
@@ -33,11 +35,6 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { currentLanguage: 'FR' };
-  }
-
   render() {
     const locale = process.env.REACT_APP_LOCALE || 'ja';
     const title = locale === 'ja' ? '履歴書' : 'Resume' ;
@@ -78,6 +75,11 @@ const mapStateToProps = (state) => {
   return ({
     currentLanguage: state.language.lang
   })
-}
+};
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  changeLanguage: lang => dispatch(changeLanguage(lang))
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -7,11 +7,11 @@ import cvPDFFR from '../../data/fr.pdf';
 import cvPDFJA from '../../data/ja.pdf';
 import cvPDFEN from '../../data/en.pdf';
 import Resume from '../Resume/Resume';
-import { changeLanguage } from '../../actions';
+import { changeLanguage, requestResume } from '../../actions';
 
 class ResumeScreen extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       cvs: {fr: cvFR, ja: cvJA, en: cvEN},
       cvPDFs: {fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN}
@@ -19,20 +19,31 @@ class ResumeScreen extends Component {
   }
 
   componentWillMount() {
-    this.props.onChangeLanguage(this.props.language)
+    this.props.onChangeLanguage(this.props.language);
+    this.props.requestResume(1);
   }
 
   render() {
-    const cv = this.state.cvs[this.props.language];
-    const cvPDF = this.state.cvPDFs[this.props.language];
-    return (
-      <Resume {...cv} cvPDF={cvPDF}/>
-    );
+    const { resume } = this.props;
+
+    if (resume.data && !resume.isFetching) {
+      const cvPDF = this.state.cvPDFs[this.props.language];
+      return (
+        <Resume {...resume.data} cvPDF={cvPDF}/>
+      );
+    }
+
+    return null;
   }
 }
 
-const actionsToProps = dispatch => ({
-  onChangeLanguage: lang => dispatch(changeLanguage(lang))
+function mapStateToProps(state) {
+  return { resume: state.resume }
+}
+
+const mapDispatchToProps = dispatch => ({
+  onChangeLanguage: lang => dispatch(changeLanguage(lang)),
+  requestResume: id => dispatch(requestResume(id))
 });
 
-export default connect(null, actionsToProps)(ResumeScreen)
+export default connect(mapStateToProps, mapDispatchToProps)(ResumeScreen)

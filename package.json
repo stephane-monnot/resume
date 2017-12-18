@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "dot-object": "^1.7.0",
+    "isomorphic-fetch": "^2.2.1",
     "local-storage": "^1.4.2",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.10",
