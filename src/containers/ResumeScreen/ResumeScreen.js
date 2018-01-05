@@ -26,7 +26,7 @@ class ResumeScreen extends Component {
   render() {
     const { resume } = this.props;
 
-    if (resume.data && !resume.isFetching) {
+    if (resume.data) {
       const cvPDF = this.state.cvPDFs[this.props.language];
       return (
         <Resume {...resume.data} cvPDF={cvPDF}/>
