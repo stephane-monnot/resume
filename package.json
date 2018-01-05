@@ -34,7 +34,7 @@
     "fix-normalize-css-unit": "cross-env NODE_ENV=production babel --presets es2015 ./node_modules/normalize-css-unit/dist --out-dir ./node_modules/normalize-css-unit/dist",
     "start": "node scripts/customized-config  start",
     "build": "npm run fix-normalize-css-unit && node scripts/customized-config build && react-snap || true",
-    "local-analytics": "replace-in-file 'https://www.google-analytics.com/' '/' build/static/js/main.*.js",
+    "local-analytics": "replace-in-file 'https://www.google-analytics.com/' '/' build/static/js/main.*.js build/**/*.html build/*.html",
     "test": "node scripts/customized-config test --env=jsdom",
     "eject": "node scripts/customized-config eject"
   },
