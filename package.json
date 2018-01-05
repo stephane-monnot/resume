@@ -46,6 +46,7 @@
     "svg-inline-loader": "^0.8.0"
   },
   "reactSnap": {
+    "inlineCss": true,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
