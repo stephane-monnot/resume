@@ -27,7 +27,8 @@
     "redux-saga": "^0.15.6",
     "reselect": "^3.0.1",
     "rewire": "^2.5.2",
-    "styled-components": "^2.2.0"
+    "styled-components": "^2.2.0",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "fix-normalize-css-unit": "cross-env NODE_ENV=production babel --presets es2015 ./node_modules/normalize-css-unit/dist --out-dir ./node_modules/normalize-css-unit/dist",
