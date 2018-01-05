@@ -22,9 +22,9 @@ pages:
     name: production
     url: https://stephanemonnot.com/
   script:
-      - REACT_APP_LOCALE=ja yarn build
+      - REACT_APP_ANALYTICS=0 REACT_APP_LOCALE=ja yarn build
       - mv build build_ja
-      - REACT_APP_LOCALE=en yarn build
+      - REACT_APP_ANALYTICS=0 REACT_APP_LOCALE=en yarn build
       - mv build build_en
       - mv public oldpublic
       - mkdir public/

@@ -17,11 +17,16 @@ import languages from './i18n';
 
 import './App.css';
 
-import Analytics from './components/Analytics/Analytics';
 import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
 import Meta from './containers/Meta/Meta';
 import WaitingUntilJapanScreen from './containers/WaitingUntilJapanScreen/WaitingUntilJapanScreen';
 
+// Async GA (Disable when building with react-snap)
+const loadAnalytics = (typeof process.env.REACT_APP_ANALYTICS !== 'undefined') ? process.env.REACT_APP_ANALYTICS : true;
+let Analytics = null;
+if (loadAnalytics === true) {
+  Analytics = require('./components/Analytics/Analytics').default;
+}
 
 addLocaleData([...en, ...fr, ...ja]);
 
@@ -53,7 +58,10 @@ class App extends Component {
             <div className="App">
               <Meta locale={this.props.currentLanguage} />
 
-              <Route path="/" component={Analytics}/>
+              {Analytics &&
+                <Route path="/" component={Analytics}/>
+              }
+
               <Route exact path="/" render={() => <ResumeScreen language={locale} title={title} />} />
               <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
               <Route exact path="/ja/rirekisho.html" render={() => <ResumeScreen language="ja" title="履歴書" />} />
