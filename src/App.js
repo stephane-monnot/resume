@@ -22,7 +22,7 @@ import Meta from './containers/Meta/Meta';
 import WaitingUntilJapanScreen from './containers/WaitingUntilJapanScreen/WaitingUntilJapanScreen';
 
 // Async GA (Disable when building with react-snap)
-const loadAnalytics = (typeof process.env.REACT_APP_ANALYTICS !== 'undefined') ? process.env.REACT_APP_ANALYTICS : true;
+const loadAnalytics = navigator.userAgent === 'ReactSnap' ? false : true;
 let Analytics = null;
 if (loadAnalytics === true) {
   Analytics = require('./components/Analytics/Analytics').default;
