@@ -19,16 +19,14 @@ class ResumeScreen extends Component {
   }
 
   componentWillMount() {
-    console.log('rere');
     this.props.onChangeLanguage(this.props.language)
   }
 
   render() {
     const cv = this.state.cvs[this.props.language];
     const cvPDF = this.state.cvPDFs[this.props.language];
-    const { initialized } = this.props;
     return (
-      <Resume initialized={initialized} {...cv} cvPDF={cvPDF}/>
+      <Resume {...cv} cvPDF={cvPDF}/>
     );
   }
 }

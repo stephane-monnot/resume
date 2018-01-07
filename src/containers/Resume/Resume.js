@@ -82,7 +82,6 @@ class Resume extends Component {
         />
 
         <ResumeHomeBlock
-          fade={!this.props.initialized}
           shortFullName={shortFullName}
           headline={this.props.headline}
           style={appTheme.phpColor.style}

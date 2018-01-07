@@ -69,6 +69,9 @@ class GridBackground extends React.PureComponent {
   }
 
   render() {
+    if (navigator.userAgent === 'ReactSnap') {
+      return (<div></div>);
+    }
 
     return (
       <div style={{display: 'flex', flexWrap: 'wrap', height: '100%'}}>

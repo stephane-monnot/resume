@@ -38,18 +38,9 @@ class App extends Component {
     this.state = { currentLanguage: 'FR' };
   }
 
-  getInitialState() {
-    return { initialized: false };
-  }
-
-  componentWillReceiveProps() {
-    this.setState({ initialized: true });
-  }
-
   render() {
     const locale = process.env.REACT_APP_LOCALE || 'ja';
     const title = locale === 'ja' ? '履歴書' : 'Resume' ;
-    const { initialized } = this.state;
 
     return (
       <IntlProvider
@@ -63,10 +54,10 @@ class App extends Component {
               <Meta locale={this.props.currentLanguage} />
 
               <Route path="/" component={Analytics}/>
-              <Route exact path="/" render={() => <ResumeScreen initialized={initialized} language={locale} title={title} />} />
-              <Route exact path="/fr/cv.html" render={() => <ResumeScreen initialized={initialized} language="fr" title="CV" />} />
-              <Route exact path="/ja/rirekisho.html" render={() => <ResumeScreen initialized={initialized} language="ja" title="履歴書" />} />
-              <Route exact path="/en/resume.html" render={() => <ResumeScreen initialized={initialized} language="en" title="Resume" />} />
+              <Route exact path="/" render={() => <ResumeScreen language={locale} title={title} />} />
+              <Route exact path="/fr/cv.html" render={() => <ResumeScreen language="fr" title="CV" />} />
+              <Route exact path="/ja/rirekisho.html" render={() => <ResumeScreen language="ja" title="履歴書" />} />
+              <Route exact path="/en/resume.html" render={() => <ResumeScreen language="en" title="Resume" />} />
               <Route exact path="/ja/until/japan.html" render={() => <WaitingUntilJapanScreen language="ja" title="日本まで" />} />
               <Route exact path="/en/until/japan.html" render={() => <WaitingUntilJapanScreen language="en" title="日本まで" />} />
               <Route exact path="/fr/until/japan.html" render={() => <WaitingUntilJapanScreen language="fr" title="日本まで" />} />
@@ -87,6 +78,6 @@ const mapStateToProps = (state) => {
   return ({
     currentLanguage: state.language.lang
   })
-}
+};
 
 export default connect(mapStateToProps)(App);
