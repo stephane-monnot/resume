@@ -8,6 +8,7 @@ import RubyIcon from 'react-devicon/ruby/plain';
 import RailsIcon from 'react-devicon/rails/plain';
 import JavascriptIcon from 'react-devicon/javascript/plain';
 import DockerIcon from 'react-devicon/docker/plain';
+import WordpressIcon from 'react-devicon/wordpress/plain';
 import CordovaIcon from './components/Icons/Apachecordova';
 
 const theme = {
@@ -74,6 +75,14 @@ const theme = {
     },
     className: 'vertical-timeline-element--cordova',
     icon: <CordovaIcon />,
+  },
+  wordpressColor: {
+    style: {
+      background: '#21759b',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--wordpress',
+    icon: <WordpressIcon />,
   },
   othersColor: {
     style: {

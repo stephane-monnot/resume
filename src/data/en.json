@@ -365,6 +365,31 @@
   ],
   "projects": [
     {
+      "title": "Leo Pole Consulting SAS",
+      "subtitle": "WordPress Project",
+      "category": "project",
+      "subcategory": "wordpress",
+      "links": [
+        {
+          "url": "http://leo-pole.fr/",
+          "text": "Visit sample website"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "WordPress"
+        },
+        {
+          "name": "Multi-language"
+        }
+      ],
+      "content": "Showcase website of the Leo Pole Consulting SAS company built with WordPress in French and English.",
+      "date": "2018-01-10"
+    },
+    {
       "title": "Resume generator",
       "subtitle": "Laravel Project",
       "category": "project",
