@@ -7,34 +7,28 @@ import cvPDFFR from '../../data/fr.pdf';
 import cvPDFJA from '../../data/ja.pdf';
 import cvPDFEN from '../../data/en.pdf';
 import Resume from '../Resume/Resume';
-import { changeLanguage } from '../../actions';
 
 class ResumeScreen extends Component {
-  constructor() {
-    super();
-    this.state = {
+  componentWillMount() {
+    this.setState({
       cvs: {fr: cvFR, ja: cvJA, en: cvEN},
       cvPDFs: {fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN}
-    }
-  }
-
-  componentWillMount() {
-    console.log('rere');
-    this.props.onChangeLanguage(this.props.language)
+    });
   }
 
   render() {
-    const cv = this.state.cvs[this.props.language];
-    const cvPDF = this.state.cvPDFs[this.props.language];
-    const { initialized } = this.props;
+    const cv = this.state.cvs[this.props.currentLanguage];
+    const cvPDF = this.state.cvPDFs[this.props.currentLanguage];
     return (
-      <Resume initialized={initialized} {...cv} cvPDF={cvPDF}/>
+      <Resume {...cv} cvPDF={cvPDF}/>
     );
   }
 }
 
-const actionsToProps = dispatch => ({
-  onChangeLanguage: lang => dispatch(changeLanguage(lang))
-});
+const mapStateToProps = (state) => {
+  return ({
+    currentLanguage: state.language.lang
+  })
+};
 
-export default connect(null, actionsToProps)(ResumeScreen)
+export default connect(mapStateToProps)(ResumeScreen);

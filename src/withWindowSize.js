@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom'
 
 function withWindowSize(WrappedComponent) {
   return class WindowSizeProvider extends React.Component {
-    constructor(props) {
-      super(props)
-
-      this.state = {
+    componentWillMount() {
+      this.setState({
         innerWidth: 1280,
         innerHeight: 800,
-      }
+      });
     }
 
     onWindowResize = () => {

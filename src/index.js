@@ -20,7 +20,7 @@ WebFont.load({
 
 render(
   <Provider store={store}>
-    <App />
+      <App />
   </Provider>,
   document.getElementById('root')
 );

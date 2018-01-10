@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import blue from 'material-ui/colors/blue';
 import red from 'material-ui/colors/red';
@@ -17,10 +15,12 @@ import languages from './i18n';
 
 import './App.css';
 
+import IntlRoute from './IntlRoute';
 import Analytics from './components/Analytics/Analytics';
 import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
 import Meta from './containers/Meta/Meta';
-import WaitingUntilJapanScreen from './containers/WaitingUntilJapanScreen/WaitingUntilJapanScreen';
+import { changeLanguage } from "./actions";
+import { history } from "./store/configureStore";
 
 
 addLocaleData([...en, ...fr, ...ja]);
@@ -33,46 +33,32 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { currentLanguage: 'FR' };
-  }
-
-  getInitialState() {
-    return { initialized: false };
-  }
-
-  componentWillReceiveProps() {
-    this.setState({ initialized: true });
+  componentWillMount() {
+    console.log('App/componentWillMount', this.props.language);
   }
 
   render() {
-    const locale = process.env.REACT_APP_LOCALE || 'ja';
-    const title = locale === 'ja' ? '履歴書' : 'Resume' ;
-    const { initialized } = this.state;
+    const defaultLanguage = process.env.REACT_APP_LOCALE || 'ja';
+    const locale = this.props.currentLanguage || defaultLanguage;
+    const { onChangeLanguage } = this.props;
 
     return (
       <IntlProvider
-        locale={this.props.currentLanguage}
-        key={this.props.currentLanguage}
-        messages={languages[this.props.currentLanguage]}
+        locale={locale}
+        key={locale}
+        messages={languages[locale]}
       >
         <MuiThemeProvider theme={theme}>
-          <Router>
+          <ConnectedRouter history={history}>
             <div className="App">
-              <Meta locale={this.props.currentLanguage} />
-
+              <Meta locale={locale} />
               <Route path="/" component={Analytics}/>
-              <Route exact path="/" render={() => <ResumeScreen initialized={initialized} language={locale} title={title} />} />
-              <Route exact path="/fr/cv.html" render={() => <ResumeScreen initialized={initialized} language="fr" title="CV" />} />
-              <Route exact path="/ja/rirekisho.html" render={() => <ResumeScreen initialized={initialized} language="ja" title="履歴書" />} />
-              <Route exact path="/en/resume.html" render={() => <ResumeScreen initialized={initialized} language="en" title="Resume" />} />
-              <Route exact path="/ja/until/japan.html" render={() => <WaitingUntilJapanScreen language="ja" title="日本まで" />} />
-              <Route exact path="/en/until/japan.html" render={() => <WaitingUntilJapanScreen language="en" title="日本まで" />} />
-              <Route exact path="/fr/until/japan.html" render={() => <WaitingUntilJapanScreen language="fr" title="日本まで" />} />
-
+              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={defaultLanguage} path="/" component={ResumeScreen} />
+              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'fr'} path="/fr/cv.html" component={ResumeScreen} />
+              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'ja'} path="/ja/rirekisho.html" component={ResumeScreen} />
+              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'en'} path="/en/resume.html" component={ResumeScreen} />
             </div>
-          </Router>
+          </ConnectedRouter>
         </MuiThemeProvider>
       </IntlProvider>
     );
@@ -87,6 +73,11 @@ const mapStateToProps = (state) => {
   return ({
     currentLanguage: state.language.lang
   })
-}
+};
 
-export default connect(mapStateToProps)(App);
+const mapActionsToProps = dispatch => ({
+  onChangeLanguage: lang => dispatch(changeLanguage(lang))
+});
+
+
+export default connect(mapStateToProps, mapActionsToProps)(App)

@@ -3,7 +3,7 @@ import {
 } from '../actions';
 
 export default function reducer(state = {
-  lang: 'en'
+  lang: null
 }, action) {
   switch (action.type) {
     case CHANGE_LANGUAGE_SUCCESS:
