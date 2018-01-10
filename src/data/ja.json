@@ -655,6 +655,10 @@
     {
       "name": "写真",
       "icon": "photo_camera"
+    },
+    {
+      "name": "Trading",
+      "icon": "attach_money"
     }
   ]
 }
