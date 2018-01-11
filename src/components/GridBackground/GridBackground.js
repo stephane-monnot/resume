@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import flow from 'lodash/flow';
 import withWindowSize from '../../withWindowSize';
+import GridItem from './GridItem';
 
 class GridBackground extends React.PureComponent {
 
@@ -61,9 +62,9 @@ class GridBackground extends React.PureComponent {
       const child = React.createElement(children[(i-interval)%children.length].type, {...children[(i-interval)%children.length].props, style: {...children[(i-interval)%children.length].props.style, border: border + 'px solid black', width: '100%', height: '100%'}});
       // const randKey = Math.floor(Math.random() * children.length);
       // const child = React.createElement(children[randKey].type, {...children[randKey].props, style: {...children[randKey].props.style, width: '100%', height: '100%'}});
-      return (<div key={i} style={{ width: itemWidth, height: itemHeight }}>
+      return (<GridItem key={i} width={itemWidth} height={itemHeight}>
           {child}
-        </div>
+        </GridItem>
       );
     });
   }
