@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GridItem = ({ width, height, style, ...rest }) => (
+const GridItem = ({ width, height, style, delay, duration, ...rest }) => (
   <div className="GridItem" style={{ width, height, ...style }} {...rest} />
 );
 
