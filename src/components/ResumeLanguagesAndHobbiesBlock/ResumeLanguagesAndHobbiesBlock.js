@@ -40,7 +40,7 @@ const ResumeLanguagesAndHobbiesBlock = ({ languages, hobbies, hobbyCardStyle }) 
       </div>
     </div>
 
-    <div id="ResumeLanguagesAndHobbiesBlock-hobbies">
+    <div id="Resume-hobbies">
       <div className="heading">
         <h2>
           <FormattedMessage
