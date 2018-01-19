@@ -556,7 +556,7 @@
           "name": "Continuous deployment"
         }
       ],
-      "content": "My resume in japanese, french and english, developed with React.",
+      "content": "My resume in japanese, french and english, developed with React.<br> With a score of 100/100 on PageSpeed Insights (mobile & desktop).",
       "date": "2017-10-02"
     },
     {
