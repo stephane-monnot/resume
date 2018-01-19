@@ -6,7 +6,7 @@
     "connected-react-router": "^4.3.0",
     "dot-object": "^1.7.0",
     "local-storage": "^1.4.2",
-    "material-ui": "next",
+    "material-ui": "^1.0.0-beta.29",
     "material-ui-icons": "^1.0.0-beta.10",
     "proxyquire": "^1.8.0",
     "react": "^15.6.1",

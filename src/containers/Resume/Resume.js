@@ -47,8 +47,8 @@ class Resume extends Component {
     const { theme } = this.props;
     const { formatMessage, formatDate } = this.props.intl;
 
-    const primaryColor = theme.palette.primary[500];
-    const secondaryColor = theme.palette.secondary[500];
+    const primaryColor = theme.palette.primary.main;
+    const secondaryColor = theme.palette.secondary.main;
 
     const skills = this.getSkillsByLanguages();
 
@@ -155,7 +155,7 @@ Resume.defaultProps = {
 }
 
 const decorators = flow([
-  withTheme,
+  withTheme(),
   injectIntl
 ]);
 
