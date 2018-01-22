@@ -3,13 +3,13 @@
 
 .ResumeProjectsBlock-technologies {
     display: flex;
-    justifyContent: center;
-    flexWrap: wrap;
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
 }
 
 .ResumeProjectsBlock-technologies > * {
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .ResumeProjectsBlock-technologies > * > * {
