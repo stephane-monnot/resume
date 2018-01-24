@@ -365,6 +365,29 @@
   ],
   "projects": [
     {
+      "title": "React Fake Code Typing",
+      "subtitle": "React Component",
+      "category": "library",
+      "subcategory": "react",
+      "links": [
+        {
+          "url": "https://stephanemonnot.com/404.html",
+          "text": "View demo"
+        },
+        {
+          "url": "https://github.com/stephane-monnot/react-fake-code-typing",
+          "text": "View source code"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "ReactJS"
+        }
+      ],
+      "content": "A react component to generate fake code typing.",
+      "date": "2018-01-24"
+    },
+    {
       "title": "Leo Pole Consulting SAS",
       "subtitle": "WordPress Project",
       "category": "project",

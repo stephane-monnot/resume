@@ -365,6 +365,29 @@
   ],
   "projects": [
     {
+      "title": "React Fake Code Typing",
+      "subtitle": "Composant React",
+      "category": "library",
+      "subcategory": "react",
+      "links": [
+        {
+          "url": "https://stephanemonnot.com/404.html",
+          "text": "Voir une démo"
+        },
+        {
+          "url": "https://github.com/stephane-monnot/react-fake-code-typing",
+          "text": "Voir les sources"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "ReactJS"
+        }
+      ],
+      "content": "Un composant React pour générer une fausse saisie de code.",
+      "date": "2018-01-24"
+    },
+    {
       "title": "Leo Pole Consulting SAS",
       "subtitle": "Projet WordPress",
       "category": "project",
@@ -535,7 +558,7 @@
           "name": "ReactJS"
         }
       ],
-      "content": "Un composant React pour générer des chronologies verticales",
+      "content": "Un composant React pour générer des chronologies verticales.",
       "date": "2017-10-27"
     },
     {
