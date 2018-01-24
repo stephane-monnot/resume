@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import blue from 'material-ui/colors/blue';
 import red from 'material-ui/colors/red';
@@ -17,6 +17,7 @@ import './App.css';
 
 import IntlRoute from './IntlRoute';
 import Analytics from './components/Analytics/Analytics';
+import NotFoundScreen from './containers/NotFoundScreen/NotFoundScreen';
 import ResumeScreen from './containers/ResumeScreen/ResumeScreen';
 import Meta from './containers/Meta/Meta';
 import { changeLanguage } from "./actions";
@@ -53,10 +54,14 @@ class App extends Component {
             <div className="App">
               <Meta locale={locale} />
               <Route path="/" component={Analytics}/>
-              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={defaultLanguage} path="/" component={ResumeScreen} />
-              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'fr'} path="/fr/cv.html" component={ResumeScreen} />
-              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'ja'} path="/ja/rirekisho.html" component={ResumeScreen} />
-              <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'en'} path="/en/resume.html" component={ResumeScreen} />
+
+              <Switch>
+                <IntlRoute exact onChangeLanguage={onChangeLanguage} language={defaultLanguage} path="/" component={ResumeScreen} />
+                <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'fr'} path="/fr/cv.html" component={ResumeScreen} />
+                <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'ja'} path="/ja/rirekisho.html" component={ResumeScreen} />
+                <IntlRoute exact onChangeLanguage={onChangeLanguage} language={'en'} path="/en/resume.html" component={ResumeScreen} />
+                <IntlRoute onChangeLanguage={onChangeLanguage} language={'en'} component={NotFoundScreen} />
+              </Switch>
             </div>
           </ConnectedRouter>
         </MuiThemeProvider>

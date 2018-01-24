@@ -1,0 +1,9 @@
+.NotFound {
+    padding-bottom: 56px;
+}
+
+.NotFoundBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
