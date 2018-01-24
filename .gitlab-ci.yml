@@ -30,6 +30,7 @@ pages:
       - mkdir public/
       - mv build_ja public/ja
       - mv build_en public/en
+      - cp public/en/404.html public/404.html
   artifacts:
     paths:
       - public
