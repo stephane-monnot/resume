@@ -45,3 +45,11 @@
     height: 14px;
   }
 }
+
+@media only screen and (max-width: 300px) {
+  .dots-progress-dot {
+    margin: 0 2px;
+    width: 12px;
+    height: 12px;
+  }
+}
