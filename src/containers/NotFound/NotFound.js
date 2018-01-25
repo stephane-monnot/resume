@@ -41,6 +41,42 @@ class HttpException extends \\RuntimeException implements HttpExceptionInterface
  */
 throw new HttpException(400, 'Page Not Found');`;
 
+const testCodeSmallScreen = `
+/**
+ * @link Home
+ * @todo ..write a 404 page that actually makes sense.
+ */
+class HttpException
+  extends \\RuntimeException
+  implements HttpExceptionInterface
+{
+
+  public function __construct(
+    int $statusCode,
+    string $message = null,
+    \\Exception $previous = null
+  ) {
+      $this->statusCode = $statusCode;
+      parent::__construct($message, $code, $previous);
+  }
+
+  /**
+   * Get Status code.
+   *
+   * @return int Status code
+   */
+  public function getStatusCode()
+  {
+      return $this->statusCode;
+  }
+}
+
+/**
+ * @link Home
+ * @todo ..write a 404 page that actually makes sense.
+ */
+throw new HttpException(400, 'Page Not Found');`;
+
 class NotFound extends Component {
   render() {
     const { formatMessage } = this.props.intl;
@@ -53,8 +89,14 @@ class NotFound extends Component {
             defaultMessage: '404 - page not found'
           })}
         />
-        <ScreenBlock className="NotFoundBlock">
-          <FakeCodeTyping>
+        <ScreenBlock containerClassName="NotFoundBlockContainer screen-sm" className="NotFoundBlock">
+          <FakeCodeTyping speed={3000}>
+            <SyntaxHighlighter language="php" style={monokai}>{testCodeSmallScreen}</SyntaxHighlighter>
+          </FakeCodeTyping>
+        </ScreenBlock>
+
+        <ScreenBlock containerClassName="NotFoundBlockContainer screen-xl" className="NotFoundBlock">
+          <FakeCodeTyping speed={3000}>
             <SyntaxHighlighter language="php" style={monokai}>{testCode}</SyntaxHighlighter>
           </FakeCodeTyping>
         </ScreenBlock>

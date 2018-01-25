@@ -24,3 +24,17 @@
 .NotFoundBlock .fake-code-typing {
     display: inline-block;
 }
+
+.NotFoundBlockContainer.screen-sm {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .NotFoundBlockContainer.screen-xl {
+        display: none;
+    }
+
+    .NotFoundBlockContainer.screen-sm {
+        display: flex;
+    }
+}

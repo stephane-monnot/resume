@@ -2,11 +2,12 @@ import React from 'react';
 
 import './ScreenBlock.css';
 
-const ScreenBlock = ({ children, className, ...othersProps }) => {
+const ScreenBlock = ({ children, className, containerClassName, ...othersProps }) => {
   className += ' ScreenBlock';
+  containerClassName += ' ScreenBlockContainer';
 
   return (
-    <div className="ScreenBlockContainer">
+    <div className={containerClassName.trim()}>
       <div {...othersProps} className={className.trim()}>
         {children}
       </div>
@@ -15,7 +16,8 @@ const ScreenBlock = ({ children, className, ...othersProps }) => {
 };
 
 ScreenBlock.defaultProps = {
-  className: ''
+  className: '',
+  containerClassName: ''
 };
 
 export default ScreenBlock;
