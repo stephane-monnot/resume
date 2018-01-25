@@ -90,13 +90,13 @@ class NotFound extends Component {
           })}
         />
         <ScreenBlock containerClassName="NotFoundBlockContainer screen-sm" className="NotFoundBlock">
-          <FakeCodeTyping speed={3000}>
+          <FakeCodeTyping>
             <SyntaxHighlighter language="php" style={monokai}>{testCodeSmallScreen}</SyntaxHighlighter>
           </FakeCodeTyping>
         </ScreenBlock>
 
         <ScreenBlock containerClassName="NotFoundBlockContainer screen-xl" className="NotFoundBlock">
-          <FakeCodeTyping speed={3000}>
+          <FakeCodeTyping>
             <SyntaxHighlighter language="php" style={monokai}>{testCode}</SyntaxHighlighter>
           </FakeCodeTyping>
         </ScreenBlock>
