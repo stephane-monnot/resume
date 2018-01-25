@@ -76,3 +76,13 @@
         height: calc(100vh - 88px);
     }
 }
+
+@media only screen and (max-width: 360px) {
+    .ResumeHomeBlock h1 {
+        font-size: 26px;
+    }
+
+    .ResumeHomeBlock h2 {
+        font-size: 15px;
+    }
+}

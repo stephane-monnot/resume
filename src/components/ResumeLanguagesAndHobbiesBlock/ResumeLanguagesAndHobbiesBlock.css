@@ -61,3 +61,25 @@
 .ResumeLanguagesAndHobbiesBlock-hobby .material-icons {
     font-size: 48px;
 }
+
+@media only screen and (max-width: 800px) {
+    .ResumeLanguagesAndHobbiesBlock-hobbies {
+        padding: 20px;
+    }
+
+    .ResumeLanguagesAndHobbiesBlock-hobby {
+        width: 31%;
+        margin: 1%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .ResumeLanguagesAndHobbiesBlock-hobbies {
+        padding: 20px;
+    }
+
+    .ResumeLanguagesAndHobbiesBlock-hobby {
+        width: 48%;
+        margin: 1%;
+    }
+}
