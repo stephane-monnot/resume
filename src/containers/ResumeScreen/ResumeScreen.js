@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import cvFR from '../../data/fr.json';
 import cvJA from '../../data/ja.json';
 import cvEN from '../../data/en.json';
+import customers from '../../data/customers.json';
 import cvPDFFR from '../../data/fr.pdf';
 import cvPDFJA from '../../data/ja.pdf';
 import cvPDFEN from '../../data/en.pdf';
@@ -20,7 +21,7 @@ class ResumeScreen extends Component {
     const cv = this.state.cvs[this.props.currentLanguage];
     const cvPDF = this.state.cvPDFs[this.props.currentLanguage];
     return (
-      <Resume {...cv} cvPDF={cvPDF}/>
+      <Resume {...cv} cvPDF={cvPDF} customers={customers} />
     );
   }
 }

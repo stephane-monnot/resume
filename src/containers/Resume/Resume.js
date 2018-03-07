@@ -12,6 +12,7 @@ import ResumeWorkAndEducationBlock from "../../components/ResumeWorkAndEducation
 import ResumeSkillsBlock from "../../components/ResumeSkillsBlock/ResumeSkillsBlock";
 import ResumeProjectsBlock from "../../components/ResumeProjectsBlock/ResumeProjectsBlock";
 import ResumeLanguagesAndHobbiesBlock from "../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock";
+import ResumeCustomersBlock from "../../components/ResumeCustomersBlock/ResumeCustomersBlock";
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 
 import appTheme from '../../theme';
@@ -120,6 +121,10 @@ class Resume extends Component {
           hobbyCardStyle={styles.primaryColor}
         />
 
+        <ResumeCustomersBlock
+          customers={this.props.customers}
+        />
+
         <BottomNavigation />
       </div>
     );
@@ -151,6 +156,7 @@ Resume.defaultProps = {
   educations: [],
   volunteer: [],
   hobbies: [],
+  customers: [],
   projects: [],
 }
 

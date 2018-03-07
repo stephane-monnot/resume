@@ -591,6 +591,28 @@
       "date": "2017-10-02"
     },
     {
+      "title": "Application Piq-Up",
+      "subtitle": "Facebook Application",
+      "category": "project",
+      "subcategory": "facebook",
+      "links": [
+        {
+          "url": "XXXXXXXXXX",
+          "text": "Open application"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Facebook SDK"
+        }
+      ],
+      "content": "XXXXXXXXXX",
+      "date": "XXXXXXXXXX"
+    },
+    {
       "title": "Laravel 5 Friendships",
       "subtitle": "Laravel Library",
       "category": "library",
@@ -659,6 +681,67 @@
       ],
       "content": "A wrapper to work with Gocr inside PHP scripts. This library makes easier the use of the OCR software named GOCR.",
       "date": "2015-09-07"
+    },
+    {
+      "title": "Application Whopper Moveout for Burger King France",
+      "subtitle": "Facebook Application",
+      "category": "project",
+      "subcategory": "facebook",
+      "links": [],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Facebook SDK"
+        }
+      ],
+      "content": "XXXXXXXXXX",
+      "date": "XXXXXXXXXX"
+    },
+    {
+      "title": "Application BKAddicts for Burger King France",
+      "subtitle": "Facebook Application",
+      "category": "project",
+      "subcategory": "facebook",
+      "links": [
+        {
+          "url": "https://www.facebook.com/burgerkingfranceofficiel/app/604808892968722/",
+          "text": "Open application"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Facebook SDK"
+        }
+      ],
+      "content": "XXXXXXXXXX",
+      "date": "XXXXXXXXXX"
+    },
+    {
+      "title": "EM2C Vos locaux",
+      "subtitle": "PHP Project",
+      "category": "project",
+      "subcategory": "php",
+      "links": [
+        {
+          "url": "http://www.em2c-voslocaux.com/",
+          "text": "Visit website"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Javascript"
+        }
+      ],
+      "content": "Showcase website of the EM2C company.",
+      "date": "2018-01-10"
     }
   ],
   "volunteer": [

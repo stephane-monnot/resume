@@ -1,0 +1,92 @@
+[
+  {
+    "picture": "customer001.png",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer002.png",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer003.png",
+    "style": {
+      "background": "#1E24BD"
+    }
+  },
+  {
+    "picture": "customer004.jpg",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer005.jpg",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer006.png",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer014.png",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer007.png",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer009.png",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer010.jpg",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer008.jpeg",
+    "style": {
+      "background": "#B3C954"
+    }
+  },
+  {
+    "picture": "customer011.jpg",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer012.jpg",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer013.jpg",
+    "style": {
+      "background": "#fff"
+    }
+  },
+  {
+    "picture": "customer015.png",
+    "style": {
+      "background": "#fff"
+    }
+  }
+]
