@@ -52,7 +52,7 @@ class GridBackground extends React.PureComponent {
     const itemsNumberByLine = Math.floor(innerWidth / itemWidth);
     let interval = 0;
 
-    return _.map(_.range(100), function (i) {
+    return _.map(_.range(150), function (i) {
 
       let border = 0;
 
