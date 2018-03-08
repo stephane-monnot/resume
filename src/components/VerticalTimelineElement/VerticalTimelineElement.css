@@ -38,6 +38,10 @@
     border-top: 3px solid #4267B2;
 }
 
+.VerticalTimelineElement.vertical-timeline-element--go .vertical-timeline-element-content {
+    border-top: 3px solid #6AD7E5;
+}
+
 .VerticalTimelineElement .vertical-timeline-element-icon .SVGInline {
     display: block;
     width: 36px;

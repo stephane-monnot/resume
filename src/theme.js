@@ -9,6 +9,7 @@ import RailsIcon from 'react-devicon/rails/plain';
 import JavascriptIcon from 'react-devicon/javascript/plain';
 import DockerIcon from 'react-devicon/docker/plain';
 import FacebookIcon from 'react-devicon/facebook/plain';
+import GoIcon from 'react-devicon/go/plain';
 import WordpressIcon from 'react-devicon/wordpress/plain';
 import CordovaIcon from './components/Icons/Apachecordova';
 
@@ -92,6 +93,14 @@ const theme = {
     },
     className: 'vertical-timeline-element--facebook',
     icon: <FacebookIcon />,
+  },
+  goColor: {
+    style: {
+      background: '#6AD7E5',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--go',
+    icon: <GoIcon />,
   },
   othersColor: {
     style: {
