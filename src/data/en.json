@@ -344,7 +344,7 @@
       }
     }
   ],
-  "tools": "Operating system: Linux(over ten years)<br />IDE: PhpStorm / RubyMine<br />Containerization: Docker<br />Continuous integration software: Jenkins / Gitlab-CI / Travis<br />Project Management Software: Jira / Gitlab<br />Version control system software: Gitlab / Github<br />",
+  "tools": "Operating system: Linux(over ten years)<br />IDE: PhpStorm / RubyMine<br />Containerization: Docker / Rancher<br />Continuous integration software: Jenkins / Gitlab-CI / Travis<br />Project Management Software: Jira / Gitlab<br />Version control system software: Gitlab / Github<br />",
   "educations": [
     {
       "schoolName": "Claude Bernard University Lyon 1",
