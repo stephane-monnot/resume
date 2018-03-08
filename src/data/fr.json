@@ -365,6 +365,29 @@
   ],
   "projects": [
     {
+      "title": "OVH provider pour External DNS Rancher",
+      "subtitle": "Librairie GO",
+      "category": "library",
+      "subcategory": "go",
+      "contribution": true,
+      "links": [
+        {
+          "url": "https://github.com/rancher/external-dns/pull/105",
+          "text": "Voir les sources"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "GO"
+        },
+        {
+          "name": "Rancher"
+        }
+      ],
+      "content": "Contributions à une libraries Rancher qui permet de mettre à jour des DNS externes avec les enregistrements générés par Rancher.",
+      "date": "2018-03-08"
+    },
+    {
       "title": "React Fake Code Typing",
       "subtitle": "Composant React",
       "category": "library",
@@ -591,6 +614,28 @@
       "date": "2017-10-02"
     },
     {
+      "title": "Application Piq-Up",
+      "subtitle": "Application Facebook",
+      "category": "project",
+      "subcategory": "facebook",
+      "links": [
+        {
+          "url": "https://apps.facebook.com/ct_quizzy",
+          "text": "Ouvrir l'application"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Facebook SDK"
+        }
+      ],
+      "content": "L'application pIQ-UP choisie des tests adaptés au profil cognitif de l'utilisateur pour l'aider à faire des progrès grâce à des exercices.",
+      "date": "2017-08-20"
+    },
+    {
       "title": "Laravel 5 Friendships",
       "subtitle": "Bibliothèque Laravel",
       "category": "library",
@@ -659,6 +704,71 @@
       ],
       "content": "un wrapper pour utiliser Gocr dans des scripts PHP. Cette bibliothèque rend facile l'utilisation  du logiciel OCR nommé GOCR.",
       "date": "2015-09-07"
+    },
+    {
+      "title": "Application Whopper Moveout pour Burger King France",
+      "subtitle": "Application Facebook",
+      "category": "project",
+      "subcategory": "facebook",
+      "links": [],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Facebook SDK"
+        }
+      ],
+      "content": "Application Facebook pour Burger King France.",
+      "date": "2015-03-17"
+    },
+    {
+      "title": "Application BKAddicts pour Burger King France",
+      "subtitle": "Application Facebook",
+      "category": "project",
+      "subcategory": "facebook",
+      "links": [
+        {
+          "url": "https://www.facebook.com/burgerkingfranceofficiel/app/604808892968722/",
+          "text": "Ouvrir l'application"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Facebook SDK"
+        }
+      ],
+      "content": "Application pour Burger King France",
+      "date": "2014-09-26"
+    },
+    {
+      "title": "EM2C",
+      "subtitle": "PHP Project",
+      "category": "project",
+      "subcategory": "php",
+      "links": [
+        {
+          "url": "http://www.em2c.com/",
+          "text": "Visitez le site 1"
+        },
+        {
+          "url": "http://www.em2c-voslocaux.com/",
+          "text": "Visit le site 2"
+        }
+      ],
+      "technologies": [
+        {
+          "name": "PHP"
+        },
+        {
+          "name": "Javascript"
+        }
+      ],
+      "content": "Site vitrine de la compagnie EM2C et de ses produits.",
+      "date": "2018-01-10"
     }
   ],
   "volunteer": [
