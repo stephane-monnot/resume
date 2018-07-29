@@ -10,48 +10,65 @@ import VerticalTimelineElement from '../../components/VerticalTimelineElement/Ve
 
 import './ResumeWorkAndEducationBlock.css';
 
-const ResumeWorkAndEducationBlock = ({ positions, educations, workIconStyle, educationIconStyle, formatMessage }) => (
+const ResumeWorkAndEducationBlock = ({
+  positions,
+  educations,
+  workIconStyle,
+  educationIconStyle,
+  formatMessage,
+}) => (
   <ScreenBlock id="Resume-work" className="ResumeWorkAndEducationBlock">
     <div className="container">
       <div className="heading">
         <h2>
           <FormattedMessage
-            id='Resume.workExperienceAndEducation'
-            defaultMessage='Work experience & Education'
+            id="Resume.workExperienceAndEducation"
+            defaultMessage="Work experience & Education"
           />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.workExperienceAndEducationSubtitle'
-            defaultMessage='My previous jobs and my qualifications.'
+            id="Resume.workExperienceAndEducationSubtitle"
+            defaultMessage="My previous jobs and my qualifications."
           />
         </p>
       </div>
 
       <VerticalTimeline>
-        {positions.map((position, i) =>
+        {positions.map((position, i) => (
           <VerticalTimelineElement
             className="Resume-position"
             key={i}
             icon={<WorkIcon />}
             iconStyle={workIconStyle}
-            date={position.startDate + ' – ' + position.endDate + ' (' + ((position.endDate === 'Today' || position.endDate === 'Aujourd\'hui' || position.endDate === '今' ? (new Date()).getFullYear() : parseInt(position.endDate, 10)) - parseInt(position.startDate, 10)) + formatMessage({
+            date={`${position.startDate} – ${
+              position.endDate
+            } (${(position.endDate === 'Today' ||
+            position.endDate === "Aujourd'hui" ||
+            position.endDate === '今'
+              ? new Date().getFullYear()
+              : parseInt(position.endDate, 10)) -
+              parseInt(position.startDate, 10)}${formatMessage({
               id: 'Resume.years',
-              defaultMessage: ' years'
-            }) + ')'}
+              defaultMessage: ' years',
+            })})`}
           >
-            <h3 className="vertical-timeline-element-title">{position.title}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{position.company}</h4>
+            <h3 className="vertical-timeline-element-title">
+              {position.title}
+            </h3>
+            <h4 className="vertical-timeline-element-subtitle">
+              {position.company}
+            </h4>
             <p>
-              <span dangerouslySetInnerHTML={{ __html: position.summary }}></span>
+              <span dangerouslySetInnerHTML={{ __html: position.summary }} />
             </p>
           </VerticalTimelineElement>
-        )}
+        ))}
       </VerticalTimeline>
 
       <div id="Resume-education">
         <VerticalTimeline>
-          {educations.map((education, i) =>
+          {educations.map((education, i) => (
             <VerticalTimelineElement
               position={i % 2 ? 'left' : 'right'}
               id=""
@@ -59,18 +76,31 @@ const ResumeWorkAndEducationBlock = ({ positions, educations, workIconStyle, edu
               key={i}
               icon={<SchoolIcon />}
               iconStyle={educationIconStyle}
-              date={education.startDate + ' – ' + education.endDate + ' (' + ((education.endDate === 'Today' || education.endDate === 'Aujourd\'hui' || education.endDate === '今' ? (new Date()).getFullYear() : parseInt(education.endDate, 10)) - parseInt(education.startDate, 10)) + formatMessage({
+              date={`${education.startDate} – ${
+                education.endDate
+              } (${(education.endDate === 'Today' ||
+              education.endDate === "Aujourd'hui" ||
+              education.endDate === '今'
+                ? new Date().getFullYear()
+                : parseInt(education.endDate, 10)) -
+                parseInt(education.startDate, 10)}${formatMessage({
                 id: 'Resume.years',
-                defaultMessage: ' years'
-              }) + ')'}
+                defaultMessage: ' years',
+              })})`}
             >
-              <h3 className="vertical-timeline-element-title">{education.fieldOfStudy}</h3>
-              <h4 className="vertical-timeline-element-subtitle">{education.degree}</h4>
+              <h3 className="vertical-timeline-element-title">
+                {education.fieldOfStudy}
+              </h3>
+              <h4 className="vertical-timeline-element-subtitle">
+                {education.degree}
+              </h4>
               <p>
-                <span dangerouslySetInnerHTML={{ __html: education.activities }}></span>
+                <span
+                  dangerouslySetInnerHTML={{ __html: education.activities }}
+                />
               </p>
             </VerticalTimelineElement>
-          )}
+          ))}
         </VerticalTimeline>
       </div>
     </div>

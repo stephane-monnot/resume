@@ -9,14 +9,14 @@ export default {
     languages: 'Languages',
     interests: 'Interests',
     resume: 'Resume',
-    projectsAndDevelopments: 'Projects & developments'
+    projectsAndDevelopments: 'Projects & developments',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Remaining days until Japan',
     from: 'From',
     until: 'Until',
     days: 'Days',
-    Percent: 'Percent'
+    Percent: 'Percent',
   },
   SimpleBottomNavigation: {
     aboutMe: 'About me',
@@ -26,6 +26,6 @@ export default {
     skills: 'Skills',
     languages: 'Languages',
     hobbies: 'Hobbies',
-    projects: 'Projects'
-  }
+    projects: 'Projects',
+  },
 };

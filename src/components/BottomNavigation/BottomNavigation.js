@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Scroll from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -13,18 +14,20 @@ import CodeIcon from '@material-ui/icons/Code';
 
 import './BottomNavigation.css';
 
-let Link = (props) => {
+const Link = props => {
   const { showLabel, ...rest } = props;
-  return (
-      <Scroll.Link {...rest} />
-  );
+  return <Scroll.Link {...rest} />;
 };
 
-var buttons = [
+Link.propTypes = {
+  showLabel: PropTypes.bool,
+};
+
+const buttons = [
   {
     label: 'SimpleBottomNavigation.home',
     name: 'Resume-home',
-    icon: <HomeIcon />
+    icon: <HomeIcon />,
   },
   {
     label: 'SimpleBottomNavigation.aboutMe',
@@ -40,8 +43,7 @@ var buttons = [
     label: 'SimpleBottomNavigation.education',
     name: 'Resume-education',
     icon: <SchoolIcon />,
-    offset: -16
-
+    offset: -16,
   },
   {
     label: 'SimpleBottomNavigation.skills',
@@ -66,17 +68,22 @@ var buttons = [
 ];
 
 const SimpleBottomNavigation = () => (
-  <BottomNavigation
-    value="0"
-    className="BottomNavigation"
-  >
-    {buttons.map((button, j) =>
-      <Link key={j} className="BottomNavigation-link" to={button.name}
-            activeClass="active" spy={true} smooth={true} offset={button.offset} duration={500}>
+  <BottomNavigation value="0" className="BottomNavigation">
+    {buttons.map((button, j) => (
+      <Link
+        key={j} // eslint-disable-line react/no-array-index-key
+        className="BottomNavigation-link"
+        to={button.name}
+        activeClass="active"
+        spy
+        smooth
+        offset={button.offset}
+        duration={500}
+      >
         {button.icon}
         <FormattedMessage id={button.label} />
       </Link>
-    )}
+    ))}
   </BottomNavigation>
 );
 

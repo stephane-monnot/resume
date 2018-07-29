@@ -6,27 +6,29 @@ export default {
     download: 'Télécharger',
     hireMe: 'Engagez-moi',
     workExperienceAndEducation: 'Expérience professionnelle et éducation',
-    workExperienceAndEducationSubtitle: 'Mes précédents emplois and mes qualifications.',
+    workExperienceAndEducationSubtitle:
+      'Mes précédents emplois and mes qualifications.',
     years: ' ans',
     year: ' an',
     skills: 'Compétences',
-    skillsSubtitle: 'Je peux dire que je suis plutôt à l\'aise avec',
+    skillsSubtitle: "Je peux dire que je suis plutôt à l'aise avec",
     languages: 'Langues',
     languagesSubtitle: 'Je parle',
     interests: 'Loisirs',
-    interestsSubtitle: 'Ce que j\'aime',
+    interestsSubtitle: "Ce que j'aime",
     resume: 'CV',
     projectsAndDevelopments: 'Projets et développements',
-    projectsAndDevelopmentsSubtitle: 'Mes derniers travaux, projets et développements.',
+    projectsAndDevelopmentsSubtitle:
+      'Mes derniers travaux, projets et développements.',
     tools: 'Outils',
-    toolsSubtitle: 'Mes outils préférés'
+    toolsSubtitle: 'Mes outils préférés',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Jours restants avant Japon',
     from: 'De',
-    until: 'Jusqu\'à',
+    until: "Jusqu'à",
     days: 'Jours',
-    Percent: 'Pourcentage'
+    Percent: 'Pourcentage',
   },
   SimpleBottomNavigation: {
     aboutMe: 'À propos de moi',
@@ -36,6 +38,6 @@ export default {
     skills: 'Compétences',
     languages: 'Langues',
     hobbies: 'Loisirs',
-    projects: 'Projets'
-  }
+    projects: 'Projets',
+  },
 };

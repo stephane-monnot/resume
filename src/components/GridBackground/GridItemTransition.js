@@ -1,13 +1,14 @@
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
 const StyledGridItemTransition = styled(CSSTransition).attrs({
-  classNames: "GridItemTransition",
+  classNames: 'GridItemTransition',
   in: true,
   appear: true,
   timeout: 1000,
 })`
-  transition: opacity ${props => props.duration}ms ease-in ${props => props.delay}ms;
+  transition: opacity ${props => props.duration}ms ease-in
+    ${props => props.delay}ms;
 
   &.GridItemTransition-appear {
     opacity: 0;

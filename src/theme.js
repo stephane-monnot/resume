@@ -1,9 +1,9 @@
 import React from 'react';
 
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import LaravelIcon from 'react-devicon/laravel/plain'
-import PhpIcon from 'react-devicon/php/plain'
-import ReactIcon from 'react-devicon/react/original'
+import LaravelIcon from 'react-devicon/laravel/plain';
+import PhpIcon from 'react-devicon/php/plain';
+import ReactIcon from 'react-devicon/react/original';
 import RubyIcon from 'react-devicon/ruby/plain';
 import RailsIcon from 'react-devicon/rails/plain';
 import JavascriptIcon from 'react-devicon/javascript/plain';
@@ -109,7 +109,7 @@ const theme = {
     },
     className: 'vertical-timeline-element--others',
     icon: <MoreHorizIcon />,
-  }
+  },
 };
 
 export default theme;

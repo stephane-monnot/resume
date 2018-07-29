@@ -13,38 +13,38 @@ const ResumeCustomersBlock = ({ customers }) => (
     <div className="container">
       <div className="heading">
         <h2>
-          <FormattedMessage
-            id='Resume.customers'
-            defaultMessage='Customers'
-          />
+          <FormattedMessage id="Resume.customers" defaultMessage="Customers" />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.customersSubtitle'
-            defaultMessage='Ils me font confiance'
+            id="Resume.customersSubtitle"
+            defaultMessage="Ils me font confiance"
           />
         </p>
       </div>
 
       <div className="ResumeCustomersBlock-customers">
         {customers.map((customer, i) => {
-            const logo = require(`../../data/img/${customer.picture}`);
-            return (
-              <Card key={i} style={customer.style} className="ResumeCustomersBlock-customer">
-                <CardContent>
-                  <img alt="" src={logo} />
-                </CardContent>
-              </Card>
-            );
-          }
-        )}
+          const logo = require(`../../data/img/${customer.picture}`);
+          return (
+            <Card
+              key={i}
+              style={customer.style}
+              className="ResumeCustomersBlock-customer"
+            >
+              <CardContent>
+                <img alt="" src={logo} />
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
     </div>
   </ScreenBlock>
 );
 
 ResumeCustomersBlock.propTypes = {
-  customers: PropTypes.array.isRequired
+  customers: PropTypes.array.isRequired,
 };
 
 export default ResumeCustomersBlock;

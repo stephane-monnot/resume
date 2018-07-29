@@ -4,8 +4,10 @@ import Helmet from 'react-helmet';
 
 class Meta extends Component {
   render() {
-    const { location: { pathname }, locale } = this.props;
-
+    const {
+      location: { pathname },
+      locale,
+    } = this.props;
 
     const mainDomain = 'https://stephanemonnot.com';
     const jaDomain = 'https://webエンジニア.com';
@@ -21,16 +23,15 @@ class Meta extends Component {
 
     return (
       <Helmet
-        htmlAttributes={
-          {"lang": locale}
-        }
-        link={
-          [{"rel": "canonical", "href": canonical}
-        ]}
+        htmlAttributes={{ lang: locale }}
+        link={[{ rel: 'canonical', href: canonical }]}
         meta={[
-          {"name": "google-site-verification", "content": '-WO5leO82u7tAYgflVya2_d4FlcHvr28LzjUUv4nHpE'},
-          {"property": "og:url", "content": canonical},
-          {"property": "og:image", "content": `${mainDomain}/share.png`},
+          {
+            name: 'google-site-verification',
+            content: '-WO5leO82u7tAYgflVya2_d4FlcHvr28LzjUUv4nHpE',
+          },
+          { property: 'og:url', content: canonical },
+          { property: 'og:image', content: `${mainDomain}/share.png` },
         ]}
       />
     );

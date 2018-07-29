@@ -5,14 +5,14 @@ import Helmet from 'react-helmet';
 import { injectIntl, intlShape } from 'react-intl';
 import { withTheme } from '@material-ui/core/styles';
 
-import ResumeAppBar from "../../components/ResumeAppBar/ResumeAppBar";
-import ResumeHomeBlock from "../../components/ResumeHomeBlock/ResumeHomeBlock";
-import ResumeAboutMeBlock from "../../components/ResumeAboutMeBlock/ResumeAboutMeBlock";
-import ResumeWorkAndEducationBlock from "../../components/ResumeWorkAndEducationBlock/ResumeWorkAndEducationBlock";
-import ResumeSkillsBlock from "../../components/ResumeSkillsBlock/ResumeSkillsBlock";
-import ResumeProjectsBlock from "../../components/ResumeProjectsBlock/ResumeProjectsBlock";
-import ResumeLanguagesAndHobbiesBlock from "../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock";
-import ResumeCustomersBlock from "../../components/ResumeCustomersBlock/ResumeCustomersBlock";
+import ResumeAppBar from '../../components/ResumeAppBar/ResumeAppBar';
+import ResumeHomeBlock from '../../components/ResumeHomeBlock/ResumeHomeBlock';
+import ResumeAboutMeBlock from '../../components/ResumeAboutMeBlock/ResumeAboutMeBlock';
+import ResumeWorkAndEducationBlock from '../../components/ResumeWorkAndEducationBlock/ResumeWorkAndEducationBlock';
+import ResumeSkillsBlock from '../../components/ResumeSkillsBlock/ResumeSkillsBlock';
+import ResumeProjectsBlock from '../../components/ResumeProjectsBlock/ResumeProjectsBlock';
+import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock';
+import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 
 import appTheme from '../../theme';
@@ -22,7 +22,7 @@ class Resume extends Component {
   getSkillsByLanguages() {
     const { skills } = this.props;
 
-    const skillsByLanguages = skills.reduce(function (obj, item) {
+    const skillsByLanguages = skills.reduce((obj, item) => {
       if (item.language) {
         obj[item.language.name] = obj[item.language.name] || [];
         obj[item.language.name].push(item);
@@ -30,9 +30,7 @@ class Resume extends Component {
       return obj;
     }, {});
 
-    return Object.keys(skillsByLanguages).map(function (key) {
-      return skillsByLanguages[key];
-    });
+    return Object.keys(skillsByLanguages).map(key => skillsByLanguages[key]);
   }
 
   render() {
@@ -40,7 +38,7 @@ class Resume extends Component {
     let shortFullName = `${this.props.firstName} ${this.props.lastName}`;
     if (this.props.firstNameKana) {
       shortFullName = this.props.firstNameKana + this.props.lastNameKana;
-      fullName += ' (' + this.props.firstNameKana + this.props.lastNameKana + ')';
+      fullName += ` (${this.props.firstNameKana}${this.props.lastNameKana})`;
     }
 
     const cv = this.props.cvPDF;
@@ -61,7 +59,7 @@ class Resume extends Component {
       secondaryColor: {
         background: secondaryColor,
         color: '#fff',
-      }
+      },
     };
 
     return (
@@ -69,11 +67,14 @@ class Resume extends Component {
         <Helmet
           title={this.props.meta.title}
           meta={[
-            {"name": "description", "content": this.props.meta.description},
-            {"name": "keywords", "content": this.props.meta.keywords},
-            {"property": "og:title", "content": this.props.meta.title},
-            {"property": "twitter:title", "content": this.props.meta.title},
-            {"property": "og:description", "content": this.props.meta.description},
+            { name: 'description', content: this.props.meta.description },
+            { name: 'keywords', content: this.props.meta.keywords },
+            { property: 'og:title', content: this.props.meta.title },
+            { property: 'twitter:title', content: this.props.meta.title },
+            {
+              property: 'og:description',
+              content: this.props.meta.description,
+            },
           ]}
         />
 
@@ -105,10 +106,7 @@ class Resume extends Component {
           formatMessage={formatMessage}
         />
 
-        <ResumeSkillsBlock
-          skills={skills}
-          tools={this.props.tools}
-        />
+        <ResumeSkillsBlock skills={skills} tools={this.props.tools} />
 
         <ResumeProjectsBlock
           projects={this.props.projects}
@@ -121,9 +119,7 @@ class Resume extends Component {
           hobbyCardStyle={styles.primaryColor}
         />
 
-        <ResumeCustomersBlock
-          customers={this.props.customers}
-        />
+        <ResumeCustomersBlock customers={this.props.customers} />
 
         <BottomNavigation />
       </div>
@@ -133,7 +129,33 @@ class Resume extends Component {
 
 Resume.propTypes = {
   theme: PropTypes.object.isRequired,
-  intl: intlShape.isRequired
+  meta: PropTypes.object.isRequired,
+  intl: intlShape.isRequired,
+  firstName: PropTypes.string,
+  firstNameKana: PropTypes.string,
+  lastName: PropTypes.string,
+  lastNameKana: PropTypes.string,
+  emailAddress: PropTypes.string,
+  headline: PropTypes.string,
+  summary: PropTypes.string,
+  pictureUrl: PropTypes.string,
+  dateOfBirth: PropTypes.string,
+  mainAddress: PropTypes.string,
+  websites: PropTypes.arrayOf(PropTypes.object),
+  phoneNumbers: PropTypes.arrayOf(PropTypes.object),
+  imAccounts: PropTypes.arrayOf(PropTypes.object),
+  snsAccounts: PropTypes.arrayOf(PropTypes.object),
+  locations: PropTypes.arrayOf(PropTypes.object),
+  positions: PropTypes.arrayOf(PropTypes.object),
+  interests: PropTypes.string,
+  languages: PropTypes.arrayOf(PropTypes.object),
+  skills: PropTypes.arrayOf(PropTypes.object),
+  educations: PropTypes.arrayOf(PropTypes.object),
+  volunteer: PropTypes.arrayOf(PropTypes.object),
+  hobbies: PropTypes.arrayOf(PropTypes.object),
+  customers: PropTypes.arrayOf(PropTypes.object),
+  projects: PropTypes.arrayOf(PropTypes.object),
+  cvPDF: PropTypes.string,
 };
 
 Resume.defaultProps = {
@@ -141,8 +163,10 @@ Resume.defaultProps = {
   lastName: 'Monnot',
   emailAddress: 'monnot.stephane@gmail.com',
   headline: 'Full-stack web engineer',
-  summary: '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.',
-  pictureUrl: 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg',
+  summary:
+    '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.',
+  pictureUrl:
+    'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg',
   dateOfBirth: '1987-09-16',
   mainAddress: 'Noda, Osaka, Japan',
   websites: [],
@@ -158,11 +182,8 @@ Resume.defaultProps = {
   hobbies: [],
   customers: [],
   projects: [],
-}
+};
 
-const decorators = flow([
-  withTheme(),
-  injectIntl
-]);
+const decorators = flow([withTheme(), injectIntl]);
 
 export default decorators(Resume);

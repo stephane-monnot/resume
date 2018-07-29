@@ -7,7 +7,7 @@ import { createBrowserHistory } from 'history';
 import reducers from '../reducers';
 import sagas from '../sagas';
 
-export const history = createBrowserHistory()
+export const history = createBrowserHistory();
 
 export default function configureStore(initialState = {}) {
   const middlewares = [];
@@ -15,12 +15,14 @@ export default function configureStore(initialState = {}) {
   middlewares.push(sagaMiddleware);
   middlewares.push(routerMiddleware(history));
 
-  let createStoreWithMiddleware = applyMiddleware(...middlewares);
+  const createStoreWithMiddleware = applyMiddleware(...middlewares);
 
   const finalCreateStore = createStoreWithMiddleware(createStore);
   const store = finalCreateStore(
-    connectRouter(history)(reducers), initialState,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    connectRouter(history)(reducers),
+    initialState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && // eslint-disable-line no-underscore-dangle
+      window.__REDUX_DEVTOOLS_EXTENSION__(), // eslint-disable-line no-underscore-dangle
   );
   sagaMiddleware.run(sagas);
 

@@ -1,12 +1,17 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-const IntlRoute = ({ language, component: Component, ...rest, onChangeLanguage }) => (
+const IntlRoute = ({
+  language,
+  component: Component,
+  onChangeLanguage,
+  ...rest
+}) => (
   <Route
     {...rest}
     render={() => {
       onChangeLanguage(language);
-      return (<Component language={language} />);
+      return <Component language={language} />;
     }}
   />
 );

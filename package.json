@@ -8,6 +8,7 @@
     "connected-react-router": "^4.3.0",
     "dot-object": "^1.7.0",
     "local-storage": "^1.4.2",
+    "prop-types": "^15.6.2",
     "proxyquire": "^1.8.0",
     "react": "^16.3.0",
     "react-devicon": "^0.1.9",

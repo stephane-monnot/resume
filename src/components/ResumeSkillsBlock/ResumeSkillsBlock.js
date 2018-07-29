@@ -15,58 +15,57 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
     <div className="container">
       <div className="heading">
         <h2>
-          <FormattedMessage
-            id='Resume.skills'
-            defaultMessage='Skills'
-          />
+          <FormattedMessage id="Resume.skills" defaultMessage="Skills" />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.skillsSubtitle'
-            defaultMessage='I can say i’m quite good at'
+            id="Resume.skillsSubtitle"
+            defaultMessage="I can say i’m quite good at"
           />
         </p>
       </div>
 
       <div className="ResumeSkillsBlock-skills">
-        {skills.map((skillCategory, i) =>
+        {skills.map((skillCategory, i) => (
           <Card key={i}>
             <CardContent>
-              <Avatar style={{
-                ...appTheme[`${skillCategory[0].language.style}Color`].style,
-                width: 100,
-                height: 100,
-                margin: '0 auto'
-              }}>
+              <Avatar
+                style={{
+                  ...appTheme[`${skillCategory[0].language.style}Color`].style,
+                  width: 100,
+                  height: 100,
+                  margin: '0 auto',
+                }}
+              >
                 {appTheme[`${skillCategory[0].language.style}Color`].icon}
               </Avatar>
-              <h3 style={{ color: appTheme[`${skillCategory[0].language.style}Color`].style.background }}>
+              <h3
+                style={{
+                  color:
+                    appTheme[`${skillCategory[0].language.style}Color`].style
+                      .background,
+                }}
+              >
                 {skillCategory[0].language.name}
               </h3>
-              {skillCategory.map((skill, j) =>
-                <div key={j}>
-                  {skill.name}
-                </div>
-              )}
+              {skillCategory.map((skill, j) => (
+                <div key={j}>{skill.name}</div>
+              ))}
             </CardContent>
           </Card>
-        )}
-
+        ))}
       </div>
 
       <br />
 
       <div className="heading">
         <h2>
-          <FormattedMessage
-            id='Resume.tools'
-            defaultMessage='Tools'
-          />
+          <FormattedMessage id="Resume.tools" defaultMessage="Tools" />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.toolsSubtitle'
-            defaultMessage='My favorites tools'
+            id="Resume.toolsSubtitle"
+            defaultMessage="My favorites tools"
           />
         </p>
       </div>

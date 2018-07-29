@@ -16,5 +16,7 @@ it('renders without crashing', () => {
           hobbyCardStyle={{}}
         />
       </MemoryRouter>
-    </IntlProvider>, div);
+    </IntlProvider>,
+    div,
+  );
 });

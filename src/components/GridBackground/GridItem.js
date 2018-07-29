@@ -9,13 +9,15 @@ GridItem.propTypes = {
   height: PropTypes.number,
   width: PropTypes.number,
   style: PropTypes.object,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  delay: PropTypes.number,
+  duration: PropTypes.number,
 };
 
 GridItem.defaultPropTypes = {
   height: 0,
   width: 0,
-  style: {}
+  style: {},
 };
 
 export default GridItem;

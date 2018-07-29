@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import flow from 'lodash/flow';
 import Helmet from 'react-helmet';
 import { injectIntl } from 'react-intl';
-import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/styles/hljs';
 import { FakeCodeTyping } from 'react-fake-code-typing';
-
 import 'react-fake-code-typing/style.min.css';
+
+import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 
 import './NotFound.css';
 
@@ -86,18 +86,28 @@ class NotFound extends Component {
         <Helmet
           title={formatMessage({
             id: 'NotFound.title',
-            defaultMessage: '404 - page not found'
+            defaultMessage: '404 - page not found',
           })}
         />
-        <ScreenBlock containerClassName="NotFoundBlockContainer screen-sm" className="NotFoundBlock">
+        <ScreenBlock
+          containerClassName="NotFoundBlockContainer screen-sm"
+          className="NotFoundBlock"
+        >
           <FakeCodeTyping>
-            <SyntaxHighlighter language="php" style={monokai}>{testCodeSmallScreen}</SyntaxHighlighter>
+            <SyntaxHighlighter language="php" style={monokai}>
+              {testCodeSmallScreen}
+            </SyntaxHighlighter>
           </FakeCodeTyping>
         </ScreenBlock>
 
-        <ScreenBlock containerClassName="NotFoundBlockContainer screen-xl" className="NotFoundBlock">
+        <ScreenBlock
+          containerClassName="NotFoundBlockContainer screen-xl"
+          className="NotFoundBlock"
+        >
           <FakeCodeTyping>
-            <SyntaxHighlighter language="php" style={monokai}>{testCode}</SyntaxHighlighter>
+            <SyntaxHighlighter language="php" style={monokai}>
+              {testCode}
+            </SyntaxHighlighter>
           </FakeCodeTyping>
         </ScreenBlock>
       </div>
@@ -105,8 +115,6 @@ class NotFound extends Component {
   }
 }
 
-const decorators = flow([
-  injectIntl
-]);
+const decorators = flow([injectIntl]);
 
 export default decorators(NotFound);

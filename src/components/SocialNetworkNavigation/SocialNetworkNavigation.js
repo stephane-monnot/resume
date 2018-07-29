@@ -6,17 +6,17 @@ import LinkedinIcon from 'react-icons/lib/fa/linkedin-square';
 import './SocialNetworkNavigation.css';
 
 const icons = {
-  "github": {
-    "element": <GithubIcon />
+  github: {
+    element: <GithubIcon />,
   },
-  "linkedin": {
-    "element": <LinkedinIcon />
+  linkedin: {
+    element: <LinkedinIcon />,
   },
 };
 
 const SocialNetworkNavigation = ({ services }) => (
   <div className="SocialNetworkNavigation">
-    {services.map((service, j) =>
+    {services.map((service, j) => (
       <a
         target="_blank"
         key={j}
@@ -25,7 +25,7 @@ const SocialNetworkNavigation = ({ services }) => (
       >
         {icons[service.icon].element}
       </a>
-    )}
+    ))}
   </div>
 );
 

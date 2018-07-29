@@ -1,17 +1,18 @@
-import {
-  CHANGE_LANGUAGE_SUCCESS
-} from '../actions';
+import { CHANGE_LANGUAGE_SUCCESS } from '../actions';
 
-export default function reducer(state = {
-  lang: null
-}, action) {
+export default function reducer(
+  state = {
+    lang: null,
+  },
+  action,
+) {
   switch (action.type) {
     case CHANGE_LANGUAGE_SUCCESS:
       return {
         ...state,
-        lang: action.payload
+        lang: action.payload,
       };
     default:
-        return state;
+      return state;
   }
 }

@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 
 import LanguagePicker from '../../components/LanguagePicker/LanguagePicker';
 
-import SocialNetworkNavigation from "../SocialNetworkNavigation/SocialNetworkNavigation";
+import SocialNetworkNavigation from '../SocialNetworkNavigation/SocialNetworkNavigation';
 
 import './ResumeAppBar.css';
 

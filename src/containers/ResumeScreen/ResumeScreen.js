@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import cvFR from '../../data/fr.json';
 import cvJA from '../../data/ja.json';
@@ -12,24 +13,24 @@ import Resume from '../Resume/Resume';
 class ResumeScreen extends Component {
   componentWillMount() {
     this.setState({
-      cvs: {fr: cvFR, ja: cvJA, en: cvEN},
-      cvPDFs: {fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN}
+      cvs: { fr: cvFR, ja: cvJA, en: cvEN },
+      cvPDFs: { fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN },
     });
   }
 
   render() {
     const cv = this.state.cvs[this.props.currentLanguage];
     const cvPDF = this.state.cvPDFs[this.props.currentLanguage];
-    return (
-      <Resume {...cv} cvPDF={cvPDF} customers={customers} />
-    );
+    return <Resume {...cv} cvPDF={cvPDF} customers={customers} />;
   }
 }
 
-const mapStateToProps = (state) => {
-  return ({
-    currentLanguage: state.language.lang
-  })
+ResumeScreen.propTypes = {
+  currentLanguage: PropTypes.string.isRequired,
 };
+
+const mapStateToProps = state => ({
+  currentLanguage: state.language.lang,
+});
 
 export default connect(mapStateToProps)(ResumeScreen);

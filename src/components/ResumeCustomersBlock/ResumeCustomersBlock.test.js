@@ -10,10 +10,9 @@ it('renders without crashing', () => {
   ReactDOM.render(
     <IntlProvider locale="en">
       <MemoryRouter location="someLocation" context={{}}>
-        <ResumeCustomersBlock
-          customers={[]}
-          customerCardStyle={{}}
-        />
+        <ResumeCustomersBlock customers={[]} customerCardStyle={{}} />
       </MemoryRouter>
-    </IntlProvider>, div);
+    </IntlProvider>,
+    div,
+  );
 });

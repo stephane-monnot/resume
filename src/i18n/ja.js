@@ -19,14 +19,14 @@ export default {
     projectsAndDevelopments: 'プロジェクトと開発',
     projectsAndDevelopmentsSubtitle: '',
     tools: 'ツール',
-    toolsSubtitle: '好きなツール'
+    toolsSubtitle: '好きなツール',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: '日本までの残りの日数',
     from: '日から',
     until: '日まで',
     days: '日',
-    percent: 'パーセンテージ'
+    percent: 'パーセンテージ',
   },
   SimpleBottomNavigation: {
     aboutMe: '私について',
@@ -36,6 +36,6 @@ export default {
     skills: '特技',
     languages: '言語能力',
     hobbies: '趣味',
-    projects: 'プロジェクト'
-  }
+    projects: 'プロジェクト',
+  },
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SVGDeviconInline from 'react-devicon/_base/SVGDeviconInline';
 
-import iconSVG from './Apachecordova.svg'
+import iconSVG from './Apachecordova.svg';
 
 /** Apachecordova */
 function Apachecordova({ width, height, className }) {
@@ -13,13 +13,13 @@ function Apachecordova({ width, height, className }) {
       width={width}
       height={height}
     />
-  )
+  );
 }
 
 Apachecordova.propTypes = {
   className: PropTypes.string,
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-}
+};
 
-export default Apachecordova
+export default Apachecordova;

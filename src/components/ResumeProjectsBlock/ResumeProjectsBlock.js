@@ -17,54 +17,70 @@ const ResumeProjectsBlock = ({ projects, formatDate }) => (
       <div className="heading">
         <h2>
           <FormattedMessage
-            id='Resume.projectsAndDevelopments'
-            defaultMessage='Projects & developments'
+            id="Resume.projectsAndDevelopments"
+            defaultMessage="Projects & developments"
           />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.projectsAndDevelopmentsSubtitle'
-            defaultMessage='Showcase of my latest works, projects and developments.'
+            id="Resume.projectsAndDevelopmentsSubtitle"
+            defaultMessage="Showcase of my latest works, projects and developments."
           />
         </p>
       </div>
 
       <VerticalTimeline>
-        {projects.map((project, i) =>
+        {projects.map((project, i) => (
           <VerticalTimelineElement
-            style={{ borderTop: '3px solid ' + appTheme[project.subcategory + 'Color'].border }}
-            className={"ResumeProjectsBlock " + appTheme[project.subcategory + 'Color'].className}
+            style={{
+              borderTop: `3px solid ${
+                appTheme[`${project.subcategory}Color`].border
+              }`,
+            }}
+            className={`ResumeProjectsBlock ${
+              appTheme[`${project.subcategory}Color`].className
+            }`}
             key={i}
-            icon={appTheme[project.subcategory + 'Color'].icon}
-            iconStyle={appTheme[project.subcategory + 'Color'].style}
-            date={Date.parse(project.date) ? formatDate(new Date(project.date).getTime(), {
-              year: 'numeric',
-              month: 'numeric',
-              day: 'numeric'
-            }): project.date}
+            icon={appTheme[`${project.subcategory}Color`].icon}
+            iconStyle={appTheme[`${project.subcategory}Color`].style}
+            date={
+              Date.parse(project.date)
+                ? formatDate(new Date(project.date).getTime(), {
+                  year: 'numeric',
+                  month: 'numeric',
+                  day: 'numeric',
+                })
+                : project.date
+            }
           >
             <div className="ResumeProjectsBlock-technologies">
-              {project.technologies.map((technology, j) =>
-                <Chip
-                  key={j}
-                  label={technology.name}
-                />
-              )}
+              {project.technologies.map((technology, j) => (
+                <Chip key={j} label={technology.name} />
+              ))}
             </div>
             <h3 className="vertical-timeline-element-title">{project.title}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{project.subtitle}</h4>
+            <h4 className="vertical-timeline-element-subtitle">
+              {project.subtitle}
+            </h4>
             <p>
-              <span dangerouslySetInnerHTML={{ __html: project.content }}></span>
+              <span dangerouslySetInnerHTML={{ __html: project.content }} />
             </p>
             <br />
             <div className="ResumeProjectsBlock-links">
-              {project.links.map((link, i) =>
+              {project.links.map((link, i) => (
                 <Button
-                    key={i} variant="outlined" color="default" target="_blank" href={link.url}>{link.text}</Button>
-              )}
+                  key={i}
+                  variant="outlined"
+                  color="default"
+                  target="_blank"
+                  href={link.url}
+                >
+                  {link.text}
+                </Button>
+              ))}
             </div>
           </VerticalTimelineElement>
-        )}
+        ))}
       </VerticalTimeline>
     </div>
   </ScreenBlock>

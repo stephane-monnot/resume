@@ -2,7 +2,12 @@ import React from 'react';
 
 import './ScreenBlock.css';
 
-const ScreenBlock = ({ children, className, containerClassName, ...othersProps }) => {
+const ScreenBlock = ({
+  children,
+  className,
+  containerClassName,
+  ...othersProps
+}) => {
   className += ' ScreenBlock';
   containerClassName += ' ScreenBlockContainer';
 
@@ -17,7 +22,7 @@ const ScreenBlock = ({ children, className, containerClassName, ...othersProps }
 
 ScreenBlock.defaultProps = {
   className: '',
-  containerClassName: ''
+  containerClassName: '',
 };
 
 export default ScreenBlock;

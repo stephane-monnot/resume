@@ -12,5 +12,7 @@ it('renders without crashing', () => {
       <MemoryRouter location="someLocation" context={{}}>
         <ResumeSkillsBlock skills={[]} tools="Tools" styles={{}} />
       </MemoryRouter>
-    </IntlProvider>, div);
+    </IntlProvider>,
+    div,
+  );
 });

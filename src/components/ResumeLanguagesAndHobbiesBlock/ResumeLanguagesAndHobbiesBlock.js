@@ -10,63 +10,74 @@ import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 
 import './ResumeLanguagesAndHobbiesBlock.css';
 
-const ResumeLanguagesAndHobbiesBlock = ({ languages, hobbies, hobbyCardStyle }) => (
+const ResumeLanguagesAndHobbiesBlock = ({
+  languages,
+  hobbies,
+  hobbyCardStyle,
+}) => (
   <ScreenBlock id="Resume-languages" className="ResumeLanguagesAndHobbiesBlock">
     <div className="container">
       <div className="heading">
         <h2>
-          <FormattedMessage
-            id='Resume.languages'
-            defaultMessage='Languages'
-          />
+          <FormattedMessage id="Resume.languages" defaultMessage="Languages" />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.languagesSubtitle'
-            defaultMessage='I speak'
+            id="Resume.languagesSubtitle"
+            defaultMessage="I speak"
           />
         </p>
       </div>
 
       <div className="ResumeLanguagesAndHobbiesBlock-languages">
-        {languages.map((language, i) =>
+        {languages.map((language, i) => (
           <div className="ResumeLanguagesAndHobbiesBlock-language" key={i}>
             <div className="ResumeLanguagesAndHobbiesBlock-languageTitleAndLevel">
-              <span className="ResumeLanguagesAndHobbiesBlock-languageTitle">{language.name}</span><br />
-              <span className="ResumeLanguagesAndHobbiesBlock-languageLevel"> {language.level}</span>
+              <span className="ResumeLanguagesAndHobbiesBlock-languageTitle">
+                {language.name}
+              </span>
+              <br />
+              <span className="ResumeLanguagesAndHobbiesBlock-languageLevel">
+                {' '}
+                {language.level}
+              </span>
             </div>
-            <DotsProgress maxNumberOfDots={10} numberOfActiveDots={language.levelNumber} />
+            <DotsProgress
+              maxNumberOfDots={10}
+              numberOfActiveDots={language.levelNumber}
+            />
           </div>
-        )}
+        ))}
       </div>
     </div>
 
     <div id="Resume-hobbies">
       <div className="heading">
         <h2>
-          <FormattedMessage
-            id='Resume.interests'
-            defaultMessage='Interests'
-          />
+          <FormattedMessage id="Resume.interests" defaultMessage="Interests" />
         </h2>
         <p>
           <FormattedMessage
-            id='Resume.interestsSubtitle'
-            defaultMessage='What I like'
+            id="Resume.interestsSubtitle"
+            defaultMessage="What I like"
           />
         </p>
       </div>
     </div>
 
     <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
-      {hobbies.map((hobby, i) =>
-        <Card key={i} style={hobbyCardStyle} className="ResumeLanguagesAndHobbiesBlock-hobby">
+      {hobbies.map((hobby, i) => (
+        <Card
+          key={i}
+          style={hobbyCardStyle}
+          className="ResumeLanguagesAndHobbiesBlock-hobby"
+        >
           <CardContent>
             <Icon>{hobby.icon}</Icon>
             <h4>{hobby.name}</h4>
           </CardContent>
         </Card>
-      )}
+      ))}
     </div>
   </ScreenBlock>
 );

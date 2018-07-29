@@ -6,16 +6,11 @@ import './VerticalTimelineElement.css';
 const VerticalTimelineElement = ({ className, ...props }) => {
   className += ' VerticalTimelineElement';
 
-  return (
-    <VerticalTimelineElementBase
-      className={className}
-      {...props}
-    />
-  );
+  return <VerticalTimelineElementBase className={className} {...props} />;
 };
 
 VerticalTimelineElement.defaultProps = {
-  className: ''
+  className: '',
 };
 
 export default VerticalTimelineElement;
