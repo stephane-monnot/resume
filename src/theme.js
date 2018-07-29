@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MoreHorizIcon from 'material-ui-icons/MoreHoriz';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import LaravelIcon from 'react-devicon/laravel/plain'
 import PhpIcon from 'react-devicon/php/plain'
 import ReactIcon from 'react-devicon/react/original'

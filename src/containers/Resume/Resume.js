@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import flow from 'lodash/flow';
 import Helmet from 'react-helmet';
 import { injectIntl, intlShape } from 'react-intl';
-import { withTheme } from 'material-ui/styles';
+import { withTheme } from '@material-ui/core/styles';
 
 import ResumeAppBar from "../../components/ResumeAppBar/ResumeAppBar";
 import ResumeHomeBlock from "../../components/ResumeHomeBlock/ResumeHomeBlock";

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Card, { CardContent } from 'material-ui/Card';
-import Avatar from 'material-ui/Avatar';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Avatar from '@material-ui/core/Avatar';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 

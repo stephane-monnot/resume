@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Button from 'material-ui/Button';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 
 import LanguagePicker from '../../components/LanguagePicker/LanguagePicker';
 
-import './ResumeAppBar.css';
 import SocialNetworkNavigation from "../SocialNetworkNavigation/SocialNetworkNavigation";
+
+import './ResumeAppBar.css';
 
 const ResumeAppBar = ({ emailAddress, snsAccounts }) => (
   <AppBar className="ResumeAppBar" position="absolute">
     <Toolbar className="ResumeAppBar-header">
       <LanguagePicker />
-      <Button href={`mailto:${emailAddress}`} color="contrast">{emailAddress}</Button>
+      <Button href={`mailto:${emailAddress}`}>{emailAddress}</Button>
       <SocialNetworkNavigation services={snsAccounts} />
     </Toolbar>
   </AppBar>

@@ -8,6 +8,15 @@
     box-shadow: none !important;
 }
 
+.ResumeAppBar a {
+    color: white;
+}
+
+.ResumeAppBar a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
 .ResumeAppBar-header {
     justify-content: flex-end;
 }

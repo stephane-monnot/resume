@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+import Button from '@material-ui/core/Button';
 import { FormattedMessage } from 'react-intl';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
@@ -43,14 +43,14 @@ const ResumeAboutMeBlock = ({ style, fullName, headline, summary, pictureUrl, re
                         <br />
 
                         <div className="ResumeAboutMeBlock-links">
-                            <Button raised color="primary" target="_blank" href={resumeUrl}>
+                            <Button variant="contained" color="primary" target="_blank" href={resumeUrl}>
                                 <FormattedMessage
                                     id='Resume.download'
                                     defaultMessage='Download'
                                 />
                             </Button>
                             &nbsp;&nbsp;&nbsp;
-                            <Button href="mailto:monnot.stephane@gmail.com" raised color="accent">
+                            <Button href="mailto:monnot.stephane@gmail.com" variant="contained" color="secondary">
                                 <FormattedMessage
                                     id='Resume.hireMe'
                                     defaultMessage='Hire me'

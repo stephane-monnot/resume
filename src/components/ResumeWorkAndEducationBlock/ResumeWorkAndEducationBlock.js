@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import SchoolIcon from 'material-ui-icons/School';
-import WorkIcon from 'material-ui-icons/Work';
+import SchoolIcon from '@material-ui/icons/School';
+import WorkIcon from '@material-ui/icons/Work';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import VerticalTimeline from '../../components/VerticalTimeline/VerticalTimeline';

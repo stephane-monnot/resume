@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
-import Chip from 'material-ui/Chip';
-import Button from 'material-ui/Button';
+import Chip from '@material-ui/core/Chip';
+import Button from '@material-ui/core/Button';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import VerticalTimeline from '../../components/VerticalTimeline/VerticalTimeline';
@@ -59,7 +59,8 @@ const ResumeProjectsBlock = ({ projects, formatDate }) => (
             <br />
             <div className="ResumeProjectsBlock-links">
               {project.links.map((link, i) =>
-                <Button key={i} raised color="default" target="_blank" href={link.url}>{link.text}</Button>
+                <Button
+                    key={i} variant="outlined" color="default" target="_blank" href={link.url}>{link.text}</Button>
               )}
             </div>
           </VerticalTimelineElement>

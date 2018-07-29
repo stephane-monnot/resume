@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route, Switch } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import blue from 'material-ui/colors/blue';
-import red from 'material-ui/colors/red';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import blue from '@material-ui/core/colors/blue';
+import red from '@material-ui/core/colors/red';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
@@ -34,10 +34,6 @@ const theme = createMuiTheme({
 });
 
 class App extends Component {
-  componentWillMount() {
-    console.log('App/componentWillMount', this.props.language);
-  }
-
   render() {
     const defaultLanguage = process.env.REACT_APP_LOCALE || 'ja';
     const locale = this.props.currentLanguage || defaultLanguage;
