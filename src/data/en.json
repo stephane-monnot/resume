@@ -64,6 +64,22 @@
   "positions": [
     {
       "title": "Full-stack web engineer",
+      "summary": "PHP/MySQL/Javascript development<br />Laravel 5 | Vuejs | ReactJS | Docker | CI",
+      "startDate": "2018",
+      "endDate": "Today",
+      "isCurrent": true,
+      "company": "Iscab"
+    },
+    {
+      "title": "Full-stack web engineer",
+      "summary": "PHP/MySQL/Javascript development<br />Symfony 4 | ReactJS | Docker | CI",
+      "startDate": "2018",
+      "endDate": "Today",
+      "isCurrent": true,
+      "company": "Finkey"
+    },
+    {
+      "title": "Full-stack web engineer",
       "summary": "PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | ReactJS | Docker | CI | Apache Cordova",
       "startDate": "2010",
       "endDate": "Today",
@@ -74,8 +90,8 @@
       "title": "Teacher",
       "summary": "Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL",
       "startDate": "2016",
-      "endDate": "Today",
-      "isCurrent": true,
+      "endDate": "2018",
+      "isCurrent": false,
       "company": "Sup’ La Mache"
     },
     {
@@ -83,7 +99,7 @@
       "summary": "PHP/MySQL/Javascript development <br />Solire Framework | Jquery | AngularJS",
       "startDate": "2009",
       "endDate": "2017",
-      "isCurrent": true,
+      "isCurrent": false,
       "company": "Solire"
     }
   ],

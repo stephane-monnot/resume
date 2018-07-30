@@ -66,6 +66,22 @@
   "positions": [
     {
       "title": "フルスタックwebエンジニア",
+      "summary": "PHP/MySQL/Javascript development<br />Laravel 5 | Vuejs | ReactJS | Docker | CI",
+      "startDate": "2018年",
+      "endDate": "今",
+      "isCurrent": true,
+      "company": "Iscab"
+    },
+    {
+      "title": "フルスタックwebエンジニア",
+      "summary": "PHP/MySQL/Javascript development<br />Symfony 4 | ReactJS | Docker | CI",
+      "startDate": "2018年",
+      "endDate": "今",
+      "isCurrent": true,
+      "company": "Finkey"
+    },
+    {
+      "title": "フルスタックwebエンジニア",
       "summary": "PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | React | Docker | CI | Apache Cordova",
       "startDate": "2010年",
       "endDate": "今",
@@ -76,8 +92,8 @@
       "title": "教員",
       "summary": "Intervened on the web development<br />PHP (Basics, OOP, Framework Laravel) | MySQL",
       "startDate": "2016年",
-      "endDate": "今",
-      "isCurrent": true,
+      "endDate": "2018年",
+      "isCurrent": false,
       "company": "Sup’ La Mache"
     },
     {
@@ -85,7 +101,7 @@
       "summary": "PHP/MySQL/Javascript development <br />Solire Framework | Jquery | AngularJS",
       "startDate": "2009年",
       "endDate": "2017年",
-      "isCurrent": true,
+      "isCurrent": false,
       "company": "Solire"
     }
   ],

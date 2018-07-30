@@ -10,6 +10,23 @@ import VerticalTimelineElement from '../../components/VerticalTimelineElement/Ve
 
 import './ResumeWorkAndEducationBlock.css';
 
+const formatPeriod = (start, end, formatMessage) => {
+  const isToday = end === 'Today' || end === "Aujourd'hui" || end === '今';
+
+  const period =
+    (isToday ? new Date().getFullYear() : parseInt(end, 10)) -
+    parseInt(start, 10);
+
+  if (period <= 1) {
+    return `${start} – ${end}`;
+  }
+
+  return `${start} – ${end} (${period}${formatMessage({
+    id: 'Resume.years',
+    defaultMessage: ' years',
+  })})`;
+};
+
 const ResumeWorkAndEducationBlock = ({
   positions,
   educations,
@@ -41,17 +58,11 @@ const ResumeWorkAndEducationBlock = ({
             key={i} // eslint-disable-line react/no-array-index-key
             icon={<WorkIcon />}
             iconStyle={workIconStyle}
-            date={`${position.startDate} – ${
-              position.endDate
-            } (${(position.endDate === 'Today' ||
-            position.endDate === "Aujourd'hui" ||
-            position.endDate === '今'
-              ? new Date().getFullYear()
-              : parseInt(position.endDate, 10)) -
-              parseInt(position.startDate, 10)}${formatMessage({
-              id: 'Resume.years',
-              defaultMessage: ' years',
-            })})`}
+            date={formatPeriod(
+              position.startDate,
+              position.endDate,
+              formatMessage,
+            )}
           >
             <h3 className="vertical-timeline-element-title">
               {position.title}
