@@ -38,7 +38,7 @@ const ResumeWorkAndEducationBlock = ({
         {positions.map((position, i) => (
           <VerticalTimelineElement
             className="Resume-position"
-            key={i}
+            key={i} // eslint-disable-line react/no-array-index-key
             icon={<WorkIcon />}
             iconStyle={workIconStyle}
             date={`${position.startDate} – ${
@@ -60,6 +60,7 @@ const ResumeWorkAndEducationBlock = ({
               {position.company}
             </h4>
             <p>
+              {/* eslint-disable-next-line react/no-danger */}
               <span dangerouslySetInnerHTML={{ __html: position.summary }} />
             </p>
           </VerticalTimelineElement>
@@ -73,7 +74,7 @@ const ResumeWorkAndEducationBlock = ({
               position={i % 2 ? 'left' : 'right'}
               id=""
               className="Resume-position"
-              key={i}
+              key={i} // eslint-disable-line react/no-array-index-key
               icon={<SchoolIcon />}
               iconStyle={educationIconStyle}
               date={`${education.startDate} – ${
@@ -96,6 +97,7 @@ const ResumeWorkAndEducationBlock = ({
               </h4>
               <p>
                 <span
+                  /* eslint-disable-next-line react/no-danger */
                   dangerouslySetInnerHTML={{ __html: education.activities }}
                 />
               </p>

@@ -7,7 +7,7 @@ import './LanguagePicker.css';
 
 const LanguagePicker = () => (
   <div className="LanguagePicker">
-    {languages.map((language) => (
+    {languages.map(language => (
       <Button
         className="LanguagePicker-button"
         key={language.name}

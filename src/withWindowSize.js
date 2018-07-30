@@ -24,7 +24,7 @@ function withWindowSize(WrappedComponent) {
     onWindowResize = () => {
       if (!this.mounted) return;
 
-      const node = ReactDOM.findDOMNode(this);
+      const node = ReactDOM.findDOMNode(this); // eslint-disable-line react/no-find-dom-node
 
       this.setState({
         innerWidth: node.getBoundingClientRect().width,
@@ -33,7 +33,15 @@ function withWindowSize(WrappedComponent) {
     };
 
     render() {
-      return <WrappedComponent {...this.props} {...this.state} />;
+      return (
+        <WrappedComponent
+          ref={node => {
+            this.node = node;
+          }}
+          {...this.props}
+          {...this.state}
+        />
+      );
     }
   };
 }

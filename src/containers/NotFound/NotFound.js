@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import flow from 'lodash/flow';
+import React from 'react';
 import Helmet from 'react-helmet';
-import { injectIntl } from 'react-intl';
+import { injectIntl, intlShape } from 'react-intl';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/styles/hljs';
 import { FakeCodeTyping } from 'react-fake-code-typing';
@@ -77,44 +76,40 @@ class HttpException
  */
 throw new HttpException(400, 'Page Not Found');`;
 
-class NotFound extends Component {
-  render() {
-    const { formatMessage } = this.props.intl;
+export const NotFound = ({ intl: { formatMessage } }) => (
+  <div className="NotFound">
+    <Helmet
+      title={formatMessage({
+        id: 'NotFound.title',
+        defaultMessage: '404 - page not found',
+      })}
+    />
+    <ScreenBlock
+      containerClassName="NotFoundBlockContainer screen-sm"
+      className="NotFoundBlock"
+    >
+      <FakeCodeTyping>
+        <SyntaxHighlighter language="php" style={monokai}>
+          {testCodeSmallScreen}
+        </SyntaxHighlighter>
+      </FakeCodeTyping>
+    </ScreenBlock>
 
-    return (
-      <div className="NotFound">
-        <Helmet
-          title={formatMessage({
-            id: 'NotFound.title',
-            defaultMessage: '404 - page not found',
-          })}
-        />
-        <ScreenBlock
-          containerClassName="NotFoundBlockContainer screen-sm"
-          className="NotFoundBlock"
-        >
-          <FakeCodeTyping>
-            <SyntaxHighlighter language="php" style={monokai}>
-              {testCodeSmallScreen}
-            </SyntaxHighlighter>
-          </FakeCodeTyping>
-        </ScreenBlock>
+    <ScreenBlock
+      containerClassName="NotFoundBlockContainer screen-xl"
+      className="NotFoundBlock"
+    >
+      <FakeCodeTyping>
+        <SyntaxHighlighter language="php" style={monokai}>
+          {testCode}
+        </SyntaxHighlighter>
+      </FakeCodeTyping>
+    </ScreenBlock>
+  </div>
+);
 
-        <ScreenBlock
-          containerClassName="NotFoundBlockContainer screen-xl"
-          className="NotFoundBlock"
-        >
-          <FakeCodeTyping>
-            <SyntaxHighlighter language="php" style={monokai}>
-              {testCode}
-            </SyntaxHighlighter>
-          </FakeCodeTyping>
-        </ScreenBlock>
-      </div>
-    );
-  }
-}
+NotFound.propTypes = {
+  intl: intlShape.isRequired,
+};
 
-const decorators = flow([injectIntl]);
-
-export default decorators(NotFound);
+export default injectIntl(NotFound);

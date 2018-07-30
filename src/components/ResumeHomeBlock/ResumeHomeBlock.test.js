@@ -17,5 +17,7 @@ it('renders without crashing', () => {
           styles={{}}
         />
       </MemoryRouter>
-    </IntlProvider>, div);
+    </IntlProvider>,
+    div,
+  );
 });

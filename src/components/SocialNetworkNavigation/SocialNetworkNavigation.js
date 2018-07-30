@@ -16,10 +16,10 @@ const icons = {
 
 const SocialNetworkNavigation = ({ services }) => (
   <div className="SocialNetworkNavigation">
-    {services.map((service, j) => (
+    {services.map(service => (
       <a
         target="_blank"
-        key={j}
+        key={service.url}
         className={`SocialNetworkNavigation-link social-${service.icon}`}
         href={service.url}
       >

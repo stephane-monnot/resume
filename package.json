@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.0",
+    "classnames": "^2.2.6",
     "connected-react-router": "^4.3.0",
     "dot-object": "^1.7.0",
     "local-storage": "^1.4.2",

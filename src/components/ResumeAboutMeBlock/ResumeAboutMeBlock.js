@@ -46,7 +46,7 @@ const ResumeAboutMeBlock = ({
 
             <p
               className="Resume-summary"
-              dangerouslySetInnerHTML={{ __html: summary }}
+              dangerouslySetInnerHTML={{ __html: summary }} // eslint-disable-line react/no-danger
             />
 
             <br />

@@ -30,8 +30,11 @@ const ResumeLanguagesAndHobbiesBlock = ({
       </div>
 
       <div className="ResumeLanguagesAndHobbiesBlock-languages">
-        {languages.map((language, i) => (
-          <div className="ResumeLanguagesAndHobbiesBlock-language" key={i}>
+        {languages.map(language => (
+          <div
+            className="ResumeLanguagesAndHobbiesBlock-language"
+            key={language.name}
+          >
             <div className="ResumeLanguagesAndHobbiesBlock-languageTitleAndLevel">
               <span className="ResumeLanguagesAndHobbiesBlock-languageTitle">
                 {language.name}
@@ -66,9 +69,9 @@ const ResumeLanguagesAndHobbiesBlock = ({
     </div>
 
     <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
-      {hobbies.map((hobby, i) => (
+      {hobbies.map(hobby => (
         <Card
-          key={i}
+          key={hobby.name}
           style={hobbyCardStyle}
           className="ResumeLanguagesAndHobbiesBlock-hobby"
         >

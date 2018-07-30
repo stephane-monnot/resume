@@ -23,11 +23,12 @@ class Resume extends Component {
     const { skills } = this.props;
 
     const skillsByLanguages = skills.reduce((obj, item) => {
+      const newObj = obj;
       if (item.language) {
-        obj[item.language.name] = obj[item.language.name] || [];
-        obj[item.language.name].push(item);
+        newObj[item.language.name] = newObj[item.language.name] || [];
+        newObj[item.language.name].push(item);
       }
-      return obj;
+      return newObj;
     }, {});
 
     return Object.keys(skillsByLanguages).map(key => skillsByLanguages[key]);
@@ -139,23 +140,16 @@ Resume.propTypes = {
   headline: PropTypes.string,
   summary: PropTypes.string,
   pictureUrl: PropTypes.string,
-  dateOfBirth: PropTypes.string,
-  mainAddress: PropTypes.string,
-  websites: PropTypes.arrayOf(PropTypes.object),
-  phoneNumbers: PropTypes.arrayOf(PropTypes.object),
-  imAccounts: PropTypes.arrayOf(PropTypes.object),
   snsAccounts: PropTypes.arrayOf(PropTypes.object),
-  locations: PropTypes.arrayOf(PropTypes.object),
   positions: PropTypes.arrayOf(PropTypes.object),
-  interests: PropTypes.string,
   languages: PropTypes.arrayOf(PropTypes.object),
   skills: PropTypes.arrayOf(PropTypes.object),
   educations: PropTypes.arrayOf(PropTypes.object),
-  volunteer: PropTypes.arrayOf(PropTypes.object),
   hobbies: PropTypes.arrayOf(PropTypes.object),
   customers: PropTypes.arrayOf(PropTypes.object),
   projects: PropTypes.arrayOf(PropTypes.object),
   cvPDF: PropTypes.string,
+  tools: PropTypes.string,
 };
 
 Resume.defaultProps = {
@@ -167,18 +161,10 @@ Resume.defaultProps = {
     '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.',
   pictureUrl:
     'https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAYqAAAAJGQ0YjYxNDI0LTEwOTMtNGVkNC1hNDIxLWYyNzNkMTYzNDMzNg.jpg',
-  dateOfBirth: '1987-09-16',
-  mainAddress: 'Noda, Osaka, Japan',
-  websites: [],
-  phoneNumbers: [],
-  imAccounts: [],
-  locations: [],
   positions: [],
-  interests: '',
   languages: [],
   skills: [],
   educations: [],
-  volunteer: [],
   hobbies: [],
   customers: [],
   projects: [],

@@ -25,10 +25,10 @@ const ResumeCustomersBlock = ({ customers }) => (
 
       <div className="ResumeCustomersBlock-customers">
         {customers.map((customer, i) => {
-          const logo = require(`../../data/img/${customer.picture}`);
+          const logo = require(`../../data/img/${customer.picture}`); // eslint-disable-line global-require
           return (
             <Card
-              key={i}
+              key={i} // eslint-disable-line react/no-array-index-key
               style={customer.style}
               className="ResumeCustomersBlock-customer"
             >

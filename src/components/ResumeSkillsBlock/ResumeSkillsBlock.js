@@ -27,6 +27,7 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
 
       <div className="ResumeSkillsBlock-skills">
         {skills.map((skillCategory, i) => (
+          // eslint-disable-next-line react/no-array-index-key
           <Card key={i}>
             <CardContent>
               <Avatar
@@ -49,6 +50,7 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
                 {skillCategory[0].language.name}
               </h3>
               {skillCategory.map((skill, j) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <div key={j}>{skill.name}</div>
               ))}
             </CardContent>
@@ -71,6 +73,7 @@ const ResumeSkillsBlock = ({ skills, tools }) => (
       </div>
 
       <div className="ResumeSkillsBlock-tools">
+        {/* eslint-disable-next-line react/no-danger */}
         <p dangerouslySetInnerHTML={{ __html: tools }} />
       </div>
     </div>
