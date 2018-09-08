@@ -22,7 +22,8 @@ before_script:
   - yarn
 
 build:
-  stage: qa
+  stage: build
+  image: docker:latest
   script:
     - docker build -t "${CONTAINER_TEST_IMAGE}" -f infrastructure/cli/Dockerfile .
     - docker push CONTAINER_TEST_IMAGE
@@ -34,6 +35,7 @@ qa:
 
 release-production:
   stage: release
+  image: docker:latest
   script:
     - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
@@ -43,6 +45,7 @@ release-production:
 
 review:
   stage: review
+  image: docker:latest
   environment:
     name: review/$CI_BUILD_REF_NAME
     url: https://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
@@ -56,6 +59,7 @@ review:
 
 stop_review:
   stage: review
+  image: docker:latest
   script:
     - echo "Stop a review app"
   variables:
@@ -71,6 +75,7 @@ stop_review:
 
 staging:
   stage: deploy
+  image: docker:latest
   environment:
     name: staging
     url: https://staging.$APPS_DOMAIN
@@ -89,7 +94,6 @@ staging:
       - public
   only:
     - master
-
 
 production:
   stage: deploy
