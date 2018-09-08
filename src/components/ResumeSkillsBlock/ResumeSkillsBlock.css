@@ -20,6 +20,10 @@
     fill: #fff !important;
 }
 
+.ResumeSkillsBlock-skills > *:last-child svg path:first-child {
+  fill: none !important;
+}
+
 .ResumeSkillsBlock-tools {
     text-align: center;
 }
