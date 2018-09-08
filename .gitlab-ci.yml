@@ -100,7 +100,7 @@ staging:
   environment:
     name: staging
     url: https://staging.$APPS_DOMAIN
-    on_stop: stop_review
+    on_stop: stop_staging
   script:
     # Build
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
