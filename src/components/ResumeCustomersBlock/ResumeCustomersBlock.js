@@ -27,15 +27,35 @@ const ResumeCustomersBlock = ({ customers }) => (
         {customers.map((customer, i) => {
           const logo = require(`../../data/img/${customer.picture}`); // eslint-disable-line global-require
           return (
-            <Card
-              key={i} // eslint-disable-line react/no-array-index-key
-              style={customer.style}
-              className="ResumeCustomersBlock-customer"
-            >
-              <CardContent>
-                <img alt="" src={logo} />
-              </CardContent>
-            </Card>
+            <div className="ResumeCustomersBlock-customer-container">
+              <div className="ResumeCustomersBlock-customer">
+                <Card
+                  key={i} // eslint-disable-line react/no-array-index-key
+                  style={customer.front ? customer.front.style : customer.style}
+                  className="ResumeCustomersBlock-customer-front"
+                >
+                  <CardContent>
+                    <img alt="" src={logo} />
+                  </CardContent>
+                </Card>
+                <Card
+                  key={i} // eslint-disable-line react/no-array-index-key
+                  style={customer.back ? customer.back.style : customer.style}
+                  className="ResumeCustomersBlock-customer-back"
+                >
+                  <CardContent>
+                    <div className="ResumeCustomersBlock-customer-back-name">
+                      {customer.name}
+                    </div>
+                    {customer.description && (
+                      <div className="ResumeCustomersBlock-customer-back-description">
+                        {customer.description}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           );
         })}
       </div>

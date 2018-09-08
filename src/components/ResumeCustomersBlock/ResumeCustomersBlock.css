@@ -1,49 +1,83 @@
 .ResumeCustomersBlock-customers {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 50px;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+.ResumeCustomersBlock-customer-container {
+  display: inline-block;
+  perspective: 900px;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
 }
 
 .ResumeCustomersBlock-customer {
-    width: 150px;
-    margin: 10px;
-    text-align: center;
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
+  transition: all 0.6s ease;
+  transform-style: preserve-3d;
 }
 
-.ResumeCustomersBlock-customer > div {
-    padding: 16px !important;
+.ResumeCustomersBlock-customer-front, .ResumeCustomersBlock-customer-back {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.ResumeCustomersBlock-customer-container:hover .ResumeCustomersBlock-customer {
+  transform: rotateY(180deg);
+}
+
+.ResumeCustomersBlock-customer-back {
+  transform: rotateY(180deg);
+}
+
+.ResumeCustomersBlock-customer > div > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16px !important;
+  height: 100%;
+}
+
+.ResumeCustomersBlock-customer-back-name {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.ResumeCustomersBlock-customer-back-description {
+
 }
 
 .ResumeCustomersBlock-customer img {
-    max-width: 100%;
+  align-self: center;
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 800px) {
-    .ResumeCustomersBlock-customers {
-        padding: 20px;
-    }
+  .ResumeCustomersBlock-customers {
+    padding: 20px;
+  }
 
-    .ResumeCustomersBlock-customer {
-        width: 31%;
-        margin: 1%;
-    }
+  .ResumeCustomersBlock-customer {
+    width: 31%;
+    margin: 1%;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-    .ResumeCustomersBlock-customers {
-        padding: 20px;
-    }
+  .ResumeCustomersBlock-customers {
+    padding: 20px;
+  }
 
-    .ResumeCustomersBlock-customer {
-        width: 48%;
-        margin: 1%;
-    }
+  .ResumeCustomersBlock-customer {
+    width: 48%;
+    margin: 1%;
+  }
 }
