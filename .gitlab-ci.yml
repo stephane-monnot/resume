@@ -1,4 +1,4 @@
-image: alekzonder/puppeteer:latest
+image: docker:latest
 
 stages:
   - build
@@ -18,24 +18,22 @@ cache:
   paths:
     - node_modules/
 
-before_script:
-  - yarn
-
 build:
   stage: build
-  image: docker:latest
   script:
     - docker build -t "${CONTAINER_TEST_IMAGE}" -f infrastructure/cli/Dockerfile .
     - docker push CONTAINER_TEST_IMAGE
 
 qa:
   stage: qa
+  image: alekzonder/puppeteer:latest
+  before_script:
+    - yarn
   script:
       - yarn test
 
 release-production:
   stage: release
-  image: docker:latest
   script:
     - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
@@ -45,7 +43,6 @@ release-production:
 
 review:
   stage: review
-  image: docker:latest
   environment:
     name: review/$CI_BUILD_REF_NAME
     url: https://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
@@ -59,7 +56,6 @@ review:
 
 stop_review:
   stage: review
-  image: docker:latest
   script:
     - echo "Stop a review app"
   variables:
@@ -75,7 +71,6 @@ stop_review:
 
 staging:
   stage: deploy
-  image: docker:latest
   environment:
     name: staging
     url: https://staging.$APPS_DOMAIN
@@ -97,9 +92,12 @@ staging:
 
 production:
   stage: deploy
+  image: alekzonder/puppeteer:latest
   environment:
     name: production
     url: https://$APPS_DOMAIN
+  before_script:
+    - yarn
   script:
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
     - mv build build_ja
