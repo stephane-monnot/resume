@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import cvFR from '../../data/fr.json';
-import cvJA from '../../data/ja.json';
-import cvEN from '../../data/en.json';
+import cvFR from '../../data/fr';
+import cvJA from '../../data/ja';
+import cvEN from '../../data/en';
 import customers from '../../data/customers.json';
 import cvPDFFR from '../../data/fr.pdf';
 import cvPDFJA from '../../data/ja.pdf';
