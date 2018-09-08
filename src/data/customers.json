@@ -38,8 +38,17 @@
     "name": "Objectif France",
     "description": "Travel agency",
     "picture": "customer004.jpg",
-    "style": {
-      "background": "#fff"
+    "front": {
+      "style": {
+        "background": "#fff",
+        "color": "#E34879"
+      }
+    },
+    "back": {
+      "style": {
+        "background": "#E34879",
+        "color": "#fff"
+      }
     }
   },
   {

@@ -64,20 +64,10 @@
   .ResumeCustomersBlock-customers {
     padding: 20px;
   }
-
-  .ResumeCustomersBlock-customer {
-    width: 31%;
-    margin: 1%;
-  }
 }
 
 @media only screen and (max-width: 480px) {
   .ResumeCustomersBlock-customers {
     padding: 20px;
-  }
-
-  .ResumeCustomersBlock-customer {
-    width: 48%;
-    margin: 1%;
   }
 }
