@@ -21,7 +21,7 @@ cache:
 build:
   stage: build
   script:
-    - docker build -t "${CONTAINER_TEST_IMAGE}" -f infrastructure/cli/Dockerfile .
+    - docker build -t "${CONTAINER_TEST_IMAGE}" .
     - docker push CONTAINER_TEST_IMAGE
 
 qa:
