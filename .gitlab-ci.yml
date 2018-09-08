@@ -107,7 +107,7 @@ staging:
   stage: deploy
   image: nanoka/puppeteer:latest
   environment:
-    name: staging
+    name: staging2
     url: https://$BASIC_AUTHstaging.$APPS_DOMAIN
     on_stop: stop_staging
   before_script:
