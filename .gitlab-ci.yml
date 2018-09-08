@@ -152,7 +152,7 @@ stop_staging:
     GIT_STRATEGY: none
   when: manual
   environment:
-    name: staging
+    name: staging2
     action: stop
   only:
     - master
