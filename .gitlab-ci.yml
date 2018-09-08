@@ -8,6 +8,7 @@ stages:
   - deploy
 
 variables:
+  # Declare SSH_COMMAND: myuser@example.com
   APPS_DOMAIN: stephanemonnot.com
   CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:$CI_COMMIT_REF_NAME
   CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:latest
@@ -18,6 +19,8 @@ cache:
 
 build:
   stage: build
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
   script:
     - docker build -t "${CONTAINER_TEST_IMAGE}" .
     - docker push "${CONTAINER_TEST_IMAGE}"
@@ -32,6 +35,8 @@ qa:
 
 release-production:
   stage: release
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
   script:
     - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
@@ -46,7 +51,27 @@ review:
     url: https://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
     on_stop: stop_review
   script:
-    - echo "Deploy a review app"
+    # Build
+    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
+    - mv build build_ja
+    - REACT_APP_LOCALE=en yarn build && yarn local-analytics
+    - mv build build_en
+    - mv public oldpublic
+    - mkdir public/
+    - mv build_ja public/ja
+    - mv build_en public/en
+    - cp public/en/404.html public/404.html
+
+    # Add ssh key
+    - 'which ssh-agent || ( apk add --no-cache openssh-client )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/$CI_BUILD_REF_SLUG"
+    - scp -r public $SSH_COMMAND:/home/resume/$CI_BUILD_REF_SLUG/app
   only:
     - branches
   except:
