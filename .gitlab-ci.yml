@@ -48,7 +48,7 @@ qa:
 
 review:
   stage: review
-  image: alekzonder/puppeteer:latest
+  image: nanoka/puppeteer:latest
   environment:
     name: review/$CI_BUILD_REF_NAME
     url: https://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
@@ -66,7 +66,6 @@ review:
     - cp public/en/404.html public/404.html
 
     # Add ssh key
-    - 'which ssh-agent || ( sudo apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | ssh-add -
     - mkdir -p ~/.ssh
