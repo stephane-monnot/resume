@@ -66,7 +66,7 @@ review:
     - cp public/en/404.html public/404.html
 
     # Add ssh key
-    - 'which ssh-agent || ( apk add --no-cache openssh-client )'
+    - 'which ssh-agent || ( apt-get install openssh-client -y )'
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | ssh-add -
     - mkdir -p ~/.ssh
