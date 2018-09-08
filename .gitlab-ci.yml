@@ -80,6 +80,7 @@ review:
 
 stop_review:
   stage: review
+  image: alekzonder/puppeteer:latest
   script:
     # Add ssh key
     - eval $(ssh-agent -s)
@@ -133,6 +134,7 @@ staging:
 
 stop_staging:
   stage: deploy
+  image: alekzonder/puppeteer:latest
   script:
     # Add ssh key
     - eval $(ssh-agent -s)
