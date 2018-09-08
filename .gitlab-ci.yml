@@ -96,24 +96,51 @@ stop_review:
 
 staging:
   stage: deploy
+  image: nanoka/puppeteer:latest
   environment:
     name: staging
     url: https://staging.$APPS_DOMAIN
+    on_stop: stop_review
   script:
-      - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
-      - mv build build_ja
-      - REACT_APP_LOCALE=en yarn build && yarn local-analytics
-      - mv build build_en
-      - mv public oldpublic
-      - mkdir public/
-      - mv build_ja public/ja
-      - mv build_en public/en
-      - cp public/en/404.html public/404.html
-  artifacts:
-    paths:
-      - public
+    # Build
+    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
+    - mv build build_ja
+    - REACT_APP_LOCALE=en yarn build && yarn local-analytics
+    - mv build build_en
+    - mv public oldpublic
+    - mkdir public/
+    - mv build_ja public/ja
+    - mv build_en public/en
+    - cp public/en/404.html public/404.html
+
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
+    - scp -r public $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
   only:
     - master
+  except:
+    - tags
+
+stop_staging:
+  stage: deploy
+  script:
+    - echo "Stop staging app"
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: staging
+    action: stop
+  only:
+    - master
+  except:
+    - tags
 
 production:
   stage: deploy
@@ -137,4 +164,4 @@ production:
     paths:
       - public
   only:
-    - master
+    - tags
