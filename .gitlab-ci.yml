@@ -117,7 +117,7 @@ staging:
 
     # Scp
     - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
-    - scp -r build $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
+    - scp -r build/. $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
   only:
     - master
   except:
