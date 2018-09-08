@@ -11,8 +11,8 @@ export default {
   headline: 'Ingénieur full-stack web à Lyon',
   summary: `
     Ingénieur full-stack web & intervenant / formateur dans le domaine du web.<br />
-    Mon domaine de compétences comprend : le PHP (Symfony & Laravel frameworks), le développemment piloté par les tests, l'intégration continue, WordPress, l'administration de systèmes Linux et le développement d'APIs.<br /><br />Grâce à une license dans le domaine du développement web obtenue à l'Université Claude Bernard Lyon 1, j'ai pu découvrir les bases de la programmation web et ainsi avoir des bases solides pour en faire véritablement mon métier. En plus d'être mon métier, c'est une réelle passion.<br /><br />
-    Ma stack favorite : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative avec intégration/déploiement continu avec Gitlab.
+    Mon domaine de compétences comprend : le développement PHP (Symfony & Laravel frameworks), le développement Javascript (ES6, ReactJS, VueJS), le développemment piloté par les tests, l'intégration continue, WordPress et le développement d'APIs.<br /><br />Grâce à une license dans le domaine du développement web obtenue à l'Université Claude Bernard Lyon 1, j'ai pu découvrir les bases de la programmation web et ainsi avoir des bases solides pour en faire véritablement mon métier. En plus d'être mon métier, c'est une réelle passion.<br /><br />
+    Ma stack favorite : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS et ReactNative. Le tout avec intégration/déploiement continu via Gitlab.
     `,
   pictureUrl: 'me.png',
   dateOfBirth: '1987-09-16',
