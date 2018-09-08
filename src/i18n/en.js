@@ -10,6 +10,8 @@ export default {
     interests: 'Interests',
     resume: 'Resume',
     projectsAndDevelopments: 'Projects & developments',
+    showMore: 'Show more',
+    showLess: 'Show less',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Remaining days until Japan',

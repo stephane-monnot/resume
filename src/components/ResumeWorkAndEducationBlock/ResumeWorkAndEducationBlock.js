@@ -7,6 +7,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import VerticalTimeline from '../../components/VerticalTimeline/VerticalTimeline';
 import VerticalTimelineElement from '../../components/VerticalTimelineElement/VerticalTimelineElement';
+import ShowMore from '../../components/ShowMore/ShowMore';
 
 import './ResumeWorkAndEducationBlock.css';
 
@@ -21,10 +22,16 @@ const formatPeriod = (start, end, formatMessage) => {
     return `${start} – ${end}`;
   }
 
-  return `${start} – ${end} (${period}${formatMessage({
-    id: 'Resume.years',
-    defaultMessage: ' years',
-  })})`;
+  return `${start} – ${end} (${formatMessage(
+    {
+      id: 'Resume.years',
+      defaultMessage:
+        '{years, plural, =0 {0 year} one {# year} other {# years}}',
+    },
+    {
+      years: period,
+    },
+  )})`;
 };
 
 const ResumeWorkAndEducationBlock = ({
@@ -52,30 +59,52 @@ const ResumeWorkAndEducationBlock = ({
       </div>
 
       <VerticalTimeline>
-        {positions.map((position, i) => (
-          <VerticalTimelineElement
-            className="Resume-position"
-            key={i} // eslint-disable-line react/no-array-index-key
-            icon={<WorkIcon />}
-            iconStyle={workIconStyle}
-            date={formatPeriod(
-              position.startDate,
-              position.endDate,
-              formatMessage,
-            )}
-          >
-            <h3 className="vertical-timeline-element-title">
-              {position.title}
-            </h3>
-            <h4 className="vertical-timeline-element-subtitle">
-              {position.company}
-            </h4>
-            <p>
-              {/* eslint-disable-next-line react/no-danger */}
-              <span dangerouslySetInnerHTML={{ __html: position.summary }} />
-            </p>
-          </VerticalTimelineElement>
-        ))}
+        {positions.map((position, i) => {
+          let picture = null;
+          if (position.picture) {
+            picture = require(`../../data/img/${position.picture}`); // eslint-disable-line global-require
+          }
+          return (
+            <VerticalTimelineElement
+              className="Resume-position"
+              key={i} // eslint-disable-line react/no-array-index-key
+              icon={<WorkIcon />}
+              iconStyle={workIconStyle}
+              date={formatPeriod(
+                position.startDate,
+                position.endDate,
+                formatMessage,
+              )}
+            >
+              {picture && (
+                <img
+                  className="ResumeWorkAndEducationBlock-picture"
+                  alt=""
+                  src={picture}
+                />
+              )}
+              <h3 className="vertical-timeline-element-title">
+                {position.title} @{position.company}
+              </h3>
+              {position.keywords && (
+                <div className="ResumeWorkAndEducationBlock-keywords">
+                  {position.keywords.map((keyword, j) => (
+                    <span key={j}>{keyword.name}</span> // eslint-disable-line react/no-array-index-key
+                  ))}
+                </div>
+              )}
+              <p>
+                {/* eslint-disable-next-line react/no-danger */}
+                <span dangerouslySetInnerHTML={{ __html: position.summary }} />
+              </p>
+              {position.more && (
+                <ShowMore>
+                  <p dangerouslySetInnerHTML={{ __html: position.more }} />
+                </ShowMore>
+              )}
+            </VerticalTimelineElement>
+          );
+        })}
       </VerticalTimeline>
 
       <div id="Resume-education">
@@ -88,17 +117,11 @@ const ResumeWorkAndEducationBlock = ({
               key={i} // eslint-disable-line react/no-array-index-key
               icon={<SchoolIcon />}
               iconStyle={educationIconStyle}
-              date={`${education.startDate} – ${
-                education.endDate
-              } (${(education.endDate === 'Today' ||
-              education.endDate === "Aujourd'hui" ||
-              education.endDate === '今'
-                ? new Date().getFullYear()
-                : parseInt(education.endDate, 10)) -
-                parseInt(education.startDate, 10)}${formatMessage({
-                id: 'Resume.years',
-                defaultMessage: ' years',
-              })})`}
+              date={formatPeriod(
+                education.startDate,
+                education.endDate,
+                formatMessage,
+              )}
             >
               <h3 className="vertical-timeline-element-title">
                 {education.fieldOfStudy}
@@ -106,12 +129,26 @@ const ResumeWorkAndEducationBlock = ({
               <h4 className="vertical-timeline-element-subtitle">
                 {education.degree}
               </h4>
-              <p>
-                <span
-                  /* eslint-disable-next-line react/no-danger */
-                  dangerouslySetInnerHTML={{ __html: education.activities }}
-                />
-              </p>
+              {education.activities &&
+                !Array.isArray(education.activities) && (
+                  <p>
+                    <span
+                      /* eslint-disable-next-line react/no-danger */
+                      dangerouslySetInnerHTML={{ __html: education.activities }}
+                    />
+                  </p>
+                )}
+              {education.activities &&
+                Array.isArray(education.activities) && (
+                  <div className="ResumeWorkAndEducationBlock-keywords">
+                    {education.activities.map((activity, j) => (
+                      <span key={j}>{activity.name}</span> // eslint-disable-line react/no-array-index-key
+                    ))}
+                  </div>
+                )}
+              {education.summary && (
+                <p dangerouslySetInnerHTML={{ __html: education.summary }} />
+              )}
             </VerticalTimelineElement>
           ))}
         </VerticalTimeline>

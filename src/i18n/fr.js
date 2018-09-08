@@ -7,8 +7,8 @@ export default {
     hireMe: 'Engagez-moi',
     workExperienceAndEducation: 'Expérience professionnelle et éducation',
     workExperienceAndEducationSubtitle:
-      'Mes précédents emplois and mes qualifications.',
-    years: ' ans',
+      'Mes précédents et actuels emplois ainsi que mes études.',
+    years: '{years, plural, =0 {0 an} one {# an} other {# ans}}',
     year: ' an',
     skills: 'Compétences',
     skillsSubtitle: "Je peux dire que je suis plutôt à l'aise avec",
@@ -22,6 +22,8 @@ export default {
       'Mes derniers travaux, projets et développements.',
     tools: 'Outils',
     toolsSubtitle: 'Mes outils préférés',
+    showMore: 'Voir plus',
+    showLess: 'Voir moins',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: 'Jours restants avant Japon',
