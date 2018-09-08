@@ -9,6 +9,7 @@ stages:
 
 variables:
   # Declare SSH_COMMAND: myuser@example.com
+  # Declare BASIC_AUTH: myuser:mypass@ if need
   APPS_DOMAIN: stephanemonnot.com
   CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:$CI_COMMIT_REF_NAME
   CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:latest
@@ -51,7 +52,7 @@ review:
   image: nanoka/puppeteer:latest
   environment:
     name: review/$CI_BUILD_REF_NAME
-    url: https://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
+    url: https://$BASIC_AUTH$CI_BUILD_REF_SLUG.$APPS_DOMAIN
     on_stop: stop_review
   script:
     # Build
@@ -97,7 +98,7 @@ staging:
   image: nanoka/puppeteer:latest
   environment:
     name: staging
-    url: https://staging.$APPS_DOMAIN
+    url: https://$BASIC_AUTHstaging.$APPS_DOMAIN
     on_stop: stop_staging
   script:
     # Build
