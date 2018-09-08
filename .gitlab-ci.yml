@@ -81,7 +81,14 @@ review:
 stop_review:
   stage: review
   script:
-    - echo "Stop a review app"
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "rm -Rf /home/resume/http/$CI_BUILD_REF_SLUG"
   variables:
     GIT_STRATEGY: none
   when: manual
@@ -127,7 +134,14 @@ staging:
 stop_staging:
   stage: deploy
   script:
-    - echo "Stop staging app"
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "rm -Rf /home/resume/http/$CI_BUILD_REF_SLUG"
   variables:
     GIT_STRATEGY: none
   when: manual
