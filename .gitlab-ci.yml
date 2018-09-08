@@ -1,8 +1,18 @@
 image: alekzonder/puppeteer:latest
 
 stages:
+  - build
   - qa
+  - review
+  - release
   - deploy
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  APPS_DOMAIN: stephanemonnot.com
+  CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:$CI_COMMIT_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:latest
 
 cache:
   paths:
@@ -11,16 +21,59 @@ cache:
 before_script:
   - yarn
 
+build:
+  stage: qa
+  script:
+    - docker build -t "${CONTAINER_TEST_IMAGE}" -f infrastructure/cli/Dockerfile .
+    - docker push CONTAINER_TEST_IMAGE
+
 qa:
   stage: qa
   script:
       - yarn test
 
-pages:
+release-production:
+  stage: release
+  script:
+    - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - master
+
+review:
+  stage: review
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: https://$CI_BUILD_REF_SLUG.$APPS_DOMAIN
+    on_stop: stop_review
+  script:
+    - echo "Deploy a review app"
+  only:
+    - branches
+  except:
+    - master
+
+stop_review:
+  stage: review
+  script:
+    - echo "Stop a review app"
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  only:
+    - branches
+  except:
+    - master
+
+staging:
   stage: deploy
   environment:
-    name: production
-    url: https://stephanemonnot.com/
+    name: staging
+    url: https://staging.$APPS_DOMAIN
   script:
       - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
       - mv build build_ja
@@ -31,6 +84,28 @@ pages:
       - mv build_ja public/ja
       - mv build_en public/en
       - cp public/en/404.html public/404.html
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+
+production:
+  stage: deploy
+  environment:
+    name: production
+    url: https://$APPS_DOMAIN
+  script:
+    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
+    - mv build build_ja
+    - REACT_APP_LOCALE=en yarn build && yarn local-analytics
+    - mv build build_en
+    - mv public oldpublic
+    - mkdir public/
+    - mv build_ja public/ja
+    - mv build_en public/en
+    - cp public/en/404.html public/404.html
   artifacts:
     paths:
       - public
