@@ -1010,22 +1010,28 @@ export default {
     {
       name: 'La cuisine',
       icon: 'restaurant',
+      description:
+        'Particulièrement la cuisine japonaise, coréenne et française.',
     },
     {
       name: 'Les voyages',
       icon: 'flight',
+      description: 'Seul ou à plusieurs.',
     },
     {
       name: "L'apprentissage de langue",
       icon: 'school',
+      description: 'Le japonais et le coréen.',
     },
     {
       name: 'Le vélo',
       icon: 'directions_bike',
+      description: 'Quand il fait beau.',
     },
     {
       name: 'Le trading',
       icon: 'attach_money',
+      description: 'De crypto-monnaies.',
     },
   ],
 };

@@ -70,16 +70,33 @@ const ResumeLanguagesAndHobbiesBlock = ({
 
     <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
       {hobbies.map(hobby => (
-        <Card
-          key={hobby.name}
-          style={hobbyCardStyle}
-          className="ResumeLanguagesAndHobbiesBlock-hobby"
-        >
-          <CardContent>
-            <Icon>{hobby.icon}</Icon>
-            <h4>{hobby.name}</h4>
-          </CardContent>
-        </Card>
+        <div className="ResumeLanguagesAndHobbiesBlock-hobby-container">
+          <div className="ResumeLanguagesAndHobbiesBlock-hobby">
+            <Card
+              key={hobby.name}
+              style={hobbyCardStyle}
+              className="ResumeLanguagesAndHobbiesBlock-hobby-front"
+            >
+              <CardContent>
+                <Icon>{hobby.icon}</Icon>
+                <h4>{hobby.name}</h4>
+              </CardContent>
+            </Card>
+            <Card
+              key={hobby.name}
+              style={hobbyCardStyle}
+              className="ResumeLanguagesAndHobbiesBlock-hobby-back"
+            >
+              <CardContent>
+                {hobby.description && (
+                  <div className="ResumeLanguagesAndHobbiesBlock-hobby-back-description">
+                    {hobby.description}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       ))}
     </div>
   </ScreenBlock>
