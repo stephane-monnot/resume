@@ -54,6 +54,8 @@ review:
     name: review/$CI_BUILD_REF_NAME
     url: https://$BASIC_AUTH$CI_BUILD_REF_SLUG.$APPS_DOMAIN
     on_stop: stop_review
+  before_script:
+    - yarn
   script:
     # Build
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
@@ -108,6 +110,8 @@ staging:
     name: staging
     url: https://$BASIC_AUTHstaging.$APPS_DOMAIN
     on_stop: stop_staging
+  before_script:
+    - yarn
   script:
     # Build
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
