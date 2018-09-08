@@ -32,6 +32,8 @@ qa:
     - yarn
   script:
       - yarn test
+  only:
+    - master
 
 #release-production:
 #  stage: release
