@@ -809,26 +809,32 @@ export default {
     {
       name: '料理',
       icon: 'restaurant',
+      description: '特に日本料理とフランスと韓国料理。',
     },
     {
       name: '旅行',
       icon: 'flight',
+      description: '一人旅か友達と',
     },
     {
       name: '言語の勉強',
       icon: 'school',
+      description: '日本語か韓国語',
     },
     {
       name: '自転車',
       icon: 'directions_bike',
+      description: '天気が良いとき',
     },
     {
       name: '写真',
       icon: 'photo_camera',
+      description: 'いい景色の',
     },
     {
       name: 'Trading',
       icon: 'attach_money',
+      description: '暗号通貨',
     },
   ],
 };

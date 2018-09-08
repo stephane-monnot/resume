@@ -103,7 +103,8 @@
     "description": "Video game studio",
     "picture": "customer008.jpeg",
     "style": {
-      "background": "#b4ce46"
+      "background": "#b4ce46",
+      "color": "#fff"
     }
   },
   {

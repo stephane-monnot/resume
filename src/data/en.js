@@ -817,26 +817,32 @@ export default {
     {
       name: 'Cooking',
       icon: 'restaurant',
+      description: 'Especially Japanese, Korean and French food.',
     },
     {
       name: 'Trips',
       icon: 'flight',
+      description: 'Alone or with someone.',
     },
     {
       name: 'Learning languages',
       icon: 'school',
+      description: 'Japanese and korean languages.',
     },
     {
       name: 'Biking',
       icon: 'directions_bike',
+      description: "When it's sunny.",
     },
     {
       name: 'Photography',
       icon: 'photo_camera',
+      description: 'Of landscapes.',
     },
     {
       name: 'Trading',
       icon: 'attach_money',
+      description: 'Of Cryptocurrency.',
     },
   ],
 };
