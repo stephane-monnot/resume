@@ -1,38 +1,180 @@
-image: alekzonder/puppeteer:latest
+image: docker:latest
 
 stages:
+#  - build
   - qa
+  - review
+#  - release
   - deploy
+
+variables:
+  # Declare SSH_COMMAND: myuser@example.com
+  # Declare BASIC_AUTH: myuser:mypass@ if need
+  APPS_DOMAIN: stephanemonnot.com
+  CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:$CI_COMMIT_REF_NAME
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:latest
 
 cache:
   paths:
     - node_modules/
 
-before_script:
-  - yarn
+#build:
+#  stage: build
+#  before_script:
+#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
+#  script:
+#    - docker build -t "${CONTAINER_TEST_IMAGE}" .
+#    - docker push "${CONTAINER_TEST_IMAGE}"
 
 qa:
   stage: qa
+  image: alekzonder/puppeteer:latest
+  before_script:
+    - yarn
   script:
       - yarn test
+  only:
+    - master
 
-pages:
+#release-production:
+#  stage: release
+#  before_script:
+#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
+#  script:
+#    - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
+#    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+#    - docker push $CONTAINER_RELEASE_IMAGE
+#  only:
+#    - master
+
+review:
+  stage: review
+  image: nanoka/puppeteer:latest
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: https://$BASIC_AUTH$CI_BUILD_REF_SLUG.$APPS_DOMAIN
+    on_stop: stop_review
+  script:
+    # Build
+    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
+    - mv build build_ja
+    - REACT_APP_LOCALE=en yarn build && yarn local-analytics
+    - mv build build_en
+    - yarn build
+    - mv build_ja build/ja
+    - mv build_en build/en
+
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
+    - scp -r build/. $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
+  only:
+    - branches
+  except:
+    - master
+
+stop_review:
+  stage: review
+  image: nanoka/puppeteer:latest
+  script:
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "rm -Rf /home/resume/http/$CI_BUILD_REF_SLUG"
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  only:
+    - branches
+  except:
+    - master
+
+staging:
   stage: deploy
+  image: nanoka/puppeteer:latest
+  environment:
+    name: staging
+    url: https://$BASIC_AUTHstaging.$APPS_DOMAIN
+    on_stop: stop_staging
+  script:
+    # Build
+    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
+    - mv build build_ja
+    - REACT_APP_LOCALE=en yarn build && yarn local-analytics
+    - mv build build_en
+    - yarn build
+    - mv build_ja build/ja
+    - mv build_en build/en
+
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
+    - scp -r build/. $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
+  only:
+    - master
+  except:
+    - tags
+
+stop_staging:
+  stage: deploy
+  image: nanoka/puppeteer:latest
+  script:
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "rm -Rf /home/resume/http/$CI_BUILD_REF_SLUG"
+  variables:
+    GIT_STRATEGY: none
+  when: manual
+  environment:
+    name: staging
+    action: stop
+  only:
+    - master
+  except:
+    - tags
+
+production:
+  stage: deploy
+  image: alekzonder/puppeteer:latest
   environment:
     name: production
-    url: https://stephanemonnot.com/
+    url: https://$APPS_DOMAIN
+  before_script:
+    - yarn
   script:
-      - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
-      - mv build build_ja
-      - REACT_APP_LOCALE=en yarn build && yarn local-analytics
-      - mv build build_en
-      - mv public oldpublic
-      - mkdir public/
-      - mv build_ja public/ja
-      - mv build_en public/en
-      - cp public/en/404.html public/404.html
+    - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
+    - mv build build_ja
+    - REACT_APP_LOCALE=en yarn build && yarn local-analytics
+    - mv build build_en
+    - mv public oldpublic
+    - mkdir public/
+    - mv build_ja public/ja
+    - mv build_en public/en
+    - cp public/en/404.html public/404.html
   artifacts:
     paths:
       - public
   only:
-    - master
+    - tags
