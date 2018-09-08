@@ -72,8 +72,8 @@ review:
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
     # Scp
-    - ssh $SSH_COMMAND "mkdir -p /home/resume/$CI_BUILD_REF_SLUG"
-    - scp -r public $SSH_COMMAND:/home/resume/$CI_BUILD_REF_SLUG/app
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
+    - scp -r public $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
   only:
     - branches
   except:
