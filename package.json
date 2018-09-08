@@ -34,6 +34,7 @@
     "reselect": "^3.0.1",
     "rewire": "^2.5.2",
     "styled-components": "^2.2.0",
+    "velocity-react": "^1.4.1",
     "webfontloader": "^1.6.28"
   },
   "scripts": {

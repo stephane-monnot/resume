@@ -7,7 +7,7 @@ export default {
     hireMe: '私を雇ってください',
     workExperienceAndEducation: '職歴と学歴',
     workExperienceAndEducationSubtitle: '私の前の仕事と資格',
-    years: '年間',
+    years: '{years}年間',
     year: ' 年間',
     skills: '特技',
     skillsSubtitle: '',
@@ -20,6 +20,8 @@ export default {
     projectsAndDevelopmentsSubtitle: '',
     tools: 'ツール',
     toolsSubtitle: '好きなツール',
+    showMore: 'もっと見る',
+    showLess: '一部を表示',
   },
   WaitingUntilJapanScreen: {
     remainingDaysUntilJapan: '日本までの残りの日数',
