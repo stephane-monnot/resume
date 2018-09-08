@@ -107,8 +107,8 @@ staging:
   stage: deploy
   image: nanoka/puppeteer:latest
   environment:
-    name: staging2
-    url: https://$BASIC_AUTHstaging.$APPS_DOMAIN
+    name: staging
+    url: https://${BASIC_AUTH}staging.$APPS_DOMAIN
     on_stop: stop_staging
   before_script:
     - yarn
@@ -152,7 +152,7 @@ stop_staging:
     GIT_STRATEGY: none
   when: manual
   environment:
-    name: staging2
+    name: staging
     action: stop
   only:
     - master
