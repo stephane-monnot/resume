@@ -4,7 +4,6 @@ import _ from 'lodash';
 import flow from 'lodash/flow';
 import withWindowSize from '../../withWindowSize';
 import GridItem from './GridItem';
-import GridItemTransition from './GridItemTransition';
 
 class GridBackground extends React.PureComponent {
   constructor(props) {
@@ -74,11 +73,9 @@ class GridBackground extends React.PureComponent {
       // const randKey = Math.floor(Math.random() * children.length);
       // const child = React.createElement(children[randKey].type, {...children[randKey].props, style: {...children[randKey].props.style, width: '100%', height: '100%'}});
       return (
-        <GridItemTransition key={i} delay={i * 20} duration={350}>
-          <GridItem width={itemWidth} height={itemHeight}>
-            {child}
-          </GridItem>
-        </GridItemTransition>
+        <GridItem width={itemWidth} height={itemHeight}>
+          {child}
+        </GridItem>
       );
     });
   }
