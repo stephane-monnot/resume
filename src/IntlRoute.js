@@ -19,7 +19,7 @@ const IntlRoute = ({
 
 IntlRoute.propTypes = {
   language: PropTypes.string,
-  component: PropTypes.element,
+  component: PropTypes.any,
   onChangeLanguage: PropTypes.func,
 };
 

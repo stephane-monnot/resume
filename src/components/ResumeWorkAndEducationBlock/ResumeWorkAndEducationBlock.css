@@ -37,3 +37,8 @@
   margin-top: 0;
   list-style: circle;
 }
+
+.ResumeWorkAndEducationBlock .VerticalTimelineElement .vertical-timeline-element-title,
+.ResumeWorkAndEducationBlock-keywords {
+  max-width: calc(100% - 50px);
+}

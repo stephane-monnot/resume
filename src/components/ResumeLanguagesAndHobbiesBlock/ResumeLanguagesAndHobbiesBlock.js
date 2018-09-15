@@ -70,10 +70,12 @@ const ResumeLanguagesAndHobbiesBlock = ({
 
     <div className="ResumeLanguagesAndHobbiesBlock-hobbies">
       {hobbies.map(hobby => (
-        <div className="ResumeLanguagesAndHobbiesBlock-hobby-container">
+        <div
+          key={hobby.name}
+          className="ResumeLanguagesAndHobbiesBlock-hobby-container"
+        >
           <div className="ResumeLanguagesAndHobbiesBlock-hobby">
             <Card
-              key={hobby.name}
               style={hobbyCardStyle}
               className="ResumeLanguagesAndHobbiesBlock-hobby-front"
             >

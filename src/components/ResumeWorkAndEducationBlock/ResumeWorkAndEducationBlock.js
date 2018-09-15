@@ -89,7 +89,7 @@ const ResumeWorkAndEducationBlock = ({
               {position.keywords && (
                 <div className="ResumeWorkAndEducationBlock-keywords">
                   {position.keywords.map((keyword, j) => (
-                    <span key={j}>{keyword.name}</span> // eslint-disable-line react/no-array-index-key
+                    <span key={j}> {keyword.name} </span> // eslint-disable-line react/no-array-index-key
                   ))}
                 </div>
               )}
@@ -142,7 +142,7 @@ const ResumeWorkAndEducationBlock = ({
                 Array.isArray(education.activities) && (
                   <div className="ResumeWorkAndEducationBlock-keywords">
                     {education.activities.map((activity, j) => (
-                      <span key={j}>{activity.name}</span> // eslint-disable-line react/no-array-index-key
+                      <span key={j}> {activity.name} </span> // eslint-disable-line react/no-array-index-key
                     ))}
                   </div>
                 )}
