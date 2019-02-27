@@ -159,7 +159,7 @@ stop_staging:
   except:
     - tags
 
-production:
+pages:
   stage: deploy
   image: alekzonder/puppeteer:latest
   environment:
