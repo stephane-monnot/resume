@@ -76,7 +76,7 @@ review:
 
     # Scp
     - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
-    - scp -r build/. $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
+    - rsync --recursive --times --compress --delete --progress build/ $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
   only:
     - branches
   except:
@@ -132,7 +132,7 @@ staging:
 
     # Scp
     - ssh $SSH_COMMAND "mkdir -p /home/resume/http/staging"
-    - scp -r build/. $SSH_COMMAND:/home/resume/http/staging/app
+    - rsync --recursive --times --compress --delete --progress build/ $SSH_COMMAND:/home/resume/http/staging/app
   only:
     - master
   except:
@@ -202,7 +202,7 @@ lighthouse:
 
     # Scp
     - ssh $SSH_COMMAND "mkdir -p /home/resume/http/staging"
-    - scp -r build/. $SSH_COMMAND:/home/resume/http/staging/app
+    - rsync --times --compress --delete --progress ./report.html $SSH_COMMAND:/home/resume/http/staging/app
   artifacts:
     paths:
       - ./report.html
