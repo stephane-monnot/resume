@@ -6,6 +6,7 @@ stages:
   - review
 #  - release
   - deploy
+  - performance
 
 variables:
   # Declare SSH_COMMAND: myuser@example.com
@@ -13,6 +14,7 @@ variables:
   APPS_DOMAIN: stephanemonnot.com
   CONTAINER_TEST_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:$CI_COMMIT_REF_NAME
   CONTAINER_RELEASE_IMAGE: registry.gitlab.nanoka.fr/shinbuntu/stephanemonnot:latest
+  REVIEW_URL: https://$BASIC_AUTH$CI_BUILD_REF_SLUG.$APPS_DOMAIN
 
 cache:
   paths:
@@ -52,7 +54,7 @@ review:
   image: nanoka/puppeteer:latest
   environment:
     name: review/$CI_BUILD_REF_NAME
-    url: https://$BASIC_AUTH$CI_BUILD_REF_SLUG.$APPS_DOMAIN
+    url: $REVIEW_URL
     on_stop: stop_review
   before_script:
     - yarn
@@ -182,3 +184,28 @@ pages:
       - public
   only:
     - tags
+
+
+lighthouse:
+  stage: performance
+  image: markhobson/node-chrome
+  before_script:
+    - npm i -g lighthouse
+  script:
+    - lighthouse --chrome-flags="--headless --no-sandbox" https://${BASIC_AUTH}staging.$APPS_DOMAIN --output html --output-path ./report.html
+
+    # Add ssh key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    # Scp
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/staging"
+    - scp -r build/. $SSH_COMMAND:/home/resume/http/staging/app
+  artifacts:
+    paths:
+      - ./report.html
+    expire_in: 1 week
+  only:
+    - master
