@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: 'CV - Stéphane Monnot : développeur web à Osaka',
+    title: 'CV - Stéphane Monnot : développeur web à Lyon',
     keywords: 'Osaka, React, PHP, Laravel',
     description:
       'Stéphane Monnot, Expert en développement web à Osaka, Japon. Spécialités : HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
