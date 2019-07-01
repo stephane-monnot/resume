@@ -73,7 +73,7 @@ class GridBackground extends React.PureComponent {
       // const randKey = Math.floor(Math.random() * children.length);
       // const child = React.createElement(children[randKey].type, {...children[randKey].props, style: {...children[randKey].props.style, width: '100%', height: '100%'}});
       return (
-        <GridItem width={itemWidth} height={itemHeight}>
+        <GridItem key={i} width={itemWidth} height={itemHeight}>
           {child}
         </GridItem>
       );
