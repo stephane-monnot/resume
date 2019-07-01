@@ -58,6 +58,7 @@ review:
     on_stop: stop_review
   before_script:
     - yarn
+    - apt-get update && apt-get install rsync
   script:
     # Build
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
@@ -114,6 +115,7 @@ staging:
     on_stop: stop_staging
   before_script:
     - yarn
+    - apt-get update && apt-get install rsync
   script:
     # Build
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
@@ -191,6 +193,7 @@ lighthouse:
   image: markhobson/node-chrome
   before_script:
     - npm i -g lighthouse
+    - apt-get update && apt-get install rsync
   script:
     - lighthouse --chrome-flags="--headless --no-sandbox" https://${BASIC_AUTH}staging.$APPS_DOMAIN --output html --output-path ./report.html
 
