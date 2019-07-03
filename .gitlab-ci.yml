@@ -60,7 +60,7 @@ review:
     - yarn
   script:
     # Build
-    - echo "Review URL: $REVIEW_URL"
+    - echo "Review URL / $REVIEW_URL"
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
     - mv build build_ja
     - REACT_APP_LOCALE=en yarn build && yarn local-analytics
