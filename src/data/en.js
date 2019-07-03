@@ -13,7 +13,7 @@ export default {
     Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />
     Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.
   `,
-  pictureUrl: 'me.png',
+  pictureUrl: 'me.jpg',
   dateOfBirth: '1987-09-16',
   mainAddress: 'Osaka, Japan',
   websites: [

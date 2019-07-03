@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import Card from '@material-ui/core/Card';
@@ -27,36 +28,40 @@ const ResumeCustomersBlock = ({ customers }) => (
         {customers.map((customer, i) => {
           const logo = require(`../../data/img/${customer.picture}`); // eslint-disable-line global-require
           return (
-            <div
-              key={i} // eslint-disable-line react/no-array-index-key
-              className="ResumeCustomersBlock-customer-container"
-            >
-              <div className="ResumeCustomersBlock-customer">
-                <Card
-                  style={customer.front ? customer.front.style : customer.style}
-                  className="ResumeCustomersBlock-customer-front"
-                >
-                  <CardContent>
-                    <img alt="" src={logo} />
-                  </CardContent>
-                </Card>
-                <Card
-                  style={customer.back ? customer.back.style : customer.style}
-                  className="ResumeCustomersBlock-customer-back"
-                >
-                  <CardContent>
-                    <div className="ResumeCustomersBlock-customer-back-name">
-                      {customer.name}
-                    </div>
-                    {customer.description && (
-                      <div className="ResumeCustomersBlock-customer-back-description">
-                        {customer.description}
+            <LazyLoad height={150}>
+              <div
+                key={i} // eslint-disable-line react/no-array-index-key
+                className="ResumeCustomersBlock-customer-container"
+              >
+                <div className="ResumeCustomersBlock-customer">
+                  <Card
+                    style={
+                      customer.front ? customer.front.style : customer.style
+                    }
+                    className="ResumeCustomersBlock-customer-front"
+                  >
+                    <CardContent>
+                      <img alt="" src={logo} />
+                    </CardContent>
+                  </Card>
+                  <Card
+                    style={customer.back ? customer.back.style : customer.style}
+                    className="ResumeCustomersBlock-customer-back"
+                  >
+                    <CardContent>
+                      <div className="ResumeCustomersBlock-customer-back-name">
+                        {customer.name}
                       </div>
-                    )}
-                  </CardContent>
-                </Card>
+                      {customer.description && (
+                        <div className="ResumeCustomersBlock-customer-back-description">
+                          {customer.description}
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            </div>
+            </LazyLoad>
           );
         })}
       </div>

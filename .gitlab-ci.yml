@@ -60,6 +60,7 @@ review:
     - yarn
   script:
     # Build
+    - echo "Review URL / $REVIEW_URL"
     - REACT_APP_LOCALE=ja yarn build && yarn local-analytics
     - mv build build_ja
     - REACT_APP_LOCALE=en yarn build && yarn local-analytics
@@ -75,7 +76,7 @@ review:
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
     # Scp
-    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG"
+    - ssh $SSH_COMMAND "mkdir -p /home/resume/http/$CI_BUILD_REF_SLUG/app"
     - scp -r build/* $SSH_COMMAND:/home/resume/http/$CI_BUILD_REF_SLUG/app
   only:
     - branches
