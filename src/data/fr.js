@@ -14,7 +14,7 @@ export default {
     Mon domaine de compétences comprend : le développement PHP (Symfony & Laravel frameworks), le développement Javascript (ES6, ReactJS, VueJS), le développement piloté par les tests, l'intégration continue, WordPress et le développement d'APIs.<br /><br />Grâce à une license dans le domaine du développement web obtenue à l'Université Claude Bernard Lyon 1, j'ai pu découvrir les bases de la programmation web et ainsi avoir des bases solides pour en faire véritablement mon métier. En plus d'être mon métier, c'est une réelle passion.<br /><br />
     Ma stack favorite : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS et ReactNative. Le tout avec intégration/déploiement continu via Gitlab.
     `,
-  pictureUrl: 'me.png',
+  pictureUrl: 'me.jpg',
   dateOfBirth: '1987-09-16',
   mainAddress: 'Osaka, Japon',
   websites: [
