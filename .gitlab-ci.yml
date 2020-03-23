@@ -1,10 +1,10 @@
 image: docker:latest
 
 stages:
-#  - build
+  #  - build
   - qa
   - review
-#  - release
+  #  - release
   - deploy
   - performance
 
@@ -20,13 +20,13 @@ cache:
   paths:
     - node_modules/
 
-#build:
-#  stage: build
-#  before_script:
-#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
-#  script:
-#    - docker build -t "${CONTAINER_TEST_IMAGE}" .
-#    - docker push "${CONTAINER_TEST_IMAGE}"
+build:
+  stage: build
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
+  script:
+    - docker build -t "${CONTAINER_TEST_IMAGE}" .
+    - docker push "${CONTAINER_TEST_IMAGE}"
 
 qa:
   stage: qa
@@ -34,20 +34,20 @@ qa:
   before_script:
     - yarn
   script:
-      - yarn test
+    - yarn test
   only:
     - master
 
-#release-production:
-#  stage: release
-#  before_script:
-#    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
-#  script:
-#    - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
-#    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
-#    - docker push $CONTAINER_RELEASE_IMAGE
-#  only:
-#    - master
+release-production:
+  stage: release
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.nanoka.fr
+  script:
+    - echo "New image with tags ${CONTAINER_TEST_IMAGE}"
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - master
 
 review:
   stage: review
