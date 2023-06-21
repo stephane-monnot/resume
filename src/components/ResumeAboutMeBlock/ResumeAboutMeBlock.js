@@ -61,16 +61,17 @@ const ResumeAboutMeBlock = ({
               >
                 <FormattedMessage
                   id="Resume.download"
-                  defaultMessage="Download"
+                  defaultMessage="Resume"
                 />
               </Button>
               &nbsp;&nbsp;&nbsp;
               <Button
-                href="mailto:roopeshb13@gmail.com"
+                href="https://api.whatsapp.com/send/?phone=918867771953&text=Hi, Roopesh. Are you open for some collaboration?&type=phone_number&app_absent=0"
                 variant="contained"
                 color="secondary"
+                target="_blank"
               >
-                <FormattedMessage id="Resume.hireMe" defaultMessage="Hire me" />
+                <FormattedMessage id="Resume.hireMe" defaultMessage="Work with me" />
               </Button>
             </div>
           </div>

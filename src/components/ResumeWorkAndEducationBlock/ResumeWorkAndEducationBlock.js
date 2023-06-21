@@ -108,7 +108,7 @@ const ResumeWorkAndEducationBlock = ({
         <VerticalTimeline>
           {educations.map((education, i) => (
             <VerticalTimelineElement
-              position={i % 2 ? 'left' : 'right'}
+              position={i % 2 ? 'right' : 'left'}
               id=""
               className="Resume-position"
               key={i} // eslint-disable-line react/no-array-index-key

@@ -1,26 +1,27 @@
 import React from 'react';
 
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import LaravelIcon from 'react-devicon/laravel/plain';
-import PhpIcon from 'react-devicon/php/plain';
+import IconNodejs from 'react-devicon/nodejs/plain-wordmark'
+import IconPython from 'react-devicon/python/original'
 import ReactIcon from 'react-devicon/react/original';
-import RubyIcon from 'react-devicon/ruby/plain';
-import RailsIcon from 'react-devicon/rails/plain';
+import IconPostgresql from 'react-devicon/postgresql/original-wordmark'
+import IconDjango from 'react-devicon/django/line'
 import JavascriptIcon from 'react-devicon/javascript/plain';
-import DockerIcon from 'react-devicon/docker/plain';
+import IconAmazonwebservices from 'react-devicon/amazonwebservices/original-wordmark'
 import FacebookIcon from 'react-devicon/facebook/plain';
 import GoIcon from 'react-devicon/go/plain';
 import WordpressIcon from 'react-devicon/wordpress/plain';
 import CordovaIcon from './components/Icons/Apachecordova';
+import IconAngularjs from 'react-devicon/angularjs/plain'
+import IconExpress from 'react-devicon/express/original'
 
 const theme = {
   laravelColor: {
     style: {
-      background: '#fd4f31',
-      color: '#fff',
+      color: "#000"
     },
     className: 'vertical-timeline-element--laravel',
-    icon: <LaravelIcon />,
+    icon: <IconNodejs />,
   },
   phpColor: {
     style: {
@@ -28,7 +29,7 @@ const theme = {
       color: '#fff',
     },
     className: 'vertical-timeline-element--php',
-    icon: <PhpIcon />,
+    icon: <IconPython />,
   },
   reactColor: {
     style: {
@@ -44,7 +45,7 @@ const theme = {
       color: '#fff',
     },
     className: 'vertical-timeline-element--ruby',
-    icon: <RubyIcon />,
+    icon: <IconPostgresql />,
   },
   railsColor: {
     style: {
@@ -52,7 +53,7 @@ const theme = {
       color: '#fff',
     },
     className: 'vertical-timeline-element--rails',
-    icon: <RailsIcon />,
+    icon: <IconDjango />,
   },
   javascriptColor: {
     style: {
@@ -68,7 +69,7 @@ const theme = {
       color: '#fff',
     },
     className: 'vertical-timeline-element--docker',
-    icon: <DockerIcon />,
+    icon: <IconDjango />,
   },
   cordovaColor: {
     style: {
@@ -109,6 +110,30 @@ const theme = {
     },
     className: 'vertical-timeline-element--others',
     icon: <MoreHorizIcon />,
+  },
+  awsColor: {
+    style: {
+      background: '#800080',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--others',
+    icon: <IconAmazonwebservices />,
+  },
+  nextColor: {
+    style: {
+      background: '#800080',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--others',
+    icon: <IconAngularjs />,
+  },
+  expressColor: {
+    style: {
+      background: '#000',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--others',
+    icon: <IconExpress />,
   },
 };
 

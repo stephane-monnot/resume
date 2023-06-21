@@ -1,84 +1,83 @@
 .ResumeAboutMeBlock .Resume-profilePicture img {
-    border-radius: 50%;
-    max-width: 90%;
-    max-height: none;
-    width: auto;
-    height: auto;
-    vertical-align: middle;
-    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.07);
+  border-radius: 50%;
+  max-width: 90%;
+  max-height: none;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.07);
 }
 
 .ResumeAboutMeBlock * {
-    color: #fff;
+  color: #fff;
 }
 
-
 .ResumeAboutMeBlock-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .ResumeAboutMeBlock-content h3 {
-    margin: 0;
-    padding-bottom: 6px;
+  margin: 0;
+  padding-bottom: 6px;
 }
 
 .ResumeAboutMeBlock-content h4 {
-    margin: 0;
-    padding-bottom: 22px;
+  margin: 0;
+  padding-bottom: 22px;
 }
 
 .ResumeAboutMeBlock-content a {
-    padding: 14px 23px;
-    font-size: 16px;
+  padding: 14px 23px;
+  font-size: 16px;
 }
 
-
 .ResumeAboutMeBlock-description {
-    flex: 1;
-    padding-right: 35px;
+  flex: 1;
+  padding-right: 35px;
 }
 
 .ResumeAboutMeBlock-links {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 1170px) {
-    .ResumeAboutMeBlock-content {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
+  .ResumeAboutMeBlock-content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 @media only screen and (max-width: 800px) {
-    .ResumeAboutMeBlock-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
+  .ResumeAboutMeBlock-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 
-    .ResumeAboutMeBlock-description {
-        padding-right: 0;
-    }
+  .ResumeAboutMeBlock-description {
+    padding-right: 0;
+  }
 
-    .ResumeAboutMeBlock-profilePicture {
-        max-width: 45%;
-        margin: 0 auto;
-        padding-bottom: 20px;
-    }
+  .ResumeAboutMeBlock-profilePicture {
+    max-width: 45%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
 
-    .ResumeAboutMeBlock-profilePicture img {
-        max-height: none;
-    }
+  .ResumeAboutMeBlock-profilePicture img {
+    max-height: none;
+  }
 
-    .ResumeAboutMeBlock-links {
-        justify-content: center;
-    }
+  .ResumeAboutMeBlock-links {
+    justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-    .ResumeAboutMeBlock-links > * {
-        width: 100%;
-    }
+  .ResumeAboutMeBlock-links > * {
+    width: 100%;
+  }
 }

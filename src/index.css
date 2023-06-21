@@ -21,38 +21,37 @@ p {
   padding: 40px;
 }
 
-
 h1 {
   font-family: 'Open Sans', sans-serif;
-  font-size:80px;
-  line-height:90px;
-  font-weight:700;
+  font-size: 80px;
+  line-height: 90px;
+  font-weight: 700;
 }
 h2 {
   font-family: 'Open Sans', sans-serif;
-  font-size:36px;
-  line-height:38px;
-  font-weight:300;
-  text-transform:uppercase;
+  font-size: 36px;
+  line-height: 38px;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 h3 {
   font-family: 'Open Sans', sans-serif;
-  font-size:24px;
-  line-height:30px;
-  padding-bottom:6px;
-  font-weight:400;
+  font-size: 24px;
+  line-height: 30px;
+  padding-bottom: 6px;
+  font-weight: 400;
 }
 h4 {
   font-family: 'Open Sans', sans-serif;
-  font-size:19px;
-  line-height:24px;
-  font-weight:600;
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 600;
 }
 h5 {
   font-family: 'Open Sans', sans-serif;
-  font-size:16px;
-  line-height:24px;
-  font-weight:400;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 ul {
@@ -61,7 +60,7 @@ ul {
 
 .container {
   width: 98%;
-  max-width: 1170px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
