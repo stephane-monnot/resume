@@ -1,97 +1,173 @@
 export default {
   meta: {
-    title: 'Resume - Stéphane Monnot : web developer in Osaka',
-    keywords: 'Osaka, React, PHP, Laravel',
+    title: 'Resume - Roopesh Babu : web developer in Bengaluru',
+    keywords: 'Bengaluru, Nodejs, Python, Teacher',
     description:
-      'Stéphane Monnot, web development expert in Osaka, Japan. Specialities: HTML5, React, Redux, PHP, Laravel, Ruby on Rails, Responsive Web Design.',
+      'Roopesh Babu, web development expert in Bengaluru, India. Specialities: Nodejs, Python, Databases, SQL, Microservice Architecture, React',
   },
-  firstName: 'Stéphane',
-  lastName: 'Monnot',
-  emailAddress: 'monnot.stephane@gmail.com',
-  headline: 'Full-stack web engineer in Lyon',
+  firstName: 'Roopesh',
+  lastName: 'Babu',
+  emailAddress: 'roopeshb13@gmail.com',
+  headline: 'Full-stack web engineer in Bengaluru',
   summary: `
-    Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces.<br /><br />
-    Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1.<br /><br />My favourite stack : Laravel 5, Symfony Flex, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.
+  Roopesh is an enthusiastic college graduate. He is extremely passionate about Mathematics and started his tutoring career by teaching maths. With a never-ending hunger for success, he learns new things and puts his learning to use. He loves to work and is passionate about any task he undertakes. He will stop at nothing to accomplish the task. Currently working as a full-stack developer, he loves building end-to-end products and going through the process of feature development. He loves fixing problems and doesn't stop until he finds a good solution.
   `,
   pictureUrl: 'me.jpg',
-  dateOfBirth: '1987-09-16',
-  mainAddress: 'Osaka, Japan',
+  dateOfBirth: '2000-06-09',
+  mainAddress: 'Bengaluru, India',
   websites: [
     {
       type: 'Linkedin',
-      url: 'https://www.linkedin.com/in/monnotnakatsuji/',
+      url: 'https://www.linkedin.com/in/roopeshshettyb/',
     },
   ],
   phoneNumbers: [
     {
       type: 'Work',
-      number: '+33 (0)7 82 69 27 69',
+      number: '+918867771953',
     },
     {
       type: 'Personal',
-      number: '+33 (0)6 73 83 21 42',
+      number: '+918867771953',
     },
   ],
   imAccounts: [
-    {
-      type: 'Line',
-      name: 'shinbuntu',
-    },
-    {
-      type: 'Skype',
-      name: 'monnot.stephane',
-    },
+    // {
+    //   type: 'Line',
+    //   name: 'shinbuntu',
+    // },
+    // {
+    //   type: 'Skype',
+    //   name: 'monnot.stephane',
+    // },
   ],
   snsAccounts: [
     {
       name: 'Linkedin',
       icon: 'linkedin',
-      url: 'https://www.linkedin.com/in/monnotstephane/',
+      url: 'https://www.linkedin.com/in/roopeshshettyb/',
     },
     {
       name: 'Github',
       icon: 'github',
-      url: 'https://github.com/stephane-monnot',
+      url: 'https://github.com/roopeshshettyb',
     },
   ],
   locations: [
     {
-      name: 'Osaka',
-      country: 'Japan',
+      name: 'Bengaluru',
+      country: 'India',
       isCurrent: true,
-    },
-    {
-      name: 'Lyon',
-      country: 'France',
-    },
+    }
   ],
   positions: [
     {
-      title: 'Full-stack web engineer',
+      title: 'Full Stack Engineer',
       summary:
-        'PHP/MySQL/Javascript development<br />Laravel 5 | Vuejs | ReactJS | Docker | CI',
-      startDate: '2018',
-      endDate: 'Today',
+        `<ul><li>Developed high-performance invoicing service handling 5x the previous volume, ensuring efficient processing of thousands of orders daily.</li>
+        <li>Utilized Zoho Bulk Invoicing APIs and integrated Amazon SQS and Kinesis for streamlined invoicing and increased productivity.</li>
+        <li>Created configurable Python service converting Excel files to CSVs, offering adaptability to different file sources and destinations.</li>
+        </ul>`,
+      startDate: '2022-08',
+      endDate: 'Present (1 year)',
+      period: 1,
       isCurrent: true,
-      company: 'Iscab',
+      company: ' GlobalBees',
+      technologies: [
+        {
+          name: 'Nodejs',
+        },
+        {
+          name: 'Nestjs',
+        },
+        {
+          name: 'Python',
+        },
+        {
+          name: 'Postgres',
+        },
+        {
+          name: 'BigQuery',
+        },
+        {
+          name: 'AWS Kinesis',
+        },
+        {
+          name: 'AWS SQS',
+        },
+        {
+          name: 'Redis',
+        },
+        {
+          name: 'Serverless',
+        },
+        {
+          name: 'Typescript',
+        },
+        {
+          name: 'Expressjs',
+        },
+      ],
     },
     {
-      title: 'Full-stack web engineer',
+      title: 'Full Stack Engineer',
       summary:
-        'PHP/MySQL/Javascript development<br />Symfony 4 | ReactJS | Docker | CI',
-      startDate: '2018',
-      endDate: 'Today',
-      isCurrent: true,
-      company: 'Finkey',
+        `<ul>
+        <li>Launched Social Creds, the world's largest kiddie time bank</li>
+        <li>
+          Business architect for the launch of India's first time bank, currently used
+          by over 1,000 users who volunteered across 150+ events, clocking 30,000
+          hours
+        </li>
+        <li>Developing front and back-end website architecture</li>
+      </ul>`,
+      startDate: '2022-01',
+      endDate: 'Present (1.5 years)',
+      // isCurrent: true,
+      company: ' Gift Of Time',
+      technologies: [
+        {
+          name: 'React',
+        },
+        {
+          name: 'Postgres',
+        },
+        {
+          name: 'Django Rest Framework',
+        },
+        {
+          name: 'Python',
+        },
+        {
+          name: 'Material-UI',
+        },
+        {
+          name: 'Redux',
+        },
+      ],
     },
     {
-      title: 'Full-stack web engineer',
+      title: 'Full Stack Engineer',
       summary:
         'PHP/MySQL/Javascript development<br />Laravel 5 | Symfony 3 | Vuejs | ReactJS | Docker | CI | Apache Cordova',
       startDate: '2010',
       endDate: 'Today',
       isCurrent: true,
       company: 'NanokaWeb',
+      technologies: [
+        {
+          name: 'Ruby on Rails',
+        },
+        {
+          name: 'RSpec',
+        },
+        {
+          name: 'API',
+        },
+        {
+          name: 'Docker',
+        },
+      ],
     },
     {
       title: 'Teacher',
@@ -101,6 +177,20 @@ export default {
       endDate: '2018',
       isCurrent: false,
       company: 'Sup’ La Mache',
+      technologies: [
+        {
+          name: 'Ruby on Rails',
+        },
+        {
+          name: 'RSpec',
+        },
+        {
+          name: 'API',
+        },
+        {
+          name: 'Docker',
+        },
+      ],
     },
     {
       title: 'Senior web dev & CTO / Lead developer',
@@ -110,6 +200,20 @@ export default {
       endDate: '2017',
       isCurrent: false,
       company: 'Solire',
+      technologies: [
+        {
+          name: 'Ruby on Rails',
+        },
+        {
+          name: 'RSpec',
+        },
+        {
+          name: 'API',
+        },
+        {
+          name: 'Docker',
+        },
+      ],
     },
   ],
   interests: '',

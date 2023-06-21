@@ -1,5 +1,9 @@
 [
-  { "value": "en", "iso": "gb", "url": "en/resume", "name": "English", "englishName": "English" },
-  { "value": "fr", "iso": "fr", "url": "fr/cv", "name": "Français", "englishName": "French" },
-  { "value": "ja", "iso": "ja", "url": "ja/rirekisho", "name": "日本語", "englishName": "Japanese" }
+  {
+    "value": "en",
+    "iso": "gb",
+    "url": "en/resume",
+    "name": "English",
+    "englishName": "English"
+  }
 ]

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import SchoolIcon from '@material-ui/icons/School';
 import WorkIcon from '@material-ui/icons/Work';
+import Chip from '@material-ui/core/Chip';
 
 import ScreenBlock from '../../components/ScreenBlock/ScreenBlock';
 import VerticalTimeline from '../../components/VerticalTimeline/VerticalTimeline';
@@ -22,16 +23,7 @@ const formatPeriod = (start, end, formatMessage) => {
     return `${start} – ${end}`;
   }
 
-  return `${start} – ${end} (${formatMessage(
-    {
-      id: 'Resume.years',
-      defaultMessage:
-        '{years, plural, =0 {0 year} one {# year} other {# years}}',
-    },
-    {
-      years: period,
-    },
-  )})`;
+  return `${start} – ${end}`;
 };
 
 const ResumeWorkAndEducationBlock = ({
@@ -76,6 +68,11 @@ const ResumeWorkAndEducationBlock = ({
                 formatMessage,
               )}
             >
+              <div className="ResumeProjectsBlock-technologies">
+                {position.technologies.map((technology, j) => (
+                  <Chip key={j} label={technology.name} /> // eslint-disable-line react/no-array-index-key
+                ))}
+              </div>
               {picture && (
                 <img
                   className="ResumeWorkAndEducationBlock-picture"
