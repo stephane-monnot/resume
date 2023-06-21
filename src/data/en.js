@@ -8,7 +8,7 @@ export default {
   firstName: 'Roopesh',
   lastName: 'Babu',
   emailAddress: 'roopeshb13@gmail.com',
-  headline: 'Full-stack web engineer in Bengaluru',
+  headline: 'Full Stack Engineer in Bengaluru',
   summary: `
   Roopesh is an enthusiastic college graduate. He is extremely passionate about Mathematics and started his tutoring career by teaching maths. With a never-ending hunger for success, he learns new things and puts his learning to use.<br> <br>  He loves to work and is passionate about any task he undertakes. He will stop at nothing to accomplish the task.<br> <br> Currently working as a full-stack developer, he loves building end-to-end products and going through the process of feature development. He loves fixing problems and doesn't stop until he finds a good solution.
   `,
