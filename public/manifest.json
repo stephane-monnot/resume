@@ -1,9 +1,9 @@
 {
-  "short_name": "MS Resume",
-  "name": "Resume - Roopesh Babu : web developer in Bengaluru",
+  "short_name": "RB Spartan",
+  "name": "Roopesh Babu - Spartan",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "tabicon.png",
       "sizes": "64x64",
       "type": "image/png"
     }

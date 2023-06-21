@@ -14,7 +14,7 @@ const ResumeAppBar = ({ emailAddress, snsAccounts }) => (
   <AppBar className="ResumeAppBar" position="absolute">
     <Toolbar className="ResumeAppBar-header">
       <LanguagePicker />
-      <Button href={`mailto:${emailAddress}`} target="_blank">{emailAddress}</Button>
+      <Button href={`https://mail.google.com/mail/?view=cm&to=roopeshb13%40gmail.com&su=Hey,Roopesh`} target="_blank">{emailAddress}</Button>
       <SocialNetworkNavigation services={snsAccounts} />
     </Toolbar>
   </AppBar>

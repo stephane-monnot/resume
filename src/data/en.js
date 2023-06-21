@@ -1,6 +1,6 @@
 export default {
   meta: {
-    title: 'Resume - Roopesh Babu : web developer in Bengaluru',
+    title: 'Roopesh Babu - Spartan',
     keywords: 'Bengaluru, Nodejs, Python, Teacher',
     description:
       'Roopesh Babu, web development expert in Bengaluru, India. Specialities: Nodejs, Python, Databases, SQL, Microservice Architecture, React',
