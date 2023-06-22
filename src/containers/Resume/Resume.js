@@ -14,6 +14,7 @@ import ResumeProjectsBlock from '../../components/ResumeProjectsBlock/ResumeProj
 import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock';
 import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
+import ContributionsBlock from '../../components/ContributionsBlock/ContributionsBlock';
 
 import appTheme from '../../theme';
 import './Resume.css';
@@ -121,6 +122,8 @@ class Resume extends Component {
         />
 
         <ResumeCustomersBlock customers={this.props.customers} />
+
+        <ContributionsBlock />
 
         <BottomNavigation />
       </div>
