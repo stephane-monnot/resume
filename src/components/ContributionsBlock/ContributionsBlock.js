@@ -1,11 +1,13 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import ScreenBlock from '../ScreenBlock/ScreenBlock';
-// import GitHubCalendar from "react-github-calendar";
-
+import CalendarHeatmap from 'react-calendar-heatmap';
+import 'react-calendar-heatmap/dist/styles.css';
 import './ContributionsBlock.css';
 
-const ContributionsBlock = () => (
+const ContributionsBlock = ({ shiftDate, today, randomValues }) => (
+
+
     <ScreenBlock id="Resume-languages" className="ResumeLanguagesAndHobbiesBlock">
         <div className="container">
             <div className="heading">
@@ -14,15 +16,23 @@ const ContributionsBlock = () => (
                 </h2>
             </div>
             <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
-                GitHub
+                Gitlab
             </h1>
-            {/* <GitHubCalendar
-                    username="roopeshshettyb"
-                    blockSize={15}
-                    blockMargin={5}
-                    color="#c084f5"
-                    fontSize={16}
-                /> */}
+            <CalendarHeatmap
+                startDate={shiftDate(today, -360)}
+                endDate={today}
+                values={randomValues}
+                gutterSize={2}
+                showOutOfRangeDays={true}
+                weekdayLabels={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
+                classForValue={value => {
+                    if (!value) {
+                        return 'color-empty';
+                    }
+                    return `color-github-${value.count}`;
+                }}
+                showWeekdayLabels={true}
+            />
         </div>
     </ScreenBlock>
 );
