@@ -18,7 +18,7 @@ import ContributionsBlock from '../../components/ContributionsBlock/Contribution
 import axios from 'axios';
 import appTheme from '../../theme';
 import './Resume.css';
-import 'github-calendar/dist/github-calendar-responsive.css';
+
 class Resume extends Component {
 
   constructor(props) {
