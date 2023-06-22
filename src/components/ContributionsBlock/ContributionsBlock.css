@@ -1,0 +1,130 @@
+.ResumeLanguagesAndHobbiesBlock .container {
+  text-align: center;
+}
+
+.ResumeLanguagesAndHobbiesBlock-languages {
+  display: inline-flex;
+  flex-flow: column nowrap;
+}
+
+.ResumeLanguagesAndHobbiesBlock-languages:after {
+  clear: both;
+}
+
+.ResumeLanguagesAndHobbiesBlock-language {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.ResumeLanguagesAndHobbiesBlock-languageTitleAndLevel {
+  text-align: left;
+  padding-right: 25px;
+}
+
+.ResumeLanguagesAndHobbiesBlock-languageTitle {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.ResumeLanguagesAndHobbiesBlock-languageLevel {
+  color: #8a8a8b;
+  width: 100%;
+  text-align: left;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+}
+
+.ResumeCustomersBlock-customer-container {
+  display: inline-block;
+  perspective: 900px;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby {
+  transition: all 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby-front,
+.ResumeLanguagesAndHobbiesBlock-hobby-back {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby-container:hover
+  .ResumeLanguagesAndHobbiesBlock-hobby {
+  transform: rotateY(180deg);
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby-back {
+  transform: rotateY(180deg);
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby > div > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 16px !important;
+  height: 100%;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  text-align: center;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby h4 {
+  margin: 4px;
+}
+
+.ResumeLanguagesAndHobbiesBlock-hobby .material-icons {
+  font-size: 48px;
+}
+
+@media only screen and (max-width: 800px) {
+  .ResumeLanguagesAndHobbiesBlock-hobbies {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ResumeLanguagesAndHobbiesBlock-language {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ResumeLanguagesAndHobbiesBlock-hobbies {
+    padding: 20px;
+  }
+}
+
+.calendar {
+  border: none !important;
+  width: 1200px !important;
+  height: 300px !important;
+}
