@@ -122,3 +122,9 @@
     padding: 20px;
   }
 }
+
+.calendar {
+  border: none !important;
+  width: 1200px !important;
+  height: 300px !important;
+}

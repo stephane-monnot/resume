@@ -15,11 +15,45 @@ import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndH
 import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 import ContributionsBlock from '../../components/ContributionsBlock/ContributionsBlock';
-
+import axios from 'axios';
 import appTheme from '../../theme';
 import './Resume.css';
-
+import 'github-calendar/dist/github-calendar-responsive.css';
 class Resume extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      contributions: { gitlab: [], github: [] }, // Initialize contributions as an empty array
+      total: 0, // Initialize total
+    };
+  }
+
+  componentDidMount() {
+    this.fetchContributions(); // Call the API once the component is mounted
+    this.fetchHubContributions();
+  }
+
+  fetchHubContributions = async () => {
+    try {
+      const response = await axios.get('https://portfolio-api-blond.vercel.app/github');
+      let total = (response.data.sum)
+      this.setState({ contributions: { ...this.state.contributions, github: response.data.contributions }, total: this.state.total + total })
+    } catch (error) {
+      console.error('Error fetching GitLab contributions:', error);
+    }
+  };
+
+  fetchContributions = async () => {
+    try {
+      const response = await axios.get('https://portfolio-api-blond.vercel.app/');
+      let total = (response.data.sum)
+      this.setState({ contributions: { ...this.state.contributions, gitlab: response.data.contributions }, total: this.state.total + total })
+    } catch (error) {
+      console.error('Error fetching GitLab contributions:', error);
+    }
+  };
+
   getSkillsByLanguages() {
     const { skills } = this.props;
 
@@ -43,6 +77,8 @@ class Resume extends Component {
       fullName += ` (${this.props.firstNameKana}${this.props.lastNameKana})`;
     }
 
+    const { contributions, total } = this.state;
+
     const cv = this.props.cvPDF;
 
     const { theme } = this.props;
@@ -64,27 +100,13 @@ class Resume extends Component {
       },
     };
 
-    const randomValues = getRange(200).map(index => {
-      return {
-        date: shiftDate(today, -index),
-        count: getRandomInt(1, 3),
-      };
-    });
-
     function shiftDate(date, numDays) {
       const newDate = new Date(date);
       newDate.setDate(newDate.getDate() + numDays);
       return newDate;
     }
-
-    function getRange(count) {
-      return Array.from({ length: count }, (_, i) => i);
-    }
-
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
     const today = new Date();
+
     return (
       <div className="Resume">
         <Helmet
@@ -144,7 +166,7 @@ class Resume extends Component {
 
         <ResumeCustomersBlock customers={this.props.customers} />
 
-        <ContributionsBlock shiftDate={shiftDate} today={today} randomValues={randomValues} />
+        <ContributionsBlock shiftDate={shiftDate} today={today} total={total} randomValues={contributions} />
 
         <BottomNavigation />
       </div>
