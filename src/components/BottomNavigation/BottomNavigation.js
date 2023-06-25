@@ -8,9 +8,10 @@ import WorkIcon from '@material-ui/icons/Work';
 import FaceIcon from '@material-ui/icons/Face';
 import SchoolIcon from '@material-ui/icons/School';
 import SettingsIcon from '@material-ui/icons/SettingsApplications';
-import LanguageIcon from '@material-ui/icons/Language';
-import ToysIcon from '@material-ui/icons/Toys';
+// import LanguageIcon from '@material-ui/icons/Language';
+// import ToysIcon from '@material-ui/icons/Toys';
 import CodeIcon from '@material-ui/icons/Code';
+import { Star } from '@material-ui/icons';
 
 import './BottomNavigation.css';
 
@@ -51,21 +52,27 @@ const buttons = [
     icon: <SettingsIcon />,
   },
   {
+    label: 'SimpleBottomNavigation.achievements',
+    name: 'Resume-achievements',
+    icon: <Star />,
+  },
+  {
     label: 'SimpleBottomNavigation.projects',
     name: 'Resume-projects',
     icon: <CodeIcon />,
   },
-  {
-    label: 'SimpleBottomNavigation.languages',
-    name: 'Resume-languages',
-    icon: <LanguageIcon />,
-  },
-  {
-    label: 'SimpleBottomNavigation.hobbies',
-    name: 'Resume-hobbies',
-    icon: <ToysIcon />,
-  },
+
 ];
+// {
+//   label: 'SimpleBottomNavigation.languages',
+//   name: 'Resume-languages',
+//   icon: <LanguageIcon />,
+// },
+// {
+//   label: 'SimpleBottomNavigation.hobbies',
+//   name: 'Resume-hobbies',
+//   icon: <ToysIcon />,
+// },
 
 const SimpleBottomNavigation = () => (
   <BottomNavigation value="0" className="BottomNavigation">

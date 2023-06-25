@@ -1,17 +1,17 @@
 [
   {
-    "name": "Bureaubureau",
-    "description": "Design and communication agency",
-    "picture": "customer001.png",
+    "name": "GlobalBees",
+    "description": "A House of Brands",
+    "picture": "customer001.jpg",
     "style": {
       "background": "#fff",
       "color": "#000"
     }
   },
   {
-    "name": "Lizeo Group",
-    "description": "Big data company",
-    "picture": "customer002.png",
+    "name": "Simplifii",
+    "description": "A Versatile Product Company",
+    "picture": "customer002.jpg",
     "front": {
       "style": {
         "background": "#fff",
@@ -26,133 +26,47 @@
     }
   },
   {
-    "name": "Solire",
-    "description": "Web agency",
-    "picture": "customer003.png",
+    "name": "Gift Of Time",
+    "description": "India's First Time Bank",
+    "picture": "customer003.jpg",
     "style": {
-      "background": "#1E24BD",
+      "background": "#fff",
       "color": "#fff"
+    },
+    "back": {
+      "style": {
+        "background": "#ff8800",
+        "color": "#fff"
+      }
     }
   },
   {
-    "name": "Objectif France",
-    "description": "Travel agency",
+    "name": "Linguaphile Skills Hub",
+    "description": "Bespoke Education",
     "picture": "customer004.jpg",
     "front": {
       "style": {
-        "background": "#fff",
+        "background": "#1E1E1E",
         "color": "#E34879"
       }
     },
     "back": {
       "style": {
-        "background": "#E34879",
+        "background": "#1E1E1E",
         "color": "#fff"
       }
     }
   },
   {
-    "name": "Alisker",
-    "description": "Design and communication agency",
+    "name": "MyBy",
+    "description": "e-Commerce Marketplace",
     "picture": "customer005.jpg",
     "style": {
       "background": "#fff"
-    }
-  },
-  {
-    "name": "Buzzman",
-    "description": "Advertising agency",
-    "picture": "customer006.png",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "Burger King",
-    "description": "Fast-Food",
-    "picture": "customer014.png",
-    "front": {
-      "style": {
-        "background": "#fff",
-        "color": "#0D1655"
-      }
     },
     "back": {
       "style": {
-        "background": "#FFBB36",
-        "color": "#fff"
-      }
-    }
-  },
-  {
-    "name": "Viadigis",
-    "description": "Agence de Stratégie de communication digitale",
-    "picture": "customer007.png",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "Eolia Software",
-    "description": "Recruitment Software",
-    "picture": "customer009.png",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "Ceyo Ramonage",
-    "picture": "customer010.jpg",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "NoHuman Studio",
-    "description": "Video game studio",
-    "picture": "customer008.jpeg",
-    "style": {
-      "background": "#b4ce46",
-      "color": "#fff"
-    }
-  },
-  {
-    "name": "École Sup’ La Mache",
-    "description": "Higher Institute of Technology",
-    "picture": "customer011.jpg",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "Leo Pole Consulting",
-    "description": "Maritime Security Consulting",
-    "picture": "customer012.jpg",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "Cercle des Transports",
-    "description": "Transport association",
-    "picture": "customer013.jpg",
-    "style": {
-      "background": "#fff"
-    }
-  },
-  {
-    "name": "Iscab",
-    "description": "Intelligent Software for Car Business",
-    "picture": "customer015.png",
-    "front": {
-      "style": {
-        "background": "#fff",
-        "color": "#0D1655"
-      }
-    },
-    "back": {
-      "style": {
-        "background": "#E4421C",
+        "background": "#324AB8",
         "color": "#fff"
       }
     }

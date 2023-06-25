@@ -8,8 +8,6 @@ import blue from '@material-ui/core/colors/blue';
 import red from '@material-ui/core/colors/red';
 import { addLocaleData, IntlProvider } from 'react-intl';
 import en from 'react-intl/locale-data/en';
-import fr from 'react-intl/locale-data/fr';
-import ja from 'react-intl/locale-data/ja';
 
 import languages from './i18n';
 
@@ -23,7 +21,7 @@ import Meta from './containers/Meta/Meta';
 import { changeLanguage } from './actions';
 import { history } from './store/configureStore';
 
-addLocaleData([...en, ...fr, ...ja]);
+addLocaleData([...en]);
 
 const theme = createMuiTheme({
   palette: {
@@ -33,7 +31,7 @@ const theme = createMuiTheme({
 });
 
 export const App = ({ currentLanguage, onChangeLanguage }) => {
-  const defaultLanguage = process.env.REACT_APP_LOCALE || 'ja';
+  const defaultLanguage = 'en';
   const locale = currentLanguage || defaultLanguage;
 
   return (
@@ -50,20 +48,6 @@ export const App = ({ currentLanguage, onChangeLanguage }) => {
                 onChangeLanguage={onChangeLanguage}
                 language={defaultLanguage}
                 path="/"
-                component={ResumeScreen}
-              />
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="fr"
-                path="/fr/cv.html"
-                component={ResumeScreen}
-              />
-              <IntlRoute
-                exact
-                onChangeLanguage={onChangeLanguage}
-                language="ja"
-                path="/ja/rirekisho.html"
                 component={ResumeScreen}
               />
               <IntlRoute

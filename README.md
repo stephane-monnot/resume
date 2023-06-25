@@ -1,10 +1,22 @@
-# My resume
-[![Build Status](https://travis-ci.org/stephane-monnot/resume.svg?branch=master)](https://travis-ci.org/stephane-monnot/resume)
+# Portfolio
 
-My resume in japanese, french and english, developed with React.
+## _The Best Portfolio, Ever_
 
-## Build docker image
-docker build -t stephane-monnot/resume .
+Credit to [Stephhane Monnot] for creating this amazing portfolio that I have made some customizations of my own.
 
-## Run a container on port 8018
-docker run  -p 8018:80 stephane-monnot/resume:latest
+## Features
+
+- Gitlab Contributions Graph
+- Github Contributions Graph
+- Achievements timeline with image carousel
+
+## Development
+
+For both gitlab and github contributions are displayed using react-calendar-heatmap.
+The contributions for Gitlab are fetched using it's API.
+The contributions for Github are fetched by scraping.
+
+I have a server that actually gets the data. Get in touch if you need any help setting it up!
+
+[//]: # "These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax"
+[stephhane monnot]: https://github.com/stephane-monnot

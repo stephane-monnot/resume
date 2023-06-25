@@ -14,11 +14,47 @@ import ResumeProjectsBlock from '../../components/ResumeProjectsBlock/ResumeProj
 import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndHobbiesBlock/ResumeLanguagesAndHobbiesBlock';
 import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
-
+import ContributionsBlock from '../../components/ContributionsBlock/ContributionsBlock';
+import ResumeAchievementsBlock from '../../components/ResumeAchievementsBlock/ResumeAchievementsBlock';
+import axios from 'axios';
 import appTheme from '../../theme';
 import './Resume.css';
 
 class Resume extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      contributions: { gitlab: [], github: [] }, // Initialize contributions as an empty array
+      total: 0, // Initialize total
+    };
+  }
+
+  componentDidMount() {
+    this.fetchContributions(); // Call the API once the component is mounted
+    this.fetchHubContributions();
+  }
+
+  fetchHubContributions = async () => {
+    try {
+      const response = await axios.get('https://portfolio-api-blond.vercel.app/github');
+      let total = (response.data.sum)
+      this.setState({ contributions: { ...this.state.contributions, github: response.data.contributions }, total: this.state.total + total })
+    } catch (error) {
+      console.error('Error fetching GitLab contributions:', error);
+    }
+  };
+
+  fetchContributions = async () => {
+    try {
+      const response = await axios.get('https://portfolio-api-blond.vercel.app/');
+      let total = (response.data.sum)
+      this.setState({ contributions: { ...this.state.contributions, gitlab: response.data.contributions }, total: this.state.total + total })
+    } catch (error) {
+      console.error('Error fetching GitLab contributions:', error);
+    }
+  };
+
   getSkillsByLanguages() {
     const { skills } = this.props;
 
@@ -42,6 +78,8 @@ class Resume extends Component {
       fullName += ` (${this.props.firstNameKana}${this.props.lastNameKana})`;
     }
 
+    const { contributions, total } = this.state;
+
     const cv = this.props.cvPDF;
 
     const { theme } = this.props;
@@ -62,6 +100,13 @@ class Resume extends Component {
         color: '#fff',
       },
     };
+
+    function shiftDate(date, numDays) {
+      const newDate = new Date(date);
+      newDate.setDate(newDate.getDate() + numDays);
+      return newDate;
+    }
+    const today = new Date();
 
     return (
       <div className="Resume">
@@ -109,10 +154,11 @@ class Resume extends Component {
 
         <ResumeSkillsBlock skills={skills} tools={this.props.tools} />
 
-        <ResumeProjectsBlock
-          projects={this.props.projects}
+        <ResumeAchievementsBlock
+          projects={this.props.achievements}
           formatDate={formatDate}
         />
+
 
         <ResumeLanguagesAndHobbiesBlock
           languages={this.props.languages}
@@ -120,7 +166,16 @@ class Resume extends Component {
           hobbyCardStyle={styles.primaryColor}
         />
 
+
+
+        <ResumeProjectsBlock
+          projects={this.props.projects}
+          formatDate={formatDate}
+        />
+
+        <ContributionsBlock shiftDate={shiftDate} today={today} total={total} randomValues={contributions} />
         <ResumeCustomersBlock customers={this.props.customers} />
+
 
         <BottomNavigation />
       </div>
@@ -155,8 +210,8 @@ Resume.propTypes = {
 Resume.defaultProps = {
   firstName: 'Stéphane',
   lastName: 'Monnot',
-  emailAddress: 'monnot.stephane@gmail.com',
-  headline: 'Full-stack web engineer',
+  emailAddress: 'roopeshb13@gmail.com',
+  headline: 'Full Stack Engineer',
   summary:
     '♥ Microservice architecture lover ♥<br>Experienced Chief Technology Officer, Developer & Teacher with a demonstrated history of working in the internet industry. Skilled in PHP (Symfony & Laravel frameworks), TDD, continuous integration, WordPress, Linux System Administration, and Application Programming Interfaces. Strong engineering professional with a Licence focused in Web Development from Université Claude Bernard Lyon 1. My favourite stack : Laravel 5, Symfony 3, PHPUnit, PHPQA, Micro-services, Docker, ReactJS, ReactNative with continuous integration on Gitlab.',
   pictureUrl:

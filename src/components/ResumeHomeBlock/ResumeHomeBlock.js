@@ -43,6 +43,7 @@ export const ResumeHomeBlock = ({ style, shortFullName, headline }) => (
         <div style={{ ...appTheme.dockerColor.style }}>
           {appTheme.dockerColor.icon}
         </div>
+
       </GridBackground>
     </div>
   </ScreenBlock>

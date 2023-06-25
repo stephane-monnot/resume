@@ -1,0 +1,35 @@
+.ResumeProjectsBlock {
+}
+
+.ResumeProjectsBlock-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.ResumeProjectsBlock-technologies > * {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.ResumeProjectsBlock-technologies > * > * {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.ResumeProjectsBlock-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ResumeProjectsBlock-links > * {
+    margin-right: 10px !important;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .ResumeProjectsBlock-links > * {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

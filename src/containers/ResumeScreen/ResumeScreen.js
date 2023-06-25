@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import cvFR from '../../data/fr';
-import cvJA from '../../data/ja';
 import cvEN from '../../data/en';
 import customers from '../../data/customers.json';
-import cvPDFFR from '../../data/fr.pdf';
-import cvPDFJA from '../../data/ja.pdf';
 import cvPDFEN from '../../data/en.pdf';
 import Resume from '../Resume/Resume';
 
 class ResumeScreen extends Component {
   componentWillMount() {
     this.setState({
-      cvs: { fr: cvFR, ja: cvJA, en: cvEN },
-      cvPDFs: { fr: cvPDFFR, ja: cvPDFJA, en: cvPDFEN },
+      cvs: { en: cvEN },
+      cvPDFs: { en: cvPDFEN },
     });
   }
 
@@ -26,11 +21,11 @@ class ResumeScreen extends Component {
 }
 
 ResumeScreen.propTypes = {
-  currentLanguage: PropTypes.string.isRequired,
+  currentLanguage: 'en',
 };
 
 const mapStateToProps = state => ({
-  currentLanguage: state.language.lang,
+  currentLanguage: 'en',
 });
 
 export default connect(mapStateToProps)(ResumeScreen);

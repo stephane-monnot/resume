@@ -1,6 +1,6 @@
 export default {
   Resume: {
-    download: 'Download',
+    download: 'Resume',
     hireMe: 'Hire me',
     workExperienceAndEducation: 'Work experience & Education',
     years: ' years',
@@ -8,6 +8,7 @@ export default {
     skills: 'Skills',
     languages: 'Languages',
     interests: 'Interests',
+    achievements: 'Achievements',
     resume: 'Resume',
     projectsAndDevelopments: 'Projects & developments',
     showMore: 'Show more',
@@ -29,5 +30,6 @@ export default {
     languages: 'Languages',
     hobbies: 'Hobbies',
     projects: 'Projects',
+    achievements: 'Achievements'
   },
 };
