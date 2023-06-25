@@ -15,6 +15,7 @@ import ResumeLanguagesAndHobbiesBlock from '../../components/ResumeLanguagesAndH
 import ResumeCustomersBlock from '../../components/ResumeCustomersBlock/ResumeCustomersBlock';
 import BottomNavigation from '../../components/BottomNavigation/BottomNavigation';
 import ContributionsBlock from '../../components/ContributionsBlock/ContributionsBlock';
+import ResumeAchievementsBlock from '../../components/ResumeAchievementsBlock/ResumeAchievementsBlock';
 import axios from 'axios';
 import appTheme from '../../theme';
 import './Resume.css';
@@ -153,10 +154,11 @@ class Resume extends Component {
 
         <ResumeSkillsBlock skills={skills} tools={this.props.tools} />
 
-        <ResumeProjectsBlock
-          projects={this.props.projects}
+        <ResumeAchievementsBlock
+          projects={this.props.achievements}
           formatDate={formatDate}
         />
+
 
         <ResumeLanguagesAndHobbiesBlock
           languages={this.props.languages}
@@ -164,9 +166,16 @@ class Resume extends Component {
           hobbyCardStyle={styles.primaryColor}
         />
 
-        <ResumeCustomersBlock customers={this.props.customers} />
+
+
+        <ResumeProjectsBlock
+          projects={this.props.projects}
+          formatDate={formatDate}
+        />
 
         <ContributionsBlock shiftDate={shiftDate} today={today} total={total} randomValues={contributions} />
+        <ResumeCustomersBlock customers={this.props.customers} />
+
 
         <BottomNavigation />
       </div>

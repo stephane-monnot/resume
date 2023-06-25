@@ -12,8 +12,10 @@ import FacebookIcon from 'react-devicon/facebook/plain';
 import GoIcon from 'react-devicon/go/plain';
 import WordpressIcon from 'react-devicon/wordpress/plain';
 import CordovaIcon from './components/Icons/Apachecordova';
+import Nestjs from './components/Icons/Nestjs/Nestjs';
 import IconAngularjs from 'react-devicon/angularjs/plain'
 import IconExpress from 'react-devicon/express/original'
+import { School, Work } from '@material-ui/icons';
 
 const theme = {
   laravelColor: {
@@ -134,6 +136,30 @@ const theme = {
     },
     className: 'vertical-timeline-element--others',
     icon: <IconExpress />,
+  },
+  nestColor: {
+    style: {
+      background: '#000',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--others',
+    icon: <Nestjs />,
+  },
+  teachColor: {
+    style: {
+      background: 'rgb(245, 0, 87)',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--others',
+    icon: <School />,
+  },
+  projectColor: {
+    style: {
+      background: 'rgb(33, 150, 243)',
+      color: '#fff',
+    },
+    className: 'vertical-timeline-element--others',
+    icon: <Work />,
   },
 };
 

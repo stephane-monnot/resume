@@ -530,7 +530,7 @@ export default {
     },
   ],
   tools:
-    'IDE: Visual Studio Code<br />APIs -  Testing: Postman<br />DB: PgAdmin4<br />Project Management Software: Jira / Azure<br />Version control system software: Gitlab / Github<br />',
+    'IDE: Visual Studio Code<br />APIs: Postman<br />DB: PgAdmin4<br />Project Management Software: Jira / Azure<br />Version control system software: Gitlab / Github<br />',
   educations: [
     {
       schoolName: 'Electronics and Communication Engineering',
@@ -543,6 +543,33 @@ export default {
     }
   ],
   projects: [
+    {
+      title: 'Creeper',
+      subtitle: 'Monitoring Service',
+      category: 'library',
+      subcategory: 'nest',
+      contribution: true,
+      links: [
+        {
+          url: 'https://github.com/roopeshshettyb/monitoring-service',
+          text: 'View source code',
+        }
+      ],
+      technologies: [
+        {
+          name: 'Nestjs',
+        },
+        {
+          name: 'Postgres',
+        },
+        {
+          name: 'Typescript',
+        },
+      ],
+      content:
+        'A data monitoring service built with Nestjs. Currently supports postgres databases. You can schedule queries to run with dynamic inputs and evaluate query results (boolean) and send email notification on success / failure / all the time.',
+      date: '2023-05 - 2023-05',
+    },
     {
       title: 'NexWordCloud',
       subtitle: 'Wordcloud',
@@ -568,7 +595,7 @@ export default {
       ],
       content:
         'A wordcloud with thumbnail, which displays words based on frequency. Implemented in React & Angular.',
-      date: '2022-06',
+      date: '2022-06 - 2022-08',
     },
     {
       title: 'Churro',
@@ -593,7 +620,7 @@ export default {
         },
       ],
       content: 'An expressjs CRM application with JWT Authentication, Ticket creation & updation. Admin/Engineer/Customer user roles.',
-      date: '2022-07',
+      date: '2022-07 - 2022-07',
     },
     {
       title: 'Burrito',
@@ -615,7 +642,7 @@ export default {
         },
       ],
       content: 'An e-commerce site with products, categories, users built using express framework.',
-      date: '2022-05',
+      date: '2022-05 - 2022-05',
     },
     {
       title: 'Pizza',
@@ -637,7 +664,7 @@ export default {
         },
       ],
       content: 'This is the backend of a Notification service application built using Nodejs and Express. Send Email notifications, tracking ID for email requests. Multiple emails supported.',
-      date: '2022-07',
+      date: '2022-07 - 2022-07',
     },
     {
       title: 'Taco',
@@ -672,7 +699,7 @@ export default {
         },
       ],
       content: 'A social media application like Facebook with timeline, posts, likes, followers, admin, routing, jwt authentication, admin profiles.',
-      date: '2022-07',
+      date: '2021-12 - 2022-01',
     },
   ],
   volunteer: [
@@ -712,4 +739,120 @@ export default {
       description: 'I can listen to the same song for hours',
     },
   ],
+  achievements: [
+    {
+      title: 'Nodejs Course - 50+ Students',
+      subtitle: 'Teaching Achievement',
+      category: 'library',
+      subcategory: 'teach',
+      contribution: true,
+      items: [],
+      images: ["https://drive.google.com/uc?id=1dLdvhdJXVSX9QhoEURCRcViLnT-KLzdE", "https://drive.google.com/uc?id=1dP0Pndbe3VFOAygeVc_r8ZDLhQqYr-ih"],
+      links: [
+        {
+          url: 'https://drive.google.com/file/d/1e5hycVufL8EGCF8YGZpzSEU9srAz7Q5g/view?usp=sharing',
+          text: 'View Course Material',
+        }
+      ],
+      technologies: [
+        {
+          name: 'Nodejs',
+        },
+        {
+          name: 'Express',
+        },
+        {
+          name: 'Javascript',
+        },
+      ],
+      content:
+        'Teaching a class of 50+ students the basics of backend development over 9 sessions to enable them to build scalable and efficient applications.'
+    },
+    {
+      title: 'Launched Social Cred$',
+      subtitle: 'Project Achievement',
+      category: 'library',
+      subcategory: 'project',
+      contribution: true,
+      items: [],
+      images: ["https://res.cloudinary.com/dt7p5tryb/image/upload/v1680536260/activity/uayxmpufgkpyrf1nnnrb.jpg", "https://res.cloudinary.com/dt7p5tryb/image/upload/v1680536257/activity/ycjil0qjxgxc42maf5i8.jpg"],
+      links: [
+        {
+          url: 'www.socialcreds.com',
+          text: 'Social Cred$',
+        }
+      ],
+      technologies: [
+        {
+          name: 'Project Management',
+        },
+        {
+          name: 'Full Stack Development',
+        },
+        {
+          name: 'React',
+        },
+        {
+          name: 'DRF',
+        },
+      ],
+      content:
+        'Business architect for the launch of India’s first time bank which is currently used by over 2,000 users who volunteered across 200+ events clocking 50,000 hours. '
+    },
+    {
+      title: 'All Tutored Students Excel',
+      subtitle: 'Teaching Achievement',
+      category: 'library',
+      subcategory: 'teach',
+      contribution: true,
+      images: [],
+      links: [],
+      technologies: [
+        {
+          name: 'Maths',
+        },
+        {
+          name: 'Science',
+        },
+        {
+          name: 'French',
+        },
+        {
+          name: 'ICT',
+        },
+      ],
+      content:
+        'All my students have gotten amazing results and their parents are content with the coaching given.'
+    },
+    {
+      title: 'Launched MyBy Pilot',
+      subtitle: 'Project Achievement',
+      category: 'library',
+      subcategory: 'project',
+      contribution: true,
+      images: [],
+      links: [
+        {
+          url: 'https://myby.in/',
+          text: 'MyBy',
+        }
+      ],
+      technologies: [
+        {
+          name: 'Sales & Marketing',
+        },
+        {
+          name: 'Customer Service',
+        },
+        {
+          name: 'Customer Journeys',
+        },
+        {
+          name: 'Analytics',
+        },
+      ],
+      content:
+        'Launched campaigns and supported over 20,000 customers and 1,000 vendors on our e-commerce platform.'
+    },
+  ]
 };
