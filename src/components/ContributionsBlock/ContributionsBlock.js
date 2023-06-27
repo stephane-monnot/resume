@@ -5,7 +5,7 @@ import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css';
 import './ContributionsBlock.css';
 
-const ContributionsBlock = ({ shiftDate, today, randomValues, total }) => (
+const ContributionsBlock = ({ shiftDate, today, contributions, total, isMobile }) => (
     <ScreenBlock id="Resume-languages" className="ResumeLanguagesAndHobbiesBlock">
         <div className="container">
             <div className="heading">
@@ -16,39 +16,43 @@ const ContributionsBlock = ({ shiftDate, today, randomValues, total }) => (
             <h2 style={{ paddingBottom: "20px", color: 'black' }}>
                 Gitlab - Work
             </h2>
-            <CalendarHeatmap
-                startDate={shiftDate(today, -360)}
-                endDate={today}
-                values={randomValues.gitlab}
-                gutterSize={2}
-                showOutOfRangeDays={true}
-                weekdayLabels={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
-                classForValue={value => {
-                    if (!value) {
-                        return 'color-empty';
-                    }
-                    return `color-github-${value.count}`;
-                }}
-                showWeekdayLabels={true}
-            />
+            <div style={{ paddingRight: isMobile ? "10px" : "0px" }}>
+                <CalendarHeatmap
+                    startDate={shiftDate(today, isMobile ? -180 : -360)}
+                    endDate={today}
+                    values={contributions.gitlab}
+                    gutterSize={2}
+                    showOutOfRangeDays={true}
+                    weekdayLabels={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
+                    classForValue={value => {
+                        if (!value) {
+                            return 'color-empty';
+                        }
+                        return `color-github-${value.count}`;
+                    }}
+                    showWeekdayLabels={true}
+                />
+            </div>
             <h2 style={{ paddingBottom: "20px", color: 'black' }}>
                 Github
             </h2>
-            <CalendarHeatmap
-                startDate={shiftDate(today, -360)}
-                endDate={today}
-                values={randomValues.github}
-                gutterSize={2}
-                showOutOfRangeDays={true}
-                weekdayLabels={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
-                classForValue={value => {
-                    if (!value) {
-                        return 'color-empty';
-                    }
-                    return `color-github-${value.count}`;
-                }}
-                showWeekdayLabels={true}
-            />
+            <div style={{ paddingRight: isMobile ? "10px" : "0px" }}>
+                <CalendarHeatmap
+                    startDate={shiftDate(today, isMobile ? -180 : -360)}
+                    endDate={today}
+                    values={contributions.github}
+                    gutterSize={2}
+                    showOutOfRangeDays={true}
+                    weekdayLabels={['S', 'M', 'T', 'W', 'T', 'F', 'S']}
+                    classForValue={value => {
+                        if (!value) {
+                            return 'color-empty';
+                        }
+                        return `color-github-${value.count}`;
+                    }}
+                    showWeekdayLabels={true}
+                />
+            </div>
         </div>
     </ScreenBlock>
 );

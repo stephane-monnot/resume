@@ -27,12 +27,15 @@ class Resume extends Component {
     this.state = {
       contributions: { gitlab: [], github: [] }, // Initialize contributions as an empty array
       total: 0, // Initialize total
+      isMobile: false
     };
   }
 
   componentDidMount() {
     this.fetchContributions(); // Call the API once the component is mounted
     this.fetchHubContributions();
+    const isMobile = /Mobi/i.test(window.navigator.userAgent);
+    this.setState({ ...this.state, isMobile });
   }
 
   fetchHubContributions = async () => {
@@ -78,7 +81,7 @@ class Resume extends Component {
       fullName += ` (${this.props.firstNameKana}${this.props.lastNameKana})`;
     }
 
-    const { contributions, total } = this.state;
+    const { contributions, total, isMobile } = this.state;
 
     const cv = this.props.cvPDF;
 
@@ -142,6 +145,7 @@ class Resume extends Component {
           pictureUrl={this.props.pictureUrl}
           resumeUrl={cv}
           style={appTheme.phpColor.style}
+          isMobile={isMobile}
         />
 
         <ResumeWorkAndEducationBlock
@@ -173,7 +177,7 @@ class Resume extends Component {
           formatDate={formatDate}
         />
 
-        <ContributionsBlock shiftDate={shiftDate} today={today} total={total} randomValues={contributions} />
+        <ContributionsBlock isMobile={isMobile} shiftDate={shiftDate} today={today} total={total} contributions={contributions} />
         <ResumeCustomersBlock customers={this.props.customers} />
 
 
