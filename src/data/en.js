@@ -766,7 +766,7 @@ export default {
         },
       ],
       content:
-        'Teaching a class of 50+ students the basics of backend development over 9 sessions to enable them to build scalable and efficient applications.'
+        'Teaching a class of 50+ students of ABES Engineering College the basics of backend development over 9 sessions to enable them to build scalable and efficient applications.'
     },
     {
       title: 'Launched Social Cred$',
