@@ -68,7 +68,7 @@ export default {
         <li>Utilized Zoho Bulk Invoicing APIs and integrated Amazon SQS and Kinesis for streamlined invoicing and increased productivity.</li>
         <li>Created configurable Python service converting Excel files to CSVs, offering adaptability to different file sources and destinations.</li>
         </ul>`,
-      startDate: '2022-08',
+      startDate: 'Aug 2022',
       endDate: 'Present (11 months)',
       period: 1,
       isCurrent: true,
@@ -121,7 +121,7 @@ export default {
         </li>
         <li>Developing front and back-end website architecture</li>
       </ul>`,
-      startDate: '2022-01',
+      startDate: 'Jan 2022',
       endDate: 'Present (1 year 6 months)',
       // isCurrent: true,
       company: ' Gift Of Time',
@@ -155,8 +155,8 @@ export default {
         <li>Ensuring real-time responsiveness across multiple devices.</li>
       </ul>
       `,
-      startDate: '2022-05',
-      endDate: '2022-08 (4 months)',
+      startDate: 'May 2022',
+      endDate: 'Aug 2022 (4 months)',
       isCurrent: true,
       company: ' Lynxemi',
       technologies: [
@@ -186,8 +186,8 @@ export default {
         <li>Prepared logs and tracked the progress of the students and shared the reports with the parents.</li>
       </ul>
       `,
-      startDate: '2021-02',
-      endDate: '2023-05 (2 years 4 months)',
+      startDate: 'Feb 2021',
+      endDate: 'June 2023 (2 years 5 months)',
       isCurrent: false,
       company: ' Linguaphile Skills Hub',
       technologies: [
@@ -214,8 +214,8 @@ export default {
         <li>Assisted farmers in selling over 100 tonnes of produce during COVID by onboarding them onto MyBy, listing their store, and enabling direct orders from end customers, contributing to the "Save the Farmer" initiative.</li>
       </ul>      
      `,
-      startDate: '2019-12',
-      endDate: '2021-12 (2 years 1 month)',
+      startDate: 'Dec 2019',
+      endDate: 'Dec 2021 (2 years 1 month)',
       isCurrent: false,
       company: ' MyBy',
       technologies: [
@@ -242,8 +242,8 @@ export default {
        <li>Prepared lesson plans to offer structured learning and sufficient practice to ensure clarity of concepts.</li>
      </ul>
      `,
-      startDate: '2019-08',
-      endDate: '2022-08 (3 years 1 month)',
+      startDate: 'Aug 2019',
+      endDate: 'Aug 2022 (3 years 1 month)',
       isCurrent: false,
       company: ' Freelance',
       technologies: [
@@ -535,8 +535,8 @@ export default {
     {
       schoolName: 'Electronics and Communication Engineering',
       fieldOfStudy: 'Electronics and Communication',
-      startDate: '2018-08',
-      endDate: '2022-08 (4 years)',
+      startDate: 'Aug 2018',
+      endDate: 'Aug 2022 (4 years)',
       degree: 'Bachelors of Technology',
       activities:
         'PES University, Bengaluru, India',
@@ -568,7 +568,7 @@ export default {
       ],
       content:
         'A data monitoring service built with Nestjs. Currently supports postgres databases. You can schedule queries to run with dynamic inputs and evaluate query results (boolean) and send email notification on success / failure / all the time.',
-      date: '2023-05 - 2023-05',
+      date: 'May 2023 - May 2023',
     },
     {
       title: 'NexWordCloud',
@@ -595,7 +595,7 @@ export default {
       ],
       content:
         'A wordcloud with thumbnail, which displays words based on frequency. Implemented in React & Angular.',
-      date: '2022-06 - 2022-08',
+      date: 'Jun 2022 - Aug 2022',
     },
     {
       title: 'Churro',
@@ -620,7 +620,7 @@ export default {
         },
       ],
       content: 'An expressjs CRM application with JWT Authentication, Ticket creation & updation. Admin/Engineer/Customer user roles.',
-      date: '2022-07 - 2022-07',
+      date: 'Jul 2022 - Jul 2022',
     },
     {
       title: 'Burrito',
@@ -642,7 +642,7 @@ export default {
         },
       ],
       content: 'An e-commerce site with products, categories, users built using express framework.',
-      date: '2022-05 - 2022-05',
+      date: 'May 2022 - May 2022',
     },
     {
       title: 'Pizza',
@@ -664,7 +664,7 @@ export default {
         },
       ],
       content: 'This is the backend of a Notification service application built using Nodejs and Express. Send Email notifications, tracking ID for email requests. Multiple emails supported.',
-      date: '2022-07 - 2022-07',
+      date: 'Jul 2022 - Jul 2022',
     },
     {
       title: 'Taco',
@@ -699,7 +699,7 @@ export default {
         },
       ],
       content: 'A social media application like Facebook with timeline, posts, likes, followers, admin, routing, jwt authentication, admin profiles.',
-      date: '2021-12 - 2022-01',
+      date: 'Dec 2021 - Jan 2022',
     },
   ],
   volunteer: [
