@@ -63,16 +63,17 @@ export default {
   positions: [
     {
       title: 'Full Stack Engineer',
+      companySite: 'https://www.globalbees.com/',
       summary:
         `<ul><li>Developed high-performance invoicing service handling 5x the previous volume, ensuring efficient processing of thousands of orders daily.</li>
         <li>Utilized Zoho Bulk Invoicing APIs and integrated Amazon SQS and Kinesis for streamlined invoicing and increased productivity.</li>
         <li>Created configurable Python service converting Excel files to CSVs, offering adaptability to different file sources and destinations.</li>
         </ul>`,
       startDate: 'Aug 2022',
-      endDate: 'Present (11 months)',
+      endDate: 'Present',
       period: 1,
       isCurrent: true,
-      company: ' GlobalBees',
+      company: 'GlobalBees',
       technologies: [
         {
           name: 'Nodejs',
@@ -111,6 +112,7 @@ export default {
     },
     {
       title: 'Full Stack Engineer',
+      companySite: 'https://www.socialcreds.com/',
       summary:
         `<ul>
         <li>Launched Social Creds, the world's largest kiddie time bank</li>
@@ -122,9 +124,9 @@ export default {
         <li>Developing front and back-end website architecture</li>
       </ul>`,
       startDate: 'Jan 2022',
-      endDate: 'Present (1 year 6 months)',
+      endDate: 'Present',
       // isCurrent: true,
-      company: ' Gift Of Time',
+      company: 'Gift Of Time',
       technologies: [
         {
           name: 'React',
@@ -148,6 +150,7 @@ export default {
     },
     {
       title: 'Full Stack Engineer',
+      companySite: 'https://www.lynxemi.com/',
       summary:
         `<ul>
         <li>Handling the development and deployment of a new product end-to-end using the MERN Stack.</li>
@@ -156,9 +159,9 @@ export default {
       </ul>
       `,
       startDate: 'May 2022',
-      endDate: 'Aug 2022 (4 months)',
+      endDate: 'Aug 2022',
       isCurrent: true,
-      company: ' Lynxemi',
+      company: 'Lynxemi',
       technologies: [
         {
           name: 'BPMN',
@@ -179,6 +182,7 @@ export default {
     },
     {
       title: 'Teacher',
+      companySite: 'https://www.linguaphile.co.uk/',
       summary:
         `<ul>
         <li>Tutored over 10 students in the IGCSE curriculum.</li>
@@ -187,9 +191,9 @@ export default {
       </ul>
       `,
       startDate: 'Feb 2021',
-      endDate: 'June 2023 (2 years 5 months)',
+      endDate: 'Jun 2023',
       isCurrent: false,
-      company: ' Linguaphile Skills Hub',
+      company: 'Linguaphile Skills Hub',
       technologies: [
         {
           name: 'Design Theory',
@@ -207,6 +211,7 @@ export default {
     },
     {
       title: 'Sales & Marketing',
+      companySite: 'https://www.myby.in/',
       summary:
         `<ul>
         <li>Conceptualized design and implemented the customer experience journeys for the launch of MyBy, facilitating over 20,000 transactions and onboarding zero to 20,000 customers and zero to 1,000 vendors in 4-5 months.</li>
@@ -215,9 +220,9 @@ export default {
       </ul>      
      `,
       startDate: 'Dec 2019',
-      endDate: 'Dec 2021 (2 years 1 month)',
+      endDate: 'Dec 2021',
       isCurrent: false,
-      company: ' MyBy',
+      company: 'MyBy',
       technologies: [
         {
           name: 'Sales',
@@ -243,9 +248,9 @@ export default {
      </ul>
      `,
       startDate: 'Aug 2019',
-      endDate: 'Aug 2022 (3 years 1 month)',
+      endDate: 'Aug 2022',
       isCurrent: false,
-      company: ' Freelance',
+      company: 'Freelance',
       technologies: [
         {
           name: 'French',
@@ -535,8 +540,9 @@ export default {
     {
       schoolName: 'Electronics and Communication Engineering',
       fieldOfStudy: 'Electronics and Communication',
+      companySite: 'https://pes.edu/',
       startDate: 'Aug 2018',
-      endDate: 'Aug 2022 (4 years)',
+      endDate: 'Aug 2022',
       degree: 'Bachelors of Technology',
       activities:
         'PES University, Bengaluru, India',

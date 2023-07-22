@@ -10,11 +10,11 @@ import SocialNetworkNavigation from '../SocialNetworkNavigation/SocialNetworkNav
 
 import './ResumeAppBar.css';
 
-const ResumeAppBar = ({ emailAddress, snsAccounts }) => (
+const ResumeAppBar = ({ emailAddress, snsAccounts, mailLink }) => (
   <AppBar className="ResumeAppBar" position="absolute">
     <Toolbar className="ResumeAppBar-header">
       <LanguagePicker />
-      <Button href={`https://mail.google.com/mail/?view=cm&to=roopeshb13%40gmail.com&su=Hey,Roopesh`} target="_blank">{emailAddress}</Button>
+      <Button href={mailLink} target="_blank">{emailAddress}</Button>
       <SocialNetworkNavigation services={snsAccounts} />
     </Toolbar>
   </AppBar>

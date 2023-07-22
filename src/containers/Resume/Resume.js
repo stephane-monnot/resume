@@ -82,7 +82,7 @@ class Resume extends Component {
     }
 
     const { contributions, total, isMobile } = this.state;
-
+    const mailLink = isMobile ? 'mailto:roopeshb13@gmail.com?subject=Hey%2C%20Roopesh' : `https://mail.google.com/mail/?view=cm&to=roopeshb13%40gmail.com&su=Hey,Roopesh`;
     const cv = this.props.cvPDF;
 
     const { theme } = this.props;
@@ -130,6 +130,7 @@ class Resume extends Component {
         <ResumeAppBar
           emailAddress={this.props.emailAddress}
           snsAccounts={this.props.snsAccounts}
+          mailLink={mailLink}
         />
 
         <ResumeHomeBlock

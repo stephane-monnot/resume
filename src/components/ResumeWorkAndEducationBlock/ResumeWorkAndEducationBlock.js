@@ -12,18 +12,49 @@ import ShowMore from '../../components/ShowMore/ShowMore';
 
 import './ResumeWorkAndEducationBlock.css';
 
-const formatPeriod = (start, end, formatMessage) => {
-  const isToday = end === 'Today' || end === "Aujourd'hui" || end === '今';
+function formatDate(inputDate) {
+  const dateParts = inputDate.split(' ');
+  const monthName = dateParts[0];
+  const year = parseInt(dateParts[1], 10);
 
-  const period =
-    (isToday ? new Date().getFullYear() : parseInt(end, 10)) -
-    parseInt(start, 10);
+  const monthIndex = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].indexOf(monthName);
 
-  if (period <= 1) {
-    return `${start} – ${end}`;
+  return new Date(year, monthIndex, 1);
+}
+
+function calculateDateDifference(startDateStr, endDateStr) {
+  const startDate = formatDate(startDateStr);
+
+  let endDate;
+  if (endDateStr === 'Present') {
+    endDate = new Date(); // Current date
+  } else {
+    endDate = formatDate(endDateStr);
   }
 
-  return `${start} – ${end}`;
+  const diffInMonths = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+  const years = Math.floor(diffInMonths / 12);
+  const months = diffInMonths % 12;
+
+  let result = '';
+  if (years > 0) {
+    result += years === 1 ? `${years} year` : `${years} years`;
+  }
+
+  if (months > 0) {
+    result += result.length > 0 ? ' ' : '';
+    result += months === 1 ? `${months} month` : `${months} months`;
+  }
+
+  return result;
+}
+
+const formatPeriod = (start, end, formatMessage) => {
+  // const period =
+  //   (isToday ? new Date().getFullYear() : parseInt(end, 10)) -
+  //   parseInt(start, 10);
+
+  return `${start} - ${end} (${calculateDateDifference(start, end)})`;
 };
 
 const ResumeWorkAndEducationBlock = ({
@@ -81,7 +112,10 @@ const ResumeWorkAndEducationBlock = ({
                 />
               )}
               <h3 className="vertical-timeline-element-title">
-                {position.title} @{position.company}
+                {position.title} @{" "}
+                <a href={position.companySite} target="_blank" rel="noopener noreferrer">
+                  {position.company}
+                </a>
               </h3>
               {position.keywords && (
                 <div className="ResumeWorkAndEducationBlock-keywords">
